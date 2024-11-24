@@ -1,0 +1,31 @@
+.-pkpClearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+// Style a <button> element to look like an inline link
+.-linkButton {
+	padding: 0;
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	color: @primary;
+	text-decoration: underline;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		color: @primary-lift;
+	}
+}
+
+// Implement [hidden] support for browsers that don't support it
+[hidden] {
+	display: none;
+}
