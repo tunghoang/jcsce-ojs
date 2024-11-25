@@ -8,36 +8,32 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class CitationListTokenizerFilterTest
- *
  * @ingroup tests_classes_citation
- *
  * @see CitationListTokenizerFilter
  *
  * @brief Test class for CitationListTokenizerFilter.
  */
 
-namespace PKP\tests\classes\citation;
+import('lib.pkp.tests.PKPTestCase');
+import('lib.pkp.classes.citation.CitationListTokenizerFilter');
 
-use PKP\citation\CitationListTokenizerFilter;
-use PKP\tests\PKPTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
+class CitationListTokenizerFilterTest extends PKPTestCase {
+	/**
+	 * @covers CitationListTokenizerFilter
+	 */
+	public function testCitationListTokenizerFilter() {
+		$tokenizer = new CitationListTokenizerFilter();
+		$rawCitationList = "\t1. citation1\n\n2 citation2\r\n 3) citation3\n[4]citation4";
+		$expectedResult = array(
+			'1. citation1',
+			'2 citation2',
+			'3) citation3',
+			'[4]citation4'
+		);
+		self::assertEquals($expectedResult, $tokenizer->process($rawCitationList));
 
-#[CoversClass(CitationListTokenizerFilter::class)]
-class CitationListTokenizerFilterTest extends PKPTestCase
-{
-    public function testCitationListTokenizerFilter()
-    {
-        $tokenizer = new CitationListTokenizerFilter();
-        $rawCitationList = "\t1. citation1\n\n2 citation2\r\n 3) citation3\n[4]citation4";
-        $expectedResult = [
-            '1. citation1',
-            '2 citation2',
-            '3) citation3',
-            '[4]citation4'
-        ];
-        self::assertEquals($expectedResult, $tokenizer->process($rawCitationList));
-
-        $rawCitationList = '';
-        self::assertEquals([], $tokenizer->process($rawCitationList));
-    }
+		$rawCitationList = '';
+		self::assertEquals(array(), $tokenizer->process($rawCitationList));
+	}
 }
+

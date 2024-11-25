@@ -12,9 +12,8 @@
  *  buttonSelector: A jQuery selector that designates the button to attach this
  *   link action to.
  *  dialogText: A translation key for the message to be displayed in the dialog.
- *  modalStyle: The modal state/style that should be used. (default is 'basic')
  *}
-{if !$modalStyle}{assign var="modalStyle" value="basic"}{/if}
+{if !$titleIcon}{assign var="titleIcon" value="modal_confirm"}{/if}
 <script>
 	$(function() {ldelim}
 		$('{$buttonSelector|escape:javascript}').pkpHandler(
@@ -28,7 +27,7 @@
 					cancelButton: {translate|json_encode key="common.cancel"},
 					dialogText: {translate|json_encode key=$dialogText},
 					$button: $({$buttonSelector|json_encode}),
-					modalStyle: {$modalStyle|json_encode},
+					titleIcon: {$titleIcon|json_encode},
 					width: 'auto'
 				{rdelim},
 		{rdelim});

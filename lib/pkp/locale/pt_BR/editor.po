@@ -1,20 +1,18 @@
-# Diego José Macêdo <diegojmacedo@gmail.com>, 2022, 2023, 2024.
-# Diego Abadan <diego@lepidus.com.br>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-09-30T11:54:13-07:00\n"
-"PO-Revision-Date: 2024-01-31 12:37+0000\n"
-"Last-Translator: Diego José Macêdo <diegojmacedo@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <http://translate.pkp.sfu.ca/projects/"
-"pkp-lib/editor/pt_BR/>\n"
+"PO-Revision-Date: 2020-11-05 07:22+0000\n"
+"Last-Translator: Luiz Borges <luizbgomide@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <http://translate.pkp.sfu.ca/projects/pkp-"
+"lib/editor/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 3.9.1\n"
 
 msgid "editor.submissionArchive.confirmDelete"
 msgstr "Você tem certeza que deseja excluir esta submissão?"
@@ -48,57 +46,6 @@ msgstr "Submissão aceita para avaliação."
 
 msgid "editor.submission.workflowDecision.changeDecision"
 msgstr "Alterar decisão"
-
-msgid "editor.submission.workflowDecision.disallowedDecision"
-msgstr "Você não tem permissão para registrar esta decisão nesta submissão."
-
-msgid "editor.submission.workflowDecision.invalidEditor"
-msgstr ""
-"O editor não foi reconhecido e pode não ter permissão para registrar uma "
-"decisão sobre esta submissão."
-
-msgid "editor.submission.workflowDecision.invalidRecipients"
-msgstr ""
-"Você não pode enviar um e-mail para os seguintes destinatários: {$names}."
-
-msgid "editor.submission.workflowDecision.invalidReviewRound"
-msgstr "Não foi possível encontrar esta rodada de avaliação."
-
-msgid "editor.submission.workflowDecision.invalidReviewRoundStage"
-msgstr ""
-"Foi providenciada uma rodada de avaliação, mas essa decisão não é tomada "
-"durante uma fase de avaliação."
-
-msgid "editor.submission.workflowDecision.invalidReviewRoundSubmission"
-msgstr "Esta rodada de avaliação não faz parte desta submissão."
-
-msgid "editor.submission.workflowDecision.invalidStage"
-msgstr ""
-"A submissão não está no estágio apropriado do fluxo de trabalho para tomar "
-"essa decisão."
-
-msgid "editor.submission.workflowDecision.noUnassignedDecisions"
-msgstr ""
-"Você deve ser designado para esta submissão para registrar uma decisão "
-"editorial."
-
-msgid "editor.submission.workflowDecision.requiredReviewRound"
-msgstr ""
-"Um ID da rodada de avaliação deve ser fornecido para tomar essa decisão."
-
-msgid "editor.submission.workflowDecision.requiredDecidingEditor"
-msgstr ""
-"Uma recomendação não pode ser feita a menos que um editor seja designado "
-"para esta etapa que possa tomar uma decisão final."
-
-msgid "editor.submission.workflowDecision.submissionInvalid"
-msgstr ""
-"Não foi possível tomar uma decisão sobre esta submissão. O ID da submissão "
-"está ausente ou não corresponde à submissão solicitada."
-
-msgid "editor.submission.workflowDecision.typeInvalid"
-msgstr ""
-"Esta decisão não foi encontrada. Forneça um tipo de decisão reconhecido."
 
 msgid "editor.review.notInitiated"
 msgstr "A avaliação não foi iniciada."
@@ -171,9 +118,6 @@ msgstr "Cancelar Avaliador"
 msgid "editor.review.reinstateReviewer"
 msgstr "Restituir Avaliador"
 
-msgid "editor.review.resendRequestReviewer"
-msgstr "Reenviar Solicitação de Avaliação"
-
 msgid "editor.submissionReview.reviewType"
 msgstr "Tipo de avaliação"
 
@@ -184,16 +128,18 @@ msgid "editor.submissionReview.sendEmail.editors"
 msgstr "Enviar uma notificação por e-mail para o(s) editor(es): {$editorNames}"
 
 msgid "editor.submissionReview.skipEmail"
-msgstr "Não envie uma notificação por e-mail ao autor"
+msgstr "Não enviar email ao autor"
 
 msgid "editor.submissionReview.open"
 msgstr "Abrir"
 
+#, fuzzy
 msgid "editor.submissionReview.anonymous"
-msgstr "Avaliador Anônimo/Autor Divulgado"
+msgstr "Cega"
 
+#, fuzzy
 msgid "editor.submissionReview.doubleAnonymous"
-msgstr "Avaliador Anônimo/Autor Anônimo"
+msgstr "Duplo-cega"
 
 msgid "editor.submissionReview.restrictFiles"
 msgstr "Arquivos a serem avaliados"
@@ -220,22 +166,11 @@ msgid "editor.review.newReviewRound"
 msgstr "Exigir Nova Rodada de Avaliação"
 
 msgid "editor.review.NotifyAuthorRevisions"
-msgstr ""
-"Solicitar ao autor modificações que não estarão sujeitas a uma nova rodada "
-"de avaliação por pares."
+msgstr "Solicitar modificações ao autor."
 
 msgid "editor.review.NotifyAuthorResubmit"
 msgstr ""
 "Solicitar modificações ao autor que estarão sujeitos a avaliação futura."
-
-msgid "editor.review.NotifyAuthorRevisions.recommendation"
-msgstr ""
-"As revisões não devem estar sujeitas a uma nova rodada de avaliação por "
-"pares."
-
-msgid "editor.review.NotifyAuthorResubmit.recommendation"
-msgstr ""
-"As revisões devem ser submetidas a uma nova rodada de avaliação por pares."
 
 msgid "editor.review.dateAccepted"
 msgstr "Data de Recebimento da Avaliação"
@@ -259,7 +194,7 @@ msgid "editor.review.thankReviewerError"
 msgstr "Erro ao enviar agradecimento ao avaliador"
 
 msgid "editor.review.skipEmail"
-msgstr "Não enviar e-mail ao avaliador."
+msgstr "Não enviar email ao avaliador."
 
 msgid "editor.review.sendReminder"
 msgstr "Enviar Lembrete"
@@ -312,9 +247,6 @@ msgstr "Avaliação Enviada"
 msgid "editor.review.reviewerThanked"
 msgstr "Avaliador Recebeu Agradecimentos"
 
-msgid "editor.review.ReviewerResendRequest"
-msgstr "Solicitar Reenvio"
-
 msgid "editor.review.reviewerComments"
 msgstr "Comentários do Avaliador"
 
@@ -341,11 +273,6 @@ msgstr "Ocorreu um erro ao excluir o avaliador. Tente novamente."
 msgid "editor.review.errorReinstatingReviewer"
 msgstr "Houve um erro ao restituir o avaliador. Por favor tente novamente."
 
-msgid "editor.review.errorResendingReviewerRequest"
-msgstr ""
-"Ocorreu um erro ao solicitar que o(a) avaliador(a) reconsiderasse o convite "
-"para avaliação. Por favor, tente novamente."
-
 msgid "editor.review.userGroupSelect"
 msgstr "Inscrever usuário neste grupo de usuários avaliadores"
 
@@ -364,11 +291,9 @@ msgstr ""
 
 msgid "editor.discussion.errorAnonymousParticipants"
 msgstr ""
-"Uma discussão não pode ser criada com os participantes selecionados por que "
-"isso impactaria o anonimato do processo de avaliação."
 
 msgid "editor.discussion.errorNotStageParticipant"
-msgstr "Um participante selecionado não está designado neste estágio."
+msgstr ""
 
 msgid "editor.submission.schedulePublication"
 msgstr "Agendar para Publicação"
@@ -520,7 +445,7 @@ msgstr ""
 "está mais completa e que o arquivo não está pronto para ser publicado."
 
 msgid "editor.submission.revertDeclineDescription"
-msgstr "Tem certeza que deseja reverter a decisão de rejeitar esta submissão?"
+msgstr ""
 
 msgid "editor.publicIdentificationNumericNotAllowed"
 msgstr "O identificador público '{$publicIdentifier}' não pode ser um número."
@@ -536,9 +461,6 @@ msgstr "{$count} em andamento"
 
 msgid "reviewer.list.activeReviewsDescription"
 msgstr "Avaliações designadas em andamento atualmente"
-
-msgid "reviewer.list.assignedToLastRound"
-msgstr "Este avaliador completou uma avaliação na última rodada."
 
 msgid "reviewer.list.completedReviews"
 msgstr "Avaliações completas"
@@ -567,20 +489,15 @@ msgstr "Média de dias para completar uma avaliação"
 msgid "reviewer.list.neverAssigned"
 msgstr "Nunca designado"
 
-msgid "reviewer.list.reassign"
-msgstr "Reatribuir"
-
-msgid "reviewer.list.reassign.withName"
-msgstr "Reatribuir {$name}"
-
 msgid "reviewer.list.currentlyAssigned"
-msgstr "Esse avaliador já foi designado para avaliar esta rodada de avaliação."
+msgstr "Esse avaliador já foi designado para avaliar essa submissão."
 
+#, fuzzy
 msgid "reviewer.list.warnOnAssign"
 msgstr ""
 "Esse avaliador está bloqueado porque lhe foi designado um papel que o "
-"permite visualizar a identidade do autor. A avaliação por pares cega não "
-"poderá ser garantida. Gostaria de desbloquear esse avaliador mesmo assim?"
+"permite ver a identidade do autor. A avaliação cega não poderá ser "
+"garantida. Gostaria de desbloquear esse avaliador mesmo assim?"
 
 msgid "reviewer.list.warnOnAssignUnlock"
 msgstr "Desbloquear"
@@ -593,33 +510,6 @@ msgstr "Biografia"
 
 msgid "reviewer.list.empty"
 msgstr "Não foram encontrados avaliadores"
-
-msgid "reviewer.list.showOnlyReviewersFromPreviousRound"
-msgstr "Atribuído à rodada anterior"
-
-msgid "editor.decision.cancelDecision"
-msgstr "Cancelar Decisão"
-
-msgid "editor.decision.cancelDecision.confirmation"
-msgstr "Tem certeza de que deseja cancelar esta decisão?"
-
-msgid "editor.decision.completeSteps"
-msgstr "Conclua as etapas a seguir para tomar essa decisão"
-
-msgid "editor.decision.dontSkipEmail"
-msgstr "Não ignore este e-mail"
-
-msgid "editor.decision.emailSkipped"
-msgstr "Esta etapa foi ignorada e nenhum e-mail será enviado."
-
-msgid "editor.decision.recordDecision"
-msgstr "Gravar Decisão"
-
-msgid "editor.decision.skipEmail"
-msgstr "Ignorar este e-mail"
-
-msgid "editor.decision.stepError"
-msgstr "Houve um problema na etapa {$stepName}."
 
 #~ msgid "editor.review.NotifyAuthorAccept"
 #~ msgstr "Notificar o autor que sua submissão foi aceita."
@@ -637,6 +527,3 @@ msgstr "Houve um problema na etapa {$stepName}."
 #~ msgstr ""
 #~ "Ocorreu um erro ao marcar esta avaliação como desconsiderada. Tente "
 #~ "novamente."
-
-msgid "reviewer.list.reviewerSameInstitution"
-msgstr "Mesma instituição do autor"

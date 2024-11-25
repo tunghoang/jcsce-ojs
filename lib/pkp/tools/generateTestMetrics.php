@@ -8,130 +8,93 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class generateTestMetrics
- *
  * @ingroup tools
  *
  * @brief Generate example metric data.
  */
 
-require(dirname(__FILE__, 4) . '/tools/bootstrap.php');
+require(dirname(dirname(dirname(dirname(__FILE__)))) . '/tools/bootstrap.inc.php');
 
-use APP\core\Application;
-use APP\facades\Repo;
-use APP\statistics\StatisticsHelper;
-use APP\submission\Submission;
-use Illuminate\Support\Facades\DB;
+class generateTestMetrics extends CommandLineTool {
 
-class generateTestMetrics extends \PKP\cliTool\CommandLineTool
-{
-    public $contextId;
-    public $dateStart;
-    public $dateEnd;
+	var $contextId;
+	var $dateStart;
+	var $dateEnd;
 
-    /**
-     * Constructor
-     */
-    public function __construct($argv = [])
-    {
-        parent::__construct($argv);
+	/**
+	 * Constructor
+	 */
+	function __construct($argv = array()) {
+		parent::__construct($argv);
 
-        if (sizeof($this->argv) < 3) {
-            $this->usage();
-            exit(1);
-        }
+		if (sizeof($this->argv) < 3) {
+			$this->usage();
+			exit(1);
+		}
 
-        $this->contextId = (int) $argv[1];
-        $this->dateStart = $argv[2];
-        $this->dateEnd = $argv[3];
-    }
+		$this->contextId = (int) $argv[1];
+		$this->dateStart = $argv[2];
+		$this->dateEnd = $argv[3];
+	}
 
-    /**
-     * Print command usage information.
-     */
-    public function usage()
-    {
-        echo "Generate fake usage data in the metrics table.\n"
-            . "Usage: {$this->scriptName} [contextId] [dateStart] [dateEnd]\n"
-            . "contextId      The context to add metrics for.\n"
-            . "dateStart      Add metrics after this date. YYYY-MM-DD\n"
-            . "dateEnd        Add metrics after this date. YYYY-MM-DD\n";
-    }
+	/**
+	 * Print command usage information.
+	 */
+	function usage() {
+		echo "Generate fake usage data in the metrics table.\n"
+			. "Usage: {$this->scriptName} [contextId] [dateStart] [dateEnd]\n"
+			. "contextId      The context to add metrics for.\n"
+			. "dateStart      Add metrics after this date. YYYY-MM-DD\n"
+			. "dateEnd        Add metrics after this date. YYYY-MM-DD\n";
+	}
 
-    /**
-     * Generate test metrics
-     */
-    public function execute()
-    {
-        $submissionIds = $this->getPublishedSubmissionIds();
+	/**
+	 * Generate test metrics
+	 */
+	function execute() {
+		$submissionIds = $this->getPublishedSubmissionIds();
 
-        $currentDate = new DateTime($this->dateStart);
-        $endDate = new DateTime($this->dateEnd);
-        $endDateTimeStamp = $endDate->getTimestamp();
+		$currentDate = new DateTime($this->dateStart);
+		$endDate = new DateTime($this->dateEnd);
+		$endDateTimeStamp = $endDate->getTimestamp();
 
-        $submissionsCount = $submissionFilesCount = 0;
-        while ($currentDate->getTimestamp() < $endDateTimeStamp) {
-            foreach ($submissionIds as $submissionId) {
-                DB::table('metrics_submission')->insert([
-                    'load_id' => 'test_events_' . $currentDate->format('Ymd'),
-                    'context_id' => $this->contextId,
-                    'submission_id' => $submissionId,
-                    'assoc_type' => Application::ASSOC_TYPE_SUBMISSION,
-                    'date' => $currentDate->format('Y-m-d'),
-                    'metric' => random_int(1, 10),
-                ]);
-                $submissionsCount++;
+		$metricsDao = DAORegistry::getDao('MetricsDAO');
 
-                // OMP needs different handling for publication formats and files
-                if (Application::get()->getName() === 'omp') {
-                    continue;
-                }
+		$count = 0;
+		while ($currentDate->getTimestamp() < $endDateTimeStamp) {
+			foreach ($submissionIds as $submissionId) {
+				$metricsDao->insertRecord([
+					'load_id' => 'test_events_' . $currentDate->format('Ymd'),
+					'assoc_type' => ASSOC_TYPE_SUBMISSION,
+					'assoc_id' => $submissionId,
+					'submission_id' => $submissionId,
+					'metric_type' => METRIC_TYPE_COUNTER,
+					'metric' => random_int(1, 10),
+					'day' => $currentDate->format('Ymd'),
+				]);
+				$count++;
+			}
+			$currentDate->add(new DateInterval('P1D'));
+		}
 
-                $submission = Repo::submission()->get($submissionId);
-                $galleys = $submission->getCurrentPublication()->getData('galleys');
-                foreach ($galleys as $galley) {
-                    $submissionFileId = $galley->getData('submissionFileId');
-                    if ($submissionFileId && $submissionFile = Repo::submissionFile()->get($submissionFileId)) {
-                        if ($submissionFile->getData('mimetype') == 'application/pdf') {
-                            $fileType = StatisticsHelper::STATISTICS_FILE_TYPE_PDF;
-                        } elseif ($submissionFile->getData('mimetype') == 'text/html') {
-                            $fileType = StatisticsHelper::STATISTICS_FILE_TYPE_HTML;
-                        } else {
-                            $fileType = StatisticsHelper::STATISTICS_FILE_TYPE_OTHER;
-                        }
-                        if ($fileType) {
-                            DB::table('metrics_submission')->insert([
-                                'load_id' => 'test_events_' . $currentDate->format('Ymd'),
-                                'context_id' => $this->contextId,
-                                'submission_id' => $submissionId,
-                                'assoc_type' => Application::ASSOC_TYPE_SUBMISSION_FILE,
-                                'representation_id' => $galley->getId(),
-                                'file_type' => $fileType,
-                                'date' => $currentDate->format('Y-m-d'),
-                                'metric' => random_int(1, 10),
-                            ]);
-                            $submissionFilesCount++;
-                        }
-                    }
-                }
-            }
-            $currentDate->add(new DateInterval('P1D'));
-        }
+		echo $count . " records added for " . count($submissionIds) . " submissions.\n";
+	}
 
-        echo $submissionsCount . ' view and ' . $submissionFilesCount . ' download records added for ' . count($submissionIds) . " submissions.\n";
-    }
-
-    /**
-     * Get an array of all published submission IDs in the database
-     */
-    public function getPublishedSubmissionIds()
-    {
-        return Repo::submission()
-            ->getCollector()
-            ->filterByContextIds([$this->contextId])
-            ->filterByStatus([Submission::STATUS_PUBLISHED])
-            ->getIds();
-    }
+	/**
+	 * Get an array of all published submission IDs in the database
+	 */
+	public function getPublishedSubmissionIds() {
+		import('classes.submission.Submission');
+		$submissionsIterator = Services::get('submission')->getMany(['contextId' => $this->contextId, 'status' => STATUS_PUBLISHED]);
+		$submissionIds = [];
+		foreach ($submissionsIterator as $submission) {
+			$submissionIds[] = $submission->getId();
+		}
+		return $submissionIds;
+	}
 }
 
-$tool = new generateTestMetrics($argv ?? []);
+$tool = new generateTestMetrics(isset($argv) ? $argv : array());
 $tool->execute();
+
+

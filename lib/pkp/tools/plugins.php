@@ -8,28 +8,22 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class PluginsTool
- *
  * @ingroup tools
  *
  * @brief CLI tool to get information about installed/available plugins
  */
 
-use APP\core\Application;
-use PKP\db\DAORegistry;
-use PKP\plugins\GalleryPlugin;
-use PKP\plugins\PluginGalleryDAO;
+require(dirname(dirname(dirname(dirname(__FILE__)))) . '/tools/bootstrap.inc.php');
 
-require(dirname(__FILE__, 4) . '/tools/bootstrap.php');
+import('lib.pkp.controllers.grid.plugins.PluginGalleryGridHandler'); // load constant: PLUGIN_GALLERY_ALL_CATEGORY_SEARCH_VALUE
 
-
-class PluginsTool extends \PKP\cliTool\CommandLineTool
+class PluginsTool extends CommandLineTool
 {
     /**
      * Constructor.
-     *
-     * @param array $argv command-line arguments
+     * @param $argv array command-line arguments
      */
-    public function __construct($argv = [])
+    function __construct($argv = array())
     {
         parent::__construct($argv);
 
@@ -42,7 +36,7 @@ class PluginsTool extends \PKP\cliTool\CommandLineTool
     /**
      * Validate arguments
      */
-    public function validateArgs()
+    function validateArgs()
     {
         switch ($this->argv[0]) {
             case 'list':
@@ -67,7 +61,7 @@ class PluginsTool extends \PKP\cliTool\CommandLineTool
     /**
      * Print command usage information.
      */
-    public function usage()
+    function usage()
     {
         echo "Plugin Gallery tool\n"
             . "Usage: {$this->scriptName} action [arguments]\n"
@@ -79,7 +73,7 @@ class PluginsTool extends \PKP\cliTool\CommandLineTool
     /**
      * Execute the specified command.
      */
-    public function execute()
+    function execute()
     {
         $result = false;
         /** @var PluginGalleryDAO $pluginGalleryDao */
@@ -100,15 +94,15 @@ class PluginsTool extends \PKP\cliTool\CommandLineTool
                 if ($plugin) {
                     foreach ($plugin->getAllData() as $key => $data) {
                         if (is_array($data)) {
-                            echo $key . ': ' . str_replace("\n", '\n', $plugin->getLocalizedData($key)) . "\n";
+                            print $key.': '.str_replace("\n", '\n', $plugin->getLocalizedData($key))."\n";
                         } else {
-                            echo $key . ': ' . str_replace("\n", '\n', $data) . "\n";
+                            print $key.': '.str_replace("\n", '\n', $data)."\n";
                         }
                     }
                     $result = true;
                 }
                 if (!$result) {
-                    error_log('"' . $opts[1] . '" not found in "' . $opts[0] . '"');
+                    error_log('"'.$opts[1].'" not found in "'.$opts[0].'"');
                     $result = true;
                 }
                 break;
@@ -122,12 +116,11 @@ class PluginsTool extends \PKP\cliTool\CommandLineTool
 
     /**
      * Select a specific plugin
-     *
-     * @param string $category a plugin category
-     * @param string $name a plugin name
-     *
+     * @param $category string a plugin category
+     * @param $name string a plugin name
+     * @return GalleryPlugin|null
      */
-    public function selectPlugin(string $category, string $name): ?GalleryPlugin
+    function selectPlugin($category, $name)
     {
         /** @var PluginGalleryDAO $pluginGalleryDao */
         $pluginGalleryDao = DAORegistry::getDAO('PluginGalleryDAO');
@@ -141,31 +134,40 @@ class PluginsTool extends \PKP\cliTool\CommandLineTool
                 return $plugin;
             }
         }
-        return null;
+        return;
     }
 
     /**
      * Print the plugins as a list
-     *
-     * @param GalleryPlugin[] $plugins array of plugins
+     * @param $plugins GalleryPlugin[] array of plugins
      */
-    public function listPlugins(array $plugins): void
+    function listPlugins($plugins)
     {
         foreach ($plugins as $plugin) {
             $statusKey = '';
-            $statusKey = match($plugin->getCurrentStatus()) {
-                GalleryPlugin::PLUGIN_GALLERY_STATE_NEWER => 'manager.plugins.installedVersionNewer',
-                GalleryPlugin::PLUGIN_GALLERY_STATE_UPGRADABLE => 'manager.plugins.installedVersionOlder',
-                GalleryPlugin::PLUGIN_GALLERY_STATE_CURRENT => 'manager.plugins.installedVersionNewest',
-                GalleryPlugin::PLUGIN_GALLERY_STATE_AVAILABLE => 'manager.plugins.noInstalledVersion',
-                GalleryPlugin::PLUGIN_GALLERY_STATE_INCOMPATIBLE => 'manager.plugins.noCompatibleVersion',
-            };
+            switch ($plugin->getCurrentStatus()) {
+                case PLUGIN_GALLERY_STATE_NEWER:
+                $statusKey = 'manager.plugins.installedVersionNewer';
+                break;
+                case PLUGIN_GALLERY_STATE_UPGRADABLE:
+                $statusKey = 'manager.plugins.installedVersionOlder';
+                break;
+                case PLUGIN_GALLERY_STATE_CURRENT:
+                $statusKey = 'manager.plugins.installedVersionNewest';
+                break;
+                case PLUGIN_GALLERY_STATE_AVAILABLE:
+                $statusKey = 'manager.plugins.noInstalledVersion';
+                break;
+                case PLUGIN_GALLERY_STATE_INCOMPATIBLE:
+                $statusKey = 'manager.plugins.noCompatibleVersion';
+                break;
+            }
             $keyOut = explode('.', $statusKey);
             $keyOut = array_pop($keyOut);
-            echo implode('/', ['plugins', $plugin->getData('category'), $plugin->getData('product')]) . ' ' . $plugin->getData('releasePackage') . ' ' . $keyOut . "\n";
+            print implode('/', array('plugins', $plugin->getData('category'), $plugin->getData('product'))) . ' ' . $plugin->getData('releasePackage') . ' ' . $keyOut . "\n";
         }
     }
 }
 
-$tool = new PluginsTool($argv ?? []);
+$tool = new PluginsTool(isset($argv) ? $argv : array());
 $tool->execute();

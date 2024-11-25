@@ -1,27 +1,21 @@
-# Martin Brändle <martin.braendle@uzh.ch>, 2022.
-# Rudy Hahusseau <rudy.hahusseau@univ-lorraine.fr>, 2023.
-# Stefan Schneider <mail@stefan-schneider.at>, 2023.
-# Germán Huélamo Bautista <germanhuelamo@gmail.com>, 2023, 2024.
-# Jean-Blaise Claivaz <jean-blaise.claivaz@unige.ch>, 2023.
-# Rodolphe Lemétayer <rlemetayer@protonmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-19T10:49:49+00:00\n"
-"PO-Revision-Date: 2024-06-21 19:39+0000\n"
-"Last-Translator: Rodolphe Lemétayer <rlemetayer@protonmail.com>\n"
+"PO-Revision-Date: 2020-08-11 18:27+0000\n"
+"Last-Translator: Paul Heckler <paul.d.heckler@gmail.com>\n"
 "Language-Team: French <http://translate.pkp.sfu.ca/projects/pkp-lib/common/"
-"fr_FR/>\n"
+"fr/>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 3.9.1\n"
 
 msgid "common.publicKnowledgeProject"
-msgstr "Public Knowledge Project"
+msgstr "Projet de connaissances publiques (Public Knowledge Project)"
 
 msgid "common.currentStyleSheet"
 msgstr "Feuille de style actuelle"
@@ -48,7 +42,7 @@ msgid "about.contact.principalContact"
 msgstr "Contact principal"
 
 msgid "about.contact.supportContact"
-msgstr "Support technique"
+msgstr "Contact de soutien"
 
 msgid "about.other"
 msgstr "Autre"
@@ -69,7 +63,7 @@ msgid "announcement.announcementsHome"
 msgstr "Annonces"
 
 msgid "announcement.moreAnnouncements"
-msgstr "Plus d'annonces..."
+msgstr "Encore plus d'annonces..."
 
 msgid "announcement.noneExist"
 msgstr "Aucune annonce n'a été publiée."
@@ -131,28 +125,13 @@ msgid "common.active"
 msgstr "Actif"
 
 msgid "common.inactive"
-msgstr "Inactif"
+msgstr ""
 
 msgid "common.add"
 msgstr "Ajouter"
 
-msgid "common.addCCBCC"
-msgstr "Ajouter CC/CCI"
-
-msgid "common.addFiles"
-msgstr "Ajouter des fichiers"
-
 msgid "common.addSelf"
 msgstr "S'ajouter"
-
-msgid "common.attachedFiles"
-msgstr "Fichiers joints"
-
-msgid "common.attachFiles"
-msgstr "Joindre des fichiers"
-
-msgid "common.attachSelected"
-msgstr "Joindre la sélection"
 
 msgid "common.name"
 msgstr "Nom"
@@ -176,9 +155,9 @@ msgstr "Texte alternatif"
 
 msgid "common.altTextInstructions"
 msgstr ""
-"Décrivez cette image pour les utilisateurs et utilisatrices qui visitent ce "
-"site avec un navigateur textuel ou à l'aide d'un dispositif d'assistance. "
-"Par exemple : « Notre rédacteur intervient lors de la conférence PKP. »"
+"Décrivez cette image pour les utilisateurs et utilisatrices visitant ce site "
+"dans un navigateur textuel où à l'aide d'un dispositif d'assistance. Par "
+"exemple : « Notre rédacteur intervient lors de la conférence PKP »."
 
 msgid "common.and"
 msgstr "et"
@@ -219,10 +198,33 @@ msgstr "Erreur"
 msgid "common.notice"
 msgstr "Avis"
 
+msgid "common.captcha.error.missing-input-secret"
+msgstr ""
+"La validation par captcha pour ce site Web n'est pas configurée "
+"correctement. La clé secrète est manquante."
+
+msgid "common.captcha.error.invalid-input-secret"
+msgstr ""
+"La validation par captcha pour ce site Web n'est pas configurée "
+"correctement. La clé secrète est invalide."
+
 msgid "common.captcha.error.missing-input-response"
 msgstr ""
 "Vous devez compléter la vérification de validation utilisée pour empêcher la "
 "soumission de spam."
+
+msgid "common.captcha.error.invalid-input-response"
+msgstr ""
+"Vous n'avez pas complété le contrôle de validation utilisé pour empêcher les "
+"soumissions de spam."
+
+msgid "common.captchaField.description"
+msgstr ""
+"Veuillez saisir les lettres telles qu'elles apparaissent dans l'image au-"
+"dessus."
+
+msgid "common.captchaField"
+msgstr "Validation"
 
 msgid "common.ccLicense"
 msgstr ""
@@ -230,13 +232,14 @@ msgstr ""
 "\t\t<br /><br />\n"
 "\t\t<a target=\"_blank\" rel=\"license\" href=\"https://creativecommons.org/"
 "licenses/by/3.0/\">\n"
-"\t\t\t<img alt=\"Creative Commons License\" style=\"border-width:0\" src=\""
-"//i.creativecommons.org/l/by/3.0/80x15.png\"/>\n"
+"\t\t\t<img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"//"
+"i.creativecommons.org/l/by/3.0/80x15.png\"/>\n"
 "\t\t</a>\n"
 "\t\t<br/>\n"
 "\t\tCe travail est autorisé sous licence avec la <a rel=\"license\" target="
 "\"_blank\" href=\"https://creativecommons.org/licenses/by/3.0/\">Licence de "
-"paternité Creative Commons 3.0</a>.\n"
+"paternité Creative Commons 3.0</a>\n"
+".\n"
 "\t"
 
 msgid "common.ccLicense.rt"
@@ -347,29 +350,17 @@ msgstr "Suppression"
 msgid "common.deleteSelection"
 msgstr "Supprimer la sélection"
 
-msgid "common.deselect"
-msgstr "Désélectionner"
-
 msgid "common.designation"
 msgstr "Désignation"
 
 msgid "common.description"
 msgstr "Description"
 
-msgid "common.details"
-msgstr "Détails"
-
 msgid "common.dimensionsInches"
 msgstr "{$width}\"&nbsp;x&nbsp;{$height}\" @ {$dpi} DPI/PPI"
 
 msgid "common.dimensionsPixels"
 msgstr "{$width} x {$height} pixels"
-
-msgid "common.discardChanges"
-msgstr "Non, ignorer les modifications non sauvegardées"
-
-msgid "common.disconnected"
-msgstr "Déconnecté"
 
 msgid "common.disable"
 msgstr "Désactiver"
@@ -389,23 +380,11 @@ msgstr "Télécharger"
 msgid "common.downloadPdf"
 msgstr "Télécharger le PDF"
 
-msgid "common.downloadReport"
-msgstr "Télécharger le rapport"
-
-msgid "common.dragAndDropHere"
-msgstr "Glisser-déposer des fichiers ici."
-
-msgid "common.orUploadFile"
-msgstr "Ou téléverser un fichier"
-
 msgid "common.edit"
 msgstr "Modifier"
 
 msgid "common.editItem"
-msgstr "Modifier {$name}"
-
-msgid "common.emailTemplates"
-msgstr "Modèles d'e-mail"
+msgstr ""
 
 msgid "common.enable"
 msgstr "Activer"
@@ -476,14 +455,14 @@ msgstr "Ajouter un filtre : {$filterTitle}"
 msgid "common.filterRemove"
 msgstr "Supprimer le filtre : {$filterTitle}"
 
-msgid "common.findTemplate"
-msgstr "Trouver un modèle d'e-mail"
+msgid "common.from"
+msgstr "Depuis"
 
-msgid "common.formatting"
-msgstr "Mise en forme"
+msgid "common.fromWithValue"
+msgstr "De : {$value}"
 
-msgid "common.geographic"
-msgstr "Géographique"
+msgid "common.until"
+msgstr "Jusqu'à"
 
 msgid "common.go"
 msgstr "Continuer"
@@ -512,32 +491,17 @@ msgstr "Commencer"
 msgid "common.inProgress"
 msgstr "En cours"
 
-msgid "common.insert"
-msgstr "Insérer"
-
-msgid "common.insertContent"
-msgstr "Insérer du contenu"
-
-msgid "common.insertContentSearch"
-msgstr "Trouver du contenu à insérer"
-
 msgid "common.itemsPerPage"
 msgstr "Items par page"
 
 msgid "common.keywords"
 msgstr "Mots-clés"
 
-msgid "common.label"
-msgstr "Étiquette"
-
 msgid "common.language"
 msgstr "Langue"
 
 msgid "common.languages"
 msgstr "Langues"
-
-msgid "common.lastSaved"
-msgstr "Dernière sauvegarde {$when}"
 
 msgid "common.lastActivity"
 msgstr "Dernière activité enregistrée le {$date}."
@@ -550,9 +514,6 @@ msgstr "{$value} ou moins"
 
 msgid "common.lessThanOnly"
 msgstr "Moins que"
-
-msgid "common.keepWorking"
-msgstr "Continuez à travailler"
 
 msgid "common.commaListSeparator"
 msgstr ", "
@@ -592,12 +553,6 @@ msgstr "Aucun assigné"
 
 msgid "common.none"
 msgstr "Aucun(e)"
-
-msgid "common.noneSelected"
-msgstr "Aucune sélection"
-
-msgid "common.noneProvided"
-msgstr "Aucune donnée"
 
 msgid "common.no"
 msgstr "Non"
@@ -641,9 +596,6 @@ msgstr "notifié : {$dateNotified}"
 
 msgid "common.noMatches"
 msgstr "Aucunes concordances"
-
-msgid "common.numberedMore"
-msgstr "{$number} de plus"
 
 msgid "common.off"
 msgstr "Arrêté"
@@ -706,10 +658,10 @@ msgid "common.plugin"
 msgstr "Module"
 
 msgid "common.pluginEnabled"
-msgstr "Le module « {$pluginName} » a été activé."
+msgstr "Le module \"{$pluginName}\" a été activé."
 
 msgid "common.pluginDisabled"
-msgstr "Le module « {$pluginName} » a été désactivé."
+msgstr "Le module \"{$pluginName}\" a été désactivé."
 
 msgid "common.prefix"
 msgstr "Préfixe"
@@ -727,7 +679,7 @@ msgid "common.quality"
 msgstr "Qualité"
 
 msgid "common.queue.long.active"
-msgstr "Toutes actives"
+msgstr "Tous actifs"
 
 msgid "common.range"
 msgstr "{$min}-{$max}"
@@ -740,9 +692,6 @@ msgstr "Lire plus"
 
 msgid "common.readMoreWithTitle"
 msgstr "Lire plus à propos de {$title}"
-
-msgid "common.reconnecting"
-msgstr "Reconnexion"
 
 msgid "common.record"
 msgstr "Consigner"
@@ -781,21 +730,13 @@ msgid "common.replaceFile"
 msgstr "Remplacer le fichier"
 
 msgid "common.requiredField"
-msgstr ""
-"<abbr class=\"required\" title=\"required\">*</abbr> Indique un champ "
-"obligatoire"
+msgstr "* Indique un champ obligatoire"
 
 msgid "common.required"
 msgstr "Obligatoire"
 
 msgid "common.reset"
 msgstr "Réinitialiser"
-
-msgid "common.reviewRoundNumber"
-msgstr "Cycle {$round}"
-
-msgid "common.role"
-msgstr "Rôle"
 
 msgid "common.saveAndContinue"
 msgstr "Enregistrer et continuer"
@@ -811,12 +752,6 @@ msgstr "Enregistrement"
 
 msgid "common.search"
 msgstr "Rechercher"
-
-msgid "common.searchPhrase"
-msgstr "Recherche d'une phrase"
-
-msgid "common.searching"
-msgstr "Recherche"
 
 msgid "common.searchQuery"
 msgstr "Requête"
@@ -840,16 +775,10 @@ msgid "common.select"
 msgstr "Sélectionner"
 
 msgid "common.selectWithName"
-msgstr "Sélectionner {$name}"
+msgstr ""
 
 msgid "common.sendEmail"
 msgstr "Envoyer le courriel"
-
-msgid "common.showAllSteps"
-msgstr "Afficher toutes les étapes"
-
-msgid "common.showingSteps"
-msgstr "{$current}/{$total} étapes"
 
 msgid "common.size"
 msgstr "Taille"
@@ -875,32 +804,23 @@ msgstr "Sous-titre"
 msgid "common.suggest"
 msgstr "Suggérer"
 
-msgid "common.switchTo"
-msgstr "Passer à"
-
-msgid "common.switchToNamedItem"
-msgstr "Passer à {$name}"
-
 msgid "common.title"
 msgstr "Titre"
 
 msgid "common.titleSeparator"
-msgstr " | "
+msgstr ""
 
 msgid "common.top"
 msgstr "Haut de page"
+
+msgid "common.toWithValue"
+msgstr "À : {$value}"
 
 msgid "common.true"
 msgstr "Vrai"
 
 msgid "common.type"
 msgstr "Type"
-
-msgid "common.uploadedBy"
-msgstr "Téléversé par {$name}"
-
-msgid "common.uploadedByAndWhen"
-msgstr "Téléversé par {$name} le {$date}"
 
 msgid "common.component"
 msgstr "Composante"
@@ -913,17 +833,6 @@ msgstr "Une erreur imprévue est survenu. Merci de recharger la page."
 
 msgid "common.unread"
 msgstr "Non lu"
-
-msgid "common.unsavedChanges"
-msgstr "Modifications non sauvegardées"
-
-msgid "common.unsavedChangesMessage"
-msgstr ""
-"Nous avons trouvé des modifications non sauvegardées depuis {$when}. Cela "
-"peut se produire si vous perdez la connexion au serveur pendant que vous "
-"travaillez. La restauration de ces modifications risque d'écraser toutes les "
-"modifications que vous avez apportées depuis. Souhaitez-vous restaurer ces "
-"modifications maintenant ?"
 
 msgid "common.untitled"
 msgstr "Sans titre"
@@ -946,13 +855,10 @@ msgid "common.up"
 msgstr "Haut"
 
 msgid "common.addFile"
-msgstr "Ajouter un fichier"
+msgstr ""
 
 msgid "common.upload.addFile"
 msgstr "Transférer un fichier"
-
-msgid "common.upload.addFile.description"
-msgstr "Téléverser un fichier depuis votre ordinateur."
 
 msgid "common.upload.restore"
 msgstr "Restaurer l'original"
@@ -973,16 +879,13 @@ msgid "common.user"
 msgstr "Utilisateur"
 
 msgid "common.user.nonexistent"
-msgstr "[Utilisatrice ou utilisateur inexistant]"
+msgstr ""
 
 msgid "common.view"
 msgstr "Afficher"
 
-msgid "common.viewError"
-msgstr "Afficher l'erreur"
-
 msgid "common.viewWithName"
-msgstr "Afficher {$name}"
+msgstr ""
 
 msgid "common.viewProfile"
 msgstr "Mon profil"
@@ -992,9 +895,6 @@ msgstr "semaines"
 
 msgid "common.width"
 msgstr "Largeur"
-
-msgid "common.withParenthesis"
-msgstr "{$item} ({$inParenthesis})"
 
 msgid "common.year"
 msgstr "Année"
@@ -1007,6 +907,9 @@ msgstr "Chargement"
 
 msgid "common.plugins"
 msgstr "Modules externes"
+
+msgid "common.metric"
+msgstr "Métrique"
 
 msgid "common.count"
 msgstr "Décompte"
@@ -1024,13 +927,13 @@ msgid "debug.memoryUsage"
 msgstr "Utilisation de la mémoire"
 
 msgid "debug.notes.localeListLoad"
-msgstr "Liste de langue « {$localeList} » chargée à partir du XML"
+msgstr "Liste de langue \"{$localeList}\" chargée à partir du XML"
 
 msgid "debug.notes.localeLoad"
-msgstr "Fichier de langue « {$localeFile} » chargé à partir du XML"
+msgstr "Fichier de langue \"{$localeFile}\" chargé à partir du XML"
 
 msgid "debug.notes.missingLocaleKey"
-msgstr "Clé de langue manquante « {$key} »."
+msgstr "Clé de langue manquante \"{$key}\"."
 
 msgid "debug.notes"
 msgstr "Notes :"
@@ -1038,42 +941,17 @@ msgstr "Notes :"
 msgid "defaultMetric.title"
 msgstr "Métrique (par défaut)"
 
+msgid "defaultMetric.availableMetrics"
+msgstr "Mesures disponibles"
+
 msgid "editor.submissionReview.uploadFile"
-msgstr "Téléverser le fichier d'évaluation"
+msgstr "Transférer le fichier de révision"
 
 msgid "editor.submissionReview.uploadAttachment"
 msgstr "Transférer le fichier"
 
 msgid "email.addAttachment"
 msgstr "Ajouter une pièce jointe"
-
-msgid "email.addAttachment.submissionFiles.attach"
-msgstr "Joindre les fichiers de soumission"
-
-msgid "email.addAttachment.submissionFiles.submissionDescription"
-msgstr ""
-"Joindre les fichiers téléversés par l'auteur lors de la phase de soumission."
-
-msgid "email.addAttachment.submissionFiles.reviewDescription"
-msgstr ""
-"Joindre les fichiers téléversés au cours du processus de soumission tels les "
-"correctifs ou les fichiers à réviser."
-
-msgid "email.addAttachment.libraryFiles"
-msgstr "Fichiers de la bibliothèque"
-
-msgid "email.addAttachment.libraryFiles.attach"
-msgstr "Joindre les fichiers de la bibliothèque"
-
-msgid "email.addAttachment.libraryFiles.description"
-msgstr ""
-"Joindre des fichiers provenant des bibliothèques de soumission et éditoriale."
-
-msgid "email.addAttachment.reviewFiles.attach"
-msgstr "Joindre les fichiers d'évaluation"
-
-msgid "email.addAttachment.reviewFiles.description"
-msgstr "Joindre les fichiers transférés par les évaluateur·rice·s"
 
 msgid "email.addBccRecipient"
 msgstr "Ajouter une CCI"
@@ -1087,9 +965,6 @@ msgstr "Ajouter un destinataire"
 msgid "email.attachments"
 msgstr "Pièces jointes"
 
-msgid "email.attachmentNotFound"
-msgstr "Le fichier {$fileName} n'a pas pu être joint."
-
 msgid "email.bcc"
 msgstr "CCI"
 
@@ -1101,12 +976,6 @@ msgstr "Corps"
 
 msgid "email.cc"
 msgstr "CC"
-
-msgid "email.confirmSwitchLocale"
-msgstr ""
-"Voulez-vous vraiement passer à {$localeName} pour rédiger ce courriel ? "
-"Toutes les modifications apportées à l’objet et au corps du message seront "
-"perdues."
 
 msgid "email.compose"
 msgstr "Envoyer le courriel"
@@ -1178,6 +1047,9 @@ msgstr "Voulez-vous vraiment envoyer ce formulaire ?"
 
 msgid "form.confirmSubmit.title"
 msgstr "Confirmer"
+
+msgid "form.emailRequired"
+msgstr "Vous devez fournir une adresse électronique."
 
 msgid "form.dataHasChanged"
 msgstr ""
@@ -1292,7 +1164,7 @@ msgid "form.resubmit"
 msgstr "Soumettre de nouveau"
 
 msgid "form.saved"
-msgstr "Enregistré"
+msgstr ""
 
 msgid "form.saveToUpload"
 msgstr "Utiliser Enregistrer pour transférer le fichier."
@@ -1453,7 +1325,7 @@ msgid "locale.supported"
 msgstr "Langues prises en charge"
 
 msgid "navigation.access"
-msgstr "Utilisateurs/trices & Rôles"
+msgstr "Utilisateurs &amp; Rôles"
 
 msgid "navigation.about"
 msgstr "À propos"
@@ -1483,7 +1355,7 @@ msgid "navigation.browse"
 msgstr "Explorer"
 
 msgid "navigation.backTo"
-msgstr "⟵ Revenir à {$page}"
+msgstr ""
 
 msgid "navigation.browseByAuthor"
 msgstr "Par Auteur"
@@ -1581,9 +1453,6 @@ msgstr "Gestion de l'utilisateur"
 msgid "navigation.viewFrontend"
 msgstr "Voir le site"
 
-msgid "institution.institutions"
-msgstr "Établissements"
-
 msgid "notification.addedAuditor"
 msgstr "Un vérificateur a été ajouté."
 
@@ -1616,6 +1485,12 @@ msgstr "Type d'annonce supprimé."
 
 msgid "notification.removedAnnouncement"
 msgstr "Annonce supprimée."
+
+msgid "notification.addedAuthor"
+msgstr "Auteur ajouté."
+
+msgid "notification.editedAuthor"
+msgstr "Auteur modifié."
 
 msgid "notification.confirmError"
 msgstr ""
@@ -1673,9 +1548,7 @@ msgid "notification.savedSubmissionMetadata"
 msgstr "Les métadonnées de la soumission ont été sauvegardées."
 
 msgid "notification.sendNotificationConfirmation"
-msgstr ""
-"Envoyer un courriel à ce sujet à l'ensemble des utilisatrices et "
-"utilisateurs enregistrés."
+msgstr "Envoyer un mail à tous les utilisateurs d'OJS"
 
 msgid "search.author"
 msgstr "Auteurs"
@@ -1705,7 +1578,7 @@ msgid "search.cli.rebuildIndex.error"
 msgstr "Erreur"
 
 msgid "search.cli.rebuildIndex.result"
-msgstr "{$numIndexed} articles prévus pour l'indexation"
+msgstr "{$numIndexed} articles indexés"
 
 msgid "search.coverage"
 msgstr "Couverture"
@@ -1756,10 +1629,10 @@ msgid "search.searchResults"
 msgstr "Résultats de recherche"
 
 msgid "search.searchResults.foundSingle"
-msgstr "Un élément trouvé."
+msgstr ""
 
 msgid "search.searchResults.foundPlural"
-msgstr "{$count} éléments trouvés."
+msgstr ""
 
 msgid "search.subject"
 msgstr "Mot(s)-clé(s)"
@@ -1779,11 +1652,12 @@ msgstr "Télécharger ce fichier"
 msgid "context.path"
 msgstr "Chemin d'accès"
 
+#, fuzzy
 msgid "review.ensuringAnonymousReview"
-msgstr "Comment s'assurer que l'ensemble des fichiers soient anonymisés"
+msgstr "Assurer un examen aveugle"
 
 msgid "grid.action.showReviewPolicy"
-msgstr "Lire la politique actuelle concernant l'évaluation"
+msgstr "Lire la politique actuelle concernant la révision"
 
 msgid "grid.action.deleteNotification"
 msgstr "Supprimer la tâche"
@@ -1801,23 +1675,25 @@ msgid "dashboard.myQueue"
 msgstr "Ma file d'attente"
 
 msgid "review.anonymousPeerReview.title"
-msgstr "Comment s'assurer que l'ensemble des fichiers soient anonymisés"
+msgstr ""
 
+#, fuzzy
 msgid "review.anonymousPeerReview"
 msgstr ""
-"<p>Afin d'assurer l'intégrité de l'évaluation anonyme par les pairs, tous "
-"les efforts possibles devraient être faits pour éviter de révéler l'identité "
-"des auteurs et autrices et des évaluateurs et évaluatrices .Cela implique "
-"que les auteurs et autrices, éditeurs et éditrices et évaluateurs et "
-"évaluatrices (qui téléversent des documents dans le cadre de leur évaluation)"
-" vérifient si les étapes suivantes ont été prises en ce qui concerne le "
-"texte et les propriétés du fichier :</p>\n"
-"<ul><li>Les auteurs ou autrices du document ont supprimé leurs noms du "
-"texte, avec l'indication « auteur » et l'année utilisées dans les références "
-"et les notes de bas de page en lieu du nom de l'auteur ou de l'autrice, du "
-"titre de l'article, etc.</li>\n"
-"<li>Les auteurs ou autrices du document ont retiré les informations "
-"personnelles des propriétés du fichier en suivant les étapes suivantes :\n"
+"<p>Afin d'assurer l'intégrité de l'évaluation par les pairs en double-"
+"aveugle des soumissions envoyées à cette revue, tous les efforts possibles "
+"devraient être faits pour éviter de révéler l'identité des auteurs et "
+"auteures et des évaluateurs et évaluatrices Cela implique que les auteurs et "
+"auteures, éditeurs et éditrices et évaluateurs et évaluatrices (qui "
+"téléversent des documents dans le cadre de leur évaluation) vérifient si les "
+"étapes suivantes ont été prises en ce qui concerne le texte et les "
+"propriétés du fichier :</p>\n"
+"<ul><li>Supprimer le nom de l'auteur ou auteure du texte. Dans la "
+"bibliographie et dans les notes en bas de page, on utilise le mot  « Auteur(-"
+"e) » et l'année au lieu du nom de l'auteur-e, du titre de l'article, etc.</"
+"li>\n"
+"<li>L'identification de l'auteur ou auteure ne doit plus apparaître dans les "
+"propriétés du fichier en suivant les étapes suivantes :\n"
 "<ul><li>Microsoft Word pour Windows :\n"
 "<ul><li>Aller à « Fichier »</li>\n"
 "<li>Sélectionner « Inspecter le document »</li>\n"
@@ -1836,7 +1712,7 @@ msgstr ""
 "<li>Cliquer sur « OK » et sauvegarder le document</li></ul></li>\n"
 "<li>PDF :\n"
 "<ul><li>Aller à « Fichier »</li>\n"
-"<li>Sélectionner « Propriétés »</li>\n"
+"<li>Sélectionner  « Propriétés »</li>\n"
 "<li>Supprimer tout nom du champ auteur</li>\n"
 "<li>Cliquer sur « OK » </li>\n"
 "<li>Sauvegarder le document</li></ul></li></ul>\n"
@@ -1876,10 +1752,6 @@ msgstr "L'évaluatrice ou évaluateur a été annulé."
 msgid "notification.reinstatedReviewer"
 msgstr "L'évaluatrice ou évaluateur a été réintégré."
 
-msgid "notification.reviewerResendRequest"
-msgstr ""
-"Une demande pour reconsidérer l’assignation de l’évaluation a été envoyée."
-
 msgid "notification.addedStageParticipant"
 msgstr "L'utilisateur a été ajouté à titre de participant."
 
@@ -1896,7 +1768,7 @@ msgid "notification.type.reviewAssignmentUpdated"
 msgstr "Mise à jour de la demande d'évaluation."
 
 msgid "notification.type.auditorRequest"
-msgstr "Demande de vérification du fichier « {$file} »"
+msgstr "On vous a demandé de vérifier \"{$file}\""
 
 msgid "notification.type.allReviewsIn"
 msgstr ""
@@ -1914,17 +1786,17 @@ msgstr "Vous devez tenir compte des révisions à l'étape {$stage}."
 msgid "notification.type.pendingRevisions.title"
 msgstr "Révisions soumises à {$stage}."
 
+msgid "notification.type.metadataModified"
+msgstr "Les metadata de \"{$title}\" ont été modifiées."
+
 msgid "notification.type.reviewerComment"
-msgstr "Un rapporteur a laissé un commentaire sur « {$title} »."
+msgstr "Un rapporteur a laissé un commentaire sur \"{$title}\"."
 
 msgid "notification.signedFile"
 msgstr "Fichier considéré."
 
-msgid "timeZone"
-msgstr "Fuseau horaire"
-
 msgid "user.email"
-msgstr "Courriel"
+msgstr ""
 
 msgid "user.authorization.submissionFile"
 msgstr "L'utilisateur actuel n'a pas accès au fichier de soumission spécifié."
@@ -1939,22 +1811,22 @@ msgid "user.authorization.invalidRepresentation"
 msgstr "Représentation invalide."
 
 msgid "user.authorization.invalidReviewRound"
-msgstr "Cycle d'évaluation invalide."
+msgstr ""
 
 msgid "user.authorization.invalidQuery"
-msgstr "Discussion invalide."
+msgstr ""
 
 msgid "user.authorization.unauthorizedNote"
-msgstr "Vous n'avez pas accès à ce message de la discussion."
+msgstr ""
 
 msgid "user.authorization.unauthorizedReviewAssignment"
-msgstr "Vous n'avez pas accès à cette assignation d'évaluation."
+msgstr ""
 
 msgid "user.authorization.authorRoleMissing"
 msgstr ""
 "Vos privilèges actuels ne vous permettent pas de visionner cette soumission. "
 "Veuillez modifier votre profil pour vous assurer que l'on vous a assigné les "
-"rôles appropriés dans la section « S'inscrire comme »."
+"rôles appropriés dans la section \"S'inscrire comme\"."
 
 msgid "user.authorization.submissionAuthor"
 msgstr ""
@@ -1963,7 +1835,7 @@ msgstr ""
 "approprié."
 
 msgid "user.register.form.privacyConsentLabel"
-msgstr "Options de confidentialité"
+msgstr ""
 
 msgid "notification.type.queryActivity"
 msgstr "Activités sur la discusssion."
@@ -1973,7 +1845,8 @@ msgstr "Discussion ajouté."
 
 msgid "notification.type.assignCopyeditors"
 msgstr ""
-"Affectez un éditeur à l'aide du lien Assigner dans la liste Participants."
+"Affectez un réviseur à l'aide du lien \"Ajouter\" dans la liste "
+"\"Participants\"."
 
 msgid "notification.type.awaitingCopyedits"
 msgstr "En attente de copies."
@@ -1988,9 +1861,6 @@ msgid "notification.type.editorialReport.contents"
 msgstr ""
 "Ceci est un rappel amical pour vous inciter à vérifier la bonne marche de "
 "votre revue via le rapport éditorial."
-
-msgid "notification.type.editorialReminder"
-msgstr "E-mail hebdomadaire des tâches en attente"
 
 msgid "semicolon"
 msgstr "{$label} :"
@@ -2013,52 +1883,11 @@ msgstr "Le menu a été mis à jour"
 msgid "notification.removedNavigationMenu"
 msgstr "Le menu a été supprimé"
 
-msgid "notification.unsubscribeNotifications.success"
-msgstr "Vous avez été désabonné(e)"
-
-msgid "notification.unsubscribeNotifications.error"
-msgstr "Nous n'avons pas pu vous désabonner"
-
-msgid "notification.unsubscribeNotifications.pageMessage"
-msgstr ""
-"Veuillez choisir les courriels que vous ne désirez plus recevoir à {$email} "
-"de {$contextName}."
-
-msgid "notification.unsubscribeNotifications.resubscribe"
-msgstr ""
-"Vous pouvez vous réabonner aux notifications par courriel en tout temps en "
-"allant dans votre <a href=\"{$profileNotificationUrl}\">profil</a>."
-
-msgid "notification.unsubscribeNotifications.successMessage"
-msgstr ""
-"L'adresse {$email} a été désabonnée. Nous ne vous enverrons plus ces "
-"courriels. Vous pouvez vous réabonner aux notifications par courriel en tout "
-"temps en allant dans votre <a href=\"{$profileNotificationUrl}\">profil</a>."
-
-msgid "notification.unsubscribeNotifications.errorMessage"
-msgstr ""
-"Une erreur imprévue nous a empêché de désabonner l'adresse {$email}. Vous "
-"pouvez vous désabonner de toute notification par courriel en allant dans "
-"votre <a href=\"{$profileNotificationUrl}\">profil</a> ou en communiquant "
-"directement avec nous afin d'obtenir de l'assistance."
-
-msgid "notification.unsubscribeNotifications"
-msgstr "Se désabonner"
-
 msgid "list.viewMore"
 msgstr "Voir plus à propos de {$name}"
 
 msgid "list.viewLess"
 msgstr "Cacher les détails de {$name}"
-
-msgid "list.expandAll"
-msgstr "Développer tout"
-
-msgid "list.collapseAll"
-msgstr "Réduire tout"
-
-msgid "validation.invalidOption"
-msgstr "Ce n'est pas une option valable."
 
 msgid "validator.accepted"
 msgstr "Veuillez accepter cet élément."
@@ -2079,8 +1908,6 @@ msgstr ""
 
 msgid "validator.alpha_dash_period"
 msgstr ""
-"Cela ne peut contenir que des lettres, des chiffres, des tirets, des traits "
-"de soulignement et des points."
 
 msgid "validator.alpha_num"
 msgstr "Ceci ne peut contenir que des lettres et des chiffres."
@@ -2108,15 +1935,6 @@ msgstr "Ce champ doit être vrai ou faux."
 
 msgid "validator.confirmed"
 msgstr "La confirmation de ce champ ne correspond pas."
-
-msgid "validator.country"
-msgstr "Ce n'est pas un pays valide."
-
-msgid "validator.country.regex"
-msgstr ""
-"Ce n'est pas un pays valide. Le pays doit correspondre à l'un des codes "
-"internationaux à 2 lettres. Voir tous les codes sur https://en.wikipedia.org/"
-"wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements."
 
 msgid "validator.currency"
 msgstr "Ceci n'est pas une devise valide."
@@ -2266,40 +2084,6 @@ msgstr "{$attribute} déjà utilisé."
 msgid "validator.url"
 msgstr "Ceci n'est pas un URL valide."
 
-msgid "validator.no_new_line"
-msgstr "Aucune nouvelle ligne autorisée."
-
-msgid "validator.allowable_title_html_tags"
-msgstr "Seules les balises html [{$tags}] sont autorisées."
-
-msgid "filter.input.error.notSupported"
-msgstr ""
-"Le filtre ({$displayName}) prend en charge l'entrée {$inputTypeName} - "
-"{$typeofInput} donnée"
-
-msgid "filter.error.missingRequirements"
-msgstr ""
-"Cette transformation n'est pas supportée dans l'environnement de votre "
-"installation."
-
-msgid "filter.import.error.couldNotImportNode"
-msgstr "Le XML n'a pas pu être importé"
-
-msgid "plugins.importexport.common.error.unknownCommand"
-msgstr "Commande inconnue {$command}"
-
-msgid "common.withForwardSlash"
-msgstr "{$item}/{$afterSlash}"
-
-msgid "common.categorySeparator"
-msgstr "{$parent} > {$child}"
-
-msgid "notification.addedAuthor"
-msgstr "Auteur ajouté."
-
-msgid "notification.editedAuthor"
-msgstr "Auteur modifié."
-
 #~ msgid "announcement.viewLink"
 #~ msgstr "Plus..."
 
@@ -2310,14 +2094,6 @@ msgstr "Auteur modifié."
 #~ msgstr ""
 #~ "Les caractères que vous avez saisis ne correspondent pas aux caractères "
 #~ "dans l'image. Veuillez vérifier les caractères et essayer de nouveau."
-
-#~ msgid "common.captchaField.description"
-#~ msgstr ""
-#~ "Veuillez saisir les lettres telles qu'elles apparaissent dans l'image au-"
-#~ "dessus."
-
-#~ msgid "common.captchaField"
-#~ msgstr "Validation"
 
 #~ msgid "help.contents"
 #~ msgstr "Contenu"
@@ -2379,21 +2155,6 @@ msgstr "Auteur modifié."
 #~ msgid "dashboard.submissions"
 #~ msgstr "Soumissions"
 
-#~ msgid "common.captcha.error.missing-input-secret"
-#~ msgstr ""
-#~ "La validation par captcha pour ce site Web n'est pas configurée "
-#~ "correctement. La clé secrète est manquante."
-
-#~ msgid "common.captcha.error.invalid-input-secret"
-#~ msgstr ""
-#~ "La validation par captcha pour ce site Web n'est pas configurée "
-#~ "correctement. La clé secrète est invalide."
-
-#~ msgid "common.captcha.error.invalid-input-response"
-#~ msgstr ""
-#~ "Vous n'avez pas complété le contrôle de validation utilisé pour empêcher "
-#~ "les soumissions de spam."
-
 #~ msgid "common.listSeparator"
 #~ msgstr ","
 
@@ -2407,18 +2168,3 @@ msgstr "Auteur modifié."
 #~ msgstr ""
 #~ "Une erreur inattendue est survenue. Vous avez peut-être été déconnecté ou "
 #~ "déconnectée. Veuillez recharger la page et essayer de nouveau."
-
-msgid "showLess"
-msgstr "Montrer moins"
-
-msgid "common.highlight"
-msgstr "Mise en évidence"
-
-msgid "showAll"
-msgstr "Montrer tous"
-
-msgid "common.highlights"
-msgstr "Mises en évidence"
-
-msgid "common.sandbox"
-msgstr "Application fonctionnant en mode bac à sable."

@@ -7,10 +7,6 @@
  *
  * @brief Admin page for configuring high-level details about a context.
  *
- * @hook Template::Settings::admin::contextSettings::setup []
- * @hook Template::Settings::admin::contextSettings::plugins []
- * @hook Template::Settings::admin::contextSettings []
- *
  * @uses $editContext Context The context that is being edited.
  *}
 {extends file="layouts/backend.tpl"}
@@ -25,36 +21,34 @@
 			<tabs :is-side-tabs="true" :track-history="true">
 				<tab id="context" label="{translate key="context.context"}">
 					<pkp-form
-						v-bind="components.{PKP\components\forms\context\PKPContextForm::FORM_CONTEXT}"
+						v-bind="components.{$smarty.const.FORM_CONTEXT}"
 						@set="set"
 					/>
 				</tab>
 				<tab id="appearance" label="{translate key="manager.website.appearance"}">
 					<theme-form
-						v-bind="components.{PKP\components\forms\context\PKPThemeForm::FORM_THEME}"
+						v-bind="components.{$smarty.const.FORM_THEME}"
 						@set="set"
 					/>
 				</tab>
 				<tab id="languages" label="{translate key="common.languages"}">
-					{capture assign=languagesUrl}{url router=PKP\core\PKPApplication::ROUTE_COMPONENT context=$editContext->getPath() component="grid.settings.languages.ManageLanguageGridHandler" op="fetchGrid" escape=false}{/capture}
+					{capture assign=languagesUrl}{url router=$smarty.const.ROUTE_COMPONENT context=$editContext->getPath() component="grid.settings.languages.ManageLanguageGridHandler" op="fetchGrid" escape=false}{/capture}
 					{load_url_in_div id="languageGridContainer" url=$languagesUrl}
-					{capture assign=submissionLanguagesUrl}{url router=PKP\core\PKPApplication::ROUTE_COMPONENT context=$editContext->getPath() component="grid.settings.languages.SubmissionLanguageGridHandler" op="fetchGrid" escape=false}{/capture}
-					{load_url_in_div id="submissionLanguageGridContainer" url=$submissionLanguagesUrl}
 				</tab>
 				<tab id="indexing" label="{translate key="manager.setup.searchEngineIndexing"}">
 					<pkp-form
-						v-bind="components.{PKP\components\forms\context\PKPSearchIndexingForm::FORM_SEARCH_INDEXING}"
+						v-bind="components.{$smarty.const.FORM_SEARCH_INDEXING}"
 						@set="set"
 					/>
 				</tab>
 				<tab id="restrictBulkEmails" label="{translate key="admin.settings.restrictBulkEmails"}">
 					{if $bulkEmailsEnabled}
 						<pkp-form
-							v-bind="components.{PKP\components\forms\context\PKPRestrictBulkEmailsForm::FORM_RESTRICT_BULK_EMAILS}"
+							v-bind="components.{$smarty.const.FORM_RESTRICT_BULK_EMAILS}"
 							@set="set"
 						/>
 					{else}
-						{capture assign="siteSettingsUrl"}{url router=PKP\core\PKPApplication::ROUTE_PAGE page="admin" op="settings" anchor="setup/bulkEmails"}{/capture}
+						{capture assign="siteSettingsUrl"}{url router=$smarty.const.ROUTE_PAGE page="admin" op="settings" anchor="setup/bulkEmails"}{/capture}
 						<p>{translate key="admin.settings.disableBulkEmailRoles.contextDisabled" siteSettingsUrl=$siteSettingsUrl}</p>
 					{/if}
 				</tab>
@@ -64,18 +58,18 @@
 		<tab id="plugins" label="{translate key="common.plugins"}">
 			<tabs :track-history="true">
 				<tab id="installed" label="{translate key="manager.plugins.installed"}">
-					{capture assign=pluginGridUrl}{url router=PKP\core\PKPApplication::ROUTE_COMPONENT context=$editContext->getPath() component="grid.settings.plugins.SettingsPluginGridHandler" op="fetchGrid" escape=false}{/capture}
+					{capture assign=pluginGridUrl}{url router=$smarty.const.ROUTE_COMPONENT context=$editContext->getPath() component="grid.settings.plugins.SettingsPluginGridHandler" op="fetchGrid" escape=false}{/capture}
 					{load_url_in_div id="pluginGridContainer" url=$pluginGridUrl}
 				</tab>
 				<tab id="gallery" label="{translate key="manager.plugins.pluginGallery"}">
-					{capture assign=pluginGalleryGridUrl}{url router=PKP\core\PKPApplication::ROUTE_COMPONENT context=$editContext->getPath() component="grid.plugins.PluginGalleryGridHandler" op="fetchGrid" escape=false}{/capture}
+					{capture assign=pluginGalleryGridUrl}{url router=$smarty.const.ROUTE_COMPONENT context=$editContext->getPath() component="grid.plugins.PluginGalleryGridHandler" op="fetchGrid" escape=false}{/capture}
 					{load_url_in_div id="pluginGalleryGridContainer" url=$pluginGalleryGridUrl}
 				</tab>
 				{call_hook name="Template::Settings::admin::contextSettings::plugins"}
 			</tabs>
 		</tab>
 		<tab id="users" label="{translate key="manager.users"}">
-			{capture assign=usersUrl}{url router=PKP\core\PKPApplication::ROUTE_COMPONENT context=$editContext->getPath() component="grid.settings.user.UserGridHandler" op="fetchGrid" escape=false}{/capture}
+			{capture assign=usersUrl}{url router=$smarty.const.ROUTE_COMPONENT context=$editContext->getPath() component="grid.settings.user.UserGridHandler" op="fetchGrid" escape=false}{/capture}
 			{load_url_in_div id="userGridContainer" url=$usersUrl}
 		</tab>
 		{call_hook name="Template::Settings::admin::contextSettings"}

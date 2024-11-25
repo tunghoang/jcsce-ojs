@@ -1,12 +1,11 @@
-# Marie-Hélène Vézina [UdeMontréal] <marie-helene.vezina@umontreal.ca>, 2023.
-# Nicolas Dickner <dickner.nicolas@uqam.ca>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-15T13:36:56-07:00\n"
-"PO-Revision-Date: 2023-09-06 18:58+0000\n"
-"Last-Translator: Nicolas Dickner <dickner.nicolas@uqam.ca>\n"
+"PO-Revision-Date: 2020-12-15 09:58+0000\n"
+"Last-Translator: Marie-Hélène Vézina [UdeMontréal] <marie-helene."
+"vezina@umontreal.ca>\n"
 "Language-Team: French (Canada) <http://translate.pkp.sfu.ca/projects/pkp-lib/"
 "installer/fr_CA/>\n"
 "Language: fr_CA\n"
@@ -14,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.13.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 # localization file for fr_CA. Last revision 2019-10-23T01:53:45 by Marie-Hélène Vézina, Bibliothèques, Université de Montréal.
 msgid "installer.additionalLocales"
@@ -34,6 +33,13 @@ msgstr "<span class=\"pkp_form_error formError\">NON</span>"
 
 msgid "installer.checkYes"
 msgstr "Oui"
+
+msgid "installer.clientCharset"
+msgstr "Jeu de caractères du client"
+
+msgid "installer.clientCharsetInstructions"
+msgstr ""
+"Encodage à utiliser pour les données envoyées et reçues des navigateurs."
 
 msgid "installer.configFileError"
 msgstr ""
@@ -127,9 +133,6 @@ msgstr ""
 "Un nom d'utilisateur-trice pour le compte administrateur-trice est "
 "obligatoire."
 
-msgid "installer.form.timeZoneRequired"
-msgstr "Un fuseau horaire doit être sélectionné."
-
 msgid "installer.installationWrongPhp"
 msgstr ""
 "<br/><strong>AVERTISSEMENT : Votre version actuelle de PHP ne satisfait pas "
@@ -160,7 +163,7 @@ msgstr ""
 msgid "installer.installMigrationError"
 msgstr ""
 "Une erreur s'est produite lors de l'exécution de la classe de migration "
-"<tt>{$class}</tt>. L'exception était {$message}."
+"<tt>{$class}</tt>."
 
 msgid "installer.installParseEmailTemplatesFileError"
 msgstr ""
@@ -171,21 +174,10 @@ msgid "installer.installParseFilterConfigFileError"
 msgstr ""
 "Erreur de traitement du fichier de configuration du filtre <tt>{$file}</tt>."
 
-#, fuzzy
 msgid "installer.unsupportedUpgradeError"
 msgstr ""
 "Mise à niveau non supportée. Voir docs/UPGRADE-UNSUPPORTED pour plus de "
 "renseignements."
-
-msgid "installer.timezoneInstructions"
-msgstr "Le fuseau horaire à utiliser pour ce système."
-
-msgid "installer.additionalLocalesInstructions"
-msgstr ""
-"Sélectionner toutes les langues supplémentaires à prendre en charge dans ce "
-"système. Des langues supplémentaires peuvent également être installées à "
-"tout moment depuis l'interface d'administration du site. <br> * = Désigne "
-"les langues qui ne sont pas entièrement traduites (> 90% des termes traduits)"
 
 msgid "installer.locale"
 msgstr "Paramètre régional"
@@ -265,13 +257,3 @@ msgid "installer.unsupportedPhpError"
 msgstr ""
 "La version PHP de votre serveur n'est pas supportée par ce logiciel. "
 "Vérifiez les conditions d'installation dans docs/README."
-
-#~ msgid "installer.clientCharset"
-#~ msgstr "Jeu de caractères du client"
-
-#~ msgid "installer.clientCharsetInstructions"
-#~ msgstr ""
-#~ "Encodage à utiliser pour les données envoyées et reçues des navigateurs."
-
-msgid "installer.miscSettings"
-msgstr "Paramètres divers"

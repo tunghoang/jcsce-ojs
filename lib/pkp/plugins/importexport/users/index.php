@@ -12,9 +12,13 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @ingroup plugins_importexport_users
- *
  * @brief Wrapper for XML user import/export plugin.
  *
  */
 
-return new \APP\plugins\importexport\users\UserImportExportPlugin();
+
+require_once('UserImportExportPlugin.inc.php');
+
+return new UserImportExportPlugin();
+
+

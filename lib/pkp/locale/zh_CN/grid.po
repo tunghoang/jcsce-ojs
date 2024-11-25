@@ -1,19 +1,15 @@
-# Huang Feilong <hfl@nominsang.org>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-04T08:55:21-08:00\n"
-"PO-Revision-Date: 2021-11-02 17:32+0000\n"
-"Last-Translator: Huang Feilong <hfl@nominsang.org>\n"
-"Language-Team: Chinese (Simplified) <http://translate.pkp.sfu.ca/projects/"
-"pkp-lib/grid/zh_CN/>\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2019-11-04T08:55:21-08:00\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
 
 msgid "grid.noItems"
 msgstr "没有项目"
@@ -22,16 +18,16 @@ msgid "grid.settings"
 msgstr "设置"
 
 msgid "grid.noAuditors"
-msgstr "没有审校"
+msgstr ""
 
 msgid "grid.remotelyHostedItem"
-msgstr "项目是远程托管。"
+msgstr ""
 
 msgid "grid.action.uninstall"
-msgstr "卸载"
+msgstr ""
 
 msgid "grid.action.manageAccess"
-msgstr "管理访问"
+msgstr ""
 
 msgid "grid.action.sort"
 msgstr "分类"
@@ -40,31 +36,31 @@ msgid "grid.action.addItem"
 msgstr "添加项目"
 
 msgid "grid.action.addNote"
-msgstr "添加说明"
+msgstr ""
 
 msgid "grid.action.addQuery"
-msgstr "添加讨论"
+msgstr ""
 
 msgid "grid.action.readQuery"
-msgstr "阅读讨论"
+msgstr ""
 
 msgid "grid.action.deleteQuery"
-msgstr "删除讨论"
+msgstr ""
 
 msgid "grid.action.updateQuery"
-msgstr "更新讨论"
+msgstr ""
 
 msgid "grid.action.addUser"
 msgstr "新建用户"
 
 msgid "grid.action.unassignReviewer"
-msgstr "取消分配此审阅者"
+msgstr ""
 
 msgid "grid.action.approveCopyedit"
-msgstr "批准此文案编辑文件并将其发送到下一阶段"
+msgstr ""
 
 msgid "grid.action.reload"
-msgstr "重载"
+msgstr ""
 
 msgid "grid.action.delete"
 msgstr "删除"
@@ -79,16 +75,16 @@ msgid "grid.action.editMedia"
 msgstr "编辑媒体"
 
 msgid "grid.action.editSection"
-msgstr "编辑栏目"
+msgstr ""
 
 msgid "grid.action.export"
-msgstr "导出"
+msgstr ""
 
 msgid "grid.action.deleteSection"
-msgstr "删除栏目"
+msgstr ""
 
 msgid "grid.action.editorialHistory"
-msgstr "编辑历史"
+msgstr ""
 
 msgid "grid.action.remove"
 msgstr "删除"
@@ -100,10 +96,10 @@ msgid "grid.action.approve"
 msgstr "同意"
 
 msgid "grid.action.disapprove"
-msgstr "反对"
+msgstr ""
 
 msgid "grid.action.setApproval"
-msgstr "设置同意"
+msgstr ""
 
 msgid "grid.action.moreInformation"
 msgstr "更多"
@@ -112,7 +108,7 @@ msgid "grid.action.restoreDefaults"
 msgstr "恢复默认值"
 
 msgid "grid.action.restoreDefaults.confirm"
-msgstr "您确定要恢复默认设置吗？"
+msgstr ""
 
 msgid "grid.action.addAuthor"
 msgstr "添加作者"
@@ -131,9 +127,6 @@ msgstr "升级"
 
 msgid "grid.action.order"
 msgstr "排序"
-
-msgid "grid.action.saveOrdering"
-msgstr ""
 
 msgid "grid.action.cancelOrdering"
 msgstr "取消排序"
@@ -201,6 +194,12 @@ msgstr "导入或导出内容或网站数据"
 msgid "grid.action.orderItems"
 msgstr "启用排序模式"
 
+msgid "grid.action.editSubmissionChecklist"
+msgstr "编辑清单项目"
+
+msgid "grid.action.deleteSubmissionChecklist"
+msgstr "消除清单项目"
+
 msgid "grid.action.resetAll"
 msgstr "将所有项目重置为默认值"
 
@@ -235,7 +234,7 @@ msgid "grid.action.editUserGroup"
 msgstr "编辑该用户群"
 
 msgid "grid.action.removeUserGroup"
-msgstr "删除这个用户组"
+msgstr ""
 
 msgid "grid.action.disable"
 msgstr "停用"
@@ -250,13 +249,13 @@ msgid "grid.action.selectCreate"
 msgstr "创立新审稿人"
 
 msgid "grid.action.search"
-msgstr "搜索"
+msgstr ""
 
 msgid "grid.action.advancedSearch"
 msgstr "高级搜索"
 
 msgid "grid.action.viewLibrary"
-msgstr "查看文库"
+msgstr ""
 
 msgid "grid.action.viewMetadata"
 msgstr "查看该提交文章的元数据"
@@ -285,9 +284,6 @@ msgstr "添加公告类型"
 msgid "grid.action.addAnnouncement"
 msgstr "添加公告"
 
-msgid "grid.action.addInstitution"
-msgstr ""
-
 msgid "grid.action.mergeUser"
 msgstr "合并用户"
 
@@ -298,43 +294,43 @@ msgid "grid.action.history"
 msgstr "查看历史"
 
 msgid "grid.action.unconsiderReview"
-msgstr "此审核完成，但是您不必理会它"
+msgstr ""
 
 msgid "grid.action.enable"
-msgstr "启用"
+msgstr ""
 
 msgid "grid.action.bookInfo"
-msgstr "稿件信息"
+msgstr ""
 
 msgid "grid.action.logInAs"
-msgstr "登录为"
+msgstr ""
 
 msgid "grid.action.exportAllUsers"
-msgstr "导出所有用户"
+msgstr ""
 
 msgid "grid.users.confirmExportAllUsers"
-msgstr "您确认要导出所有用户吗？"
+msgstr ""
 
 msgid "grid.action.activate"
-msgstr "激活"
+msgstr ""
 
 msgid "grid.action.deactivate"
-msgstr "停用"
+msgstr ""
 
 msgid "grid.action.copy"
-msgstr "复制"
+msgstr ""
 
 msgid "grid.action.preview"
-msgstr "预览"
+msgstr ""
 
 msgid "grid.action.install"
-msgstr "安装"
+msgstr ""
 
 msgid "grid.action.moreItems"
-msgstr "加载更多"
+msgstr ""
 
 msgid "grid.action.users"
-msgstr "查看/选择 用户"
+msgstr ""
 
 msgid "grid.task.status.completed"
 msgstr "该任务完成"
@@ -365,9 +361,6 @@ msgstr "审计者"
 
 msgid "grid.columns.locale"
 msgstr "地点"
-
-msgid "grid.columns.locale.code"
-msgstr ""
 
 msgid "grid.sponsor.title"
 msgstr "主管"
@@ -405,20 +398,20 @@ msgstr "合作者"
 msgid "grid.action.addContributor"
 msgstr "添加合著者"
 
+msgid "grid.action.editContributor"
+msgstr "编辑合著者"
+
 msgid "grid.action.deleteContributor"
 msgstr "消除合著者"
 
-msgid "grid.action.deleteContributor.confirmationMessage"
-msgstr ""
-
 msgid "grid.action.newVersion"
-msgstr "创建一个新版本"
+msgstr ""
 
 msgid "grid.reviewForm.title"
 msgstr "审查表单"
 
 msgid "grid.reviewFormElement.responseItems"
-msgstr "反馈意见"
+msgstr ""
 
 msgid "grid.noFiles"
 msgstr "没有文件"
@@ -447,31 +440,19 @@ msgstr "投稿检查列表"
 msgid "grid.submissionChecklist.column.checklistItem"
 msgstr "项目清单"
 
+msgid "author.users.contributor.name"
+msgstr "姓名"
+
+msgid "author.users.contributor.email"
+msgstr "电子邮件"
+
+msgid "author.users.contributor.role"
+msgstr "角色"
+
 msgid "author.users.contributor.principalContact"
 msgstr "主要联系人"
 
-msgid "author.users.contributor.setPrincipalContact"
-msgstr ""
-
-msgid "contributor.listPanel.preview"
-msgstr ""
-
-msgid "contributor.listPanel.preview.description"
-msgstr ""
-
-msgid "contributor.listPanel.preview.format"
-msgstr ""
-
-msgid "contributor.listPanel.preview.display"
-msgstr ""
-
-msgid "contributor.listPanel.preview.abbreviated"
-msgstr ""
-
-msgid "contributor.listPanel.preview.publicationLists"
-msgstr ""
-
-msgid "contributor.listPanel.preview.full"
+msgid "author.users.contributor.includeInBrowse"
 msgstr ""
 
 msgid "grid.roles.currentRoles"
@@ -493,7 +474,7 @@ msgid "grid.user.allRoles"
 msgstr "所有角色"
 
 msgid "grid.user.allPermissionLevels"
-msgstr "所有权限级别"
+msgstr ""
 
 msgid "grid.user.add"
 msgstr "添加用户"
@@ -529,6 +510,9 @@ msgstr ""
 
 msgid "grid.user.cannotAdminister"
 msgstr "您没有足够的权限来编辑该用户。"
+
+msgid "grid.user.authSource"
+msgstr "验证源"
 
 msgid "grid.user.mustProvideName"
 msgstr "请首先至少提供该用户的姓氏。"
@@ -579,7 +563,7 @@ msgid "grid.user.addRoles"
 msgstr "添加角色"
 
 msgid "grid.user.addRole"
-msgstr "添加角色"
+msgstr ""
 
 msgid "grid.user.selectUser"
 msgstr "选择用户"
@@ -588,19 +572,19 @@ msgid "grid.user.pleaseSelectUser"
 msgstr "请选择一个用户"
 
 msgid "grid.user.confirmLogInAs"
-msgstr "用此用户登录？您执行的所有操作将会跟此用户关联。"
+msgstr ""
 
 msgid "grid.user.mergeUsers"
-msgstr "合并用户"
+msgstr ""
 
 msgid "grid.user.mergeUsers.mergeUser"
-msgstr "合并用户"
+msgstr ""
 
 msgid "grid.user.mergeUsers.mergeIntoUser"
-msgstr "并入此用户"
+msgstr ""
 
 msgid "grid.user.mergeUsers.allUsers"
-msgstr "所有注册用户"
+msgstr ""
 
 msgid "grid.user.mergeUsers.confirm"
 msgstr ""
@@ -691,21 +675,6 @@ msgstr ""
 
 msgid "grid.action.view"
 msgstr ""
-
-msgid "author.users.contributor.name"
-msgstr "姓名"
-
-msgid "author.users.contributor.email"
-msgstr "电子邮件"
-
-msgid "author.users.contributor.role"
-msgstr "角色"
-
-msgid "author.users.contributor.includeInBrowse"
-msgstr ""
-
-msgid "grid.action.editContributor"
-msgstr "编辑合著者"
 
 #~ msgid "grid.action.downloadFile"
 #~ msgstr "下载文件"

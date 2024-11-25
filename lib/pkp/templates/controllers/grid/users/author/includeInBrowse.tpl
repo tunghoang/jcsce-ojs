@@ -7,7 +7,6 @@
  *
  * User is included in browse lists cell
  *
- * @deprecated 3.4
  *}
 {if $includeInBrowse}
 	<div id="isChecked"><div href="#" class='pkp_helpers_container_center checked'></div></div>

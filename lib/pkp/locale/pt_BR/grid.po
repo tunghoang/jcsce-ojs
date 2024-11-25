@@ -1,19 +1,18 @@
-# Diego José Macêdo <diegojmacedo@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-09-30T11:54:13-07:00\n"
-"PO-Revision-Date: 2023-03-06 23:07+0000\n"
+"PO-Revision-Date: 2020-06-07 13:56+0000\n"
 "Last-Translator: Diego José Macêdo <diegojmacedo@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <http://translate.pkp.sfu.ca/projects/"
-"pkp-lib/grid/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <http://translate.pkp.sfu.ca/projects/pkp-"
+"lib/grid/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.13.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 msgid "grid.noItems"
 msgstr "Nenhum item"
@@ -132,9 +131,6 @@ msgstr "Atualizar"
 msgid "grid.action.order"
 msgstr "Ordenar"
 
-msgid "grid.action.saveOrdering"
-msgstr "Salvar Ordem"
-
 msgid "grid.action.cancelOrdering"
 msgstr "Cancelar ordenação"
 
@@ -200,6 +196,12 @@ msgstr "Importar ou exportar conteúdo ou dados do site"
 
 msgid "grid.action.orderItems"
 msgstr "Habilitar modo de ordenação"
+
+msgid "grid.action.editSubmissionChecklist"
+msgstr "Editar este item de verificação"
+
+msgid "grid.action.deleteSubmissionChecklist"
+msgstr "Excluir este item de verificação"
 
 msgid "grid.action.resetAll"
 msgstr "Restaurar todos os itens a seus valores originais"
@@ -285,9 +287,6 @@ msgstr "Incluir tipo de notícia"
 msgid "grid.action.addAnnouncement"
 msgstr "Incluir notícia"
 
-msgid "grid.action.addInstitution"
-msgstr "Adicionar instituição"
-
 msgid "grid.action.mergeUser"
 msgstr "Mesclar usuários"
 
@@ -367,9 +366,6 @@ msgstr "Auditor"
 msgid "grid.columns.locale"
 msgstr "Tradução"
 
-msgid "grid.columns.locale.code"
-msgstr "Código"
-
 msgid "grid.sponsor.title"
 msgstr "Patrocinadores"
 
@@ -406,13 +402,11 @@ msgstr "Fontes de Apoio"
 msgid "grid.action.addContributor"
 msgstr "Incluir Coautor"
 
+msgid "grid.action.editContributor"
+msgstr "Editar coautor"
+
 msgid "grid.action.deleteContributor"
 msgstr "Excluir Coautor"
-
-msgid "grid.action.deleteContributor.confirmationMessage"
-msgstr ""
-"Tem certeza que deseja remover {$name} como um colaborador? Essa ação não "
-"pode ser desfeita."
 
 msgid "grid.action.newVersion"
 msgstr "Criar uma nova versão"
@@ -450,33 +444,20 @@ msgstr "Diretrizes para submissão"
 msgid "grid.submissionChecklist.column.checklistItem"
 msgstr "Item de verificação"
 
+msgid "author.users.contributor.name"
+msgstr "Nome"
+
+msgid "author.users.contributor.email"
+msgstr "E-mail"
+
+msgid "author.users.contributor.role"
+msgstr "Papel"
+
 msgid "author.users.contributor.principalContact"
 msgstr "Contato principal"
 
-msgid "author.users.contributor.setPrincipalContact"
-msgstr "Definir contato principal"
-
-msgid "contributor.listPanel.preview"
-msgstr "Pré-visualizar"
-
-msgid "contributor.listPanel.preview.description"
-msgstr ""
-"Os colaboradores desta publicação serão identificados nos seguintes formatos."
-
-msgid "contributor.listPanel.preview.format"
-msgstr "Formato"
-
-msgid "contributor.listPanel.preview.display"
-msgstr "Exibição"
-
-msgid "contributor.listPanel.preview.abbreviated"
-msgstr "Abreviado"
-
-msgid "contributor.listPanel.preview.publicationLists"
-msgstr "Listas de Publicação"
-
-msgid "contributor.listPanel.preview.full"
-msgstr "Completo"
+msgid "author.users.contributor.includeInBrowse"
+msgstr "Nas Listas de Navegação"
 
 msgid "grid.roles.currentRoles"
 msgstr "Papéis atuais"
@@ -537,6 +518,9 @@ msgstr ""
 "Sem permisão para editar usuário. Para editar um usuário você deve ou ser "
 "administrador do site ou ser gerente em todas as revistas nas quais o "
 "usuário está cadastrado."
+
+msgid "grid.user.authSource"
+msgstr "Fonte de autenticação"
 
 msgid "grid.user.mustProvideName"
 msgstr "Informe pelo menos o sobrenome para o usuário."
@@ -706,22 +690,7 @@ msgid "grid.navigationMenus.navigationMenu.selectType"
 msgstr "Escolha um tipo..."
 
 msgid "grid.action.view"
-msgstr "Visualizar"
-
-msgid "author.users.contributor.name"
-msgstr "Nome"
-
-msgid "author.users.contributor.email"
-msgstr "E-mail"
-
-msgid "author.users.contributor.role"
-msgstr "Papel"
-
-msgid "author.users.contributor.includeInBrowse"
-msgstr "Nas Listas de Navegação"
-
-msgid "grid.action.editContributor"
-msgstr "Editar coautor"
+msgstr ""
 
 #~ msgid "grid.user.mergeUsers.into.description"
 #~ msgstr ""
@@ -742,6 +711,3 @@ msgstr "Editar coautor"
 
 #~ msgid "grid.user.mergeUsers.noneEnrolled"
 #~ msgstr "Nenhum usuário com este papel."
-
-#~ msgid "grid.user.authSource"
-#~ msgstr "Fonte de autenticação"

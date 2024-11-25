@@ -26,16 +26,16 @@
 
 	{fbvFormArea id="changePasswordFormArea"}
 		{fbvFormSection label="user.profile.oldPassword"}
-			{fbvElement type="text" password="true" id="oldPassword" maxLength="32" size=$fbvStyles.size.MEDIUM}
+			{fbvElement type="text" password="true" id="oldPassword" value=$oldPassword maxLength="32" size=$fbvStyles.size.MEDIUM}
 		{/fbvFormSection}
 		{fbvFormSection label="user.profile.newPassword"}
 			{capture assign="passwordLengthRestriction"}{translate key="user.register.form.passwordLengthRestriction" length=$minPasswordLength}{/capture}
-			{fbvElement type="text" password="true" id="password" label=$passwordLengthRestriction subLabelTranslate=false maxLength="32" size=$fbvStyles.size.MEDIUM}
-			{fbvElement type="text" password="true" id="password2" maxLength="32" label="user.profile.repeatNewPassword" size=$fbvStyles.size.MEDIUM}
+			{fbvElement type="text" password="true" id="password" value=$oldPassword label=$passwordLengthRestriction subLabelTranslate=false maxLength="32" size=$fbvStyles.size.MEDIUM}
+			{fbvElement type="text" password="true" id="password2" value=$oldPassword maxLength="32" label="user.profile.repeatNewPassword" size=$fbvStyles.size.MEDIUM}
 		{/fbvFormSection}
 
 		<p>
-			{capture assign="privacyUrl"}{url router=PKP\core\PKPApplication::ROUTE_PAGE page="about" op="privacy"}{/capture}
+			{capture assign="privacyUrl"}{url router=$smarty.const.ROUTE_PAGE page="about" op="privacy"}{/capture}
 			{translate key="user.privacyLink" privacyUrl=$privacyUrl}
 		</p>
 

@@ -8,113 +8,101 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class CitationsParsingTool
- *
  * @ingroup tools
  *
  * @brief CLI tool to parse existing citations
  */
 
-use APP\core\Application;
-use APP\facades\Repo;
-use PKP\db\DAORegistry;
+require(dirname(dirname(dirname(dirname(__FILE__)))) . '/tools/bootstrap.inc.php');
 
-require(dirname(__FILE__, 4) . '/tools/bootstrap.php');
+class CitationsParsingTool extends CommandLineTool {
 
-class CitationsParsingTool extends \PKP\cliTool\CommandLineTool
-{
-    public $parameters;
-    /**
-     * Constructor.
-     *
-     * @param array $argv command-line arguments
-     */
-    public function __construct($argv = [])
-    {
-        parent::__construct($argv);
+	/**
+	 * Constructor.
+	 * @param $argv array command-line arguments
+	 */
+	function __construct($argv = array()) {
+		parent::__construct($argv);
 
-        if (!sizeof($this->argv)) {
-            $this->usage();
-            exit(1);
-        }
+		if (!sizeof($this->argv)) {
+			$this->usage();
+			exit(1);
+		}
 
-        $this->parameters = $this->argv;
-    }
+		$this->parameters = $this->argv;
+	}
 
-    /**
-     * Print command usage information.
-     */
-    public function usage()
-    {
-        echo "Parse and save submission(s) citations.\n"
-            . "Usage:\n"
-            . "{$this->scriptName} all\n"
-            . "{$this->scriptName} context context_id [...]\n"
-            . "{$this->scriptName} submission submission_id [...]\n";
-    }
+	/**
+	 * Print command usage information.
+	 */
+	function usage() {
+		echo "Parse and save submission(s) citations.\n"
+			. "Usage:\n"
+			. "{$this->scriptName} all\n"
+			. "{$this->scriptName} context context_id [...]\n"
+			. "{$this->scriptName} submission submission_id [...]\n";
+	}
 
-    /**
-     * Parse citations
-     */
-    public function execute()
-    {
-        $citationDao = DAORegistry::getDAO('CitationDAO');
-        $contextDao = Application::getContextDAO();
+	/**
+	 * Parse citations
+	 */
+	function execute() {
+		$submissionDao = DAORegistry::getDAO('SubmissionDAO'); /* @var $submissionDao SubmissionDAO */
+		$citationDao = DAORegistry::getDAO('CitationDAO');
+		$contextDao = Application::getContextDAO();
 
-        switch (array_shift($this->parameters)) {
-            case 'all':
-                $contexts = $contextDao->getAll();
-                while ($context = $contexts->next()) {
-                    $submissions = Repo::submission()->getCollector()->filterByContextIds([$context->getId()])->getMany();
-                    foreach ($submissions as $submission) {
-                        $this->_parseSubmission($submission);
-                    }
-                }
-                break;
-            case 'context':
-                foreach ($this->parameters as $contextId) {
-                    $context = $contextDao->getById($contextId);
-                    if (!isset($context)) {
-                        printf("Error: Skipping {$contextId}. Unknown context.\n");
-                        continue;
-                    }
-                    $submissions = Repo::submission()->getCollector()->filterByContextIds([$context->getId()])->getMany();
-                    foreach ($submissions as $submission) {
-                        $this->_parseSubmission($submission);
-                    }
-                }
-                break;
-            case 'submission':
-                foreach ($this->parameters as $submissionId) {
-                    $submission = Repo::submission()->get($submissionId);
-                    if (!isset($submission)) {
-                        printf("Error: Skipping {$submissionId}. Unknown submission.\n");
-                        continue;
-                    }
-                    $this->_parseSubmission($submission);
-                }
-                break;
-            default:
-                $this->usage();
-                break;
-        }
-    }
+		switch(array_shift($this->parameters)) {
+			case 'all':
+				$contexts = $contextDao->getAll();
+				while ($context = $contexts->next()) {
+					$submissions = $submissionDao->getByContextId($context->getId());
+					while ($submission = $submissions->next()) {
+						$this->_parseSubmission($submission);
+					}
+				}
+				break;
+			case 'context':
+				foreach($this->parameters as $contextId) {
+					$context = $contextDao->getById($contextId);
+					if(!isset($context)) {
+						printf("Error: Skipping $contextId. Unknown context.\n");
+						continue;
+					}
+					$submissions = $submissionDao->getByContextId($contextId);
+					while ($submission = $submissions->next()) {
+						$this->_parseSubmission($submission);
+					}
+				}
+				break;
+			case 'submission':
+				foreach($this->parameters as $submissionId) {
+					$submission = $submissionDao->getById($submissionId);
+					if(!isset($submission)) {
+						printf("Error: Skipping $submissionId. Unknown submission.\n");
+						continue;
+					}
+					$this->_parseSubmission($submission);
+				}
+				break;
+			default:
+				$this->usage();
+				break;
+		}
+	}
 
-    /**
-     * Parse the citations of one submission
-     *
-     * @param Submission $submission
-     */
-    private function _parseSubmission($submission)
-    {
-        /** @var CitationDAO */
-        $citationDao = DAORegistry::getDAO('CitationDAO');
-        foreach ($submission->getData('publications') as $publication) {
-            if (!empty($publication->getData('citationsRaw'))) {
-                $citationDao->importCitations($publication->getId(), $publication->getData('citationsRaw'));
-            }
-        }
-    }
+	/**
+	 * Parse the citations of one submission
+	 * @param Submission $submission
+	 */
+	private function _parseSubmission($submission) {
+		foreach ((array) $submission->getData('publications') as $publication) {
+			if (!empty($publication->getData('citationsRaw'))) {
+				DAORegistry::getDAO('CitationDAO')->importCitations($publication->getId(), $publication->getData('citationsRaw'));
+			}
+		}
+	}
 }
 
-$tool = new CitationsParsingTool($argv ?? []);
+$tool = new CitationsParsingTool(isset($argv) ? $argv : array());
 $tool->execute();
+

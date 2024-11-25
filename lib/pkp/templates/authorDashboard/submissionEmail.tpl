@@ -9,12 +9,12 @@
  *}
 <div class="pkp_submission_email">
 	<h2>
-		{$submissionEmail->subject|escape}
+		{$submissionEmail->getSubject()|escape}
 	</h2>
 	<div class="date">
-		{$submissionEmail->dateSent|date_format:$datetimeFormatShort}
+		{$submissionEmail->getDateSent()|date_format:$datetimeFormatShort}
 	</div>
 	<div class="email_entry">
-		{$submissionEmail->body|strip_unsafe_html}
+		{$submissionEmail->getBody()|strip_unsafe_html}
 	</div>
 </div>

@@ -12,13 +12,16 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @ingroup pages_announcement
- *
  * @brief Handle requests for public announcement functions.
  *
  */
 
 switch ($op) {
-    case 'index':
-    case 'view':
-        return new PKP\pages\announcement\AnnouncementHandler();
+	case 'index':
+	case 'view':
+		define('HANDLER_CLASS', 'AnnouncementHandler');
+		import('lib.pkp.pages.announcement.AnnouncementHandler');
+		break;
 }
+
+

@@ -1,12 +1,10 @@
-# Marie-Hélène Vézina [UdeMontréal] <marie-helene.vezina@umontreal.ca>, 2022, 2023.
-# "Marie-Hélène Vézina [UdeMontréal]" <marie-helene.vezina@umontreal.ca>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-15T13:36:56-07:00\n"
-"PO-Revision-Date: 2024-05-17 23:27+0000\n"
-"Last-Translator: \"Marie-Hélène Vézina [UdeMontréal]\" <marie-helene."
+"PO-Revision-Date: 2020-12-18 16:52+0000\n"
+"Last-Translator: Marie-Hélène Vézina [UdeMontréal] <marie-helene."
 "vezina@umontreal.ca>\n"
 "Language-Team: French (Canada) <http://translate.pkp.sfu.ca/projects/pkp-lib/"
 "editor/fr_CA/>\n"
@@ -15,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 3.9.1\n"
 
 # localization file for fr_CA. Last revision 2019-10-22T04:44:40 by Marie-Hélène Vézina, Bibliothèques, Université de Montréal.
 msgid "editor.submissionArchive.confirmDelete"
@@ -51,62 +49,6 @@ msgstr "Soumission acceptée pour évaluation."
 
 msgid "editor.submission.workflowDecision.changeDecision"
 msgstr "Changer la décision"
-
-msgid "editor.submission.workflowDecision.disallowedDecision"
-msgstr ""
-"Vous n'avez pas l'autorisation d'enregistrer cette décision sur cette "
-"soumission."
-
-msgid "editor.submission.workflowDecision.invalidEditor"
-msgstr ""
-"Le,la rédacteur.trice n'a pas été reconnu.e et n'a peut-être pas "
-"l'autorisation d'enregistrer une décision sur cette soumission."
-
-msgid "editor.submission.workflowDecision.invalidRecipients"
-msgstr ""
-"Vous ne pouvez pas envoyer de courriel aux destinataires suivants : {$names}."
-
-msgid "editor.submission.workflowDecision.invalidReviewRound"
-msgstr "Ce cycle d'évaluation n'a pu être trouvé."
-
-#, fuzzy
-msgid "editor.submission.workflowDecision.invalidReviewRoundStage"
-msgstr ""
-"Un cycle d'évaluation a été prévu, mais cette décision n'est pas prise au "
-"cours de l'étape d'évaluation."
-
-msgid "editor.submission.workflowDecision.invalidReviewRoundSubmission"
-msgstr "Le cycle d'évaluation spécifié ne fait pas partie de cette soumission."
-
-msgid "editor.submission.workflowDecision.invalidStage"
-msgstr ""
-"La soumission n'est pas à l'étape appropriée du processus éditorial pour "
-"pouvoir prendre cette décision."
-
-msgid "editor.submission.workflowDecision.noUnassignedDecisions"
-msgstr ""
-"Vous devez être assigné.e à cette soumission afin d'enregistrer une décision "
-"éditoriale."
-
-msgid "editor.submission.workflowDecision.requiredReviewRound"
-msgstr ""
-"Un numéro d'identification du cycle d'évaluation doit être fourni afin de "
-"prendre cette décision."
-
-msgid "editor.submission.workflowDecision.requiredDecidingEditor"
-msgstr ""
-"Une recommandation ne peut être faite que si un.e rédacteur.trice qui soit "
-"en mesure de prendre une décision finale est affecté.e à cette étape."
-
-msgid "editor.submission.workflowDecision.submissionInvalid"
-msgstr ""
-"Aucune décision n'a pu être prise concernant cette soumission. L'identifiant "
-"de la soumission est manquant ou ne correspond pas à la soumission demandée."
-
-msgid "editor.submission.workflowDecision.typeInvalid"
-msgstr ""
-"Cette décision n'a pas été trouvée. Veuillez indiquer un type de décision "
-"reconnu."
 
 msgid "editor.review.notInitiated"
 msgstr "Le processus d'évaluation n'a pas encore débuté."
@@ -186,9 +128,6 @@ msgstr "Annuler l'évaluateur-trice"
 msgid "editor.review.reinstateReviewer"
 msgstr "Réintégrer l'évaluateur-trice"
 
-msgid "editor.review.resendRequestReviewer"
-msgstr "Envoyer de nouveau la demande d'évaluation"
-
 msgid "editor.submissionReview.reviewType"
 msgstr "Type d'évaluation"
 
@@ -244,16 +183,6 @@ msgid "editor.review.NotifyAuthorResubmit"
 msgstr ""
 "Les révisions seront assujetties à un nouveau cycle d'évaluation par les "
 "pairs."
-
-msgid "editor.review.NotifyAuthorRevisions.recommendation"
-msgstr ""
-"Les révisions ne devraient pas être assujetties à un nouveau cycle "
-"d'évaluation par les pairs."
-
-msgid "editor.review.NotifyAuthorResubmit.recommendation"
-msgstr ""
-"Les révisions devraient être assujetties à un nouveau cycle d'évaluation par "
-"les pairs."
 
 msgid "editor.review.dateAccepted"
 msgstr "Date d'acceptation de l'évaluation"
@@ -330,9 +259,6 @@ msgstr "Évaluation soumise"
 msgid "editor.review.reviewerThanked"
 msgstr "Évaluateur-trice remercié-e"
 
-msgid "editor.review.ReviewerResendRequest"
-msgstr "Demande envoyée de nouveau"
-
 msgid "editor.review.reviewerComments"
 msgstr "Commentaires de l'évaluateur-trice"
 
@@ -365,11 +291,6 @@ msgstr ""
 "Il y a eu une erreur au moment de rétablir l'évaluateur-trice. Veuillez "
 "essayer de nouveau."
 
-msgid "editor.review.errorResendingReviewerRequest"
-msgstr ""
-"Une erreur s'est produite lors de la demande de réexamen de l'invitation par "
-"l'évaluateur.trice.  Veuillez réessayer."
-
 msgid "editor.review.userGroupSelect"
 msgstr "Recruter l'utilisateur-trice dans ce groupe d'évaluateurs-trices"
 
@@ -390,14 +311,12 @@ msgstr ""
 
 msgid "editor.discussion.errorAnonymousParticipants"
 msgstr ""
-"Une discussion ne peut être créée avec les participant.e.s sélectionné.e.s "
-"car cela affecterait l'anonymité du processus d'évaluation."
 
 msgid "editor.discussion.errorNotStageParticipant"
-msgstr "Un.e participant.e sélectionné.e ne peut être assigné.e à cette étape."
+msgstr ""
 
 msgid "editor.submission.schedulePublication"
-msgstr "Programmer la publication"
+msgstr "Calendrier de publication"
 
 msgid "editor.submission.selectCopyedingFiles"
 msgstr "Fichiers en révision"
@@ -567,9 +486,6 @@ msgstr "{$count} active(s)"
 msgid "reviewer.list.activeReviewsDescription"
 msgstr "Évaluation(s) en cours"
 
-msgid "reviewer.list.assignedToLastRound"
-msgstr "Cet.te évaluateur.trice a effectué une révision lors du dernier cycle."
-
 msgid "reviewer.list.completedReviews"
 msgstr "Évaluation(s) complétée(s)"
 
@@ -597,23 +513,18 @@ msgstr "Moyenne de jours pour compléter une évaluation"
 msgid "reviewer.list.neverAssigned"
 msgstr "Jamais assigné-e"
 
-msgid "reviewer.list.reassign"
-msgstr "Réassigner"
-
-msgid "reviewer.list.reassign.withName"
-msgstr "Réassigner {$name}"
-
 msgid "reviewer.list.currentlyAssigned"
 msgstr ""
 "Cet,Cette évaluateur-trice a déjà été assigné-e à l'évaluation de cette "
 "soumission."
 
+#, fuzzy
 msgid "reviewer.list.warnOnAssign"
 msgstr ""
-"Cet.te évaluateur.trice est verrouillé.e car un rôle lui a été attribué qui "
-"lui permet de connaître l'identité de l'auteur.e. L'évaluation par les pairs "
-"en aveugle ne peut être garantie. Souhaitez-vous tout de même déverrouiller "
-"cet.te évaluateur.trice ?"
+"Cet,Cette évaluateur-trice est verrouillé-e car un rôle lui a été attribué "
+"qui lui permet de connaître l'identité de l'auteur-e. L'évaluation par les "
+"pairs en aveugle ne peut être garantie. Souhaitez-vous tout de même "
+"déverrouiller cet ou cette évaluateur-trice ?"
 
 msgid "reviewer.list.warnOnAssignUnlock"
 msgstr "Déverrouiller"
@@ -626,30 +537,3 @@ msgstr "Biographie"
 
 msgid "reviewer.list.empty"
 msgstr "Aucun-e évaluateur-trice n'a été trouvé-e"
-
-msgid "reviewer.list.showOnlyReviewersFromPreviousRound"
-msgstr "Assigné à un cycle précédent"
-
-msgid "editor.decision.cancelDecision"
-msgstr "Annuler la décision"
-
-msgid "editor.decision.cancelDecision.confirmation"
-msgstr "Êtes-vous certain.e de vouloir annuler cette décision ?"
-
-msgid "editor.decision.completeSteps"
-msgstr "Compléter les étapes suivantes pour prendre cette décision"
-
-msgid "editor.decision.dontSkipEmail"
-msgstr "Ne pas passer outre ce courriel"
-
-msgid "editor.decision.emailSkipped"
-msgstr "Cette étape a été sautée et aucun courriel ne sera envoyé."
-
-msgid "editor.decision.recordDecision"
-msgstr "Enregistrer la décision"
-
-msgid "editor.decision.skipEmail"
-msgstr "Passer outre ce courriel"
-
-msgid "editor.decision.stepError"
-msgstr "Un problème est survenu avec l'étape {$stepName}."

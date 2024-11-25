@@ -35,12 +35,11 @@
 	{fbvFormSection title="reviewer.step1.request"}
 		<p>{$reviewerRequest|nl2br}</p>
 	{/fbvFormSection}
-	{assign var="publication" value=$submission->getCurrentPublication()}
 	{fbvFormSection label="submission.title"}
-		{$currentPublication->getLocalizedTitle()|strip_unsafe_html}
+		{$submission->getLocalizedTitle()|strip_unsafe_html}
 	{/fbvFormSection}
 	{fbvFormSection label=$descriptionFieldKey}
-		{$currentPublication->getLocalizedData('abstract')|strip_unsafe_html}
+		{$submission->getLocalizedAbstract()|strip_unsafe_html}
 	{/fbvFormSection}
 
 	{fbvFormSection label="editor.submissionReview.reviewType"}
@@ -48,7 +47,7 @@
 	{/fbvFormSection}
 
 	{if !$restrictReviewerFileAccess}
-	{capture assign=reviewFilesGridUrl}{url router=PKP\core\PKPApplication::ROUTE_COMPONENT component="grid.files.review.ReviewerReviewFilesGridHandler" op="fetchGrid" submissionId=$submission->getId() stageId=$reviewAssignment->getStageId() reviewRoundId=$reviewRoundId reviewAssignmentId=$reviewAssignment->getId() escape=false}{/capture}
+	{capture assign=reviewFilesGridUrl}{url router=$smarty.const.ROUTE_COMPONENT component="grid.files.review.ReviewerReviewFilesGridHandler" op="fetchGrid" submissionId=$submission->getId() stageId=$reviewAssignment->getStageId() reviewRoundId=$reviewRoundId reviewAssignmentId=$reviewAssignment->getId() escape=false}{/capture}
 	{load_url_in_div id="reviewFilesStep1" url=$reviewFilesGridUrl}
 	{/if}
 
@@ -58,9 +57,9 @@
 	<br /><br />
 
 	{fbvFormSection title="reviewer.submission.reviewSchedule"}
-		{fbvElement type="text" id="dateNotified" label="reviewer.submission.reviewRequestDate" value=$reviewAssignment->getDateNotified()|date_format:$dateFormatShort readonly=true inline=true size=$fbvStyles.size.SMALL}
-		{fbvElement type="text" id="responseDue" label="reviewer.submission.responseDueDate" value=$reviewAssignment->getDateResponseDue()|date_format:$dateFormatShort readonly=true inline=true size=$fbvStyles.size.SMALL}
-		{fbvElement type="text" id="dateDue" label="reviewer.submission.reviewDueDate" value=$reviewAssignment->getDateDue()|date_format:$dateFormatShort readonly=true inline=true size=$fbvStyles.size.SMALL}
+		{fbvElement type="text" id="dateNotified" label="reviewer.submission.reviewRequestDate" value=$submission->getDateNotified()|date_format:$dateFormatShort readonly=true inline=true size=$fbvStyles.size.SMALL}
+		{fbvElement type="text" id="responseDue" label="reviewer.submission.responseDueDate" value=$submission->getDateResponseDue()|date_format:$dateFormatShort readonly=true inline=true size=$fbvStyles.size.SMALL}
+		{fbvElement type="text" id="dateDue" label="reviewer.submission.reviewDueDate" value=$submission->getDateDue()|date_format:$dateFormatShort readonly=true inline=true size=$fbvStyles.size.SMALL}
 	{/fbvFormSection}
 	<br /><br />
 		<div class="pkp_linkActions">
@@ -88,7 +87,7 @@
 
 	{if !$reviewAssignment->getDateConfirmed() && $currentContext->getData('privacyStatement')}
 		{fbvFormSection list=true}
-			{capture assign="privacyUrl"}{url router=PKP\core\PKPApplication::ROUTE_PAGE page="about" op="privacy"}{/capture}
+			{capture assign="privacyUrl"}{url router=$smarty.const.ROUTE_PAGE page="about" op="privacy"}{/capture}
 			{capture assign="privacyLabel"}{translate key="user.register.form.privacyConsent" privacyUrl=$privacyUrl}{/capture}
 			{fbvElement type="checkbox" id="privacyConsent" required=true value=1 label=$privacyLabel translate=false checked=$privacyConsent}
 		{/fbvFormSection}

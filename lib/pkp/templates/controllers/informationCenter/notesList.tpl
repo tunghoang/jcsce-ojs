@@ -9,11 +9,11 @@
  *}
 
 <div id="{$notesListId}" class="pkp_notes_list">
-	{foreach from=$notes item=$note}
-		{assign var=noteId value=$note->id}
+	{iterate from=notes item=note}
+		{assign var=noteId value=$note->getId()}
 		{include file="controllers/informationCenter/note.tpl"}
-	{/foreach}
-	{if $notes->isEmpty()}
+	{/iterate}
+	{if $notes->wasEmpty()}
 		<p class="no_notes">{translate key="informationCenter.noNotes"}</p>
 	{/if}
 </div>

@@ -15,7 +15,7 @@
 	{rdelim});
 </script>
 
-<form class="pkp_form" id="genreForm" method="post" action="{url router=PKP\core\PKPApplication::ROUTE_COMPONENT component="grid.settings.genre.GenreGridHandler" op="updateGenre"}">
+<form class="pkp_form" id="genreForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT component="grid.settings.genre.GenreGridHandler" op="updateGenre"}">
 {csrf}
 {include file="controllers/notification/inPlaceNotification.tpl" notificationId="genreFormNotification"}
 
@@ -29,10 +29,6 @@
 {/fbvFormSection}
 {fbvFormSection label="manager.setup.genres.metatadata" description="manager.setup.genres.metatadata.description" for="category"}
 	{fbvElement type="select" id="category" from=$submissionFileCategories selected=$category translate=false}
-{/fbvFormSection}
-{fbvFormSection list="true" label="manager.setup.genres.submitRequired.label" description="manager.setup.genres.submitRequired.description"}
-	{fbvElement type="radio" id="required1" name="required" value=1 checked=$required label="manager.setup.genres.submitRequired.yes"}
-	{fbvElement type="radio" id="required0" name="required" value=0 checked=!$required label="manager.setup.genres.submitRequired.no"}
 {/fbvFormSection}
 {fbvFormSection label="manager.setup.genres.key" description="manager.setup.genres.key.description" for="key"}
 	{fbvElement type="text" id="key" value=$key maxlength="30" readonly=$keyReadOnly size=$fbvStyles.size.SMALL}

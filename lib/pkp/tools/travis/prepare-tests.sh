@@ -12,12 +12,12 @@
 set -e
 
 # Set some environment variables.
-export BASEURL="http://localhost" # This is the URL to the installation directory.
+export BASEURL="http://localhost" # This is the URL to the OJS installation directory.
 export DBHOST=localhost # Database hostname
 export DBNAME=${APPLICATION}-ci # Database name
 export DBUSERNAME=${APPLICATION}-ci # Database username
 export DBPASSWORD=${APPLICATION}-ci # Database password
-export FILESDIR=files # Files directory (relative to application directory -- do not do this in production!)
+export FILESDIR=files # Files directory (relative to OJS installation -- do not do this in production!)
 export DATABASEDUMP=~/database.sql.gz # Path and filename where a database dump can be created/accessed
 export FILESDUMP=~/files.tar.gz # Path and filename where a database dump can be created/accessed
 
@@ -37,24 +37,28 @@ elif [[ "$TEST" == "mysql" ]]; then
 	sudo service mysql start
 	sudo mysql -u root -e "CREATE DATABASE \`${DBNAME}\` DEFAULT CHARACTER SET utf8"
 	sudo mysql -u root -e "CREATE USER \`${DBUSERNAME}\`@${DBHOST} IDENTIFIED BY '${DBPASSWORD}'"
-	sudo mysql -u root -e "GRANT ALL ON \`${DBNAME}\`.* TO \`${DBUSERNAME}\`@${DBHOST} WITH GRANT OPTION"
-	export DBTYPE=MySQLi
-elif [[ "$TEST" == "mariadb" ]]; then
-	sudo service mariadb start
-	sudo mysql -u root -e "CREATE DATABASE \`${DBNAME}\` DEFAULT CHARACTER SET utf8"
-	sudo mysql -u root -e "CREATE USER \`${DBUSERNAME}\`@${DBHOST} IDENTIFIED BY '${DBPASSWORD}'"
-	sudo mysql -u root -e "GRANT ALL ON \`${DBNAME}\`.* TO \`${DBUSERNAME}\`@${DBHOST} WITH GRANT OPTION"
+	sudo mysql -u root -e "GRANT ALL ON \`${DBNAME}\`.* TO \`${DBUSERNAME}\`@localhost WITH GRANT OPTION"
 	export DBTYPE=MySQLi
 fi
 
 # Use the template configuration file.
 cp config.TEMPLATE.inc.php config.inc.php
 
+# Use DISABLE_PATH_INFO = 1 to turn on disable_path_info mode in config.inc.php.
+if [[ "$DISABLE_PATH_INFO" == "1" ]]; then
+	sed -i -e "s/disable_path_info = Off/disable_path_info = On/" config.inc.php
+fi
+
 # Make the files directory (this will be files_dir in config.inc.php after installation).
 mkdir --parents ${FILESDIR}
 
-# Make the required environment variables available to Cypress
+# Cypress requires a CYPRESS_ prefix on environment variables
+export CYPRESS_baseUrl=${BASEURL}
 export CYPRESS_DBTYPE=${DBTYPE}
-cp cypress.travis.env.json cypress.env.json
+export CYPRESS_DBUSERNAME=${DBUSERNAME}
+export CYPRESS_DBNAME=${DBNAME}
+export CYPRESS_DBPASSWORD=${DBPASSWORD}
+export CYPRESS_DBHOST=${DBHOST}
+export CYPRESS_FILESDIR=${FILESDIR}
 
 set +e

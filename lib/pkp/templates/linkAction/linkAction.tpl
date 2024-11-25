@@ -23,7 +23,7 @@
 {/if}
 
 {assign var=buttonId value=$staticId|concat:"-"|uniqid}
-{include file="linkAction/linkActionButton.tpl" action=$action buttonId=$buttonId anyhtml=$anyhtml html=$html}
+{include file="linkAction/linkActionButton.tpl" action=$action buttonId=$buttonId anyhtml=$anyhtml}
 
 <script>
 	{* Attach the action handler to the button. *}

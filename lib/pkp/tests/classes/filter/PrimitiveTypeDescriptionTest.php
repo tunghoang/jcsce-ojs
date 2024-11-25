@@ -8,9 +8,7 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class PrimitiveTypeDescriptionTest
- *
  * @ingroup tests_classes_filter
- *
  * @see PrimitiveTypeDescription
  *
  * @brief Test class for PrimitiveTypeDescription and TypeDescription.
@@ -22,70 +20,79 @@
  * return values.
  */
 
-namespace PKP\tests\classes\filter;
+import('lib.pkp.tests.PKPTestCase');
+import('lib.pkp.classes.filter.PrimitiveTypeDescription');
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PKP\filter\TypeDescription;
-use PKP\filter\PrimitiveTypeDescription;
-use PKP\tests\PKPTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
-use stdClass;
+class PrimitiveTypeDescriptionTest extends PKPTestCase {
+	/**
+	 * @covers PrimitiveTypeDescription
+	 * @covers TypeDescription
+	 */
+	public function testInstantiateAndCheck() {
+		$typeDescription = new PrimitiveTypeDescription('string');
+		self::assertTrue($typeDescription->isCompatible($object = 'some string'));
+		self::assertFalse($typeDescription->isCompatible($object = 5));
+		self::assertFalse($typeDescription->isCompatible($object = array(5)));
 
-#[CoversClass(PrimitiveTypeDescription::class)]
-#[CoversClass(TypeDescription::class)]
-class PrimitiveTypeDescriptionTest extends PKPTestCase
-{
-    public function testInstantiateAndCheck()
-    {
-        $typeDescription = new PrimitiveTypeDescription('string');
-        self::assertTrue($typeDescription->isCompatible('some string'));
-        self::assertFalse($typeDescription->isCompatible(5));
-        self::assertFalse($typeDescription->isCompatible([5]));
+		self::assertEquals('string', $typeDescription->getTypeName());
+		self::assertEquals('primitive::string', $typeDescription->getTypeDescription());
 
-        self::assertEquals('string', $typeDescription->getTypeName());
-        self::assertEquals('primitive::string', $typeDescription->getTypeDescription());
+		$typeDescription = new PrimitiveTypeDescription('integer');
+		self::assertTrue($typeDescription->isCompatible($object = 2));
+		self::assertFalse($typeDescription->isCompatible($object = 'some string'));
+		self::assertFalse($typeDescription->isCompatible($object = 5.5));
+		self::assertFalse($typeDescription->isCompatible($object = new stdClass()));
 
-        $typeDescription = new PrimitiveTypeDescription('integer');
-        self::assertTrue($typeDescription->isCompatible(2));
-        self::assertFalse($typeDescription->isCompatible('some string'));
-        self::assertFalse($typeDescription->isCompatible(5.5));
-        self::assertFalse($typeDescription->isCompatible(new stdClass()));
+		$typeDescription = new PrimitiveTypeDescription('float');
+		self::assertTrue($typeDescription->isCompatible($object = 2.5));
+		self::assertFalse($typeDescription->isCompatible($object = 'some string'));
+		self::assertFalse($typeDescription->isCompatible($object = 5));
 
-        $typeDescription = new PrimitiveTypeDescription('float');
-        self::assertTrue($typeDescription->isCompatible(2.5));
-        self::assertFalse($typeDescription->isCompatible('some string'));
-        self::assertFalse($typeDescription->isCompatible(5));
+		$typeDescription = new PrimitiveTypeDescription('boolean');
+		self::assertTrue($typeDescription->isCompatible($object = true));
+		self::assertTrue($typeDescription->isCompatible($object = false));
+		self::assertFalse($typeDescription->isCompatible($object = 1));
+		self::assertFalse($typeDescription->isCompatible($object = ''));
 
-        $typeDescription = new PrimitiveTypeDescription('boolean');
-        self::assertTrue($typeDescription->isCompatible(true));
-        self::assertTrue($typeDescription->isCompatible(false));
-        self::assertFalse($typeDescription->isCompatible(1));
-        self::assertFalse($typeDescription->isCompatible(''));
+		$typeDescription = new PrimitiveTypeDescription('integer[]');
+		self::assertTrue($typeDescription->isCompatible($object = array(2)));
+		self::assertTrue($typeDescription->isCompatible($object = array(2, 5)));
+		self::assertFalse($typeDescription->isCompatible($object = 2));
 
-        $typeDescription = new PrimitiveTypeDescription('integer[]');
-        self::assertTrue($typeDescription->isCompatible([2]));
-        self::assertTrue($typeDescription->isCompatible([2, 5]));
-        self::assertFalse($typeDescription->isCompatible(2));
+		$typeDescription = new PrimitiveTypeDescription('integer[1]');
+		self::assertTrue($typeDescription->isCompatible($object = array(2)));
+		self::assertFalse($typeDescription->isCompatible($object = array(2, 5)));
+		self::assertFalse($typeDescription->isCompatible($object = 2));
+	}
 
-        $typeDescription = new PrimitiveTypeDescription('integer[1]');
-        self::assertTrue($typeDescription->isCompatible([2]));
-        self::assertFalse($typeDescription->isCompatible([2, 5]));
-        self::assertFalse($typeDescription->isCompatible(2));
-    }
+	/**
+	 * @covers PrimitiveTypeDescription
+	 * @covers TypeDescription
+	 */
+	function testInstantiateWithInvalidTypeDescriptor1() {
+		// An unknown type name will cause an error.
+		$this->expectError();
+		$typeDescription = new PrimitiveTypeDescription('xyz');
+	}
 
-    public static function typeDescriptorDataProvider(): array
-    {
-        return [
-            'An unknown type name will cause an error' => ['xyz'],
-            'We don\'t allow multi-dimensional arrays' => ['integer[][]'],
-            'An invalid cardinality will also cause an error' => ['integer[x]'],
-        ];
-    }
+	/**
+	 * @covers PrimitiveTypeDescription
+	 * @covers TypeDescription
+	 */
+	function testInstantiateWithInvalidTypeDescriptor2() {
+		// We don't allow multi-dimensional arrays.
+		$this->expectError();
+		$typeDescription = new PrimitiveTypeDescription('integer[][]');
+	}
 
-    #[DataProvider('typeDescriptorDataProvider')]
-    public function testInstantiateWithInvalidTypeDescriptor(string $type)
-    {
-        $this->expectException(\Exception::class); // Trying to instantiate a "primitive" type description with an invalid type name "$type"
-        $typeDescription = new PrimitiveTypeDescription($type);
-    }
+	/**
+	 * @covers PrimitiveTypeDescription
+	 * @covers TypeDescription
+	 */
+	function testInstantiateWithInvalidTypeDescriptor3() {
+		// An invalid cardinality will also cause an error.
+		$this->expectError();
+		$typeDescription = new PrimitiveTypeDescription('integer[x]');
+	}
 }
+

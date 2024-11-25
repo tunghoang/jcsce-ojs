@@ -10,7 +10,7 @@
  *}
 
 {* These variables are both "safe" to be used unescaped. *}
-{assign var="noteId" value=$note->id}
+{assign var="noteId" value=$note->getId()}
 {assign var="formId" value="deleteNoteForm-$noteId"}
 
 <script type="text/javascript">
@@ -25,19 +25,19 @@
 <div id="note-{$noteId}" class="note">
 	<div class="details">
 		<span class="user">
-			{assign var=noteUser value=$note->user}
+			{assign var=noteUser value=$note->getUser()}
 			{$noteUser->getFullName()|escape}
 		</span>
 		<span class="date">
-			{$note->dateCreated|date_format:$datetimeFormatShort}
+			{$note->getDateCreated()|date_format:$datetimeFormatShort}
 		</span>
-		{if ($notesDeletable && array_intersect(array(PKP\security\Role::ROLE_ID_MANAGER, PKP\security\Role::ROLE_ID_SUB_EDITOR), (array)$userRoles))}
+		{if ($notesDeletable && array_intersect(array(ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR), (array)$userRoles))}
 			<div class="actions">
-				{if $notesDeletable && array_intersect(array(PKP\security\Role::ROLE_ID_MANAGER, PKP\security\Role::ROLE_ID_SUB_EDITOR), (array)$userRoles)}
+				{if $notesDeletable && array_intersect(array(ROLE_ID_MANAGER, ROLE_ID_SUB_EDITOR), (array)$userRoles)}
 					<form class="pkp_form" id="{$formId}" action="{url op="deleteNote" noteId=$noteId params=$linkParams}">
 						{csrf}
 						{assign var=deleteNoteButtonId value="deleteNote-$noteId"}
-						{include file="linkAction/buttonConfirmationLinkAction.tpl" modalStyle="negative" buttonSelector="#$deleteNoteButtonId" dialogText="informationCenter.deleteConfirm"}
+						{include file="linkAction/buttonConfirmationLinkAction.tpl" titleIcon="modal_delete" buttonSelector="#$deleteNoteButtonId" dialogText="informationCenter.deleteConfirm"}
 						<button type="submit" id="{$deleteNoteButtonId}" class="pkp_button pkp_button_offset">{translate key='common.delete'}</button>
 					</form>
 				{/if}
@@ -46,8 +46,8 @@
 	</div>
 	<div class="message">
 		{if $noteFileDownloadLink}
-			{include file="linkAction/linkAction.tpl" action=$noteFileDownloadLink contextId=$note->id}
+			{include file="linkAction/linkAction.tpl" action=$noteFileDownloadLink contextId=$note->getId()}
 		{/if}
-		{include file="controllers/revealMore.tpl" content=$note->contents|strip_unsafe_html}
+		{include file="controllers/revealMore.tpl" content=$note->getContents()|strip_unsafe_html}
 	</div>
 </div>

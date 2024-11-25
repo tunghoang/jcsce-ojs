@@ -8,29 +8,36 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class ClassTypeDescriptionTest
- *
  * @ingroup tests_classes_filter
- *
  * @see ClassTypeDescription
  *
  * @brief Test class for ClassTypeDescription.
  */
 
-namespace PKP\tests\classes\filter;
+import('lib.pkp.tests.PKPTestCase');
+import('lib.pkp.classes.filter.ClassTypeDescription');
+import('lib.pkp.tests.classes.filter.TestClass1');
+import('lib.pkp.tests.classes.filter.TestClass2');
 
-use PKP\filter\ClassTypeDescription;
-use PKP\tests\PKPTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
+class ClassTypeDescriptionTest extends PKPTestCase {
+	/**
+	 * @covers ClassTypeDescription
+	 */
+	public function testInstantiateAndCheck() {
+		$typeDescription = new ClassTypeDescription('lib.pkp.tests.classes.filter.TestClass1');
+		$compatibleObject = new TestClass1();
+		$wrongObject = new TestClass2();
+		self::assertTrue($typeDescription->isCompatible($compatibleObject));
+		self::assertFalse($typeDescription->isCompatible($wrongObject));
+	}
 
-#[CoversClass(ClassTypeDescription::class)]
-class ClassTypeDescriptionTest extends PKPTestCase
-{
-    public function testInstantiateAndCheck()
-    {
-        $typeDescription = new ClassTypeDescription('lib.pkp.tests.classes.filter.TestClass1');
-        $compatibleObject = new TestClass1();
-        $wrongObject = new TestClass2();
-        self::assertTrue($typeDescription->isCompatible($compatibleObject));
-        self::assertFalse($typeDescription->isCompatible($wrongObject));
-    }
+	/**
+	 * @covers ClassTypeDescription
+	 */
+	function testInstantiateWithInvalidTypeDescriptor1() {
+		// An unknown type name will cause an error.
+		$this->expectError();
+		$typeDescription = new ClassTypeDescription('ClassWithoutPackage');
+	}
 }
+

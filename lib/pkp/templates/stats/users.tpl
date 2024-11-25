@@ -15,26 +15,41 @@
 		<div class="pkpStats__panel">
 			<pkp-header>
 				<h1 id="usersTableLabel" class="pkpHeader__title">{translate key="manager.statistics.statistics.registeredUsers"}</h1>
-				<template #actions>
-					<pkp-button ref="exportButton" @click="openExportModal">
+				<template slot="actions">
+					<pkp-button ref="exportButton" @click="$modal.show('export')">
 						{translate key="common.export"}
 					</pkp-button>
 				</template>
 			</pkp-header>
-			<pkp-table labelled-by="usersTableLabel">
-				<table-header>
-					<table-column>{translate key="common.name"}</table-column>
-					<table-column>{translate key="stats.total"}</table-column>
-				</table-header>
-				<table-body>
+			<table class="pkpTable" labelled-by="usersTableLabel">
+				<thead>
+					<tr>
+						<th>{translate key="common.name"}</th>
+						<th>{translate key="stats.total"}</th>
+					</tr>
+				</thead>
+				<tbody>
 					{foreach from=$userStats item=$row}
-						<table-row>
-							<table-cell>{$row.name}</table-cell>
-							<table-cell>{$row.value}</table-cell>
-						</table-row>
+						<tr>
+							<td>{$row.name}</td>
+							<td>{$row.value}</td>
+						</tr>
 					{/foreach}
-				</table-body>
-			</pkp-table>
+				</tbody>
+			</table>
 		</div>
 	</div>
+	<modal
+		v-bind="MODAL_PROPS"
+		name="export"
+		@closed="setFocusToRef('exportButton')"
+	>
+		<modal-content
+			close-label="common.close"
+			modal-name="export"
+			title="{translate key="manager.export.usersToCsv.label"}"
+		>
+			<pkp-form v-bind="components.usersReportForm" @set="set" @success="loadExport" />
+		</modal-content>
+	</modal>
 {/block}

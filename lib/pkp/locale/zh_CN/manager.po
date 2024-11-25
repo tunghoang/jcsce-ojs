@@ -1,13 +1,10 @@
-# Yukari Chiba <Charles@nia.ac.cn>, 2021.
-# HKBU Library <libms@hkbu.edu.hk>, 2023.
-# Martin Brändle <martin.braendle@uzh.ch>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-04T08:55:35-08:00\n"
-"PO-Revision-Date: 2023-04-21 03:49+0000\n"
-"Last-Translator: Martin Brändle <martin.braendle@uzh.ch>\n"
+"PO-Revision-Date: 2020-08-30 02:48+0000\n"
+"Last-Translator: Yukari Chiba <Charles@nia.ac.cn>\n"
 "Language-Team: Chinese (Simplified) <http://translate.pkp.sfu.ca/projects/"
 "pkp-lib/manager/zh_CN/>\n"
 "Language: zh_CN\n"
@@ -15,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.13.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 msgid "manager.website.information"
 msgstr "信息"
@@ -30,7 +27,7 @@ msgid "manager.announcements"
 msgstr "公告"
 
 msgid "manager.announcements.confirmDelete"
-msgstr "您确定要永久删除公告 {$title}?"
+msgstr "您确定要永久删除此公告?"
 
 msgid "manager.announcements.create"
 msgstr "创建新的公告"
@@ -42,10 +39,10 @@ msgid "manager.announcements.dateExpire"
 msgstr "到期"
 
 msgid "manager.announcements.datePublish"
-msgstr "出版日期"
+msgstr "已出版"
 
 msgid "manager.announcements.deleteAnnouncement"
-msgstr "删除公告"
+msgstr ""
 
 msgid "manager.announcements.edit"
 msgstr "编辑公告"
@@ -72,7 +69,7 @@ msgid "manager.announcements.form.dateExpireYearIncompleteDate"
 msgstr "根据到期日年选择一个月份和（或）日."
 
 msgid "manager.announcements.form.description"
-msgstr "公告"
+msgstr "描述"
 
 msgid "manager.announcements.form.descriptionInstructions"
 msgstr "公告的全文."
@@ -149,199 +146,7 @@ msgstr "没有公告类别已经创建."
 msgid "manager.announcementTypes.typeName"
 msgstr "公告类别"
 
-msgid "manager.dois.actions.deposit.all"
-msgstr ""
-
-msgid "manager.dois.actions.deposit.label"
-msgstr ""
-
-msgid "manager.dois.actions.deposit.prompt"
-msgstr ""
-
-msgid "manager.dois.actions.markRegistered.label"
-msgstr ""
-
-msgid "manager.dois.actions.markRegistered.prompt"
-msgstr ""
-
-msgid "manager.dois.actions.markUnregistered.label"
-msgstr ""
-
-msgid "manager.dois.actions.markUnregistered.prompt"
-msgstr ""
-
-msgid "manager.dois.actions.markStale.label"
-msgstr ""
-
-msgid "manager.dois.actions.markStale.prompt"
-msgstr ""
-
-msgid "manager.dois.actions.export.label"
-msgstr ""
-
-msgid "manager.dois.actions.export.prompt"
-msgstr ""
-
-msgid "manager.dois.actions.assign.label"
-msgstr ""
-
-msgid "manager.dois.actions.assign.prompt"
-msgstr ""
-
-msgid "manager.dois.actions.depositAll.label"
-msgstr ""
-
-msgid "manager.dois.actions.depositAll.prompt"
-msgstr ""
-
-msgid "manager.dois.actions.description"
-msgstr ""
-
-msgid "manager.dois.actions.bulkActions"
-msgstr ""
-
-msgid "manager.dois.depositStatus"
-msgstr ""
-
-msgid "manager.dois.publicationStatus"
-msgstr ""
-
-msgid "manager.dois.registration.submittedDescription"
-msgstr ""
-
-msgid "manager.dois.registration.manuallyMarkedRegistered"
-msgstr ""
-
-msgid "manager.dois.registration.notSubmittedDescription"
-msgstr ""
-
-msgid "manager.dois.registration.notPublishedDescription"
-msgstr ""
-
-msgid "manager.dois.registration.viewError"
-msgstr ""
-
-msgid "manager.dois.registration.viewError.title"
-msgstr ""
-
-msgid "manager.dois.registration.viewRecord"
-msgstr ""
-
-msgid "manager.dois.registration.viewRecord.title"
-msgstr ""
-
-msgid "manager.dois.update.success"
-msgstr ""
-
-msgid "manager.dois.registration.depositDois"
-msgstr ""
-
-msgid "manager.dois.status.needsDoi"
-msgstr ""
-
-msgid "manager.dois.status.unregistered"
-msgstr ""
-
-msgid "manager.dois.status.submitted"
-msgstr ""
-
-msgid "manager.dois.status.registered"
-msgstr ""
-
-msgid "manager.dois.status.error"
-msgstr ""
-
-msgid "manager.dois.status.error.filterTitle"
-msgstr ""
-
-msgid "manager.dois.status.stale"
-msgstr ""
-
-msgid "manager.dois.filters.doiAssigned"
-msgstr ""
-
-msgid "manager.dois.status.needsDoi.description"
-msgstr ""
-
-msgid "manager.dois.filters.doiAssigned.description"
-msgstr ""
-
-msgid "manager.dois.status.unregistered.description"
-msgstr ""
-
-msgid "manager.dois.status.submitted.description"
-msgstr ""
-
-msgid "manager.dois.status.registered.description"
-msgstr ""
-
-msgid "manager.dois.status.error.description"
-msgstr ""
-
-msgid "manager.dois.status.stale.description"
-msgstr ""
-
-msgid "manager.dois.update.failedCreation"
-msgstr ""
-
-msgid "manager.dois.update.partialFailure"
-msgstr ""
-
-msgid "manager.dois.notification.exportSuccess"
-msgstr ""
-
-msgid "manager.dois.notification.markRegisteredSuccess"
-msgstr ""
-
-msgid "manager.dois.notification.markUnregisteredSuccess"
-msgstr ""
-
-msgid "manager.dois.notification.markStaleSuccess"
-msgstr ""
-
-msgid "manager.dois.notification.assignDoisSuccess"
-msgstr ""
-
-msgid "manager.dois.notification.depositQueuedSuccess"
-msgstr ""
-
-msgid "manager.dois.help.statuses.title"
-msgstr ""
-
-msgid "manager.dois.settings.relocated"
-msgstr ""
-
-msgid "manager.dois.settings.prefixRequired"
-msgstr ""
-
-msgid "doi.exceptions.missingPrefix"
-msgstr ""
-
 msgid "manager.genres.alertDelete"
-msgstr ""
-
-msgid "manager.institutions.edit"
-msgstr ""
-
-msgid "manager.institutions.form.ror"
-msgstr ""
-
-msgid "manager.institutions.form.ror.description"
-msgstr ""
-
-msgid "manager.institutions.form.ipRanges"
-msgstr ""
-
-msgid "manager.institutions.form.ipRangesInstructions"
-msgstr ""
-
-msgid "manager.institutions.deleteInstitution"
-msgstr ""
-
-msgid "manager.institutions.confirmDelete"
-msgstr ""
-
-msgid "manager.institutions.invalidIPRange"
 msgstr ""
 
 msgid "manager.publication.submissionStage"
@@ -365,20 +170,20 @@ msgstr "评审人指导"
 msgid "manager.publication.reviewReminders.success"
 msgstr "评审提醒详细信息已更新。"
 
-msgid "manager.dois.title"
-msgstr ""
+msgid "manager.emails.confirmDelete"
+msgstr "你确定要删除此电子邮件范本?"
 
-msgid "manager.dois.registrationAgency.errorMessagePreamble"
-msgstr ""
-
-msgid "manager.dois.registrationAgency.registeredMessagePreamble"
-msgstr ""
+msgid "manager.emails.confirmReset"
+msgstr "你确定要以默认值重置此电子邮件模板?"
 
 msgid "manager.emails.addEmail"
 msgstr "添加模板"
 
 msgid "manager.emails.createEmail"
 msgstr "创建邮件"
+
+msgid "manager.emails.customTemplate"
+msgstr "自定义模板"
 
 msgid "manager.emails.data"
 msgstr "模板信息数据"
@@ -394,8 +199,20 @@ msgstr ""
 "你是要禁用此电子邮件模板。如果有使用此模板的系统进程，他们不会用它了。你要确"
 "认此操作？"
 
+msgid "manager.emails.editEmail"
+msgstr "编辑电子邮件"
+
 msgid "manager.emails.editTestExample"
 msgstr "编辑电子邮件测试例子"
+
+msgid "manager.emails.emailKey"
+msgstr "电子邮件键"
+
+msgid "manager.emails.emailKey.description"
+msgstr "电子邮件密钥只能包含字母，数字和下划线。"
+
+msgid "manager.emails.emailKeyExists"
+msgstr "一个给定的电子邮件键已经存在，电子邮件键必须是唯一的."
 
 msgid "manager.emails.emailTemplate"
 msgstr "电子邮件模板"
@@ -403,11 +220,11 @@ msgstr "电子邮件模板"
 msgid "manager.emails.emailTemplates"
 msgstr "电子邮件模板"
 
-msgid "manager.emails.otherTemplates"
-msgstr "其它模板"
-
 msgid "manager.emails.emailTemplate.contextRequired"
 msgstr "添加电子邮件模板时，必须提供上下文ID。"
+
+msgid "manager.emails.emailTemplate.noDuplicateKeys"
+msgstr "您提供的密钥已在使用中。"
 
 msgid "manager.emails.enabled"
 msgstr "启用此电子邮件模板"
@@ -436,6 +253,15 @@ msgstr "重置所有"
 msgid "manager.emails.resetAll.message"
 msgstr "如果您重置所有模板，所有的电子邮件模板的修改都将丢失。你要确认此操作？"
 
+msgid "manager.emails.resetAll.complete"
+msgstr ""
+
+msgid "manager.emails.reset"
+msgstr "重置"
+
+msgid "manager.emails.resetComplete"
+msgstr ""
+
 msgid "manager.emails.reset.message"
 msgstr ""
 "如果重置这个模板，所有的消息数据将被重置为其默认值，失去了所有的修改。你要确"
@@ -450,11 +276,14 @@ msgstr "来自"
 msgid "manager.emails.sentTo"
 msgstr "发给"
 
+msgid "manager.emails.subjectWithValue"
+msgstr "主题：{$subject}"
+
 msgid "manager.export.usersToCsv.label"
-msgstr "导出到 Excel/CSV"
+msgstr ""
 
 msgid "manager.export.usersToCsv.description"
-msgstr "选择要导出到 Excel/CSV 文件的用户。"
+msgstr ""
 
 msgid "manager.filesBrowser"
 msgstr "文件浏览"
@@ -540,6 +369,9 @@ msgstr "时间戳"
 
 msgid "manager.people.existingUserRequired"
 msgstr "必须输入一个现有用户。"
+
+msgid "manager.people.authSource"
+msgstr "验证源"
 
 msgid "manager.people.confirmUnenroll"
 msgstr "取消注册这个用户?"
@@ -640,7 +472,7 @@ msgid "manager.people.saveAndCreateAnotherUser"
 msgstr "保存并创建其他"
 
 msgid "manager.people.signedInAs"
-msgstr "您目前以 {$username} 的身份登录"
+msgstr ""
 
 msgid "manager.people.signInAs"
 msgstr "登录为"
@@ -707,44 +539,24 @@ msgstr ""
 msgid "manager.roles"
 msgstr "角色"
 
-msgid "manager.setup.statistics"
-msgstr ""
+msgid "manager.statistics"
+msgstr "状态 &amp; 报告"
 
-msgid "manager.settings.statistics.geoUsageStats"
+msgid "manager.statistics.defaultMetricDescription"
 msgstr ""
+"\n"
+"\t\t您的 {$contextObjectName} 已配置为记录多个使用量指标。 使用情况统计信息将"
+"在多个上下文中显示。\n"
+"\t\t在某些情况下，必须使用单个使用情况统计信息，例如 显示最常用提交的有序列表"
+"或对搜索结果进行排名。\n"
+"\t\t请选择一个配置的指标作为默认指标。\n"
+"\t"
 
-msgid "manager.settings.statistics.geoUsageStats.description"
-msgstr ""
+msgid "manager.statistics.city"
+msgstr "城市"
 
-msgid "manager.settings.statistics.geoUsageStats.disabled"
-msgstr ""
-
-msgid "manager.settings.statistics.geoUsageStats.countryLevel"
-msgstr ""
-
-msgid "manager.settings.statistics.geoUsageStats.regionLevel"
-msgstr ""
-
-msgid "manager.settings.statistics.geoUsageStats.cityLevel"
-msgstr ""
-
-msgid "manager.settings.statistics.institutionUsageStats"
-msgstr ""
-
-msgid "manager.settings.statistics.institutionUsageStats.description"
-msgstr ""
-
-msgid "manager.settings.statistics.institutionUsageStats.enable"
-msgstr ""
-
-msgid "manager.settings.statistics.publicSushiApi"
-msgstr ""
-
-msgid "manager.settings.statistics.publicSushiApi.description"
-msgstr ""
-
-msgid "manager.settings.statistics.publicSushiApi.public"
-msgstr ""
+msgid "manager.statistics.region"
+msgstr "地区"
 
 #, fuzzy
 msgid "manager.statistics.reports"
@@ -755,125 +567,112 @@ msgstr ""
 "系统生成报告，跟踪给定时间段内与网站使用情况和提交相关的详细信息。 报告以CSV"
 "格式生成，需要电子表格应用程序以查看。"
 
+msgid "manager.statistics.reports.aggregationColumns"
+msgstr "汇总统计信息："
+
+msgid "manager.statistics.reports.optionalColumns.description"
+msgstr ""
+"斜体并标有 * 的项目表示这些数据对于当前系统中统计信息计数方式（度量类型）而言"
+"是可选的。 您是否可以得到该数据，取决于您的统计信息插件配置。"
+
+msgid "manager.statistics.reports.defaultReportTemplates"
+msgstr "默认报告模板"
+
+msgid "manager.statistics.reports.generateReport"
+msgstr "生成自定义报告"
+
+msgid "manager.statistics.reports.customReportGenerator"
+msgstr ""
+
+msgid "manager.statistics.reports.advancedOptions"
+msgstr "高级选项"
+
+msgid "manager.statistics.reports.advancedOptions.hide"
+msgstr "隐藏高级选项"
+
+msgid "manager.statistics.reports.columns"
+msgstr "列"
+
+msgid "manager.statistics.reports.columns.description"
+msgstr ""
+"定义将用于生成报告的列。 您在此处选择的列不仅定义了将在报告内显示的数据，而且"
+"还定义了统计的汇总级别。 例如，如果选择“ ID”，“类型”和“月”列，则报告将汇总一"
+"个月内来自对象的所有视图，并将该数据显示在一行中。 如果选择“天”而不是“月”，则"
+"每个对象每天都有一行。"
+
+msgid "manager.statistics.reports.filters"
+msgstr "过滤器"
+
+msgid "manager.statistics.reports.objectNotFound"
+msgstr "在数据库中找不到对象"
+
+msgid "manager.statistics.reports.objectType"
+msgstr "对象类型"
+
+msgid "manager.statistics.reports.objectId"
+msgstr "对象 ID"
+
+msgid "manager.statistics.reports.objectId.label"
+msgstr "定义一个或多个对象ID，以逗号分隔（例如1,2,3,4,5）。"
+
+msgid "manager.statistics.reports.yesterday"
+msgstr "昨天"
+
+msgid "manager.statistics.reports.currentMonth"
+msgstr "当前月份"
+
+msgid "manager.statistics.reports.orderBy"
+msgstr "排序方式"
+
+msgid "manager.statistics.reports.orderDir"
+msgstr "方向"
+
+msgid "manager.statistics.reports.orderDir.asc"
+msgstr "递增"
+
+msgid "manager.statistics.reports.orderDir.desc"
+msgstr "递减"
+
 msgid "manager.statistics.reports.month.label"
 msgstr "使用 YYYYMM 格式。"
 
 msgid "manager.statistics.reports.day.label"
 msgstr "使用 YYYYMMDD 格式。"
 
+msgid "manager.statistics.reports.cities.label"
+msgstr "一个或多个城市名称，以逗号分隔（例如，城市名称1,城市名称2）"
+
+msgid "manager.statistics.reports.form.columnsRequired"
+msgstr "您必须至少选择一列才能生成报告。"
+
+msgid "manager.statistics.reports.reportUrl"
+msgstr "报告 URL"
+
+msgid "manager.statistics.reports.reportUrl.label"
+msgstr ""
+"以下网址可用于使用当前表单设置生成的报告。 只需将其复制并在浏览器中打开即"
+"可。 也可以将其作为自定义报告URL生成器存储在您的书签中。"
+
+msgid "manager.statistics.reports.filters.byContext"
+msgstr "根据上下文"
+
+msgid "manager.statistics.reports.filters.byObject"
+msgstr "按对象类型和/或对象ID"
+
+msgid "manager.statistics.reports.filters.byTime"
+msgstr "选择报告范围"
+
+msgid "manager.statistics.reports.filters.byTime.dimensionSelector"
+msgstr "或选择范围："
+
+msgid "manager.statistics.reports.filters.byLocation"
+msgstr "按照地理位置"
+
+msgid "manager.statistics.reports.filters.byLocation.description"
+msgstr "按国家，地区和/或城市缩小结果范围。"
+
 msgid "manager.affiliationAndSupport"
 msgstr "赞助者"
-
-msgid "manager.setup.dois"
-msgstr ""
-
-msgid "manager.setup.dois.setup"
-msgstr ""
-
-msgid "manager.setup.dois.registration"
-msgstr ""
-
-msgid "doi.manager.settings.doiPrefix"
-msgstr ""
-
-msgid "doi.manager.setup.automaticDeposit"
-msgstr ""
-
-msgid "doi.manager.setup.automaticDeposit.enable"
-msgstr ""
-
-msgid "doi.manager.setup.automaticDeposit.description"
-msgstr ""
-
-msgid "doi.manager.settings.doiPrefix.description"
-msgstr ""
-
-msgid "doi.manager.settings.doiPrefixPattern"
-msgstr ""
-
-msgid "doi.manager.settings.doiCreationTime.label"
-msgstr ""
-
-msgid "doi.manager.settings.doiCreationTime.description"
-msgstr ""
-
-msgid "doi.manager.settings.doiCreationTime.publication"
-msgstr ""
-
-msgid "doi.manager.settings.doiCreationTime.never"
-msgstr ""
-
-msgid "manager.setup.doiPrefix"
-msgstr ""
-
-msgid "doi.manager.settings.doiObjects"
-msgstr ""
-
-msgid "doi.manager.settings.doiPrefix.required"
-msgstr ""
-
-msgid "doi.manager.settings.doiSuffix"
-msgstr ""
-
-msgid "doi.manager.settings.doiSuffix.pattern"
-msgstr ""
-
-msgid "doi.manager.settings.doiSuffix.custom"
-msgstr ""
-
-msgid "doi.manager.settings.enabledDoiTypes.error"
-msgstr ""
-
-msgid "doi.manager.settings.doiSuffix.description"
-msgstr ""
-
-msgid "doi.manager.settings.doiSuffixDefault"
-msgstr ""
-
-msgid "doi.manager.settings.doiSuffixManual"
-msgstr ""
-
-msgid "doi.manager.settings.doiSuffixUserDefined"
-msgstr ""
-
-msgid "doi.manager.settings.registrationAgency"
-msgstr ""
-
-msgid "doi.manager.settings.registrationAgency.description"
-msgstr ""
-
-msgid "doi.manager.settings.registrationAgency.noPluginsEnabled.label"
-msgstr ""
-
-msgid "doi.manager.settings.registrationAgency.noPluginsEnabled.description"
-msgstr ""
-
-msgid "doi.manager.settings.registrationAgency.none"
-msgstr ""
-
-msgid "doi.manager.settings.doiVersioning"
-msgstr ""
-
-msgid "doi.authorization.enabledRequired"
-msgstr ""
-
-msgid "doi.manager.versions.countStatement"
-msgstr ""
-
-msgid "doi.manager.versions.view"
-msgstr ""
-
-msgid "doi.manager.versions.modalTitle"
-msgstr ""
-
-msgid "doi.editor.doiSuffixInvalidCharacters"
-msgstr ""
-
-msgid "manager.setup.publishing"
-msgstr "出版细节"
-
-msgid "manager.setup.publishingDescription"
-msgstr "出版这份期刊的组织单位名称会出现在这份期刊的「期刊介绍」中。"
 
 msgid "manager.setup.additionalContent"
 msgstr "附加内容"
@@ -897,7 +696,7 @@ msgid "manager.setup.authorGuidelines.description"
 msgstr "建议的指南包括引用文献和格式标准，以及在提交中使用的常见引文格式示例。"
 
 msgid "manager.setup.disableSubmissions"
-msgstr "禁用提交"
+msgstr ""
 
 msgid "manager.setup.checklist"
 msgstr "检查清单"
@@ -948,69 +747,34 @@ msgstr "作者提交的通知"
 msgid "manager.setup.notifications.copySpecifiedAddress"
 msgstr "发送副本到该电子邮件地址"
 
-msgid "manager.setup.notifyAllAuthors"
-msgstr ""
-
-msgid "manager.setup.notifyAllAuthors.description"
-msgstr ""
-
-msgid "manager.setup.notifyAllAuthors.allAuthors"
-msgstr ""
-
-msgid "manager.setup.notifyAllAuthors.assignedAuthors"
-msgstr ""
-
-msgid "manager.setup.submissionsNotifications"
-msgstr "通知"
-
-msgid "manager.setup.notifications.copySubmissionAckPrimaryContact"
-msgstr "通知主要联系人"
-
-msgid "manager.setup.notifications.copySubmissionAckPrimaryContact.enabled"
-msgstr "是的，将副本发送至 {$email}"
-
-msgid "manager.setup.notifications.copySubmissionAckPrimaryContact.disabled"
-msgstr "否"
-
-msgid "manager.setup.notifications.copySubmissionAckAddress"
-msgstr "通知任何人"
-
-msgid "manager.setup.notifications.copySubmissionAckAddress.description"
-msgstr ""
-"确认提交的电子邮件将被发送到此处输入的电子邮件地址。 用逗号分隔多个电子邮件地"
-"址。 示例：one@example.com,two@example.com"
-
-msgid "manager.setup.notifications.copySubmissionAckAddress.invalid"
-msgstr "一个或多个电子邮件地址无效。"
-
 msgid "manager.setup.notifications.description"
 msgstr ""
 "系统会自动向作者发送一封确认提交的电子邮件。 您可能将此电子邮件的副本发送到以"
 "下地址："
 
 msgid "manager.setup.notifyUsers"
-msgstr "通知"
+msgstr ""
 
 msgid "manager.setup.notifyUsers.description"
-msgstr "选择需要接收您的电子邮件通知的用户。"
+msgstr ""
 
 msgid "manager.setup.notifyUsers.copyDetails"
-msgstr "通过 {$email} 将这封电子邮件的副本发送给我。"
+msgstr ""
 
 msgid "manager.setup.notifyUsers.send"
-msgstr "发送电子邮件"
+msgstr ""
 
 msgid "manager.setup.notifyUsers.confirm"
-msgstr "您即将向 {$total} 个用户发送电子邮件。 您确定要发送此电子邮件吗？"
+msgstr ""
 
 msgid "manager.setup.notifyUsers.sending"
-msgstr "电子邮件发送中。 在发送完成之前，请不要退出。"
+msgstr ""
 
 msgid "manager.setup.notifyUsers.sent"
-msgstr "电子邮件已成功发送给所有收件人。"
+msgstr ""
 
 msgid "manager.setup.notifyUsers.sendAnother"
-msgstr "发送另一封电子邮件"
+msgstr ""
 
 msgid "manager.setup.openAccessPolicy"
 msgstr "开放存取政策"
@@ -1047,34 +811,31 @@ msgid "manager.setup.privacyStatement"
 msgstr "隐私声明"
 
 msgid "manager.setup.dateTime"
-msgstr "日期与时间"
+msgstr ""
 
 msgid "manager.setup.dateTime.descriptionTitle"
-msgstr "日期和时间格式"
+msgstr ""
 
 msgid "manager.setup.dateTime.description"
 msgstr ""
-"选择日期和时间的首选格式。 可以使用特殊的<a href='http://php.net/manual/en/"
-"function.strftime.php#refsect1-function.strftime-parameters'>格式化字符</a>输"
-"入自定义格式。"
 
 msgid "manager.setup.dateTime.longDate"
-msgstr "日期"
+msgstr ""
 
 msgid "manager.setup.dateTime.shortDate"
-msgstr "日期（短）"
+msgstr ""
 
 msgid "manager.setup.dateTime.time"
-msgstr "时间"
+msgstr ""
 
 msgid "manager.setup.dateTime.longDateTime"
-msgstr "日期与时间"
+msgstr ""
 
 msgid "manager.setup.dateTime.shortDateTime"
-msgstr "日期与时间（短）"
+msgstr ""
 
 msgid "manager.setup.dateTime.custom"
-msgstr "自定义"
+msgstr ""
 
 msgid "manager.setup.privacyStatement.description"
 msgstr ""
@@ -1110,7 +871,7 @@ msgstr "审阅提醒"
 
 msgid "manager.setup.reviewOptions.reminders.submit.description"
 msgstr ""
-"如果审阅者在审阅截止日期之后的指定天数内仍未提交推荐，将发送电子邮件提醒。"
+"如果审阅者在审阅截止日期之后的指定时间内仍未提交推荐，将发送电子邮件提醒。"
 
 msgid "manager.setup.reviewOptions.reviewMode"
 msgstr "默认审阅模式"
@@ -1139,66 +900,19 @@ msgstr ""
 msgid "manager.setup.theme"
 msgstr "主题"
 
-msgid "manager.setup.institutions"
-msgstr ""
-
 msgid "manager.setup.theme.description"
 msgstr "新主题可以从此页面顶部的“插件”选项卡安装。"
 
 msgid "manager.setup.theme.notFound"
 msgstr "您选择的主题未安装或启用。"
 
-msgid "manager.setup.workflow.beginSubmissionHelp.description"
-msgstr ""
-
-msgid "manager.setup.workflow.uploadFilesHelp.description"
-msgstr ""
-
-msgid "manager.setup.workflow.contributorsHelp.description"
-msgstr ""
-
-msgid "manager.setup.workflow.detailsHelp.description"
-msgstr ""
-
-msgid "manager.setup.workflow.forTheEditorsHelp.description"
-msgstr ""
-
-msgid "manager.setup.workflow.reviewHelp.description"
-msgstr ""
-
-msgid "manager.setup.workflow.guidance"
-msgstr ""
-
-msgid "manager.setup.submissionPreparationChecklist"
-msgstr "投稿准备清单"
-
-#, fuzzy
-msgid "manager.setup.submissionPreparationChecklistDescription"
-msgstr ""
-"在提交一份投稿文章给这个期刊时，作者首先会被要求检查是否完成「投稿准备清单」"
-"中的每个项目，才能继续下一步。这份清单也会出现在「期刊介绍」内的「作者须知」"
-"栏位中。这份清单能够在下面进行编辑，而所有的项目将会需要作者进行检查后，才能"
-"继续他们的投稿流程。"
-
 msgid "manager.sections.form.deactivateSection"
-msgstr "停用此栏目，不允许对其进行新的提交。"
+msgstr ""
 
 msgid "manager.sections.confirmDeactivateSection"
-msgstr "您确定要停用此栏目吗？"
+msgstr ""
 
 msgid "manager.sections.confirmActivateSection"
-msgstr "您确定要激活此栏目吗？"
-
-msgid "manager.sections.form.assignEditors"
-msgstr ""
-
-msgid "manager.sections.form.assignEditors.description"
-msgstr ""
-
-msgid "manager.sections.form.assignEditorAs"
-msgstr ""
-
-msgid "manager.categories.form.assignEditors.description"
 msgstr ""
 
 msgid "manager.siteAccessOptions.siteAccessOptions"
@@ -1426,6 +1140,9 @@ msgstr "插件已经存在，但比已安装的版本新。 请升级"
 msgid "manager.plugins.settings"
 msgstr "设置"
 
+msgid "manager.plugins.tarCommandNotFound"
+msgstr "tar命令不可用。 请在 \"config.inc.php\" 中正确配置它。"
+
 msgid "manager.plugins.upgrade"
 msgstr "升级插件"
 
@@ -1470,9 +1187,6 @@ msgstr "已为 {$contextName} 重新加载 {$locale} 语言环境。"
 
 msgid "notification.localeSettingsSaved"
 msgstr "语言环境设置已保存。"
-
-msgid "notification.localeSettingsCannotBeSaved"
-msgstr "无法保存语言设置。 每个选项必须至少启用一种语言"
 
 msgid "notification.editedUser"
 msgstr "用户已编辑。"
@@ -1613,13 +1327,13 @@ msgid "grid.action.restoreGenres"
 msgstr "将组件还原为默认设置"
 
 msgid "manager.setup.genres.label"
-msgstr "文件类型"
+msgstr ""
 
 msgid "manager.setup.genres.dependent"
-msgstr "这些依赖文件（例如由 HTML 文件显示的图像）不会与已发布的内容一起显示。"
+msgstr "将这种类型的文件标记为从属文件（例如，不要与已发布内容一起列出）"
 
 msgid "manager.setup.genres.supplementary"
-msgstr "这些补充文件（例如数据集和研究材料）将与主要出版物文件分开显示。"
+msgstr "将此类型的文件标记为补充文件（例如，不是主要提交内容）"
 
 msgid "manager.setup.genres.key"
 msgstr "键"
@@ -1635,21 +1349,9 @@ msgstr ""
 "该键只能包含字母数字字符，下划线和连字符，并且必须以字母数字字符开头和结尾。"
 
 msgid "manager.setup.genres.metatadata"
-msgstr "文件元数据"
+msgstr ""
 
 msgid "manager.setup.genres.metatadata.description"
-msgstr ""
-
-msgid "manager.setup.genres.submitRequired.label"
-msgstr ""
-
-msgid "manager.setup.genres.submitRequired.description"
-msgstr ""
-
-msgid "manager.setup.genres.submitRequired.yes"
-msgstr ""
-
-msgid "manager.setup.genres.submitRequired.no"
 msgstr ""
 
 msgid "manager.settings.wizard"
@@ -1853,6 +1555,21 @@ msgstr ""
 msgid "manager.setup.metadata.keywords.require"
 msgstr ""
 
+msgid "manager.setup.metadata.languages.description"
+msgstr ""
+
+msgid "manager.setup.metadata.languages.enable"
+msgstr ""
+
+msgid "manager.setup.metadata.languages.noRequest"
+msgstr ""
+
+msgid "manager.setup.metadata.languages.request"
+msgstr ""
+
+msgid "manager.setup.metadata.languages.require"
+msgstr "要求作者在接受提交之前输入提交的语言。"
+
 msgid "manager.setup.metadata.rights.description"
 msgstr "提交内容所拥有的任何权利，包括知识产权（IPR），版权和各种产权。"
 
@@ -1960,21 +1677,6 @@ msgstr ""
 msgid "manager.setup.metadata.citations.require"
 msgstr ""
 
-msgid "manager.setup.metadata.dataAvailability.description"
-msgstr ""
-
-msgid "manager.setup.metadata.dataAvailability.enable"
-msgstr ""
-
-msgid "manager.setup.metadata.dataAvailability.noRequest"
-msgstr ""
-
-msgid "manager.setup.metadata.dataAvailability.request"
-msgstr ""
-
-msgid "manager.setup.metadata.dataAvailability.require"
-msgstr ""
-
 msgid "plugins.importexport.common.validationErrors"
 msgstr ""
 
@@ -1982,9 +1684,6 @@ msgid "plugins.importexport.common.warningsEncountered"
 msgstr ""
 
 msgid "plugins.importexport.common.errorsOccured"
-msgstr ""
-
-msgid "plugins.importexport.common.id"
 msgstr ""
 
 msgid "plugins.importexport.common.error.unknownElement"
@@ -2000,9 +1699,6 @@ msgid "plugins.importexport.common.error.encodingError"
 msgstr ""
 
 msgid "plugins.importexport.common.error.unknownUserGroup"
-msgstr ""
-
-msgid "plugins.importexport.common.error.userGroupMissing"
 msgstr ""
 
 msgid "plugins.importexport.common.error.missingGivenName"
@@ -2039,9 +1735,6 @@ msgid "plugins.importexport.user.error.plainPasswordNotValid"
 msgstr ""
 
 msgid "plugins.importexport.user.error.usernameEmailMismatch"
-msgstr ""
-
-msgid "plugins.importexport.common.settings.form.testMode.label"
 msgstr ""
 
 msgid "manager.navigationMenus.form.title"
@@ -2130,6 +1823,12 @@ msgid "manager.navigationMenus.about.description"
 msgstr "链接到在“设置”>“期刊”中显示“关于期刊”内容的页面"
 
 msgid "manager.navigationMenus.about.conditionalWarning"
+msgstr ""
+
+msgid "manager.navigationMenus.editorialTeam.description"
+msgstr ""
+
+msgid "manager.navigationMenus.editorialTeam.conditionalWarning"
 msgstr ""
 
 msgid "manager.navigationMenus.submissions.description"
@@ -2237,21 +1936,6 @@ msgstr ""
 msgid "stats.allUsers"
 msgstr ""
 
-msgid "stats.city"
-msgstr "城市"
-
-msgid "stats.views"
-msgstr ""
-
-msgid "stats.downloads"
-msgstr ""
-
-msgid "stats.views.timelineInterval"
-msgstr ""
-
-msgid "stats.downloads.timelineInterval"
-msgstr ""
-
 msgid "stats.countWithYearlyAverage"
 msgstr ""
 
@@ -2336,12 +2020,6 @@ msgstr ""
 msgid "stats.editorialActivity"
 msgstr ""
 
-msgid "stats.file.type.primaryFile"
-msgstr ""
-
-msgid "stats.file.type.suppFile"
-msgstr ""
-
 msgid "stats.fileViews"
 msgstr ""
 
@@ -2354,67 +2032,19 @@ msgstr ""
 msgid "stats.pdf"
 msgstr ""
 
-msgid "stats.geographic.ccAttribution"
-msgstr ""
-
-msgid "stats.geographic.tooltip.label"
-msgstr ""
-
-msgid "stats.downloadReport.betweenDates"
-msgstr ""
-
-msgid "stats.downloadReport.allFilters"
-msgstr ""
-
-msgid "stats.publications.downloadReport.downloadFiles"
-msgstr ""
-
-msgid "stats.publications.downloadReport.downloadFiles.description"
-msgstr ""
-
-msgid "stats.publications.downloadReport.downloadGeographic"
-msgstr ""
-
-msgid "stats.publications.downloadReport.downloadGeographic.description"
-msgstr ""
-
-msgid "stats.region"
-msgstr "地区"
-
 msgid "stats.searchSubmissionDescription"
 msgstr ""
 
 msgid "stats.submissionsActive"
 msgstr ""
 
-msgid "stats.timeline"
-msgstr ""
-
-msgid "stats.timeline.downloadReport.description"
-msgstr ""
-
-msgid "stats.timeline.downloadReport.downloadTimeline"
-msgstr ""
-
-msgid "stats.timelineInterval"
-msgstr ""
-
-msgid "stats.timelineType"
-msgstr ""
-
 msgid "stats.total"
-msgstr ""
-
-msgid "stats.unique"
 msgstr ""
 
 msgid "stats.totalWithinDateRange"
 msgstr ""
 
 msgid "stats.trends"
-msgstr ""
-
-msgid "stats.unknown"
 msgstr ""
 
 msgid "stats.userStatistics"
@@ -2468,697 +2098,6 @@ msgstr ""
 msgid "stats.name.declinedReviewRate"
 msgstr ""
 
-msgid "plugins.importexport.native.processFailed"
-msgstr ""
-
-msgid "plugins.importexport.native.export.submissions.results"
-msgstr ""
-
-msgid "plugins.importexport.native.export.download.results"
-msgstr ""
-
-msgid "plugins.importexport.native.export.completed"
-msgstr ""
-
-msgid "plugins.importexport.native.export.completed.downloadFile"
-msgstr ""
-
-msgid "plugins.importexport.native.common.any"
-msgstr ""
-
-msgid "plugins.importexport.native.common.error.filter.configuration.count"
-msgstr ""
-
-msgid "plugins.importexport.common.cliError"
-msgstr "错误："
-
-msgid "plugins.importexport.common.error.unknownContext"
-msgstr "指定的期刊路径 \"{$contextPath}\"不存在。"
-
-msgid "plugins.importexport.submission.cli.display"
-msgstr ""
-
-msgid "plugins.importexport.author.exportFailed"
-msgstr ""
-
-msgid "plugins.importexport.publication.exportFailed"
-msgstr ""
-
-msgid "emailTemplate.variable.allReviewersComments"
-msgstr ""
-
-msgid "emailTemplate.variable.authorsWithAffiliation"
-msgstr ""
-
-msgid "emailTemplate.variable.context.passwordLostUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.context.submissionsUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.context.userProfileUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.decision.name"
-msgstr ""
-
-msgid "emailTemplate.variable.decision.description"
-msgstr ""
-
-msgid "emailTemplate.variable.decision.stage"
-msgstr ""
-
-msgid "emailTemplate.variable.decision.round"
-msgstr ""
-
-msgid "emailTemplate.variable.discussion.subject"
-msgstr ""
-
-msgid "emailTemplate.variable.discussion.content"
-msgstr ""
-
-msgid "emailTemplate.variable.editorialReminder.outstandingTasks"
-msgstr ""
-
-msgid "emailTemplate.variable.editorialReminder.numberOfSubmissions"
-msgstr ""
-
-msgid "emailTemplate.variable.recipient.userFullName"
-msgstr ""
-
-msgid "emailTemplate.variable.recipient.username"
-msgstr ""
-
-msgid "emailTemplate.variable.recipient.reviewDueDate"
-msgstr ""
-
-msgid "emailTemplate.variable.recipient.responseDueDate"
-msgstr ""
-
-msgid "emailTemplate.variable.recipient.reviewAssignmentUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.recommendation"
-msgstr ""
-
-msgid "emailTemplate.variable.review.assignedDate"
-msgstr ""
-
-msgid "emailTemplate.variable.review.method"
-msgstr ""
-
-msgid "emailTemplate.variable.review.recommendation"
-msgstr ""
-
-msgid "emailTemplate.variable.review.round"
-msgstr ""
-
-msgid "emailTemplate.variable.review.files"
-msgstr ""
-
-msgid "emailTemplate.variable.review.name"
-msgstr ""
-
-msgid "emailTemplate.variable.reviewType"
-msgstr ""
-
-msgid "emailTemplate.variable.reviewType.doubleAnonymous"
-msgstr ""
-
-msgid "emailTemplate.variable.reviewType.anonymous"
-msgstr ""
-
-msgid "emailTemplate.variable.reviewType.open"
-msgstr ""
-
-msgid "emailTemplate.variable.sender.senderName"
-msgstr ""
-
-msgid "emailTemplate.variable.sender.senderEmail"
-msgstr ""
-
-msgid "emailTemplate.variable.sender.signature"
-msgstr ""
-
-msgid "emailTemplate.variable.site.siteContactName"
-msgstr ""
-
-msgid "emailTemplate.variable.site.siteContactEmail"
-msgstr ""
-
-msgid "emailTemplate.variable.site.siteSignature"
-msgstr ""
-
-msgid "emailTemplate.variable.stageAssignment.editors"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.submissionTitle"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.submissionId"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.submissionAbstract"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.authorsShort"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.authors"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.authorSubmissionUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.submissionUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.submissionPublishedUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.submissionWizardUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.submission.submittingAuthorName"
-msgstr ""
-
-msgid "emailTemplate.variable.passwordResetUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.password"
-msgstr ""
-
-msgid "mailable.reviewerReinstate.name"
-msgstr ""
-
-msgid "mailable.reviewerResendRequest.name"
-msgstr ""
-
-msgid "emailTemplate.variable.submitterName"
-msgstr ""
-
-msgid "emailTemplate.variable.announcementTitle"
-msgstr ""
-
-msgid "emailTemplate.variable.announcementSummary"
-msgstr ""
-
-msgid "emailTemplate.variable.announcementUrl"
-msgstr ""
-
-msgid "emailTemplate.variable.statisticsReportNotify.newSubmissions"
-msgstr ""
-
-msgid "emailTemplate.variable.statisticsReportNotify.declinedSubmissions"
-msgstr ""
-
-msgid "emailTemplate.variable.statisticsReportNotify.acceptedSubmissions"
-msgstr ""
-
-msgid "emailTemplate.variable.statisticsReportNotify.otherSubmissions"
-msgstr ""
-
-msgid "emailTemplate.variable.statisticsReportNotify.totalSubmissions"
-msgstr ""
-
-msgid "emailTemplate.variable.statisticsReportNotify.month"
-msgstr ""
-
-msgid "emailTemplate.variable.statisticsReportNotify.year"
-msgstr ""
-
-msgid "emailTemplate.variable.issue.issueIdentification"
-msgstr ""
-
-msgid "emailTemplate.variable.issue.issuePublishedUrl"
-msgstr ""
-
-msgid "mailTemplate.variable.statisticsReportNotify.year"
-msgstr ""
-
-msgid "emailTemplate.variable.statisticsReportNotify.editorialStatsLink"
-msgstr ""
-
-msgid "mailable.reviewerReinstate.description"
-msgstr ""
-
-msgid "mailable.reviewerResendRequest.description"
-msgstr ""
-
-msgid "mailable.reviewerUnassign.name"
-msgstr ""
-
-msgid "mailable.reviewerUnassign.description"
-msgstr ""
-
-msgid "mailable.validateEmailSite.name"
-msgstr ""
-
-msgid "mailable.validateEmailSite.description"
-msgstr ""
-
-msgid "mailable.decision.notifyOtherAuthors.name"
-msgstr ""
-
-msgid "mailable.decision.notifyOtherAuthors.description"
-msgstr ""
-
-msgid "mailable.decision.notifyOtherAuthors.variable.message.description"
-msgstr ""
-
-msgid "mailable.decision.notifyReviewer.name"
-msgstr ""
-
-msgid "mailable.decision.notifyReviewer.description"
-msgstr ""
-
-msgid "mailable.decision.notifyReviewer.variable.decisionDescription"
-msgstr ""
-
-msgid "mailable.decision.notifyReviewer.variable.decisionDescription.accept"
-msgstr ""
-
-msgid "mailable.decision.notifyReviewer.variable.decisionDescription.decline"
-msgstr ""
-
-msgid ""
-"mailable.decision.notifyReviewer.variable.decisionDescription."
-"pendingRevisions"
-msgstr ""
-
-msgid "mailable.decision.notifyReviewer.variable.decisionDescription.resubmit"
-msgstr ""
-
-msgid ""
-"mailable.decision.notifyReviewer.variable.decisionDescription.unassigned"
-msgstr ""
-
-msgid "mailable.decision.accept.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.accept.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.backToCopyediting.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.backToCopyediting.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.backFromCopyediting.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.backFromCopyediting.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.cancelReviewRound.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.cancelReviewRound.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.decline.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.decline.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.initialDecline.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.newReviewRound.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.newReviewRound.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.requestRevisions.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.requestRevisions.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.resubmit.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.resubmit.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.revertDecline.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.revertDecline.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.revertInitialDecline.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.revertInitialDecline.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.sendExternalReview.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.sendExternalReview.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.sendToProduction.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.sendToProduction.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.skipReview.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.skipReview.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.recommendation.notifyEditors.name"
-msgstr ""
-
-msgid "mailable.decision.recommendation.notifyEditors.description"
-msgstr ""
-
-msgid "mailable.reviewConfirm.name"
-msgstr ""
-
-msgid "mailable.reviewConfirm.description"
-msgstr ""
-"这封电子邮件是由一位审查人寄给区段编辑，回复一份审查邀请，并通知区段编辑说已"
-"经接受审查邀请而且会在特定的日期之前完成工作。"
-
-msgid "mailable.reviewDecline.name"
-msgstr ""
-
-msgid "mailable.reviewDecline.description"
-msgstr ""
-"这封电子邮件是由一位审查人寄给区段编辑以回复一份审查邀请，并通知区段编辑要婉"
-"谢审查邀请。"
-
-msgid "mailable.reviewRemind.name"
-msgstr ""
-
-msgid "mailable.reviewRemind.description"
-msgstr ""
-
-msgid "mailable.reviewRemindAuto.name"
-msgstr ""
-
-#, fuzzy
-msgid "mailable.reviewRemindAuto.description"
-msgstr ""
-"这封电子邮件在一位审查人的工作期限日已经超过的时候，会自动发出给他（见「期刊"
-"设定」之步骤2，「审查选项」），而审查访问一点即入的功能已经停用。必须启用并且"
-"设定排程任务（见网站设定）。"
-
-msgid "mailable.reviewAcknowledgement.name"
-msgstr ""
-
-msgid "mailable.reviewAcknowledgement.description"
-msgstr ""
-
-msgid "mailable.reviewResponseOverdueAuto.name"
-msgstr ""
-
-#, fuzzy
-msgid "mailable.reviewResponseOverdueAuto.description"
-msgstr ""
-"这封电子邮件是由区段编辑寄发给审查人一份邀请函，询问审查人接受或婉谢一份稿件"
-"的审查工作。邮件中含有关于稿件标题和摘要的信息，一个审查工作到期日，以及如何"
-"访问稿件的说明信息。在「期刊设定」之步骤2中选择「标准审查流程」选项时，才会用"
-"到这份消息。"
-
-msgid "mailable.reviewRequest.name"
-msgstr ""
-
-#, fuzzy
-msgid "mailable.reviewRequest.description"
-msgstr ""
-"这封电子邮件是由区段编辑寄发给审查人一份邀请函，询问审查人接受或婉谢一份稿件"
-"的审查工作。邮件中含有关于稿件标题和摘要的信息，一个审查工作到期日，以及如何"
-"访问稿件的说明信息。在「期刊设定」之步骤2中选择「标准审查流程」选项时，才会用"
-"到这份消息。"
-
-msgid "mailable.reviewRequestSubsequent.name"
-msgstr ""
-
-#, fuzzy
-msgid "mailable.reviewRequestSubsequent.description"
-msgstr ""
-"This email from the Section Editor to a Reviewer requests that the reviewer "
-"accept or decline the task of reviewing a submission for a second or greater "
-"round of review. It provides information about the submission such as the "
-"title and abstract, a review due date, and how to access the submission "
-"itself. This message is used when the Standard Review Process is selected in "
-"Journal Setup, Step 2."
-
-msgid "plugins.importexport.common.error.currentPublicationNullOrMissing"
-msgstr ""
-
-msgid "plugins.importexport.common.error.submissionChildFailed"
-msgstr ""
-
-msgid "mailable.editorialReminder.name"
-msgstr ""
-
-msgid "mailable.editorialReminder.description"
-msgstr ""
-
-msgid "mailable.passwordResetRequested.name"
-msgstr ""
-
-msgid "mailable.passwordResetRequested.description"
-msgstr ""
-"当注册用户忘记他们的密码或者无法登入的时候，这封电子邮件会寄给他们。信中会提"
-"供一个网址让它们能够登入并重置他们的密码。"
-
-msgid "mailable.userRegister.name"
-msgstr ""
-
-#, fuzzy
-msgid "mailable.userRegister.description"
-msgstr ""
-"这封电子邮件会被寄给新注册的用户，欢迎他们加入这个系统，并且提供他们一个用户"
-"名称和密码的记录。"
-
-msgid "mailable.reviewerRegister.name"
-msgstr ""
-
-msgid "mailable.reviewerRegister.description"
-msgstr ""
-"这封电子邮件发送给新注册的审稿人，欢迎他们的加入并提供关于他们的用户名和密码"
-"的记录。"
-
-msgid "mailable.submissionSavedForLater.name"
-msgstr ""
-
-msgid "mailable.submissionSavedForLater.description"
-msgstr ""
-
-msgid "mailable.submissionAck.name"
-msgstr ""
-
-#, fuzzy
-msgid "mailable.submissionAck.description"
-msgstr ""
-"这封电子邮件，一旦启用，就会在作者完成投稿一份稿件到期刊的流程之后，会自动地"
-"寄发给作者。邮件中提供了有关追踪稿件编辑进度的信息，以及感谢作者的投稿。"
-
-msgid "mailable.submissionAckNotAuthor.name"
-msgstr ""
-
-#, fuzzy
-msgid "mailable.submissionAckNotAuthor.description"
-msgstr ""
-"启用此电子邮件后，它将自动发送给不是提交过程中指定的OJS中用户的其他作者。"
-
-msgid "mailable.discussionSubmission.name"
-msgstr ""
-
-msgid "mailable.discussionSubmission.description"
-msgstr ""
-
-msgid "mailable.discussionReview.name"
-msgstr ""
-
-msgid "mailable.discussionReview.description"
-msgstr ""
-
-msgid "mailable.discussionCopyediting.name"
-msgstr ""
-
-msgid "mailable.discussionCopyediting.description"
-msgstr ""
-
-msgid "mailable.discussionProduction.name"
-msgstr ""
-
-msgid "mailable.discussionProduction.description"
-msgstr ""
-
-msgid "mailable.revisedVersionNotify.name"
-msgstr ""
-
-msgid "mailable.revisedVersionNotify.description"
-msgstr "当作者上传的修订版的一篇文章后，此邮件将被自动发送到指定的编辑"
-
-msgid "mailable.announcementNotify.name"
-msgstr ""
-
-msgid "mailable.announcementNotify.description"
-msgstr "此邮件当公告发布时将会自动发送。"
-
-msgid "mailable.statisticsReportNotify.name"
-msgstr ""
-
-msgid "mailable.editReviewNotify.name"
-msgstr ""
-
-msgid "mailable.editReviewNotify.description"
-msgstr ""
-
-msgid "mailable.reviewCompleteNotifyEditors.name"
-msgstr ""
-
-msgid "mailable.reviewCompleteNotifyEditors.description"
-msgstr ""
-
-msgid "manager.people.authSource"
-msgstr ""
-
-msgid "mailable.decision.backToReview.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.backToReview.notifyAuthor.description"
-msgstr ""
-
-msgid "mailable.decision.backToSubmission.notifyAuthor.name"
-msgstr ""
-
-msgid "mailable.decision.backToSubmission.notifyAuthor.description"
-msgstr ""
-
-msgid "manager.manageEmails"
-msgstr ""
-
-msgid "manager.manageEmailTemplates.description"
-msgstr ""
-
-msgid "manager.mailables.addTemplates"
-msgstr ""
-
-msgid "manager.mailables.templates"
-msgstr ""
-
-msgid "manager.mailables.editTemplate"
-msgstr ""
-
-msgid "manager.mailables.removeTemplate"
-msgstr ""
-
-msgid "manager.mailables.removeTemplate.confirm"
-msgstr ""
-
-msgid "manager.mailables.resetTemplate"
-msgstr ""
-
-msgid "manager.mailables.resetTemplate.confirm"
-msgstr ""
-
-msgid "manager.mailables.search"
-msgstr ""
-
-msgid "manager.emailTemplate.name.description"
-msgstr ""
-
-msgid "manager.newSubmission"
-msgstr ""
-
-msgid "manager.newSubmission.description"
-msgstr ""
-
-msgid "manager.submissionAck.description"
-msgstr ""
-
-msgid "manager.submissionAck.off"
-msgstr ""
-
-msgid "manager.submissionAck.submittingAuthor"
-msgstr ""
-
-msgid "manager.submissionAck.allAuthors"
-msgstr ""
-
-msgid "manager.editorialDecisions"
-msgstr ""
-
-msgid "manager.editorialDecisions.description"
-msgstr ""
-
-msgid "manager.forEditors"
-msgstr ""
-
-msgid "manager.forEditors.description"
-msgstr ""
-
-msgid "manager.editorialStatistics"
-msgstr ""
-
-msgid "manager.editorialStatistics.description"
-msgstr ""
-
-msgid "manager.editorialStatistics.on"
-msgstr ""
-
-msgid "manager.editorialStatistics.off"
-msgstr ""
-
-msgid "manager.submitWithCategories.description"
-msgstr ""
-
-msgid "manager.submitWithCategories.yes"
-msgstr ""
-
-msgid "manager.submitWithCategories.no"
-msgstr ""
-
-msgid "mailable.copyeditRequest.name"
-msgstr ""
-
-msgid "mailable.editorAssign.name"
-msgstr ""
-
-msgid "mailable.layoutRequest.name"
-msgstr ""
-
-msgid "mailable.system"
-msgstr ""
-
-msgid "mailable.versionCreated.name"
-msgstr ""
-
-msgid "mailable.reviewComplete.name"
-msgstr ""
-
-msgid "mailable.reviewEdit.name"
-msgstr ""
-
-msgid "mailable.submissionAckOtherAuthors.name"
-msgstr ""
-
-msgid "mailable.editorAssigned.name"
-msgstr ""
-
-msgid "mailable.editorAssigned.description"
-msgstr ""
-
-msgid "mailable.editorAssignedManual.name"
-msgstr ""
-
-msgid "mailable.submissionNeedsEditor.name"
-msgstr ""
-
 #~ msgid "manager.setup.selectOne"
 #~ msgstr "选择"
 
@@ -3201,16 +2140,8 @@ msgstr ""
 #~ msgid "manager.setup.metadata.success"
 #~ msgstr "提交元数据已成功更新。"
 
-#, fuzzy
-#~ msgid "emails.reviewRemind.body"
-#~ msgstr ""
-#~ "这封电子邮件是由区段编辑发出，提醒一位审查人他们的审查工作已经到期。"
-
 msgid "manager.setup.competingInterests.requireAuthors"
 msgstr "要求投稿作者提供一个利益冲突（CI）的文字声明。"
 
-msgid "manager.setup.masthead"
-msgstr "刊头"
-
 msgid "plugins.importexport.common.validation"
-msgstr "在导出和注册之前验证 XML。"
+msgstr "在导出和注册之前验证XML。"

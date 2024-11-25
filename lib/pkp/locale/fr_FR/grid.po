@@ -1,20 +1,18 @@
-# Stefan Schneider <mail@stefan-schneider.at>, 2023.
-# Germán Huélamo Bautista <germanhuelamo@gmail.com>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-19T10:49:49+00:00\n"
-"PO-Revision-Date: 2024-05-31 16:41+0000\n"
-"Last-Translator: Germán Huélamo Bautista <germanhuelamo@gmail.com>\n"
-"Language-Team: French <http://translate.pkp.sfu.ca/projects/pkp-lib/grid/"
-"fr_FR/>\n"
+"PO-Revision-Date: 2020-08-04 07:48+0000\n"
+"Last-Translator: Paul Heckler <paul.d.heckler@gmail.com>\n"
+"Language-Team: French <http://translate.pkp.sfu.ca/projects/pkp-lib/grid/fr/"
+">\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 3.9.1\n"
 
 msgid "grid.noItems"
 msgstr "Aucun élément"
@@ -89,7 +87,7 @@ msgid "grid.action.deleteSection"
 msgstr "Supprimer la section"
 
 msgid "grid.action.editorialHistory"
-msgstr "Historique de l'édition"
+msgstr "Historique de révision"
 
 msgid "grid.action.remove"
 msgstr "Supprimer"
@@ -116,13 +114,13 @@ msgid "grid.action.restoreDefaults.confirm"
 msgstr "Vous voulez vraiment réinstaurer les valeurs par défaut ?"
 
 msgid "grid.action.addAuthor"
-msgstr "Ajouter un·e auteur·e"
+msgstr "Ajouter un auteur"
 
 msgid "grid.action.editAuthor"
-msgstr "Modifier l'auteur·e"
+msgstr "Modifier l'auteur"
 
 msgid "grid.action.deleteAuthor"
-msgstr "Supprimer l'auteur·e"
+msgstr "Supprimer l'auteur"
 
 msgid "grid.action.addAuditor"
 msgstr "Ajouter un vérificateur"
@@ -132,9 +130,6 @@ msgstr "Mise à niveau"
 
 msgid "grid.action.order"
 msgstr "Trier"
-
-msgid "grid.action.saveOrdering"
-msgstr "Enregistrer la commande"
 
 msgid "grid.action.cancelOrdering"
 msgstr "Annuler la commande"
@@ -176,7 +171,7 @@ msgid "grid.action.selectFiles"
 msgstr "Sélectionner les fichiers à gérer"
 
 msgid "grid.action.requestRevisions"
-msgstr "Demander des révisions pour cette soumission"
+msgstr "Demande de révisions à l'auteur"
 
 msgid "grid.action.accept"
 msgstr "Accepter cette soumission"
@@ -201,6 +196,12 @@ msgstr "Importer ou exporter le contenu ou les données du site"
 
 msgid "grid.action.orderItems"
 msgstr "Activer le mode de commande"
+
+msgid "grid.action.editSubmissionChecklist"
+msgstr "Modifier cette liste des vérifications"
+
+msgid "grid.action.deleteSubmissionChecklist"
+msgstr "Supprimer cette liste des vérifications"
 
 msgid "grid.action.resetAll"
 msgstr "Réinitialiser tous les objets à leurs valeurs par défaut"
@@ -266,7 +267,7 @@ msgid "grid.action.sendReminder"
 msgstr "Envoyer un rappel de tâche à cet utilisateur"
 
 msgid "grid.action.newRound"
-msgstr "Créer un nouveau cycle"
+msgstr "Créer une nouvelle série d'évaluations"
 
 msgid "grid.action.viewReviewGuidelines"
 msgstr "Voir les lignes directrices des examens"
@@ -285,9 +286,6 @@ msgstr "Ajouter un type d'annonce"
 
 msgid "grid.action.addAnnouncement"
 msgstr "Ajouter une annonce"
-
-msgid "grid.action.addInstitution"
-msgstr "Ajouter un établissement"
 
 msgid "grid.action.mergeUser"
 msgstr "Fusionner l'utilisateur"
@@ -369,9 +367,6 @@ msgstr "Vérificateur"
 msgid "grid.columns.locale"
 msgstr "Paramètre régional"
 
-msgid "grid.columns.locale.code"
-msgstr "Code"
-
 msgid "grid.sponsor.title"
 msgstr "Commanditaires"
 
@@ -385,10 +380,10 @@ msgid "grid.action.editSponsor"
 msgstr "Modifier un commanditaire"
 
 msgid "grid.action.addSeries"
-msgstr "Ajouter une collection"
+msgstr "Ajouter une série"
 
 msgid "grid.action.editSeries"
-msgstr "Modifier une collection"
+msgstr "Modifier une série"
 
 msgid "grid.action.deleteSeries"
 msgstr "Supprimer une série"
@@ -408,13 +403,11 @@ msgstr "Contributeur"
 msgid "grid.action.addContributor"
 msgstr "Ajouter un contributeur"
 
+msgid "grid.action.editContributor"
+msgstr "Modifier un contributeur"
+
 msgid "grid.action.deleteContributor"
 msgstr "Supprimer un contributeur"
-
-msgid "grid.action.deleteContributor.confirmationMessage"
-msgstr ""
-"Voulez-vous vraiment supprimer {$name} en tant que contributeur/trice ? "
-"Cette action ne peut pas être annulée."
 
 msgid "grid.action.newVersion"
 msgstr "Créer une nouvelle version"
@@ -452,34 +445,20 @@ msgstr "Liste de vérification de la soumission"
 msgid "grid.submissionChecklist.column.checklistItem"
 msgstr "Élément de la liste de vérification"
 
+msgid "author.users.contributor.name"
+msgstr "Nom"
+
+msgid "author.users.contributor.email"
+msgstr "Courriel"
+
+msgid "author.users.contributor.role"
+msgstr "Rôle"
+
 msgid "author.users.contributor.principalContact"
 msgstr "Contact principal"
 
-msgid "author.users.contributor.setPrincipalContact"
-msgstr "Définir le contact principal"
-
-msgid "contributor.listPanel.preview"
-msgstr "Aperçu"
-
-msgid "contributor.listPanel.preview.description"
-msgstr ""
-"Les contributeurs/trices à cette publication seront identifié.es dans les "
-"formats suivants."
-
-msgid "contributor.listPanel.preview.format"
-msgstr "Format"
-
-msgid "contributor.listPanel.preview.display"
-msgstr "Afficher"
-
-msgid "contributor.listPanel.preview.abbreviated"
-msgstr "Abrégé"
-
-msgid "contributor.listPanel.preview.publicationLists"
-msgstr "Listes de publications"
-
-msgid "contributor.listPanel.preview.full"
-msgstr "Complet"
+msgid "author.users.contributor.includeInBrowse"
+msgstr "Dans la liste de navigation"
 
 msgid "grid.roles.currentRoles"
 msgstr "Rôles actuels"
@@ -541,6 +520,9 @@ msgid "grid.user.cannotAdminister"
 msgstr ""
 "Vous n'avez pas les autorisations nécessaires pour modifier cet utilisateur."
 
+msgid "grid.user.authSource"
+msgstr "Source d'authentification"
+
 msgid "grid.user.mustProvideName"
 msgstr ""
 "Veuillez d'abord indiquer au moins un nom de famille pour l'utilisateur ."
@@ -589,7 +571,7 @@ msgid "grid.user.step1"
 msgstr "Étape #1 : Ajouter les détails de l'utilisateur"
 
 msgid "grid.user.step2"
-msgstr "Étape #2 : Ajouter des rôles à {$userFullName}"
+msgstr "Étape #2 : Ajouter des rôles à  {$userFullName}"
 
 msgid "grid.user.addRoles"
 msgstr "Ajouter les rôles"
@@ -696,12 +678,11 @@ msgid "grid.userGroup.unassignedStage"
 msgstr "Le rôle {$userGroupName} est désassigner de l'étape {$stageName}."
 
 msgid "grid.submission.itemTitle"
-msgstr "Auteur·e ; Titre"
+msgstr "Auteur-e ; Titre"
 
 msgid "grid.submission.active.selectOrphaned"
 msgstr ""
-"Inclure les soumissions incomplètes qui n'ont pas été soumises par un·e "
-"auteur·e."
+"Inclu les soumissions incomplètes qui n'ont pas été soumises par un auteur."
 
 msgid "grid.action.addNavigationMenu"
 msgstr "Ajouter un menu"
@@ -719,22 +700,7 @@ msgid "grid.navigationMenus.navigationMenu.selectType"
 msgstr "Choisir un type…"
 
 msgid "grid.action.view"
-msgstr "Afficher"
-
-msgid "author.users.contributor.name"
-msgstr "Nom"
-
-msgid "author.users.contributor.email"
-msgstr "Courriel"
-
-msgid "author.users.contributor.role"
-msgstr "Rôle"
-
-msgid "author.users.contributor.includeInBrowse"
-msgstr "Dans la liste de navigation"
-
-msgid "grid.action.editContributor"
-msgstr "Modifier un contributeur"
+msgstr ""
 
 #~ msgid "grid.action.viewSignoffNotes"
 #~ msgstr "Visionner les notes de certification de conformité"

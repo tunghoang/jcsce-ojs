@@ -8,44 +8,40 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class FormValidatorBooleanTest
- *
  * @ingroup tests_classes_form_validation
- *
  * @see FormValidatorBoolean
  *
  * @brief Test class for FormValidatorBoolean.
  */
 
-namespace PKP\tests\classes\form\validation;
+import('lib.pkp.tests.PKPTestCase');
+import('lib.pkp.classes.form.Form');
 
-use PKP\form\Form;
-use PKP\form\validation\FormValidatorBoolean;
-use PKP\tests\PKPTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
+class FormValidatorBooleanTest extends PKPTestCase {
+	/**
+	 * @covers FormValidatorBoolean
+	 * @covers FormValidator
+	 */
+	public function testIsValid() {
+		$form = new Form('some template');
 
-#[CoversClass(FormValidatorBoolean::class)]
-class FormValidatorBooleanTest extends PKPTestCase
-{
-    public function testIsValid()
-    {
-        $form = new Form('some template');
+		// Instantiate test validator
+		$validator = new FormValidatorBoolean($form, 'testData', 'some.message.key');
 
-        // Instantiate test validator
-        $validator = new FormValidatorBoolean($form, 'testData', 'some.message.key');
+		$form->setData('testData', '');
+		self::assertTrue($validator->isValid());
 
-        $form->setData('testData', '');
-        self::assertTrue($validator->isValid());
+		$form->setData('testData', 'on');
+		self::assertTrue($validator->isValid());
 
-        $form->setData('testData', 'on');
-        self::assertTrue($validator->isValid());
+		$form->setData('testData', true);
+		self::assertTrue($validator->isValid());
 
-        $form->setData('testData', true);
-        self::assertTrue($validator->isValid());
+		$form->setData('testData', false);
+		self::assertTrue($validator->isValid());
 
-        $form->setData('testData', false);
-        self::assertTrue($validator->isValid());
-
-        $form->setData('testData', 'anything else');
-        self::assertFalse($validator->isValid());
-    }
+		$form->setData('testData', 'anything else');
+		self::assertFalse($validator->isValid());
+	}
 }
+

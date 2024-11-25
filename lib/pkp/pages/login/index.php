@@ -17,17 +17,20 @@
  */
 
 switch ($op) {
-    case 'index':
-    case 'signIn':
-    case 'signOut':
-    case 'lostPassword':
-    case 'requestResetPassword':
-    case 'resetPassword':
-    case 'updateResetPassword':
-    case 'changePassword':
-    case 'savePassword':
-    case 'signInAsUser':
-    case 'signOutAsUser':
-        return new PKP\pages\login\LoginHandler();
-        break;
+	case 'index':
+	case 'signIn':
+	case 'signOut':
+	case 'lostPassword':
+	case 'requestResetPassword':
+	case 'updateResetPassword':
+	case 'resetPassword':
+	case 'changePassword':
+	case 'savePassword':
+	case 'signInAsUser':
+	case 'signOutAsUser':
+		define('HANDLER_CLASS', 'LoginHandler');
+		import('lib.pkp.pages.login.LoginHandler');
+		break;
 }
+
+

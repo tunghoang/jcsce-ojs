@@ -12,13 +12,16 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @ingroup pages_notification
- *
  * @brief Handle requests for viewing notifications.
  *
  */
 
+
 switch ($op) {
-    case 'fetchNotification':
-    case 'unsubscribe':
-        return new PKP\pages\notification\NotificationHandler();
+	case 'fetchNotification':
+		define('HANDLER_CLASS', 'NotificationHandler');
+		import('lib.pkp.pages.notification.NotificationHandler');
+		break;
 }
+
+

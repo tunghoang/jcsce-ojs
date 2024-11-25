@@ -11,8 +11,6 @@
  *}
 {include file="frontend/components/header.tpl" pageTitle="user.register"}
 
-{assign var="siteContextId" value=PKP\core\PKPApplication::SITE_CONTEXT_ID|intval}
-
 <div class="page page_register">
 	{include file="frontend/components/breadcrumbs.tpl" currentTitleKey="user.register"}
 	<h1>
@@ -23,11 +21,7 @@
 		{translate key="common.requiredField"}
 	</p>
 
-	<form class="cmp_form register" id="register" method="post" action="{url op="register"}" role="form">
-		{if $orcidEnabled}
-			{include file="form/orcidProfile.tpl"}
-		{/if}
-
+	<form class="cmp_form register" id="register" method="post" action="{url op="register"}">
 		{csrf}
 
 		{if $source}
@@ -49,7 +43,7 @@
 						<div class="optin optin-privacy">
 							<label>
 								<input type="checkbox" name="privacyConsent" value="1"{if $privacyConsent} checked="checked"{/if}>
-								{capture assign="privacyUrl"}{url router=PKP\core\PKPApplication::ROUTE_PAGE page="about" op="privacy"}{/capture}
+								{capture assign="privacyUrl"}{url router=$smarty.const.ROUTE_PAGE page="about" op="privacy"}{/capture}
 								{translate key="user.register.form.privacyConsent" privacyUrl=$privacyUrl}
 							</label>
 						</div>
@@ -130,8 +124,8 @@
 				<div class="fields">
 					<div class="optin optin-privacy">
 						<label>
-							<input type="checkbox" name="privacyConsent[{$siteContextId}]" id="privacyConsent[{$siteContextId}]" value="1"{if $privacyConsent[$siteContextId]} checked="checked"{/if}>
-							{capture assign="privacyUrl"}{url router=PKP\core\PKPApplication::ROUTE_PAGE page="about" op="privacy"}{/capture}
+							<input type="checkbox" name="privacyConsent[{$smarty.const.CONTEXT_ID_NONE}]" id="privacyConsent[{$smarty.const.CONTEXT_ID_NONE}]" value="1"{if $privacyConsent[$smarty.const.CONTEXT_ID_NONE]} checked="checked"{/if}>
+							{capture assign="privacyUrl"}{url router=$smarty.const.ROUTE_PAGE page="about" op="privacy"}{/capture}
 							{translate key="user.register.form.privacyConsent" privacyUrl=$privacyUrl}
 						</label>
 					</div>
@@ -150,12 +144,11 @@
 		{/if}
 
 		{* recaptcha spam blocker *}
-		{if $recaptchaPublicKey}
+		{if $reCaptchaHtml}
 			<fieldset class="recaptcha_wrapper">
 				<div class="fields">
 					<div class="recaptcha">
-						<div class="g-recaptcha" data-sitekey="{$recaptchaPublicKey|escape}">
-						</div><label for="g-recaptcha-response" style="display:none;" hidden>Recaptcha response</label>
+						{$reCaptchaHtml}
 					</div>
 				</div>
 			</fieldset>

@@ -1,19 +1,18 @@
-# Yukari Chiba <Charles@nia.ac.cn>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-04T08:55:00-08:00\n"
-"PO-Revision-Date: 2023-02-17 03:48+0000\n"
+"PO-Revision-Date: 2020-07-28 15:47+0000\n"
 "Last-Translator: Yukari Chiba <Charles@nia.ac.cn>\n"
 "Language-Team: Chinese (Simplified) <http://translate.pkp.sfu.ca/projects/"
-"pkp-lib/admin/zh_CN/>\n"
+"pkp-lib/admin/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.13.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 msgid "admin.systemInfo.settingName"
 msgstr "设置名称"
@@ -24,11 +23,17 @@ msgstr "设置值"
 msgid "admin.adminFunctions"
 msgstr "管理职能"
 
-msgid "admin.deleteCache"
-msgstr ""
+msgid "admin.auth.confirmDelete"
+msgstr "您确定要永久删除此验证来源?"
 
-msgid "admin.deleteCache.description"
-msgstr ""
+msgid "admin.auth.create"
+msgstr "创建验证来源"
+
+msgid "admin.auth.noneCreated"
+msgstr "没有验证来源已经确定."
+
+msgid "admin.authSources"
+msgstr "验证来源"
 
 msgid "admin.clearDataCache"
 msgstr "清除数据缓存"
@@ -70,9 +75,6 @@ msgstr "显示新的配置"
 
 msgid "admin.expireSessions"
 msgstr "用户会话过期"
-
-msgid "admin.expireSessions.description"
-msgstr ""
 
 msgid "admin.languages.cantDisable"
 msgstr ""
@@ -133,22 +135,10 @@ msgstr "任务进程已停止。"
 msgid "admin.scheduledTask.noLog"
 msgstr "任务未生成日志。"
 
-msgid "admin.scheduledTask.depositDois"
-msgstr ""
-
 msgid "admin.scheduledTask.downloadLog"
 msgstr ""
 "您的{$softwareName}安装会自动执行并完成此任务，您可以在此处下载日志文件："
 "{$url}"
-
-msgid "admin.scheduledTask.editorialReminder"
-msgstr ""
-
-msgid "admin.scheduledTask.editorialReminder.logStart"
-msgstr ""
-
-msgid "admin.scheduledTask.editorialReminder.logEnd"
-msgstr ""
 
 msgid "admin.scheduledTask.confirmClearLogs"
 msgstr "您确定要删除所有计划的任务执行日志吗？"
@@ -156,92 +146,14 @@ msgstr "您确定要删除所有计划的任务执行日志吗？"
 msgid "admin.scheduledTask.clearLogs"
 msgstr "清除计划任务的执行日志"
 
-msgid "admin.scheduledTask.clearLogs.description"
-msgstr ""
-
-msgid "admin.scheduledTask.clearLogs.delete"
-msgstr ""
-
 msgid "admin.scheduledTask.publishSubmissions"
 msgstr "发布计划发布的提交"
 
 msgid "admin.scheduledTask.reviewReminder"
 msgstr "审稿提醒"
 
-msgid "admin.scheduledTask.statisticsReport"
-msgstr ""
-
 msgid "admin.scheduledTask.subscriptionExpiryReminder"
 msgstr "订阅到期提醒"
-
-msgid "admin.scheduledTask.removeUnvalidatedExpiredUsers"
-msgstr ""
-
-msgid "admin.scheduledTask.removeFailedJobs"
-msgstr ""
-
-msgid "admin.scheduledTask.processQueueJobs"
-msgstr ""
-
-msgid "admin.scheduledTask.updateGeoDB"
-msgstr ""
-
-msgid "admin.scheduledTask.updateGeoDB.fileRename.error"
-msgstr ""
-
-msgid "admin.scheduledTask.usageStatsLoader"
-msgstr ""
-
-msgid "admin.scheduledTask.usageStatsLoader.processingPathNotEmpty"
-msgstr ""
-
-msgid "admin.job.processLogFile.openFileFailed"
-msgstr ""
-
-msgid "admin.scheduledTask.usageStatsLoader.veryOldLogFile"
-msgstr ""
-
-msgid "admin.scheduledTask.usageStatsLoader.monthExists"
-msgstr ""
-
-msgid "admin.job.processLogFile.wrongLoglineFormat"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry.time"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry.contextId"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry.submissionId"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry.representationId"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry.assocType"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry.fileType"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry.country"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry.region"
-msgstr ""
-
-msgid "admin.job.processLogFile.invalidLogEntry.institutionIds"
-msgstr ""
-
-msgid "admin.job.processLogFile.insertError"
-msgstr ""
-
-msgid "admin.scheduledTask.usageStatsLoader.jobDispatched"
-msgstr ""
 
 msgid "admin.server.apacheVersion"
 msgstr "Apache版本"
@@ -275,6 +187,14 @@ msgstr "主要联络的电子邮件"
 
 msgid "admin.settings.contactName"
 msgstr "主要的联系人名"
+
+msgid "admin.settings.defaultMetricDescription"
+msgstr ""
+"\n"
+"\t\t您的安装已配置为记录多个指标。 使用情况统计信息将在多个上下文中显示。\n"
+"   在某些情况下，必须使用单个使用情况统计，例如 显示最常用提交的有序列表或对"
+"搜索结果进行排序。 请在配置的指标中选择一个作为默认指标。\n"
+"\t"
 
 msgid "admin.settings.introduction"
 msgstr "介绍"
@@ -326,12 +246,6 @@ msgstr "T配置文件 <tt>config.inc.php</tt> 不存在, 或者不可读, 或者
 
 msgid "admin.systemInformation"
 msgstr "系统信息"
-
-msgid "admin.systemInformation.description"
-msgstr ""
-
-msgid "admin.systemInformation.view"
-msgstr ""
 
 msgid "admin.versionBuild"
 msgstr "版本号"
@@ -387,386 +301,44 @@ msgstr "文件{$filename}已处理并存档。"
 msgid "admin.fileLoader.emailSubject"
 msgstr "文件加载器"
 
-msgid "admin.error.gzDecompressFile.gzopen"
+msgid "admin.copyAccessLogFileTool.usage"
 msgstr ""
+"复制 apache 访问日志文件，过滤与此安装相关的条目到 UsageStatsPlugin 阶段目录"
+"中的当前文件目录。 必须以具有足够权限的用户运行以读取 apache 日志文件。\n"
+"\n"
+"该工具将仅复制尚不位于 usageStats 文件加载器目录（stage, processing, "
+"archive, reject）中的文件。\n"
+"\n"
+"用法：{$scriptName} path/to/apache/log/file.log\n"
+"用法（处理目录内的所有文件）：{$scriptName} path/to/apache/directory\n"
+"\t"
 
-msgid "admin.error.gzDecompressFile.fopen"
-msgstr ""
+msgid "admin.copyAccessLogFileTool.error.creatingFolder"
+msgstr "错误：无法创建临时文件夹{$tmpDir}"
 
-msgid "admin.error.gzDecompressFile.gzread"
-msgstr ""
+msgid "admin.copyAccessLogFileTool.error.acessingFile"
+msgstr "错误：文件{$filePath}不存在或无法访问。"
 
-msgid "admin.error.gzDecompressFile.fwrite"
-msgstr ""
+msgid "admin.copyAccessLogFileTool.error.copyingFile"
+msgstr "错误：无法将文件从{$filePath}复制到{$tmpFilePath}"
 
-msgid "admin.error.gzDecompressFile.fclose"
-msgstr ""
+msgid "admin.copyAccessLogFileTool.error.deletingFile"
+msgstr "错误：无法删除文件{$tmpFilePath}"
 
-msgid "admin.error.gzDecompressFile.gzclose"
-msgstr ""
+msgid "admin.copyAccessLogFileTool.warning.fileAlreadyExists"
+msgstr "警告：使用情况统计目录中已经存在文件{$filePath}。"
 
-msgid "admin.error.gzDecompressFile.unlink"
-msgstr ""
+msgid "admin.copyAccessLogFileTool.success"
+msgstr "成功：{$filePath}至{$destinationPath}"
 
-msgid "admin.error.gzCompressFile.gzopen"
-msgstr ""
+msgid "admin.error.utilExecutionProblem"
+msgstr "“ {$utilPath}”程序执行返回以下错误：{$output}"
 
-msgid "admin.error.gzCompressFile.fopen"
-msgstr ""
-
-msgid "admin.error.gzCompressFile.fread"
-msgstr ""
-
-msgid "admin.error.gzCompressFile.gzwrite"
-msgstr ""
-
-msgid "admin.error.gzCompressFile.fclose"
-msgstr ""
-
-msgid "admin.error.gzCompressFile.gzclose"
-msgstr ""
-
-msgid "admin.error.gzCompressFile.unlink"
-msgstr ""
+msgid "admin.error.executingUtil"
+msgstr "错误：无法执行“ {$utilPath}”。 检查config.inc.php中的{$utilVar}设置。"
 
 msgid "admin.languages.noLocalesToDownload"
 msgstr "没有可供下载的语言。"
-
-msgid "admin.cli.tool.usage.title"
-msgstr ""
-
-msgid "admin.cli.tool.usage.parameters"
-msgstr ""
-
-msgid "admin.cli.tool.available.commands"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.maintenance.message"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.list.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.purge.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.test.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.work.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.failed.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.run.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.run.completed.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.run.empty.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.total.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.help.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.available.options.usage.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.empty.option"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.failed.title"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.title"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.id"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.queue"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.connection"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.job.display.name"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.attempts"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.reserved.at"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.available.at"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.created.at"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.failed.at"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.queued.jobs.fields.exception"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.pagination"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.pagination.current"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.pagination.previous"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.pagination.next"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.purge.without.id"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.test.job.failed.dispatch.message"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.test.job.success.dispatch.message"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.test.invalid.option"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.purge.invalid.id"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.purge.successful"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.purge.impossible.to.purge.empty"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.purge.impossible.to.purge.all"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.purge.successful.all"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.failed.clear.successful"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.failed.redispatch.successful"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.total.failed.jobs"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.total.jobs"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.option.doesnt.exists"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.mean.those"
-msgstr ""
-
-msgid "admin.jobs.totalCount"
-msgstr ""
-
-msgid "admin.jobs.failed.totalCount"
-msgstr ""
-
-msgid "admin.jobs.viewQueuedJobs"
-msgstr ""
-
-msgid "navigation.tools.jobs"
-msgstr ""
-
-msgid "navigation.tools.jobs.failed"
-msgstr ""
-
-msgid "navigation.tools.jobs.failed.details"
-msgstr ""
-
-msgid "navigation.tools.jobs.description"
-msgstr ""
-
-msgid "navigation.tools.jobs.view"
-msgstr ""
-
-msgid "navigation.tools.jobs.failed.view"
-msgstr ""
-
-msgid "navigation.tools.job.failed.details.view"
-msgstr ""
-
-msgid "admin.job.failed.list.attribute"
-msgstr ""
-
-msgid "admin.job.failed.list.attribute.value"
-msgstr ""
-
-msgid "admin.jobs.list.id"
-msgstr ""
-
-msgid "admin.jobs.list.displayName"
-msgstr ""
-
-msgid "admin.jobs.list.queue"
-msgstr ""
-
-msgid "admin.jobs.list.connection"
-msgstr ""
-
-msgid "admin.jobs.list.attempts"
-msgstr ""
-
-msgid "admin.jobs.list.createdAt"
-msgstr ""
-
-msgid "admin.jobs.list.failedAt"
-msgstr ""
-
-msgid "admin.jobs.list.payload"
-msgstr ""
-
-msgid "admin.jobs.list.exception"
-msgstr ""
-
-msgid "admin.jobs.list.actions"
-msgstr ""
-
-msgid "admin.jobs.failedAt"
-msgstr ""
-
-msgid "admin.jobs.createdAt"
-msgstr ""
-
-msgid "admin.jobs.failed.action.redispatch"
-msgstr ""
-
-msgid "admin.jobs.failed.action.redispatch.all"
-msgstr ""
-
-msgid "admin.job.compileMetrics.returnToStaging.error"
-msgstr ""
-
-msgid "admin.job.compileMetrics.error"
-msgstr ""
-
-msgid "admin.settings.statistics.collection"
-msgstr ""
-
-msgid "admin.settings.statistics.collection.description"
-msgstr ""
-
-msgid "admin.settings.statistics.storage"
-msgstr ""
-
-msgid "admin.settings.statistics.storage.description"
-msgstr ""
-
-msgid "admin.settings.statistics.sushi"
-msgstr ""
-
-msgid "admin.settings.statistics.sushi.description"
-msgstr ""
-
-msgid "admin.settings.statistics.keepDaily"
-msgstr ""
-
-msgid "admin.settings.statistics.keepDaily.description"
-msgstr ""
-
-msgid "admin.settings.statistics.keepDaily.keep"
-msgstr ""
-
-msgid "admin.settings.statistics.keepDaily.discard"
-msgstr ""
-
-msgid "admin.settings.statistics.compressStatsLogs.label"
-msgstr ""
-
-msgid "admin.settings.statistics.compressStatsLogs.description"
-msgstr ""
-
-msgid "admin.settings.statistics.compressStatsLogs.default"
-msgstr ""
-
-msgid "admin.settings.statistics.compressStatsLogs.compress"
-msgstr ""
-
-msgid "admin.settings.statistics.publicSushiApi.private"
-msgstr ""
-
-msgid "admin.settings.statistics.sushiPlatform"
-msgstr ""
-
-msgid "admin.settings.statistics.sushiPlatform.description"
-msgstr ""
-
-msgid "admin.settings.statistics.sushiPlatform.sushiPlatformID"
-msgstr ""
-
-msgid "admin.settings.statistics.sushiPlatform.sushiPlatformID.description"
-msgstr ""
-
-msgid "admin.settings.statistics.sushiPlatform.sushiPlatformID.required"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.options.title"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.options.usage"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.options.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.connection.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.queue.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.name.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.backoff.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.memory.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.timeout.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.sleep.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.tries.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.force.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.stopWhenEmpty.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.maxJobs.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.maxTime.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.rest.description"
-msgstr ""
-
-msgid "admin.cli.tool.jobs.work.option.test.description"
-msgstr ""
 
 #~ msgid "admin.serverInformationDescription"
 #~ msgstr ""

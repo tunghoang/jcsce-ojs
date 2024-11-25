@@ -1,20 +1,18 @@
-# Jean-Blaise Claivaz <jean-blaise.claivaz@unige.ch>, 2023.
-# Germán Huélamo Bautista <germanhuelamo@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-19T10:49:49+00:00\n"
-"PO-Revision-Date: 2024-04-24 16:12+0000\n"
-"Last-Translator: Germán Huélamo Bautista <germanhuelamo@gmail.com>\n"
+"PO-Revision-Date: 2020-08-04 07:48+0000\n"
+"Last-Translator: Paul Heckler <paul.d.heckler@gmail.com>\n"
 "Language-Team: French <http://translate.pkp.sfu.ca/projects/pkp-lib/"
-"installer/fr_FR/>\n"
+"installer/fr/>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 3.9.1\n"
 
 msgid "installer.additionalLocales"
 msgstr "Langues supplémentaires"
@@ -34,6 +32,13 @@ msgstr "<span class=\"pkp_form_error formError\">NON</span>"
 msgid "installer.checkYes"
 msgstr "Oui"
 
+msgid "installer.clientCharset"
+msgstr "Jeu de caractères du client"
+
+msgid "installer.clientCharsetInstructions"
+msgstr ""
+"L'encodage à utiliser pour les données envoyées et reçues des navigateurs."
+
 msgid "installer.configFileError"
 msgstr ""
 "Le fichier de configuration <tt>config.inc.php</tt> n'existe pas ou n'est "
@@ -50,10 +55,12 @@ msgstr "Pilote de la base de données"
 
 msgid "installer.databaseDriverInstructions"
 msgstr ""
-"<strong>Le système prend actuellement en charge MySQL et PostgreSQL. Si vous "
-"ne pouvez pas sélectionner l'une des options ci-dessous, contactez votre "
-"administrateur système pour vous assurer que votre serveur dispose des "
-"extensions PHP requises.</strong>"
+"<strong>Les pilotes de bases de données qui sont listés entre crochets ne "
+"semblent pas avoir chargé l'extension PHP requise et l'installation risque "
+"donc d'échouer s'ils sont sélectionnés.</strong><br />Tous les pilotes de "
+"bases de données qui ne sont pas pris en charge, tel indiqué ci-dessus, sont "
+"listés uniquement à des fins académiques et ne fonctionneront "
+"vraisemblablement pas."
 
 msgid "installer.databaseHost"
 msgstr "Hébergeur"
@@ -122,9 +129,6 @@ msgstr ""
 msgid "installer.form.usernameRequired"
 msgstr "Un nom d'utilisateur pour le compte administrateur est obligatoire."
 
-msgid "installer.form.timeZoneRequired"
-msgstr "Un fuseau horaire doit être sélectionné."
-
 msgid "installer.installationWrongPhp"
 msgstr ""
 "<br/><strong>AVERTISSEMENT : Votre version actuelle de PHP ne satisfait pas "
@@ -154,8 +158,6 @@ msgstr ""
 
 msgid "installer.installMigrationError"
 msgstr ""
-"Erreur lors de l'exécution de la classe de migration <tt>{$class}</tt>. "
-"Message d'erreur : {$message}."
 
 msgid "installer.installParseEmailTemplatesFileError"
 msgstr ""
@@ -168,18 +170,7 @@ msgstr ""
 
 msgid "installer.unsupportedUpgradeError"
 msgstr ""
-"La mise à jour n'est pas compatible. Voir le guide de mise à jour "
-"(https://docs.pkp.sfu.ca/dev/upgrade-guide) pour plus de détails."
-
-msgid "installer.timezoneInstructions"
-msgstr "Le fuseau horaire à utiliser pour ce système."
-
-msgid "installer.additionalLocalesInstructions"
-msgstr ""
-"Sélectionnez les langues supplémentaires à prendre en charge dans ce "
-"système. D'autres langues peuvent être ajoutée à n'importe quel moment "
-"depuis l'interface d'administration.<br>*= indique les langues qui ne sont "
-"pas entièrement traduites (avec moins de 90% des termes traduits)"
+"Mise à niveau non supportée. Voir docs/UPGRADE-UNSUPPORTED pour les détails."
 
 msgid "installer.locale"
 msgstr "Langue"
@@ -256,13 +247,6 @@ msgstr ""
 msgid "installer.unsupportedPhpError"
 msgstr "La version de PHP n'est pas supportée. Lire docs/README."
 
-#~ msgid "installer.clientCharset"
-#~ msgstr "Jeu de caractères du client"
-
-#~ msgid "installer.clientCharsetInstructions"
-#~ msgstr ""
-#~ "L'encodage à utiliser pour les données envoyées et reçues des navigateurs."
-
 #~ msgid "installer.encryption"
 #~ msgstr "Algorithme d'encryptage des mots de passe"
 
@@ -273,6 +257,3 @@ msgstr "La version de PHP n'est pas supportée. Lire docs/README."
 
 #~ msgid "installer.encryptionInstructions"
 #~ msgstr "On recommande SHA1"
-
-msgid "installer.miscSettings"
-msgstr "Paramètres divers"

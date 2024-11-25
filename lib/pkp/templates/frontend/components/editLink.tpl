@@ -5,7 +5,7 @@
  * Copyright (c) 2003-2021 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
- * @brief Display the edit link.
+ * @brief Display the page to view the editorial team.
  *
  * @uses $page string Page to pass to the url constructor
  * @uses $op string Op to pass to the url constructor
@@ -15,7 +15,7 @@
  * @uses SectionTitleKey string A key that must be translated to get the
  *       $sectionTitle
  *}
-{if in_array(PKP\security\Role::ROLE_ID_MANAGER, (array) $userRoles)}
+{if in_array(ROLE_ID_MANAGER, (array) $userRoles)}
 
 	{* Render the $sectionTitle if we only have a translation key *}
 	{if $sectionTitleKey}

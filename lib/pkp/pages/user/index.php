@@ -12,22 +12,27 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @ingroup pages_user
- *
  * @brief Handle requests for user functions.
  *
  */
 
 switch ($op) {
-    //
-    // Profiles
-    //
-    case 'profile':
-        return new PKP\pages\user\ProfileHandler();
-        //
-        // Registration
-        //
-    case 'register':
-    case 'registerUser':
-    case 'activateUser':
-        return new PKP\pages\user\RegistrationHandler();
+	//
+	// Profiles
+	//
+	case 'profile':
+		define('HANDLER_CLASS', 'ProfileHandler');
+		import('lib.pkp.pages.user.ProfileHandler');
+		break;
+	//
+	// Registration
+	//
+	case 'register':
+	case 'registerUser':
+	case 'activateUser':
+		define('HANDLER_CLASS', 'RegistrationHandler');
+		import('lib.pkp.pages.user.RegistrationHandler');
+		break;
 }
+
+

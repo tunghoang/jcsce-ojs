@@ -1,16 +1,11 @@
-# Nicolas Dickner <dickner.nicolas@uqam.ca>, 2022, 2023.
-# Marie-Hélène Vézina [UdeMontréal] <marie-helene.vezina@umontreal.ca>, 2022, 2023.
-# Germán Huélamo Bautista <germanhuelamo@gmail.com>, 2023.
-# Pierre Lasou <pierre.lasou@bibl.ulaval.ca>, 2023, 2024.
-# Jean-Blaise Claivaz <jean-blaise.claivaz@unige.ch>, 2023.
-# "Marie-Hélène Vézina [UdeMontréal]" <marie-helene.vezina@umontreal.ca>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-15T13:36:56-07:00\n"
-"PO-Revision-Date: 2024-03-13 17:13+0000\n"
-"Last-Translator: Pierre Lasou <pierre.lasou@bibl.ulaval.ca>\n"
+"PO-Revision-Date: 2020-12-18 16:52+0000\n"
+"Last-Translator: Marie-Hélène Vézina [UdeMontréal] <marie-helene."
+"vezina@umontreal.ca>\n"
 "Language-Team: French (Canada) <http://translate.pkp.sfu.ca/projects/pkp-lib/"
 "manager/fr_CA/>\n"
 "Language: fr_CA\n"
@@ -18,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.2\n"
+"X-Generator: Weblate 3.9.1\n"
 
 # localization file for fr_CA. Last revision 2019-10-23T01:54:57 by Marie-Hélène Vézina, Bibliothèques, Université de Montréal.
 msgid "manager.website.information"
@@ -162,244 +157,8 @@ msgstr "Aucun type d'annonce n'a été créé."
 msgid "manager.announcementTypes.typeName"
 msgstr "Type d'annonce"
 
-msgid "manager.dois.actions.deposit.all"
-msgstr "Tout déposer"
-
-msgid "manager.dois.actions.deposit.label"
-msgstr "Déposer les DOIs"
-
-msgid "manager.dois.actions.deposit.prompt"
-msgstr ""
-"Vous êtes sur le point d'envoyer des notices de métadonnées DOI pour {$count}"
-" item(s) à {$registrationAgency}. Voulez-vous vraiment déposer ces notices ?"
-
-msgid "manager.dois.actions.markRegistered.label"
-msgstr "Marquer les DOIs enregistrés"
-
-msgid "manager.dois.actions.markRegistered.prompt"
-msgstr ""
-"Vous êtes sur le point d'étiquetter les DOIs de {$count} items(s) comme "
-"\"enregistrés\". Souhaitez-vous vraiment procéder?"
-
-msgid "manager.dois.actions.markUnregistered.label"
-msgstr "Marquer comme \"non enregistrés\""
-
-msgid "manager.dois.actions.markUnregistered.prompt"
-msgstr ""
-"Vous êtes sur le point d'étiquetter les DOIs de {$count} item(s) comme \"non "
-"enregistrés\". Souhaitez-vous vraiment procéder?"
-
-msgid "manager.dois.actions.markStale.label"
-msgstr "Marquer comme \"à synchroniser\""
-
-msgid "manager.dois.actions.markStale.prompt"
-msgstr ""
-"Vous êtes sur le point d'étiquetter les DOIs de {$count} item(s) comme \"à "
-"synchroniser\". Ce statut ne peut -être appliqué qu'à des DOIs qui ont déjà "
-"été soumis. Souhaitez-vous vraiment étiquetter ces DOIs comme déjà soumis et "
-"à synchroniser?"
-
-msgid "manager.dois.actions.export.label"
-msgstr "Exporter les DOIs"
-
-msgid "manager.dois.actions.export.prompt"
-msgstr ""
-"Vous êtes sur le point d'exporter les DOIs pour {$count} item(s) vers "
-"{$registrationAgency}. Souhaitez-vous vraiment procéder?"
-
-msgid "manager.dois.actions.assign.label"
-msgstr "Assigner des DOIs"
-
-msgid "manager.dois.actions.assign.prompt"
-msgstr ""
-"Vous êtes sur le point d'assigner de nouveaux DOIs à {$count} item(s). Cette "
-"action n'affectera que les items éligibles auquel un DOI n'a pas déjà été "
-"assigné. Souhaitez-vous vraiment procéder?"
-
-msgid "manager.dois.actions.depositAll.label"
-msgstr "Déposer tous les DOIs"
-
-msgid "manager.dois.actions.depositAll.prompt"
-msgstr ""
-"Vous êtes sur le point de programmer le dépôt de tous les DOIs en attente "
-"auprès de {$registrationAgency}. Seuls les items publiés et avec un DOI "
-"seront déposés. Le statut de chaque item sera mis à jour lorsqu'une réponse "
-"sera reçue. Souhaitez-vous vraiment procéder?"
-
-msgid "manager.dois.actions.description"
-msgstr "Appliquer l'action aux items sélectionnés ({$count})."
-
-msgid "manager.dois.actions.bulkActions"
-msgstr "Actions en lot"
-
-msgid "manager.dois.depositStatus"
-msgstr "Statut de dépôt"
-
-msgid "manager.dois.publicationStatus"
-msgstr "Statut de publication"
-
-msgid "manager.dois.registration.submittedDescription"
-msgstr ""
-"Les métadonnées de cet article ont été soumises à {$registrationAgency}."
-
-msgid "manager.dois.registration.manuallyMarkedRegistered"
-msgstr ""
-"Cet article a été enregistré manuellement auprès d'une agence "
-"d'enregistrement."
-
-msgid "manager.dois.registration.notSubmittedDescription"
-msgstr ""
-"Les métadonnées de cet article n'ont pas été soumises à "
-"{$registrationAgency}."
-
-msgid "manager.dois.registration.notPublishedDescription"
-msgstr "Cet article ne peut être déposé avant d'avoir été publié."
-
-msgid "manager.dois.registration.viewError"
-msgstr "Afficher les erreurs"
-
-msgid "manager.dois.registration.viewError.title"
-msgstr "Message d'erreur d'enregistrement"
-
-msgid "manager.dois.registration.viewRecord"
-msgstr "Afficher la notice"
-
-msgid "manager.dois.registration.viewRecord.title"
-msgstr "Message d'enregistrement réussi"
-
-msgid "manager.dois.update.success"
-msgstr "DOI(s) actualisé(s) avec succès"
-
-msgid "manager.dois.registration.depositDois"
-msgstr "Déposer les DOI(s)"
-
-msgid "manager.dois.status.needsDoi"
-msgstr "Sans DOI"
-
-msgid "manager.dois.status.unregistered"
-msgstr "Non enregistré"
-
-msgid "manager.dois.status.submitted"
-msgstr "Soumis"
-
-msgid "manager.dois.status.registered"
-msgstr "Enregistré"
-
-msgid "manager.dois.status.error"
-msgstr "Erreur"
-
-msgid "manager.dois.status.error.filterTitle"
-msgstr "Avec erreur"
-
-msgid "manager.dois.status.stale"
-msgstr "À synchroniser"
-
-msgid "manager.dois.filters.doiAssigned"
-msgstr "Avec DOI"
-
-msgid "manager.dois.status.needsDoi.description"
-msgstr "Tous les items sans DOI."
-
-msgid "manager.dois.filters.doiAssigned.description"
-msgstr "Tous les items avec DOI."
-
-msgid "manager.dois.status.unregistered.description"
-msgstr ""
-"Tous les items avec DOI qui ont été publiés, mais qui n'ont pas encore été "
-"déposés auprès d'une agence d'enregistrement."
-
-msgid "manager.dois.status.submitted.description"
-msgstr "Tous les items qui ont été soumis à une agence d'enregistrement."
-
-msgid "manager.dois.status.registered.description"
-msgstr ""
-"Tous les items qui ont été enregistrés auprès d'une agence d'enregistrement, "
-"ou marqué manuellement comme \"enregistrés\"."
-
-msgid "manager.dois.status.error.description"
-msgstr "Tous les items qui ont produit une erreur lors de l'enregistrement."
-
-msgid "manager.dois.status.stale.description"
-msgstr ""
-"Tous les items qui ont été republiés après avoir été déposés auprès d'une "
-"agence d'enregistrement. Ces items doivent être soumis à nouveau auprès de "
-"l'agence d'enregistrement afin d'être mis à jour."
-
-msgid "manager.dois.update.failedCreation"
-msgstr "Échec de la mise à jour des DOIs"
-
-msgid "manager.dois.update.partialFailure"
-msgstr "Certains DOIs n'ont pas pu être mis à jour"
-
-msgid "manager.dois.notification.exportSuccess"
-msgstr "Les items ont été exportés"
-
-msgid "manager.dois.notification.markRegisteredSuccess"
-msgstr "Les items ont été marqués comme \"enregistrés\""
-
-msgid "manager.dois.notification.markUnregisteredSuccess"
-msgstr "Les items ont été marqués comme \"non enregistrés\""
-
-msgid "manager.dois.notification.markStaleSuccess"
-msgstr "Les items ont été marqués comme \"à synchroniser\""
-
-msgid "manager.dois.notification.assignDoisSuccess"
-msgstr "L'assignation de DOIs a réussi"
-
-msgid "manager.dois.notification.depositQueuedSuccess"
-msgstr "Les items ont été soumis pour dépôt"
-
-msgid "manager.dois.help.statuses.title"
-msgstr "Statuts des DOIs"
-
-msgid "manager.dois.settings.relocated"
-msgstr ""
-"L'administration des DOIs a été déplacée. Veuillez consulter les pages d' <a "
-"href=\"{$doiManagementUrl}\">administration</a> et de <a href=\""
-"{$doiSettingsUrl}\">paramétrage</a> des DOIs."
-
-msgid "manager.dois.settings.prefixRequired"
-msgstr ""
-"Pour assigner des DOIs, vous devez au préalable fournir le préfixe DOI qui "
-"vous a été attribué. <a href=\"{$doiSettingsUrl}\">Ajouter le préfixe "
-"DOI</a>."
-
-msgid "doi.exceptions.missingPrefix"
-msgstr "Un préfixe DOI est requis afin de créer un DOI."
-
-#, fuzzy
 msgid "manager.genres.alertDelete"
 msgstr ""
-"Avant que cette élément puisse être supprimé, vous devez associé tous les "
-"fichiers qui lui sont associés à un autre élément."
-
-msgid "manager.institutions.edit"
-msgstr "Modifier l'institution"
-
-msgid "manager.institutions.form.ror"
-msgstr "ROR"
-
-msgid "manager.institutions.form.ror.description"
-msgstr "Identifiant ROR (Research Organization Registry) de cette institution."
-
-msgid "manager.institutions.form.ipRanges"
-msgstr "Plage d'adresses IP"
-
-msgid "manager.institutions.form.ipRangesInstructions"
-msgstr ""
-"Les valeurs valides peuvent être une adresse IP (par ex. 142.58.103.1), une "
-"plage d'adresses IP (par ex. 142.58.103.1 - 142.58.103.4), une plage "
-"d'adresses IP avec le caractère de remplacement '*' (par ex. 142.58.*.*) ou "
-"une plage d'adresses IP avec CIDR (par ex. 142.58.100.0/24)."
-
-msgid "manager.institutions.deleteInstitution"
-msgstr "Supprimer l'institution"
-
-msgid "manager.institutions.confirmDelete"
-msgstr "Souhaitez-vous vraiment supprimer cette institution?"
-
-msgid "manager.institutions.invalidIPRange"
-msgstr "Plage d'adresses IP invalide"
 
 msgid "manager.publication.submissionStage"
 msgstr "Soumission"
@@ -422,24 +181,22 @@ msgstr "Conseils aux évaluateurs-trices"
 msgid "manager.publication.reviewReminders.success"
 msgstr "Les renseignements du rappel d'évaluation ont été mis à jour."
 
-msgid "manager.dois.title"
-msgstr "DOIs"
+msgid "manager.emails.confirmDelete"
+msgstr "Êtes-vous certain-e de vouloir supprimer ce modèle de courriel ?"
 
-msgid "manager.dois.registrationAgency.errorMessagePreamble"
+msgid "manager.emails.confirmReset"
 msgstr ""
-"Le message d'erreur suivant a été transmis par {$registrationAgency} et il "
-"contient des détails sur les causes de l'erreur:"
-
-msgid "manager.dois.registrationAgency.registeredMessagePreamble"
-msgstr ""
-"Le message suivant a été transmis par {$registrationAgency} et il contient "
-"des détails sur l'enregistrement:"
+"Êtes-vous certain-e de vouloir réinitialiser ce modèle de courriel à ses "
+"valeurs par défaut ?"
 
 msgid "manager.emails.addEmail"
 msgstr "Ajouter un modèle de courriel"
 
 msgid "manager.emails.createEmail"
 msgstr "Créer un courriel"
+
+msgid "manager.emails.customTemplate"
+msgstr "Modèle de courriel personnalisé"
 
 msgid "manager.emails.data"
 msgstr "Données du modèle de courriel"
@@ -456,8 +213,24 @@ msgstr ""
 "système utilisent ce modèle, ils ne pourront plus l'utiliser. Souhaitez-vous "
 "confirmer cette action ?"
 
+msgid "manager.emails.editEmail"
+msgstr "Modifier un courriel"
+
 msgid "manager.emails.editTestExample"
 msgstr "Modifier l'exemple du test de courriel"
+
+msgid "manager.emails.emailKey"
+msgstr "Clé du courriel"
+
+msgid "manager.emails.emailKey.description"
+msgstr ""
+"La clé du courriel ne peut contenir que des lettres, des chiffres et des "
+"traits de soulignement."
+
+msgid "manager.emails.emailKeyExists"
+msgstr ""
+"Un courriel avec cette clé existe déjà. Les clés de courriels doivent être "
+"uniques."
 
 msgid "manager.emails.emailTemplate"
 msgstr "Modèle de courriel"
@@ -465,13 +238,13 @@ msgstr "Modèle de courriel"
 msgid "manager.emails.emailTemplates"
 msgstr "Modèles de courriel"
 
-msgid "manager.emails.otherTemplates"
-msgstr "Autres modèles"
-
 msgid "manager.emails.emailTemplate.contextRequired"
 msgstr ""
 "Vous devez fournir un identifiant de contexte lors de l'ajout d'un modèle de "
 "courriel."
+
+msgid "manager.emails.emailTemplate.noDuplicateKeys"
+msgstr "La clé que vous avez fournie est déjà utilisée."
 
 msgid "manager.emails.enabled"
 msgstr "Activer ce modèle de courriel"
@@ -504,6 +277,15 @@ msgstr ""
 "Si vous réinitialisez tous les modèles, toutes vos modifications aux modèles "
 "de courriel seront perdues. Vous souhaitez confirmer cette opération ?"
 
+msgid "manager.emails.resetAll.complete"
+msgstr "Les modèles de courriels par défaut ont été réinitialisés."
+
+msgid "manager.emails.reset"
+msgstr "Réinitialiser"
+
+msgid "manager.emails.resetComplete"
+msgstr "Le modèle de courriel a été réinitialisé avec succès."
+
 msgid "manager.emails.reset.message"
 msgstr ""
 "Si vous réinitialisez ce modèle, toutes les données des messages seront "
@@ -518,6 +300,9 @@ msgstr "Envoyé par"
 
 msgid "manager.emails.sentTo"
 msgstr "Envoyé à"
+
+msgid "manager.emails.subjectWithValue"
+msgstr "Objet : {$subject}"
 
 msgid "manager.export.usersToCsv.label"
 msgstr "Exporter en format Excel/CSV"
@@ -617,6 +402,9 @@ msgstr "Estampille temporelle"
 
 msgid "manager.people.existingUserRequired"
 msgstr "Vous devez choisir un-e utilisateur-trice existant-e."
+
+msgid "manager.people.authSource"
+msgstr "Source d'authentification"
 
 msgid "manager.people.confirmUnenroll"
 msgstr "Désinscrire cet,cette utilisateur-trice ?"
@@ -803,58 +591,30 @@ msgstr ""
 msgid "manager.roles"
 msgstr "Rôles"
 
-msgid "manager.setup.statistics"
-msgstr "Statistiques"
+msgid "manager.statistics"
+msgstr "Statistiques et rapports"
 
-msgid "manager.settings.statistics.geoUsageStats"
-msgstr "Statistiques géographiques"
-
-msgid "manager.settings.statistics.geoUsageStats.description"
+msgid "manager.statistics.defaultMetricDescription"
 msgstr ""
-"Sélectionner le type de statistiques d'utilisation géographique qui peuvent "
-"être collectées par les revues sur ce site. Des statistiques géographiques "
-"plus détaillées peuvent considérablement augmenter la taille de votre base "
-"de données et, dans de rares cas, compromettre l'anonymat de vos visiteurs."
+"\n"
+"\t\tVotre {$contextObjectName} a été configuré-e pour enregistrer plus d'une "
+"mesure d'utilisation. Les statistiques d'utilisation seront affichées dans "
+"plusieurs contextes.\n"
+"\t\tIl y a des cas où seule une statistique d'utilisation doit être "
+"utilisée, par exemple pour afficher une liste ordonnée des articles les plus "
+"consultés ou pour classer les résultats de recherche.\n"
+"\t\tVeuillez sélectionner l'une des  mesures configurées par défaut.\n"
+"\t"
 
-msgid "manager.settings.statistics.geoUsageStats.disabled"
-msgstr "Ne collecter aucune statistique géographique"
+msgid "manager.statistics.city"
+msgstr "Ville"
 
-msgid "manager.settings.statistics.geoUsageStats.countryLevel"
-msgstr "Collecter le pays"
+msgid "manager.statistics.region"
+msgstr "Région"
 
-msgid "manager.settings.statistics.geoUsageStats.regionLevel"
-msgstr "Collecter le pays et la région"
-
-msgid "manager.settings.statistics.geoUsageStats.cityLevel"
-msgstr "Collecter le pays, la région et la ville"
-
-msgid "manager.settings.statistics.institutionUsageStats"
-msgstr "Statistiques institutionnelles"
-
-msgid "manager.settings.statistics.institutionUsageStats.description"
-msgstr ""
-"Activer les statistiques institutionnelles si vous souhaitez que les revues "
-"sur ce site puissent collecter des statistiques d'utilisation par "
-"institution. Les revues devront ajouter l'institution et ses plages "
-"d'adresses IP pour utiliser cette fonctionnalité."
-
-msgid "manager.settings.statistics.institutionUsageStats.enable"
-msgstr "Activer les statistiques institutionnelles"
-
-msgid "manager.settings.statistics.publicSushiApi"
-msgstr "API publique"
-
-msgid "manager.settings.statistics.publicSushiApi.description"
-msgstr ""
-"Indiquer si vous souhaitez restreindre l'accès à l'API COUNTER SUSHI. Si "
-"vous désactivez l'API publique, seuls les utilisateurs-trices avec des rôles "
-"administratifs y ont auront accès."
-
-msgid "manager.settings.statistics.publicSushiApi.public"
-msgstr "Rendre publiques les statistique COUNTER SUSHI"
-
+#, fuzzy
 msgid "manager.statistics.reports"
-msgstr "Rapports"
+msgstr "Générateur de rapports"
 
 msgid "manager.statistics.reports.description"
 msgstr ""
@@ -863,151 +623,125 @@ msgstr ""
 "donnée. Les rapports sont générés au format CSV lequel nécessite un tableur "
 "pour la visualisation."
 
+msgid "manager.statistics.reports.aggregationColumns"
+msgstr "Statistiques agrégées par :"
+
+msgid "manager.statistics.reports.optionalColumns.description"
+msgstr ""
+"Les éléments en italique et marqués d'un astérisque (*) représentent les "
+"données facultatives pour le mode actuel de décompte des statistiques dans "
+"le système (type métrique). Vous pouvez avoir ces données ou non, "
+"dépendamment de votre configuration des plugiciels de statistiques."
+
+msgid "manager.statistics.reports.defaultReportTemplates"
+msgstr "Modèles de rapport par défaut"
+
+msgid "manager.statistics.reports.generateReport"
+msgstr "Générer un rapport personnalisé"
+
+msgid "manager.statistics.reports.customReportGenerator"
+msgstr "Générateur de rapports personnalisés"
+
+msgid "manager.statistics.reports.advancedOptions"
+msgstr "Options avancées"
+
+msgid "manager.statistics.reports.advancedOptions.hide"
+msgstr "Masquer les options avancées"
+
+msgid "manager.statistics.reports.columns"
+msgstr "Colonnes"
+
+msgid "manager.statistics.reports.columns.description"
+msgstr ""
+"Définir les colonnes qui seront utilisées pour construire le rapport. Les "
+"colonnes que vous sélectionnez ici précisent non seulement les données qui "
+"apparaîtront dans les rapports, mais également le niveau d'agrégation des "
+"statistiques. Par exemple, si vous choisissez les colonnes « ID », « Type » "
+"et « Mois », le rapport effectuera la somme de tous les consultations d'un "
+"objet pour un mois particulier et affichera les données sur une ligne. Si "
+"vous choisissez « Jour » au lieu de « Mois », chaque objet affichera une "
+"ligne pour chaque jour."
+
+msgid "manager.statistics.reports.filters"
+msgstr "Filtres"
+
+msgid "manager.statistics.reports.objectNotFound"
+msgstr "Objet introuvable dans la base de données."
+
+msgid "manager.statistics.reports.objectType"
+msgstr "Type d'objet"
+
+msgid "manager.statistics.reports.objectId"
+msgstr "Identifiant (ID) de l'objet"
+
+msgid "manager.statistics.reports.objectId.label"
+msgstr ""
+"Définir un ou plusieur identifiant(s) d'objet, séparés par une virgule (par "
+"exemple 1,2,3,4,5)."
+
+msgid "manager.statistics.reports.yesterday"
+msgstr "Hier"
+
+msgid "manager.statistics.reports.currentMonth"
+msgstr "Mois actuel"
+
+msgid "manager.statistics.reports.orderBy"
+msgstr "Trier par"
+
+msgid "manager.statistics.reports.orderDir"
+msgstr "Ordre"
+
+msgid "manager.statistics.reports.orderDir.asc"
+msgstr "Croissant"
+
+msgid "manager.statistics.reports.orderDir.desc"
+msgstr "Décroissant"
+
 msgid "manager.statistics.reports.month.label"
 msgstr "Utiliser le format AAAAMM."
 
 msgid "manager.statistics.reports.day.label"
 msgstr "Utiliser le format AAAAMMJJ."
 
+msgid "manager.statistics.reports.cities.label"
+msgstr ""
+"Un ou plusieurs noms de villes séparés par une virgule (par exemple Ville 1, "
+"Ville 2)"
+
+msgid "manager.statistics.reports.form.columnsRequired"
+msgstr ""
+"Vous devez choisir au moins une colonne pour pourvoir produire le rapport."
+
+msgid "manager.statistics.reports.reportUrl"
+msgstr "Signaler l'URL"
+
+msgid "manager.statistics.reports.reportUrl.label"
+msgstr ""
+"L'adresse URL suivante peut être utilisée pour produire le rapport selon les "
+"configurations actuelles du formulaire. Il suffit de la copier/coller dans "
+"votre navigateur Web. Vous pouvez également utiliser vos favoris pour "
+"conserver cet URL en tant que générateur de rapports personnalisés."
+
+msgid "manager.statistics.reports.filters.byContext"
+msgstr "Par contexte"
+
+msgid "manager.statistics.reports.filters.byObject"
+msgstr "Par type d'objet et/ou identifiant (ID) de l'objet"
+
+msgid "manager.statistics.reports.filters.byTime"
+msgstr "Choisir la période du rapport"
+
+msgid "manager.statistics.reports.filters.byTime.dimensionSelector"
+msgstr "Ou choisir la période par :"
+
+msgid "manager.statistics.reports.filters.byLocation"
+msgstr "Par l'emplacement géographique"
+
+msgid "manager.statistics.reports.filters.byLocation.description"
+msgstr "Limiter les résultats selon le pays, la région ou la ville."
+
 msgid "manager.affiliationAndSupport"
 msgstr "Organisme subventionnaire"
-
-msgid "manager.setup.dois"
-msgstr "DOIs"
-
-msgid "manager.setup.dois.setup"
-msgstr "Configuration"
-
-msgid "manager.setup.dois.registration"
-msgstr "Enregistrement"
-
-msgid "doi.manager.settings.doiPrefix"
-msgstr "Préfixe DOI"
-
-msgid "doi.manager.setup.automaticDeposit"
-msgstr "Dépôt automatique"
-
-msgid "doi.manager.setup.automaticDeposit.enable"
-msgstr "Activer le dépôt automatique"
-
-#, fuzzy
-msgid "doi.manager.setup.automaticDeposit.description"
-msgstr ""
-"L'enregistrement du DOI et ses métadonnées peuvent être déposés "
-"automatiquement auprès de l'agence d'enregistrement sélectionnée chaque fois "
-"qu'un élément comportant un DOI est publié. Le dépôt automatique a lieu à "
-"intervalles réguliers et l'état de l'enregistrement de chaque DOI peut être "
-"contrôlé à partir de la page de gestion des DOI."
-
-msgid "doi.manager.settings.doiPrefix.description"
-msgstr ""
-"Le préfixe DOI est attribué par des agences (tel que <a href=\"http://www."
-"crossref.org\" target=\"_new\">Crossref</a> ou <a href=\"https://datacite."
-"org/\" target=\"new\">DataCite</a>) et se présente sous la forme 10.xxxx"
-
-msgid "doi.manager.settings.doiPrefixPattern"
-msgstr ""
-"Le préfixe DOI est obligatoire et doit respecter le format suivant: 10.xxxx."
-
-msgid "doi.manager.settings.doiCreationTime.label"
-msgstr "Assignation automatique de DOIs"
-
-msgid "doi.manager.settings.doiCreationTime.description"
-msgstr "À quel moment un DOI devrait-il être assigné à une soumission?"
-
-msgid "doi.manager.settings.doiCreationTime.publication"
-msgstr "À la publication"
-
-msgid "doi.manager.settings.doiCreationTime.never"
-msgstr "Jamais"
-
-msgid "manager.setup.doiPrefix"
-msgstr "Préfixe DOI"
-
-msgid "doi.manager.settings.doiObjects"
-msgstr "Contenu de la revue"
-
-msgid "doi.manager.settings.doiPrefix.required"
-msgstr "Un préfixe DOI est requis"
-
-msgid "doi.manager.settings.doiSuffix"
-msgstr "Suffixe DOI"
-
-msgid "doi.manager.settings.doiSuffix.pattern"
-msgstr "Suffixe DOI"
-
-msgid "doi.manager.settings.doiSuffix.custom"
-msgstr "Format personnalisé de suffixe DOI"
-
-msgid "doi.manager.settings.enabledDoiTypes.error"
-msgstr ""
-"Un ou plusieurs types de DOI sélectionnés ne sont pas autorisés pour "
-"l'agence d'enregistrement choisie."
-
-msgid "doi.manager.settings.doiSuffix.description"
-msgstr ""
-"Un suffixe DOI s'inscrit de différentes façons mais doit être unique par "
-"rapport aux autres « objets » publiés qui ont le même préfixe DOI :"
-
-msgid "doi.manager.settings.doiSuffixDefault"
-msgstr ""
-"Modèle par défaut - génère automatiquement un suffixe unique à huit "
-"caractères"
-
-msgid "doi.manager.settings.doiSuffixManual"
-msgstr ""
-"Aucun, les suffixes ne seront pas générés automatiquement et il faudra les "
-"saisir manuellement dans la <a href=\"{$doiManagementUrl}\">page "
-"d'administration des DOIs</a>"
-
-msgid "doi.manager.settings.doiSuffixUserDefined"
-msgstr "Format personnalisé (non recommandé)"
-
-msgid "doi.manager.settings.registrationAgency"
-msgstr "Agence d'enregistrement"
-
-msgid "doi.manager.settings.registrationAgency.description"
-msgstr ""
-"Sélectionner l'agence d'enregistrement auprès de laquelle vous désirez "
-"déposer les DOIs."
-
-msgid "doi.manager.settings.registrationAgency.noPluginsEnabled.label"
-msgstr "Aucune agence d'enregistrement n'a été sélectionnée"
-
-msgid "doi.manager.settings.registrationAgency.noPluginsEnabled.description"
-msgstr ""
-"Les DOIs peuvent être automatiquement forgés et déposés auprès d'une agence "
-"d'enregistrement. Pour utiliser cette fonctionnalité, repérer et installer "
-"le plugiciel pour l'agence d'enregistrement souhaitée."
-
-msgid "doi.manager.settings.registrationAgency.none"
-msgstr "Aucune"
-
-msgid "doi.manager.settings.doiVersioning"
-msgstr "Versionnage des DOIs"
-
-msgid "doi.authorization.enabledRequired"
-msgstr "Il faut activers les DOIs pour effectuer cette opération."
-
-msgid "doi.manager.versions.countStatement"
-msgstr "Il existe {$count} versions."
-
-msgid "doi.manager.versions.view"
-msgstr "Tout voir"
-
-msgid "doi.manager.versions.modalTitle"
-msgstr "DOIs de toutes les versions"
-
-msgid "doi.editor.doiSuffixInvalidCharacters"
-msgstr "Le DOI contient des caractères invalides."
-
-msgid "manager.setup.publishing"
-msgstr "Renseignements au sujet de la publication"
-
-msgid "manager.setup.publishingDescription"
-msgstr ""
-"Le nom de l'organisation qui publie la revue pourrait être inclus dans les "
-"métadonnées fournies aux agents d'achivage externes."
 
 msgid "manager.setup.additionalContent"
 msgstr "Contenu additionnel"
@@ -1096,47 +830,6 @@ msgstr "Avis de soumission d'un-e auteur-e"
 msgid "manager.setup.notifications.copySpecifiedAddress"
 msgstr "Envoyer une copie à cette adresse courriel"
 
-msgid "manager.setup.notifyAllAuthors"
-msgstr "Aviser les auteurs-es"
-
-msgid "manager.setup.notifyAllAuthors.description"
-msgstr ""
-"Qui devrait recevoir une notification lorsqu'une décision éditoriale a été "
-"prise?"
-
-msgid "manager.setup.notifyAllAuthors.allAuthors"
-msgstr "Envoyer un courriel à tous-tes les auteurs-es."
-
-msgid "manager.setup.notifyAllAuthors.assignedAuthors"
-msgstr ""
-"Envoyer un courriel uniquement aux auteurs-res qui participent au flux "
-"éditorial. Il s'agit habituellement de l'auteur-e qui a fait la soumission."
-
-msgid "manager.setup.submissionsNotifications"
-msgstr "Avis"
-
-msgid "manager.setup.notifications.copySubmissionAckPrimaryContact"
-msgstr "Aviser la personne-ressource principale"
-
-msgid "manager.setup.notifications.copySubmissionAckPrimaryContact.enabled"
-msgstr "Oui, envoyer une copie à {$email}"
-
-msgid "manager.setup.notifications.copySubmissionAckPrimaryContact.disabled"
-msgstr "Non"
-
-#, fuzzy
-msgid "manager.setup.notifications.copySubmissionAckAddress"
-msgstr "Avertir tout le monde"
-
-msgid "manager.setup.notifications.copySubmissionAckAddress.description"
-msgstr ""
-"Une copie de l'accusé de réception sera envoyée à toute adresse de courriel "
-"saisie ici. Les adresses doivent être séparées par une virgule. Exemple : "
-"un@exemple.com,deux@exemple.com"
-
-msgid "manager.setup.notifications.copySubmissionAckAddress.invalid"
-msgstr "Un ou plusieurs de ces adresses de courriel sont invalides."
-
 msgid "manager.setup.notifications.description"
 msgstr ""
 "Les auteurs-es reçoivent automatiquement un courriel leur confirmant la "
@@ -1144,12 +837,12 @@ msgstr ""
 "copies de ce courriel également à :"
 
 msgid "manager.setup.notifyUsers"
-msgstr "Avis"
+msgstr "Aviser"
 
 msgid "manager.setup.notifyUsers.description"
 msgstr ""
-"Sélectionner les utilisateurs-trices qui doivent recevoir vos avis par "
-"courriel."
+"Sélectionner les utilisateurs-trices qui doivent recevoir votre notification "
+"par courriel."
 
 msgid "manager.setup.notifyUsers.copyDetails"
 msgstr "M'envoyer une copie de ce courriel à {$email}."
@@ -1326,9 +1019,6 @@ msgstr ""
 msgid "manager.setup.theme"
 msgstr "Thème"
 
-msgid "manager.setup.institutions"
-msgstr "Institutions"
-
 msgid "manager.setup.theme.description"
 msgstr ""
 "Un nouveau thème peut être installé à partir de l'onglet « Plugiciels » au "
@@ -1336,54 +1026,6 @@ msgstr ""
 
 msgid "manager.setup.theme.notFound"
 msgstr "Le thème que vous avez sélectionné n'est pas installé ou activé."
-
-msgid "manager.setup.workflow.beginSubmissionHelp.description"
-msgstr ""
-"Le texte suivant est présenté avant de débuter une soumission. Il explique "
-"brièvement le processus de soumission afin que les auteur-es sachent à quoi "
-"s'attendre."
-
-msgid "manager.setup.workflow.uploadFilesHelp.description"
-msgstr ""
-"Le texte suivant est présenté à l'étape du téléversement des fichiers. Il "
-"détaille brièvement les fichiers que les auteur-es doivent fournir avec leur "
-"soumission."
-
-msgid "manager.setup.workflow.contributorsHelp.description"
-msgstr ""
-"Le texte suivant est présenté à l'étape des contributeurs-trices. Il "
-"explique brièvement les informations qui doivent être fournis au sujet des "
-"auteur-es, co-auteur-es et autres contributeurs-trices."
-
-msgid "manager.setup.workflow.detailsHelp.description"
-msgstr ""
-"Le texte suivant est présenté à l'étape des détails, lorsque l'auteur-e doit "
-"fournir le titre, le résumé et les mots-clés de la soumission."
-
-msgid "manager.setup.workflow.forTheEditorsHelp.description"
-msgstr ""
-"Ce qui suit est montré aux auteurs-trices pendant l'étape \"Pour les "
-"rédacteur\", lorsqu'il leur est demandé de fournir des métadonnées, les "
-"commentaires aux rédacteurs ou tout autre détail pouvant aider dans "
-"l'évaluation éditoriale."
-
-msgid "manager.setup.workflow.reviewHelp.description"
-msgstr ""
-"Le texte suivant est présenté à la dernière étape de la soumission, lorsque "
-"l'auteur-e doit réviser toutes informations fournies."
-
-msgid "manager.setup.workflow.guidance"
-msgstr "Directives aux auteur-es"
-
-msgid "manager.setup.submissionPreparationChecklist"
-msgstr "Liste de vérification de la soumission"
-
-msgid "manager.setup.submissionPreparationChecklistDescription"
-msgstr ""
-"Lors d'une soumission à la revue, on demande d'abord aux auteurs-es de "
-"s'assurer que toutes les conditions requises pour soumettre un article sont "
-"remplies. Tous les éléments de la liste devront être approuvés par les "
-"auteurs-es afin de poursuivre la procédure de soumission."
 
 msgid "manager.sections.form.deactivateSection"
 msgstr ""
@@ -1394,24 +1036,6 @@ msgstr "Êtes-vous certain-e de vouloir désactiver cette rubrique ?"
 
 msgid "manager.sections.confirmActivateSection"
 msgstr "Êtes-vous certain-e de vouloir activer cette rubrique ?"
-
-msgid "manager.sections.form.assignEditors"
-msgstr "Assignations éditoriales"
-
-msgid "manager.sections.form.assignEditors.description"
-msgstr ""
-"Choisir les utilisateurs-trices avec des rôles éditoriaux qui doivent être "
-"assigné-es automatiquement à toutes les nouvelles soumissions pour cette "
-"section."
-
-msgid "manager.sections.form.assignEditorAs"
-msgstr "Assigner {$name} comme {$role}"
-
-msgid "manager.categories.form.assignEditors.description"
-msgstr ""
-"Choisir les utilisateurs-trices avec des rôles éditoriaux qui doivent être "
-"assigné-es automatiquement à toutes les nouvelles soumissions pour cette "
-"catégorie."
 
 msgid "manager.siteAccessOptions.siteAccessOptions"
 msgstr "Options d'accès au site"
@@ -1683,6 +1307,11 @@ msgstr ""
 msgid "manager.plugins.settings"
 msgstr "Paramètres"
 
+msgid "manager.plugins.tarCommandNotFound"
+msgstr ""
+"La commande tar n'est pas disponible. Veuillez la configurer correctement "
+"dans votre fichier « config.inc.php »."
+
 msgid "manager.plugins.upgrade"
 msgstr "Mettre le plugiciel à jour"
 
@@ -1734,11 +1363,6 @@ msgstr ""
 msgid "notification.localeSettingsSaved"
 msgstr "Les paramètres du paramètre régional ont été sauvegardés."
 
-msgid "notification.localeSettingsCannotBeSaved"
-msgstr ""
-"Le paramètre de langue n'a pas pu être sauvegardé. Au moins une langue doit "
-"être activée pour chaque option"
-
 msgid "notification.editedUser"
 msgstr "Utilisateur-trice modifié-e."
 
@@ -1746,7 +1370,7 @@ msgid "manager.distribution.license"
 msgstr "Licence"
 
 msgid "manager.distribution.license.other"
-msgstr "URL d'une autre licence"
+msgstr "Autre URL de la licence"
 
 msgid "manager.distribution.licenseTerms"
 msgstr "Termes de la licence"
@@ -1919,30 +1543,13 @@ msgstr "Métadonnées du fichier"
 
 msgid "manager.setup.genres.metatadata.description"
 msgstr ""
-"Sélectionner le type de métadonnées que ces fichiers peuvent présenter. Le "
+"Sélectionner le type de métadonnées que ces fichiers peuvent présenter. Le  "
 "type « Document » doit être sélectionné pour les fichiers de publication "
 "principaux, tels que le PDF téléchargeable, afin que ces fichiers héritent "
 "leurs métadonnées depuis la publication. Sinon, choisir « Contenu "
 "supplémentaire » pour la plupart des types de fichiers. Le type « "
 "illustration » convient aux fichiers qui nécessitent des métadonnées "
 "distinctes d'attribution de crédits, de légende et de licence."
-
-#, fuzzy
-msgid "manager.setup.genres.submitRequired.label"
-msgstr "Obligatoire avec les soumissions"
-
-msgid "manager.setup.genres.submitRequired.description"
-msgstr ""
-"Toute nouvelle soumission devrait-elle comporter un de ces fichiers? Si vous "
-"sélectionnez oui, les auteur-es n'auront pas l'autorisation de faire une "
-"soumission à moins d'avoir téléversé au moins un fichier de ce type."
-
-msgid "manager.setup.genres.submitRequired.yes"
-msgstr ""
-"Oui, exiger qu'au moins un de ces fichiers soit téléversé par les auteur-es."
-
-msgid "manager.setup.genres.submitRequired.no"
-msgstr "Non, autoriser les nouvelles soumissions sans ces fichiers."
 
 msgid "manager.settings.wizard"
 msgstr "Assistant de paramétrage"
@@ -2168,6 +1775,29 @@ msgid "manager.setup.metadata.keywords.require"
 msgstr ""
 "Obliger l'auteur-e à suggérer des mots-clés avant d'accepter sa soumission."
 
+msgid "manager.setup.metadata.languages.description"
+msgstr ""
+"La langue indique la langue principale de l'œuvre à l'aide d'un code de "
+"langue (« en ») avec, facultativement, un code de pays (« en_US »)."
+
+msgid "manager.setup.metadata.languages.enable"
+msgstr "Activer la métadonnée « Langue »"
+
+msgid "manager.setup.metadata.languages.noRequest"
+msgstr ""
+"Ne pas demander la,les langue-s du document à l'auteur-e pendant la "
+"soumission."
+
+msgid "manager.setup.metadata.languages.request"
+msgstr ""
+"Demander à l'auteur-e d'indiquer la,les langues du document soumis au moment "
+"de la soumission."
+
+msgid "manager.setup.metadata.languages.require"
+msgstr ""
+"Obliger l'auteur-e à entrer la,les langue-s du document soumis avant "
+"d'accepter sa soumission."
+
 msgid "manager.setup.metadata.rights.description"
 msgstr ""
 "Tous les droits détenus sur la soumission, lesquels peuvent inclure les "
@@ -2309,29 +1939,6 @@ msgid "manager.setup.metadata.citations.require"
 msgstr ""
 "Obliger l'auteur-e à fournir des références avant d'accepter sa soumission."
 
-msgid "manager.setup.metadata.dataAvailability.description"
-msgstr ""
-"Courte déclaration précisant si les auteur-es ont rendu leurs données de "
-"recherche disponibles et, le cas échéant, à quel endroit on peut y accéder."
-
-msgid "manager.setup.metadata.dataAvailability.enable"
-msgstr "Activer la métadonnées « Déclaration de disponibilité des données »"
-
-msgid "manager.setup.metadata.dataAvailability.noRequest"
-msgstr ""
-"Ne pas demander à l'auteur-e une déclaration de disponibilité de données "
-"lors de la soumission."
-
-msgid "manager.setup.metadata.dataAvailability.request"
-msgstr ""
-"Demander à l'auteur-e une déclaration de disponibilité de données lors de la "
-"soumission."
-
-msgid "manager.setup.metadata.dataAvailability.require"
-msgstr ""
-"Exiger de l'auteur-e une déclaration de disponibilité de données avant "
-"d'accepter la soumission."
-
 msgid "plugins.importexport.common.validationErrors"
 msgstr "Erreurs de validation :"
 
@@ -2340,9 +1947,6 @@ msgstr "Avertissements rencontrés :"
 
 msgid "plugins.importexport.common.errorsOccured"
 msgstr "Erreurs :"
-
-msgid "plugins.importexport.common.id"
-msgstr "Id : {$id}"
 
 msgid "plugins.importexport.common.error.unknownElement"
 msgstr "Élément inconnu {$param}"
@@ -2357,13 +1961,7 @@ msgid "plugins.importexport.common.error.encodingError"
 msgstr "Le contenu n'est pas codé comme {$param}"
 
 msgid "plugins.importexport.common.error.unknownUserGroup"
-msgstr ""
-"Le fichier d'importation inclut un-e auteur-e '{$authorName}' dans le groupe "
-"d'utilisateurs-trices '{$userGroupName}', mais il n'existe aucun groupe avec "
-"ce nom dans l'instance cible."
-
-msgid "plugins.importexport.common.error.userGroupMissing"
-msgstr "Groupe d'utilisateurs-trices manquant pour le nom d'usager {$param}"
+msgstr "Groupe d'utilisateurs-trices inconnu {$param}"
 
 msgid "plugins.importexport.common.error.missingGivenName"
 msgstr ""
@@ -2420,9 +2018,6 @@ msgstr ""
 "L'utilisateur-trice « {$username} » et l'adresse courriel « {$email} » ne "
 "correspondent pas à ceux de l'utilisateur-trice existant-e."
 
-msgid "plugins.importexport.common.settings.form.testMode.label"
-msgstr "Test"
-
 msgid "manager.navigationMenus.form.title"
 msgstr "Titre"
 
@@ -2445,8 +2040,8 @@ msgstr "Contenu"
 
 msgid "manager.navigationMenus.form.pathRegEx"
 msgstr ""
-"Le champ « Chemin d'accès » ne peut contenir que des caractères "
-"alphanumériques, plus « . », « / », « - », et « _ »."
+"Le champ  « Chemin d'accès » ne peut contenir que des caractères "
+"alphanumériques, plus « . », « / », « - », et  « _ »."
 
 msgid "manager.navigationMenus.form.duplicatePath"
 msgstr ""
@@ -2490,8 +2085,8 @@ msgid "manager.navigationMenus.form.submenuWarning"
 msgstr ""
 "Lorsqu'un élément du menu ouvre un sous-menu, son lien ne peut pas être "
 "suivi sur tous les périphériques. Par exemple, si vous avez un élément « À "
-"propos » qui ouvre un sous-menu avec « Personne-ressource » et « Équipe "
-"éditoriale », le lien « À propos » peut ne pas être accessible sur tous les "
+"propos » qui ouvre un sous-menu avec  « Personne-ressource » et « Équipe "
+"éditoriale », le lien  « À propos » peut ne pas être accessible sur tous les "
 "appareils. Dans le menu par défaut, cela est géré en créant un deuxième "
 "élément de menu, « À propos de cette revue », qui apparaît dans le sous-menu."
 
@@ -2528,6 +2123,16 @@ msgid "manager.navigationMenus.about.conditionalWarning"
 msgstr ""
 "Ce lien ne sera affiché que si vous avez rempli la section « À propos », "
 "située sous Paramètres > Revue."
+
+msgid "manager.navigationMenus.editorialTeam.description"
+msgstr ""
+"Lien vers une page affichant le contenu du « Bloc-générique » dans "
+"Paramètres > Revue."
+
+msgid "manager.navigationMenus.editorialTeam.conditionalWarning"
+msgstr ""
+"Ce lien sera seulement affiché si vous avez rempli la section « Bloc-"
+"générique » dans Paramètres > Revue."
 
 msgid "manager.navigationMenus.submissions.description"
 msgstr "Lien vers la page affichant les instructions de soumission."
@@ -2656,21 +2261,6 @@ msgstr "Renseignements sur la catégorie"
 msgid "stats.allUsers"
 msgstr "Tous,toutes les utilisateurs-trices"
 
-msgid "stats.city"
-msgstr "Ville"
-
-msgid "stats.views"
-msgstr "Consultations"
-
-msgid "stats.downloads"
-msgstr "Téléchargements"
-
-msgid "stats.views.timelineInterval"
-msgstr "Total des consultations par date"
-
-msgid "stats.downloads.timelineInterval"
-msgstr "Total des téléchargements par date"
-
 msgid "stats.countWithYearlyAverage"
 msgstr "{$count} ({$average}/année)"
 
@@ -2748,7 +2338,7 @@ msgstr ""
 "Le pourcentage pour la période sélectionnée entre deux dates est calculé "
 "pour les soumissions qui ont été soumises pendant cet intervalle de dates et "
 "qui ont reçu une décision finale. <br> <br> Par exemple, considérons le cas "
-"où dix soumissions ont été faites pendant cet intervalle de dates : Quatre "
+"où dix soumissions ont été faites pendant cet intervalle de dates :  Quatre "
 "ont été acceptées, quatre ont été rejetées et deux attendent toujours une "
 "décision finale. <br> <br> Le taux d'acceptation sera de 50% (4 des 8 "
 "soumissions) car les deux soumissions qui n'ont pas abouti à une décision "
@@ -2765,21 +2355,12 @@ msgstr ""
 
 msgid "stats.description.submissionsSkipped"
 msgstr ""
-"Cela inclut les soumissions qui ne sont pas comptabilisées dans d'autres "
-"totaux, comme celles qui sont toujours en cours et celles qui semblent avoir "
-"été importées."
 
 msgid "stats.descriptionForStat"
 msgstr "Description de {$stat}"
 
 msgid "stats.editorialActivity"
 msgstr "Activité éditoriale"
-
-msgid "stats.file.type.primaryFile"
-msgstr "Fichier principal"
-
-msgid "stats.file.type.suppFile"
-msgstr "Fichier supplémentaire"
 
 msgid "stats.fileViews"
 msgstr "Consultations de fichiers"
@@ -2793,70 +2374,20 @@ msgstr "Par mois"
 msgid "stats.pdf"
 msgstr "PDF"
 
-msgid "stats.geographic.ccAttribution"
-msgstr "Géolocalisation assurée par <a href='https://db-ip.com'>DB-IP</a>"
-
-msgid "stats.geographic.tooltip.label"
-msgstr "À propos de la géolocalisation"
-
-msgid "stats.downloadReport.betweenDates"
-msgstr "Du {$startDate} au {$endDate}"
-
-msgid "stats.downloadReport.allFilters"
-msgstr "Tout {$filter}"
-
-msgid "stats.publications.downloadReport.downloadFiles"
-msgstr "Télécharger les fichiers"
-
-msgid "stats.publications.downloadReport.downloadFiles.description"
-msgstr "Nombre de téléchargements pour chaque fichier."
-
-msgid "stats.publications.downloadReport.downloadGeographic"
-msgstr "Télécharger les données géographiques"
-
-msgid "stats.publications.downloadReport.downloadGeographic.description"
-msgstr ""
-"Nombre de consultations et de téléchargements pour chaque ville, région et "
-"pays."
-
-msgid "stats.region"
-msgstr "Région"
-
 msgid "stats.searchSubmissionDescription"
 msgstr "Chercher par titre, auteur-e et identifiant (ID)"
 
 msgid "stats.submissionsActive"
 msgstr "Soumissions actives"
 
-msgid "stats.timeline"
-msgstr "Chronologie"
-
-msgid "stats.timeline.downloadReport.description"
-msgstr "Le nombre de {$type} pour chaque {$interval}."
-
-msgid "stats.timeline.downloadReport.downloadTimeline"
-msgstr "Télécharger la chronologie"
-
-msgid "stats.timelineInterval"
-msgstr "Intervalle de temps"
-
-msgid "stats.timelineType"
-msgstr "Type de chronologie"
-
 msgid "stats.total"
 msgstr "Total"
-
-msgid "stats.unique"
-msgstr "Unique"
 
 msgid "stats.totalWithinDateRange"
 msgstr "Total pour la période"
 
 msgid "stats.trends"
 msgstr "Tendances"
-
-msgid "stats.unknown"
-msgstr "inconnu-e"
 
 msgid "stats.userStatistics"
 msgstr "Statistiques utilisateur"
@@ -2865,13 +2396,13 @@ msgid "stats.name.submissionsReceived"
 msgstr "Soumissions reçues"
 
 msgid "stats.name.submissionsSkipped"
-msgstr "Autres soumissions"
+msgstr ""
 
 msgid "stats.name.submissionsInProgress"
-msgstr "Soumissions en cours"
+msgstr ""
 
 msgid "stats.name.submissionsImported"
-msgstr "Soumissions importées"
+msgstr ""
 
 msgid "stats.name.submissionsAccepted"
 msgstr "Soumissions acceptées"
@@ -2909,919 +2440,10 @@ msgstr "Taux de refus en préévaluation"
 msgid "stats.name.declinedReviewRate"
 msgstr "Taux de refus suite à l'évaluation"
 
-msgid "plugins.importexport.native.processFailed"
-msgstr ""
-"Le processus a échoué. Veuillez consulter les erreurs ou avertissements ci-"
-"dessous."
-
-#, fuzzy
-msgid "plugins.importexport.native.export.submissions.results"
-msgstr "Exporter les résultats des soumissions"
-
-msgid "plugins.importexport.native.export.download.results"
-msgstr "Télécharger le fichier exporté"
-
-msgid "plugins.importexport.native.export.completed"
-msgstr "Exportation complétée avec succès."
-
-msgid "plugins.importexport.native.export.completed.downloadFile"
-msgstr "Télécharger le fichier exporté avec le bouton ci-dessous."
-
-msgid "plugins.importexport.native.common.any"
-msgstr "Éléments génériques"
-
-msgid "plugins.importexport.native.common.error.filter.configuration.count"
-msgstr ""
-"Mauvaise configuration du filtre [{$filterName}] : {$filterCount} "
-"occurrences. Il ne devrait y en avoir qu'une seule."
-
-msgid "plugins.importexport.common.cliError"
-msgstr "ERREUR :"
-
-msgid "plugins.importexport.common.error.unknownContext"
-msgstr "Le chemin « {$contextPath} » de la revue n'existe pas."
-
-msgid "plugins.importexport.submission.cli.display"
-msgstr "\"{$submissionId}\" - \"{$submissionTitle}\""
-
-msgid "plugins.importexport.author.exportFailed"
-msgstr "Le processus n'a pas réussi à analyser les auteur.e.s"
-
-msgid "plugins.importexport.publication.exportFailed"
-msgstr "Le processus n'a pas réussi à analyser les publications"
-
-msgid "emailTemplate.variable.allReviewersComments"
-msgstr ""
-"Tous les commentaires issus d'évaluations complétées. Les noms des "
-"évaluateur.trice.s sont cachés pour préserver l'anonymat des évaluations"
-
-msgid "emailTemplate.variable.authorsWithAffiliation"
-msgstr "Les noms et affiliations des auteur-es de la soumission."
-
-msgid "emailTemplate.variable.context.passwordLostUrl"
-msgstr "L'URL de la page pour récupérer un mot de passe perdu"
-
-msgid "emailTemplate.variable.context.submissionsUrl"
-msgstr "L'URL pour afficher toutes les soumissions assignées"
-
-msgid "emailTemplate.variable.context.userProfileUrl"
-msgstr "L'URL pour modifier le profil de l'utilisateur-trice"
-
-msgid "emailTemplate.variable.decision.name"
-msgstr "Le nom de la décision qui a été prise"
-
-msgid "emailTemplate.variable.decision.description"
-msgstr "La description de la décision qui a été prise"
-
-msgid "emailTemplate.variable.decision.stage"
-msgstr "L'étape du flux des travaux où cette décision a été prise"
-
-msgid "emailTemplate.variable.decision.round"
-msgstr ""
-"Le cycle d'évaluation où cette décision a été prise, si la décision a été "
-"prise lors d'un cycle d'évaluation"
-
-msgid "emailTemplate.variable.discussion.subject"
-msgstr "Le sujet de la discussion"
-
-msgid "emailTemplate.variable.discussion.content"
-msgstr "Le contenu de la nouvelle discussion ou de la réponse"
-
-msgid "emailTemplate.variable.editorialReminder.outstandingTasks"
-msgstr "Une liste des soumissions comportant des tâches en attente"
-
-msgid "emailTemplate.variable.editorialReminder.numberOfSubmissions"
-msgstr "Le nombre de soumissions assignées à cet-te éditeur-trice"
-
-msgid "emailTemplate.variable.recipient.userFullName"
-msgstr "Le nom complet du/de la destinataire ou de tous les destinataires"
-
-msgid "emailTemplate.variable.recipient.username"
-msgstr "Le nom d'utilisateur du/de la destinataire ou de tous les destinataires"
-
-msgid "emailTemplate.variable.recipient.reviewDueDate"
-msgstr "Date à laquelle l'évaluation devrait être complétée"
-
-msgid "emailTemplate.variable.recipient.responseDueDate"
-msgstr ""
-"Date à laquelle l'assignation devrait être acceptée ou déclinée par l"
-"'évaluateur-trice"
-
-msgid "emailTemplate.variable.recipient.reviewAssignmentUrl"
-msgstr "L'URL de l'assignation d'évaluation"
-
-msgid "emailTemplate.variable.recommendation"
-msgstr "La décision recommandée, par exemple \"Accepter la soumission\""
-
-msgid "emailTemplate.variable.review.assignedDate"
-msgstr "La date à laquelle cette évaluation a été assignée"
-
-msgid "emailTemplate.variable.review.method"
-msgstr "Le type d'évaluation, par exemple anonyme, doublement anonyme ou ouvert"
-
-msgid "emailTemplate.variable.review.recommendation"
-msgstr ""
-"La recommandation de l'évaluateur.trice, telle que Accepter la soumission ou "
-"Refuser"
-
-msgid "emailTemplate.variable.review.round"
-msgstr "Le cycle d'évaluation, tel le Cycle 1 ou Cycle 2"
-
-msgid "emailTemplate.variable.review.files"
-msgstr "Les fichiers téléversés par l'évaluateur-trice"
-
-msgid "emailTemplate.variable.review.name"
-msgstr "Le nom de l'évaluateur-trice"
-
-msgid "emailTemplate.variable.reviewType"
-msgstr ""
-
-msgid "emailTemplate.variable.reviewType.doubleAnonymous"
-msgstr ""
-"Cette revue effectue une évaluation par les pairs à double anonymat. Les "
-"évaluateur.trice.s ne verront aucune information d'identification vous "
-"concernant, ni concernant vos co-auteur.e.s. De même, vous ne saurez pas qui "
-"a évalué votre soumission et vous n'aurez pas de contact direct avec les "
-"évaluateur.trice.s."
-
-#, fuzzy
-msgid "emailTemplate.variable.reviewType.anonymous"
-msgstr ""
-"Cette revue utilise une évaluation \"évaluateur anonyme\". Votre nom et ceux "
-"de vos coauteurs-trices seront visibles aux évaluateurs-trices. Cependant, "
-"l'identité des évaluateurs-trices restera anonyme."
-
-#, fuzzy
-msgid "emailTemplate.variable.reviewType.open"
-msgstr ""
-"Cette revue pratique l'évaluation ouverte. Les évaluateurs-trices verront "
-"votre nom et affiliation aussi que ceux de vos coauteurs-trices. Vous serez "
-"en mesure de voir les noms et affiliations des évaluateurs."
-
-msgid "emailTemplate.variable.sender.senderName"
-msgstr "Le nom complet de l'expéditeur-trice"
-
-msgid "emailTemplate.variable.sender.senderEmail"
-msgstr "L'adresse courriel de l'expéditeur-trice"
-
-msgid "emailTemplate.variable.sender.signature"
-msgstr "La signature courriel de l'expéditeur-trice"
-
-msgid "emailTemplate.variable.site.siteContactName"
-msgstr "Le nom complet de la personne-ressource principale du site"
-
-msgid "emailTemplate.variable.site.siteContactEmail"
-msgstr "L'adresse courriel de la personne-ressource principale du site"
-
-msgid "emailTemplate.variable.site.siteSignature"
-msgstr "La signature courriel de la personne-ressource principale du site"
-
-msgid "emailTemplate.variable.stageAssignment.editors"
-msgstr ""
-"Les rédacteur.trice.s affecté.e.s à cette soumission qui peuvent prendre une "
-"décision"
-
-msgid "emailTemplate.variable.submission.submissionTitle"
-msgstr "Le titre de la soumission"
-
-msgid "emailTemplate.variable.submission.submissionId"
-msgstr "Le numéro d'identifiant unique de la soumission"
-
-msgid "emailTemplate.variable.submission.submissionAbstract"
-msgstr "Le résumé de la soumission"
-
-msgid "emailTemplate.variable.submission.authorsShort"
-msgstr ""
-"Les noms des auteur-trices au format court, par exemple \"Bernes, et al.\""
-
-msgid "emailTemplate.variable.submission.authors"
-msgstr "Les noms complets des auteur-es"
-
-msgid "emailTemplate.variable.submission.authorSubmissionUrl"
-msgstr "L'URL de la soumission pour les auteur-es"
-
-msgid "emailTemplate.variable.submission.submissionUrl"
-msgstr "L'URL de la soumission dans l'interface administrative"
-
-msgid "emailTemplate.variable.submission.submissionPublishedUrl"
-msgstr "L'URL de la soumission publiée"
-
-msgid "emailTemplate.variable.submission.submissionWizardUrl"
-msgstr "L'URL de la soumission dans l'assistant de soumission"
-
-msgid "emailTemplate.variable.submission.submittingAuthorName"
-msgstr ""
-"Les noms des auteur-es qui participent au flux éditorial. Il s'agit "
-"habituellement de l'auteur-e qui a fait la soumission"
-
-msgid "emailTemplate.variable.passwordResetUrl"
-msgstr ""
-"URL haché envoyé à l'utilisateur-trice pour confirmer la réinitialisation du "
-"mot de passe"
-
-msgid "emailTemplate.variable.password"
-msgstr "Nouveau mot de passe aléatoire"
-
-msgid "mailable.reviewerReinstate.name"
-msgstr "Évaluateur.trice réintégré.e"
-
-msgid "mailable.reviewerResendRequest.name"
-msgstr "Envoyer de nouveau la demande d'évaluation à l'évaluateur-trice"
-
-msgid "emailTemplate.variable.submitterName"
-msgstr ""
-"Le nom complet de l'utilisateur-trice qui a téléversé un fichier de "
-"soumission"
-
-msgid "emailTemplate.variable.announcementTitle"
-msgstr "Le titre de l'annonce"
-
-msgid "emailTemplate.variable.announcementSummary"
-msgstr "Courte description de l'annonce"
-
-msgid "emailTemplate.variable.announcementUrl"
-msgstr "L'URL de l'annonce"
-
-msgid "emailTemplate.variable.statisticsReportNotify.newSubmissions"
-msgstr "Le nombre de soumissions reçues ce mois-ci"
-
-msgid "emailTemplate.variable.statisticsReportNotify.declinedSubmissions"
-msgstr "Le nombre de soumissions refusées"
-
-msgid "emailTemplate.variable.statisticsReportNotify.acceptedSubmissions"
-msgstr "Le nombre de soumissions acceptées"
-
-msgid "emailTemplate.variable.statisticsReportNotify.otherSubmissions"
-msgstr "Le nombre de soumission non incluses dans les autres totaux"
-
-msgid "emailTemplate.variable.statisticsReportNotify.totalSubmissions"
-msgstr "Le nombre total de soumissions reçues"
-
-msgid "emailTemplate.variable.statisticsReportNotify.month"
-msgstr "Le mois du rapport"
-
-msgid "emailTemplate.variable.statisticsReportNotify.year"
-msgstr "L'année du rapport"
-
-msgid "emailTemplate.variable.issue.issueIdentification"
-msgstr ""
-"Identification du numéro, incluant le volume, le numéro, l'année et le titre"
-
-msgid "emailTemplate.variable.issue.issuePublishedUrl"
-msgstr "L'URL du numéro publié"
-
-msgid "mailTemplate.variable.statisticsReportNotify.year"
-msgstr "L'année du rapport"
-
-msgid "emailTemplate.variable.statisticsReportNotify.editorialStatsLink"
-msgstr "Le lien vers la page de l'activité éditoriale"
-
-msgid "mailable.reviewerReinstate.description"
-msgstr ""
-"Ce courriel est envoyé lorsqu'un.e évaluateur.trice qui n'était pas "
-"assigné.e est réintégré.e par un rédacteur.trice."
-
-msgid "mailable.reviewerResendRequest.description"
-msgstr ""
-"Ce courriel est envoyé par un-e éditeur-trice à un-e évaluateur-trice qui a "
-"refusé une demande d'évaluation, lorsque l'éditeur-trice souhaite envoyer de "
-"nouveau la demande."
-
-msgid "mailable.reviewerUnassign.name"
-msgstr "Évaluateur.trice non assigné.e"
-
-msgid "mailable.reviewerUnassign.description"
-msgstr ""
-"Ce courriel est envoyé lorsqu'un.e rédacteur.trice retire l'assignation "
-"d'un.e évaluateur.trice."
-
-msgid "mailable.validateEmailSite.name"
-msgstr "Valider le courriel (site)"
-
-msgid "mailable.validateEmailSite.description"
-msgstr ""
-"Ce courriel est automatiquement envoyé à un-e utilisateur-trice qui veut "
-"s'inscrire sur le site, lorsque les paramètres exigent une validation de "
-"l'adresse courriel."
-
-msgid "mailable.decision.notifyOtherAuthors.name"
-msgstr "Envoyer une notification aux autres auteur-es"
-
-msgid "mailable.decision.notifyOtherAuthors.description"
-msgstr ""
-"Ce courriel est envoyé aux auteur-es d'une soumission qui ne participent pas "
-"au flux des travaux afin de les notifier qu'une décision a été prise. Il "
-"s'agit habituellement de tous-tes les auteurs-res, à l'exception de l'auteur-"
-"e qui a fait la soumission."
-
-msgid "mailable.decision.notifyOtherAuthors.variable.message.description"
-msgstr ""
-"Une copie du courriel qui a été envoyé à l'auteur-e qui a fait la soumission"
-
-msgid "mailable.decision.notifyReviewer.name"
-msgstr "Notifier les évaluateurs-trices de la décision"
-
-msgid "mailable.decision.notifyReviewer.description"
-msgstr ""
-"Ce courriel est envoyé par un-e éditeur-trice à un-e évaluateur-trice afin "
-"d'annoncer qu'une décision a été prise au sujet d'une soumission qu'il ou "
-"elle a révisé."
-
-msgid "mailable.decision.notifyReviewer.variable.decisionDescription"
-msgstr ""
-"Une courte description de cette décision destinée à être partagée dans un "
-"courriel de notification envoyé aux évaluateurs-trices"
-
-msgid "mailable.decision.notifyReviewer.variable.decisionDescription.accept"
-msgstr "Nous avons décidé d'accepter cette soumission sans évaluations."
-
-msgid "mailable.decision.notifyReviewer.variable.decisionDescription.decline"
-msgstr "Nous avons décidé de refuser cette soumission."
-
-msgid ""
-"mailable.decision.notifyReviewer.variable.decisionDescription."
-"pendingRevisions"
-msgstr "Nous avons invité les auteurs-trices à soumettre des révisions."
-
-msgid "mailable.decision.notifyReviewer.variable.decisionDescription.resubmit"
-msgstr ""
-"Nous avons invité les auteurs-trices à soumettre une version révisée pour "
-"une plus ample évaluation."
-
-msgid ""
-"mailable.decision.notifyReviewer.variable.decisionDescription.unassigned"
-msgstr "L'évaluateur-trice invité-e à la soumission a été retiré-e."
-
-msgid "mailable.decision.accept.notifyAuthor.name"
-msgstr "Soumission acceptée"
-
-msgid "mailable.decision.accept.notifyAuthor.description"
-msgstr ""
-"Le courriel notifie l'auteur-e que la soumission a été acceptée pour "
-"publication."
-
-msgid "mailable.decision.backToCopyediting.notifyAuthor.name"
-msgstr "Soumission renvoyée à la révision"
-
-msgid "mailable.decision.backToCopyediting.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e que sa soumission a été renvoyée à l'étape de "
-"la révision."
-
-msgid "mailable.decision.backFromCopyediting.notifyAuthor.name"
-msgstr "Soumission renvoyée de l'étape de révision"
-
-#, fuzzy
-msgid "mailable.decision.backFromCopyediting.notifyAuthor.description"
-msgstr ""
-"Ce courriel avise les auteurs-trices que leur soumission a été renvoyée de "
-"l'étape de révision vers celle d'évaluation."
-
-msgid "mailable.decision.cancelReviewRound.notifyAuthor.name"
-msgstr "Cycle d'évaluation annulé"
-
-msgid "mailable.decision.cancelReviewRound.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e qu'un cycle d'évaluation de leur soumission a "
-"été annulé."
-
-msgid "mailable.decision.decline.notifyAuthor.name"
-msgstr "Soumission refusée"
-
-msgid "mailable.decision.decline.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e que sa soumission a été refusée après "
-"évaluation par les pairs."
-
-msgid "mailable.decision.initialDecline.notifyAuthor.name"
-msgstr "Soumission refusée avant évaluation"
-
-msgid "mailable.decision.newReviewRound.notifyAuthor.name"
-msgstr "Un nouveau cycle d'évaluation a été lancé"
-
-msgid "mailable.decision.newReviewRound.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e qu'un nouveau cycle d'évaluation de leur "
-"soumission a été lancé."
-
-msgid "mailable.decision.requestRevisions.notifyAuthor.name"
-msgstr "Révisions demandées"
-
-msgid "mailable.decision.requestRevisions.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e qu'une demande de révision a été décidée "
-"suite à l'évaluation par les pairs."
-
-msgid "mailable.decision.resubmit.notifyAuthor.name"
-msgstr "Soumettez à nouveau pour évaluation"
-
-msgid "mailable.decision.resubmit.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e qu'une demande de révision et de resoumission "
-"été décidée suite à l'évaluation par les pairs."
-
-msgid "mailable.decision.revertDecline.notifyAuthor.name"
-msgstr "Rétablir une soumission refusée"
-
-msgid "mailable.decision.revertDecline.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e que la décision de refuser sa soumission "
-"après évaluation par les pairs a été annulée."
-
-msgid "mailable.decision.revertInitialDecline.notifyAuthor.name"
-msgstr "Rétablir une soumission refusée sans évaluation"
-
-msgid "mailable.decision.revertInitialDecline.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e que la décision de refuser sa soumission sans "
-"évaluation a été annulée."
-
-msgid "mailable.decision.sendExternalReview.notifyAuthor.name"
-msgstr "Envoyé à l'évaluation"
-
-msgid "mailable.decision.sendExternalReview.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e que sa soumission a été envoyée à l'étape de "
-"l'évaluation."
-
-msgid "mailable.decision.sendToProduction.notifyAuthor.name"
-msgstr "Envoyé en production"
-
-msgid "mailable.decision.sendToProduction.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e que sa soumission a été envoyée à l'étape de "
-"la production."
-
-msgid "mailable.decision.skipReview.notifyAuthor.name"
-msgstr "Soumission acceptée (sans évaluation)"
-
-msgid "mailable.decision.skipReview.notifyAuthor.description"
-msgstr ""
-"Ce courriel notifie l'auteur-e que sa soumission a été envoyée directement à "
-"l'étape de la révision et ne sera pas évaluée par les pairs."
-
-msgid "mailable.decision.recommendation.notifyEditors.name"
-msgstr "Recommandation émise"
-
-#, fuzzy
-msgid "mailable.decision.recommendation.notifyEditors.description"
-msgstr ""
-"Ce message avise un-e rédacteur-trice ou un-e rédacteur-trice de rubrique "
-"qu'une recommandation éditoriale a été faite concernant l'une des "
-"soumissions qui leur est assignée. Ce message est utilisé lorsqu'un-e "
-"rédacteur-trice est autorisé à recommander une décision éditoriale et "
-"requiert qu'un-e rédacteur-trice autorisé enregistre une décision "
-"éditoriale. L'option peut être sélectionnée lors de l'assignation d'un-e "
-"rédacteur-trice à une soumission."
-
-#, fuzzy
-msgid "mailable.reviewConfirm.name"
-msgstr "Évaluation confirmée"
-
-msgid "mailable.reviewConfirm.description"
-msgstr ""
-"Ce courriel est envoyé automatiquement lorsque l'évaluateur-trice accepte "
-"une demande d'évaluation"
-
-#, fuzzy
-msgid "mailable.reviewDecline.name"
-msgstr "Évaluation refusée"
-
-msgid "mailable.reviewDecline.description"
-msgstr ""
-"Ce courriel est envoyé automatiquement lorsque l'évaluateur-trice refuse une "
-"demande d'évaluation"
-
-#, fuzzy
-msgid "mailable.reviewRemind.name"
-msgstr "Rappel d'évaluation"
-
-#, fuzzy
-msgid "mailable.reviewRemind.description"
-msgstr ""
-"Ce courriel est envoyé par un-e rédacteur-trice afi de rappeler à un-e "
-"évaluatrice que leur recommandation est due."
-
-#, fuzzy
-msgid "mailable.reviewRemindAuto.name"
-msgstr "Rappel automatique d'évaluation"
-
-#, fuzzy
-msgid "mailable.reviewRemindAuto.description"
-msgstr ""
-"Ce courriel est envoyé automatiquement lorsque la date d'échéance de remise "
-"d'une évaluation est révolue (voir Options d'évaluation sous Paramètres > "
-"Flux des travaux > Évaluation) et que l'accès de l'évaluateur-trice en un "
-"clic est désactivé. Les tâches planifiées doivent être activées et "
-"configurées (voir le fichier de configuration du site)."
-
-msgid "mailable.reviewAcknowledgement.name"
-msgstr "Accusé de réception de l'évaluation"
-
-msgid "mailable.reviewAcknowledgement.description"
-msgstr ""
-"Ce courriel est envoyé par un-e éditeur-trice afin de confirmer la réception "
-"de l'évaluation et remercier l'évaluateur-trice pour sa contribution."
-
-#, fuzzy
-msgid "mailable.reviewResponseOverdueAuto.name"
-msgstr "Rappel automatique pour une invitation à évaluer"
-
-#, fuzzy
-msgid "mailable.reviewResponseOverdueAuto.description"
-msgstr ""
-"Ce courriel est envoyé automatiquement lorsque la date d'échéance de "
-"confirmation d'un,une évaluateur-trice est révolue (voir Options "
-"d'évaluation sous Paramètres &gt; Flux des travaux &gt; Évaluation) et que "
-"l'accès de l'évaluateur-trice en un clic est désactivé. Les tâches "
-"planifiées doivent être activées et configurées (voir le fichier de "
-"configuration du site)."
-
-msgid "mailable.reviewRequest.name"
-msgstr "Demande d'évaluation"
-
-msgid "mailable.reviewRequest.description"
-msgstr ""
-"Ce courriel du,de la rédacteur-trice à un,une évaluateur-trice demande que l"
-"'évaluateur-trice accepte ou refuse la tâche d'évaluation d'une soumission. "
-"Il fournit de l'information sur la soumission, tel son titre et un résumé, "
-"la date d'échéance pour l'évaluation, et comment accéder à la soumission. Ce "
-"message est utilisé quand « Processus d'évaluation standard » est "
-"sélectionné dans Configuration de la revue > Paramètres > Flux des travaux > "
-"Évaluation. (Autrement voir « Demande d'évaluation d'un article (en pièce "
-"jointe) ».) "
-
-#, fuzzy
-msgid "mailable.reviewRequestSubsequent.name"
-msgstr "Demande d'évaluation (nouveau cycle)"
-
-msgid "mailable.reviewRequestSubsequent.description"
-msgstr ""
-"Ce courriel du,de la rédacteur-trice de rubrique à un,une évaluateur-trice "
-"demande que l'évaluateur-trice accepte ou décline la tâche d'évaluation "
-"d'une soumission pour un cycle subséquent d'évaluation. Il contient des "
-"informations sur la soumission tel que son titre et un résumé, la date "
-"d'échéance pour faire l'évaluation, et comment accéder à la soumission. Ce "
-"message est utilisé quand « Processus d'évaluation standard » est "
-"sélectionné dans Configuration de la revue > Paramètres > Flux des travaux > "
-"Évaluation (Autrement voir « Demande d'évaluation d'un article (cycle "
-"subséquent) »)."
-
-#, fuzzy
-msgid "plugins.importexport.common.error.currentPublicationNullOrMissing"
-msgstr "La publication actuelle de la soumission est manquante"
-
-msgid "plugins.importexport.common.error.submissionChildFailed"
-msgstr "L'enfant de la soumission {$child} n'a pu être traité"
-
-msgid "mailable.editorialReminder.name"
-msgstr "Rappel éditorial"
-
-msgid "mailable.editorialReminder.description"
-msgstr ""
-"Un courriel automatisé envoyé aux éditeurs-trices avec des tâches en cours"
-
-msgid "mailable.passwordResetRequested.name"
-msgstr "Confirmation de la réinitialisation du mot de passe"
-
-msgid "mailable.passwordResetRequested.description"
-msgstr ""
-"Ce courriel est envoyé à l'utilisateur-trice inscrit-e qui nous signale "
-"avoir oublié son mot de passe ou qui est incapable d'ouvrir une session. Il "
-"fournit le lien URL à cliquer pour pouvoir réinitialiser son mot de passe."
-
-msgid "mailable.userRegister.name"
-msgstr "Création de l'utilisateur-trice"
-
-msgid "mailable.userRegister.description"
-msgstr ""
-"Ce courriel est envoyé à l'utilisateur-trice nouvellement inscrit-e pour lui "
-"souhaiter la bienvenue à la revue et l'informer de son nom d'utilisateur-"
-"trice et de son mot de passe."
-
-msgid "mailable.reviewerRegister.name"
-msgstr "Inscription d'une évaluateur-trice"
-
-msgid "mailable.reviewerRegister.description"
-msgstr ""
-"Ce courriel est envoyé à un,une évaluateur-trice nouvellement inscrit-e, "
-"afin de lui souhaiter la bienvenue dans le système et l'informer de son nom "
-"d'utilisateur-trice et de son mot de passe."
-
-msgid "mailable.submissionSavedForLater.name"
-msgstr "Soumission incomplète sauvegardée"
-
-msgid "mailable.submissionSavedForLater.description"
-msgstr ""
-"Un courriel automatique envoyé aux auteurs-trices lorsqu'ils-elles "
-"enregistrent leur soumission pour la finaliser plus tard"
-
-msgid "mailable.submissionAck.name"
-msgstr "Confirmation de soumission"
-
-msgid "mailable.submissionAck.description"
-msgstr ""
-"Ce courriel, lorsqu'activé, est envoyé automatiquement à un-e auteur-e quand "
-"le processus de soumission d'un manuscrit à la revue a été complété. Le "
-"courriel explique comment suivre la soumission à travers le processus "
-"éditorial, et remercie l'auteur-e pour sa soumission."
-
-msgid "mailable.submissionAckNotAuthor.name"
-msgstr "Confirmation de soumission (autres auteur-es)"
-
-#, fuzzy
-msgid "mailable.submissionAckNotAuthor.description"
-msgstr ""
-"Ce courriel est envoyé automatiquement aux auteur-e-s qui n'ont pas fait la "
-"soumission."
-
-msgid "mailable.discussionSubmission.name"
-msgstr "Discussion (soumission)"
-
-msgid "mailable.discussionSubmission.description"
-msgstr ""
-"Ce courriel est envoyé lorsqu'une discussion ou un message sont ajoutés à "
-"l'étape de la soumission."
-
-msgid "mailable.discussionReview.name"
-msgstr "Discussion (évaluation)"
-
-msgid "mailable.discussionReview.description"
-msgstr ""
-"Ce courriel est envoyé lorsqu'une discussion ou un message sont ajoutés à "
-"l'étape de l'évaluation."
-
-msgid "mailable.discussionCopyediting.name"
-msgstr "Discussion (révision)"
-
-msgid "mailable.discussionCopyediting.description"
-msgstr ""
-"Ce courriel est envoyé lorsqu'une discussion ou un message sont ajoutés à "
-"l'étape de la révision."
-
-msgid "mailable.discussionProduction.name"
-msgstr "Discussion (production)"
-
-msgid "mailable.discussionProduction.description"
-msgstr ""
-"Ce courriel est envoyé lorsqu'une discussion ou un message sont ajoutés à "
-"l'étape de la production."
-
-#, fuzzy
-msgid "mailable.revisedVersionNotify.name"
-msgstr "Notification de la version révisée"
-
-msgid "mailable.revisedVersionNotify.description"
-msgstr ""
-"Ce courriel est envoyé automatiquement au,à la rédacteur-trice assigné-e "
-"quand un-e auteur-e téléverse une version révisée d'un article."
-
-msgid "mailable.announcementNotify.name"
-msgstr "Nouvelle annonce"
-
-msgid "mailable.announcementNotify.description"
-msgstr "Ce courriel est envoyé lorsqu'une nouvelle annonce est créée."
-
-#, fuzzy
-msgid "mailable.statisticsReportNotify.name"
-msgstr "Notification sur les rapports statistiques"
-
-#, fuzzy
-msgid "mailable.editReviewNotify.name"
-msgstr "Avis de modification d'une évaluation"
-
-msgid "mailable.editReviewNotify.description"
-msgstr ""
-"Ce courriel notifie automatiquement l'évaluateur-trice lorsque les détails "
-"de son assignation ont été modifiés."
-
-#, fuzzy
-msgid "mailable.reviewCompleteNotifyEditors.name"
-msgstr "Évaluation complétée"
-
-#, fuzzy
-msgid "mailable.reviewCompleteNotifyEditors.description"
-msgstr ""
-"Ce courriel est automatiquement envoyé aux rédacteurs-trices lorsqu'un-e "
-"évaluateur-trice a envoyé sa recommandation"
-
-#, fuzzy
-msgid "manager.people.authSource"
-msgstr "Source de l'authentification"
-
-msgid "mailable.decision.backToReview.notifyAuthor.name"
-msgstr "Soumission renvoyée à l'étape d'évaluation"
-
-msgid "mailable.decision.backToReview.notifyAuthor.description"
-msgstr ""
-"Ce courriel avise l'auteur-trice que sa soumission a été renvoyée à l'étape "
-"d'évaluation."
-
-msgid "mailable.decision.backToSubmission.notifyAuthor.name"
-msgstr "Soumission renvoyée à l'étape de soumission"
-
-msgid "mailable.decision.backToSubmission.notifyAuthor.description"
-msgstr ""
-"Ce courriel avise l'auteur-trice que sa soumission a été renvoyée à l'étape "
-"de soumission."
-
-msgid "manager.manageEmails"
-msgstr "Gérer les courriels"
-
-msgid "manager.manageEmailTemplates.description"
-msgstr ""
-"<p><a href=\"{$url}\">Ajouter et modifier les gabarits</a> pour tous les "
-"courriels envoyés par le système.</p>"
-
-#, fuzzy
-msgid "manager.mailables.addTemplates"
-msgstr ""
-"Ajouter ou modifier des gabarits que vous voulez rendre disponibles aux "
-"utilisateurs lorsqu'ils-elles envoient ce courriel. Le gabarit par défaut "
-"sera chargé automatiquement et l'utilisateur-trice sera capable de charger "
-"rapidement n'importe quel autre gabarit ayant été ajouté ici."
-
-msgid "manager.mailables.templates"
-msgstr "Gabarits"
-
-msgid "manager.mailables.editTemplate"
-msgstr "Modifier le gabarit"
-
-msgid "manager.mailables.removeTemplate"
-msgstr "Supprimer le gabarit"
-
-msgid "manager.mailables.removeTemplate.confirm"
-msgstr ""
-"Êtes-vous sûr de vouloir supprimer le gabarit <strong>{$template}</strong>?"
-
-msgid "manager.mailables.resetTemplate"
-msgstr "Réinitialiser le gabarit"
-
-#, fuzzy
-msgid "manager.mailables.resetTemplate.confirm"
-msgstr ""
-"Êtes-vous sûr de vouloir réinitialiser le gabarit "
-"<strong>{$template}</strong>?"
-
-msgid "manager.mailables.search"
-msgstr "Recherche par nom ou description"
-
-msgid "manager.emailTemplate.name.description"
-msgstr "Entrer un mot pour vous aidez à trouver un gabarit."
-
-msgid "manager.newSubmission"
-msgstr "Nouvelle soumission"
-
-msgid "manager.newSubmission.description"
-msgstr "Configurer les courriels envoyés lors d'une nouvelle soumission."
-
-msgid "manager.submissionAck.description"
-msgstr ""
-"Qui devrait recevoir un courriel lorsqu'une nouvelle soumission a été "
-"complétée."
-
-msgid "manager.submissionAck.off"
-msgstr "Ne pas envoyer de courriels."
-
-msgid "manager.submissionAck.submittingAuthor"
-msgstr "Envoyer des courriels uniquement à l'auteur-e qui a fait la soumission."
-
-msgid "manager.submissionAck.allAuthors"
-msgstr "Envoyer des courriels à tous-tes les auteur-es."
-
-msgid "manager.editorialDecisions"
-msgstr "Décisions éditoriales"
-
-msgid "manager.editorialDecisions.description"
-msgstr ""
-"Configurer les courriels envoyés aux auteur-es lorsqu'une décision "
-"éditoriale a été prise."
-
-msgid "manager.forEditors"
-msgstr "Aux éditeurs-trices"
-
-msgid "manager.forEditors.description"
-msgstr "Configurer les courriels envoyés aux éditeurs-trices."
-
-msgid "manager.editorialStatistics"
-msgstr "Statistiques éditoriales"
-
-msgid "manager.editorialStatistics.description"
-msgstr ""
-"Envoyer ou non aux éditeur-trices un courriel mensuel contenant les "
-"statistiques éditoriales de la revue, tel que les taux d'acceptation et de "
-"refus. On peut se désabonner de ces courriels dans le profil d'utilisateur-"
-"trice."
-
-msgid "manager.editorialStatistics.on"
-msgstr "Envoyer un courriel mensuel aux éditeurs-trices."
-
-msgid "manager.editorialStatistics.off"
-msgstr "Ne pas envoyer de courriel aux éditeurs-trices."
-
-msgid "manager.submitWithCategories.description"
-msgstr ""
-"Faut-il demander à l'auteur-trice de sélectionner une catégorie lorsqu'il-"
-"elle est en train de faire sa soumission?"
-
-#, fuzzy
-msgid "manager.submitWithCategories.yes"
-msgstr "Oui, ajouter le champ catégorie lors du processus de soumission."
-
-msgid "manager.submitWithCategories.no"
-msgstr "Non, ne pas afficher ce champ aux auteur.e.s."
-
-#, fuzzy
-msgid "mailable.copyeditRequest.name"
-msgstr "Demande de révision"
-
-msgid "mailable.editorAssign.name"
-msgstr "Rédacteur-trice assigné"
-
-#, fuzzy
-msgid "mailable.layoutRequest.name"
-msgstr "Prêt pour production"
-
-msgid "mailable.system"
-msgstr "Système"
-
-msgid "mailable.versionCreated.name"
-msgstr "Version créée"
-
-msgid "mailable.reviewComplete.name"
-msgstr "Évaluation terminée"
-
-msgid "mailable.reviewEdit.name"
-msgstr ""
-
-#, fuzzy
-msgid "mailable.submissionAckOtherAuthors.name"
-msgstr "Avis de réception de soumission aux autres auteurs-trices"
-
-msgid "mailable.editorAssigned.name"
-msgstr "Rédacteur-trice assigné (Automatique)"
-
-msgid "mailable.editorAssigned.description"
-msgstr ""
-"Ce courriel est envoyé à une rédacteur-trice lorsqu'il ou elle est "
-"automatiquement assigné à une soumission."
-
-msgid "mailable.editorAssignedManual.name"
-msgstr "Assigner un-e rédacteur-trice"
-
-msgid "mailable.submissionNeedsEditor.name"
-msgstr "Soumission en attente de rédacteur-trice"
-
-#, fuzzy
-#~ msgid "emails.reviewRemind.body"
-#~ msgstr ""
-#~ "Ce courriel est envoyé par le,la rédacteur-trice de rubrique pour "
-#~ "rappeler à un,une évaluateur-trice que son évaluation est due."
-
-msgid "manager.setup.notifyUsers.queued"
-msgstr ""
-"Les courriels ont été mis dans la file d'attente et seront envoyés aussitôt "
-"que possible."
-
-msgid "emailTemplate.variable.activateUrl"
-msgstr "Le lien pour valider un compte de messagerie"
-
-#, fuzzy
-msgid "plugins.importexport.native.error.submissionFileWithoutRevision"
-msgstr ""
-"Le fichier de la soumission {$id} a été ignoré car il n'avait pas une "
-"révision valide."
-
-#, fuzzy
-msgid "plugins.importexport.native.error.submissionFileRevisionMissing"
-msgstr ""
-"La révision {$revision} du fichier de la soumission {$id} a été ignoré car "
-"le fichier n'a pu être trouvé à l'adresse: \"{$path}\"."
-
-#, fuzzy
-msgid "plugins.importexport.common.error.publicationCoverImageMissing"
-msgstr ""
-"L'image de couverture de la publication {$id} n'a pas été exportée, son "
-"fichier n'a pu être trouvé à l'adresse: \"{$path}\"."
-
-msgid "manager.highlights.confirmDelete"
-msgstr ""
-"Êtes-vous certain.e de vouloir supprimer {$title}? Cette action est "
-"irréversible."
-
-msgid "manager.highlights.image"
-msgstr "Image"
-
 msgid "manager.setup.competingInterests.requireAuthors"
 msgstr ""
 "Les auteurs-es soumissionnaires doivent déposer une déclaration de conflits "
 "d'intérêts avec leur soumission."
-
-msgid "manager.statistics.counterR5"
-msgstr "Counter R5"
-
-msgid "manager.setup.masthead"
-msgstr "Bloc générique"
 
 msgid "plugins.importexport.common.validation"
 msgstr "Valider le XML avant l'exportation et l'enregistrement."

@@ -3,8 +3,4 @@ lib/tinymce/jscripts/tiny_mce/*.gz
 lib/vendor
 lib/components
 .DS_Store
-.php_cs.cache
-tests/.phpunit.result.cache
-.php-cs-fixer.cache
-styles/tinymce
-tests/.phpunit.cache
+js/lib/jquery/plugins/validate/

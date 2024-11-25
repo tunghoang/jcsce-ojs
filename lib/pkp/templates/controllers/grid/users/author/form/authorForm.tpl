@@ -6,7 +6,6 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * Submission Contributor grid form
- * @deprecated 3.4
  *
  *}
 
@@ -25,6 +24,7 @@
 	{include
 		file="common/userDetails.tpl"
 		disableUserNameSection=true
+		disableAuthSourceSection=true
 		disablePasswordSection=true
 		disableSendNotifySection=true
 		disableSalutationSection=true
@@ -45,10 +45,10 @@
 			{/fbvFormSection}
 		{/if}
 		{fbvFormSection id="userGroupId" title="submission.submit.contributorRole" list=true required=true}
-			{foreach from=$authorUserGroups item=$userGroup}
+			{iterate from=authorUserGroups item=userGroup}
 				{if $userGroupId == $userGroup->getId()}{assign var="checked" value=true}{else}{assign var="checked" value=false}{/if}
 				{fbvElement type="radio" id="userGroup"|concat:$userGroup->getId() name="userGroupId" value=$userGroup->getId() checked=$checked label=$userGroup->getLocalizedName() translate=false}
-			{/foreach}
+			{/iterate}
 		{/fbvFormSection}
 		{fbvFormSection list="true"}
 			{fbvElement type="checkbox" label="submission.submit.selectPrincipalContact" id="primaryContact" checked=$primaryContact}

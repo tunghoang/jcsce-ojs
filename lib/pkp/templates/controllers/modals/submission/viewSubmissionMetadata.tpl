@@ -9,37 +9,24 @@
  *}
 
 <div id="viewSubmissionMetadata" class="">
-	<h3>{$publication->getLocalizedFullTitle(null, 'html')|strip_unsafe_html}</h3>
+	<h3>{$publication->getLocalizedFullTitle()|strip_unsafe_html}</h3>
 	{if $authors}<h4>{$authors|escape}</h4>{/if}
 	<div class="abstract">
 		{$publication->getLocalizedData('abstract')|strip_unsafe_html}
 	</div>
-	{if $additionalMetadata || $dataAvailability}
-		<pkp-table>
+	{if $additionalMetadata}
+		<table class="pkpTable">
 		{foreach $additionalMetadata as $metadata}
-			<pkp-table-row>
+			<tr>
 				{foreach $metadata as $metadataItem}
 					{if $metadataItem@iteration % 2 != 0}
-						<pkp-table-cell :is-row-header="true">{$metadataItem|escape}</pkp-table-cell>
+						<th scope="row">{$metadataItem}</th>
 					{else}
-						<pkp-table-cell>{$metadataItem|escape}</pkp-table-cell>
+						<td>{$metadataItem}</td>
 					{/if}
 				{/foreach}
-			</pkp-table-row>
+			</tr>
 		{/foreach}
-		{if $dataAvailability}
-			<pkp-table-row>
-				<pkp-table-cell :is-row-header="true">
-					{translate key="submission.dataAvailability"}
-				</pkp-table-cell>
-				<pkp-table-cell>
-					{$dataAvailability|strip_unsafe_html}
-				</pkp-table-cell>
-			</pkp-table-row>
-		{/if}
-		</pkp-table>
+		</table>
 	{/if}
 </div>
-<script type="text/javascript">
-	pkp.registry.init('viewSubmissionMetadata', 'Page', {$additionalMetadata|json_encode});
-</script>

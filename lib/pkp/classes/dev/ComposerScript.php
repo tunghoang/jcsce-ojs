@@ -2,13 +2,13 @@
 /**
  * @file classes/dev/ComposerScript.php
  *
- * Copyright (c) 2023 Simon Fraser University
- * Copyright (c) 2023 John Willinsky
+ * Copyright (c) 2024 Simon Fraser University
+ * Copyright (c) 2024 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class ComposerScript
  *
- * @brief Custom composer script that checks if the file iso_639-2.json exists in sokil library
+ * @brief Custom composer scripts to run post installs/updates
  */
 
 namespace PKP\dev;
@@ -17,59 +17,96 @@ use Exception;
 
 class ComposerScript
 {
-    /**
-     * A post-install-cmd custom composer script that checks if
-     * the file iso_639-2.json exists in the installed sokil library
-     *
-     * @throw Exception
-     */
-    public static function isoFileCheck(): void
-    {
-        // We use dirname(__FILE__, 3) and not Core::getBaseDir() because
-        // this funciton is called by Composer, where INDEX_FILE_LOCATION is not defined.
-        $iso6392bFile = dirname(__FILE__, 3) . '/lib/vendor/sokil/php-isocodes-db-i18n/databases/iso_639-2.json';
-        if (!file_exists($iso6392bFile)) {
-            throw new Exception("The ISO639-2b file {$iso6392bFile} does not exist.");
-        }
-    }
+	/**
+	 * Recursively copies the contents of a directory from source to destination.
+	 *
+	 * @param string $src The source directory.
+	 * @param string $dst The destination directory.
+	 * @throws Exception If a directory cannot be opened or a file cannot be copied.
+	 */
+	private static function copyDir(string $src, string $dst): void
+	{
+		if (!is_dir($src)) {
+			throw new Exception("Source directory does not exist: $src");
+		}
 
-    /**
-     * A post-install-cmd custom composer script that
-     * creates languages.json from downloaded Weblate languages.csv.
-     */
-    public static function weblateFilesDownload(): void
-    {
-        try {
-            $dirPath = dirname(__FILE__, 3) . "/lib/weblateLanguages";
-            $langFilePath = "$dirPath/languages.json";
-            $urlCsv = 'https://raw.githubusercontent.com/WeblateOrg/language-data/main/languages.csv';
+		$dir = @opendir($src);
+		if (!$dir) {
+			throw new Exception("Failed to open directory: $src");
+		}
 
-            if (!is_dir($dirPath)) {
-                mkdir($dirPath);
-            }
+		if (!@mkdir($dst, 0755, true) && !is_dir($dst)) {
+			throw new Exception("Failed to create destination directory: $dst");
+		}
 
-            $streamContext = stream_context_create(['http' => ['method' => 'HEAD']]);
-            $languagesCsv = !preg_match('/200 OK/', get_headers($urlCsv, false, $streamContext)[0] ?? "") ?: file($urlCsv, FILE_SKIP_EMPTY_LINES);
-            if (!is_array($languagesCsv) || !$languagesCsv) {
-                throw new Exception(__METHOD__ . " : The Weblate file 'languages.csv' cannot be downloaded !");
-            }
+		while (false !== ($file = readdir($dir))) {
+			if ($file != '.' && $file != '..') {
+				$srcFile = $src . '/' . $file;
+				$dstFile = $dst . '/' . $file;
 
-            array_shift($languagesCsv);
-            $languages = [];
-            foreach($languagesCsv as $languageCsv) {
-                $localeAndName = str_getcsv($languageCsv, ",");
-                if (isset($localeAndName[0], $localeAndName[1]) && preg_match('/^[\w@-]{2,50}$/', $localeAndName[0])) {
-                    $displayName = locale_get_display_name($localeAndName[0], 'en');
-                    $languages[$localeAndName[0]] = (($displayName && $displayName !== $localeAndName[0]) ? $displayName : $localeAndName[1]);
-                }
-            }
+				if (is_dir($srcFile)) {
+					self::copyDir($srcFile, $dstFile);
+				} else {
+					if (!@copy($srcFile, $dstFile)) {
+						throw new Exception("Failed to copy file: $srcFile to $dstFile");
+					}
+				}
+			}
+		}
 
-            $languagesJson = json_encode($languages, JSON_THROW_ON_ERROR);
-            if (!$languagesJson || !file_put_contents($langFilePath, $languagesJson)) {
-                throw new Exception(__METHOD__ . " : Json file empty, or save unsuccessful: $langFilePath !");
-            }
-        } catch (Exception $e) {
-            error_log($e->getMessage());
-        }
-    }
+		closedir($dir);
+	}
+
+	/**
+	 * A post-install-cmd custom composer script that
+	 * copies composer installs from repositories
+	 * to the correct/existing directories of the following dependencies:
+	 * jquery-ui and jquery validation
+	 */
+	public static function copyVendorAssets(): void
+	{
+		$vendorBaseDir = __DIR__ . '/../../lib/vendor';
+		$jsPluginsDir = __DIR__ . '/../../js/lib';
+
+		$source = [
+			'jquery-ui.js' => $vendorBaseDir . '/jquery/ui/dist/jquery-ui.js',
+			'jquery-ui.min.js' => $vendorBaseDir . '/jquery/ui/dist/jquery-ui.min.js',
+			'jquery-validate' => $vendorBaseDir . '/jquery/validation/dist'
+		];
+
+		$dest = [
+			'jquery-ui.js' => $vendorBaseDir . '/components/jqueryui/jquery-ui.js',
+			'jquery-ui.min.js' => $vendorBaseDir . '/components/jqueryui/jquery-ui.min.js',
+			'jquery-validate' => $jsPluginsDir . '/jquery/plugins/validate'
+		];
+
+		try {
+			// jQuery UI
+			if (!file_exists($vendorBaseDir . '/components/jqueryui')) {
+				if (!mkdir($vendorBaseDir . '/components/jqueryui', 0755, true)) {
+					throw new Exception("Failed to create directory: {$vendorBaseDir}/components/jqueryui");
+				}
+			}
+
+			if (!copy($source['jquery-ui.js'], $dest['jquery-ui.js'])) {
+				throw new Exception('Failed to copy jquery-ui.js to destination folder');
+			}
+
+			if (!copy($source['jquery-ui.min.js'], $dest['jquery-ui.min.js'])) {
+				throw new Exception('Failed to copy jquery-ui.min.js to destination folder');
+			}
+			
+
+			// jQuery Validation
+			if (!file_exists($dest['jquery-validate'])) {
+				if (!mkdir($dest['jquery-validate'], 0755, true)) {
+					throw new Exception("Failed to create directory: {$dest['jquery-validate']}");
+				}
+			}
+
+			self::copyDir($source['jquery-validate'], $dest['jquery-validate']);
+		} catch (Exception $e) {
+			throw $e;
+		}
+	}
 }

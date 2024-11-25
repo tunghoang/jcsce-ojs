@@ -10,9 +10,6 @@
  * @uses $isFullWidth bool Should this page be displayed without sidebars? This
  *       represents a page-level override, and doesn't indicate whether or not
  *       sidebars have been configured for thesite.
- *
- * @hook Templates::Common::Sidebar []
- * @hook Templates::Common::Footer::PageFooter []
  *}
 
 	</div><!-- pkp_structure_main -->
@@ -21,7 +18,7 @@
 	{if empty($isFullWidth)}
 		{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 		{if $sidebarCode}
-			<div class="pkp_structure_sidebar left" role="complementary">
+			<div class="pkp_structure_sidebar left" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
 				{$sidebarCode}
 			</div><!-- pkp_sidebar.left -->
 		{/if}
@@ -39,7 +36,7 @@
 			</div>
 		{/if}
 
-		<div class="pkp_brand_footer">
+		<div class="pkp_brand_footer" role="complementary">
 			<a href="{url page="about" op="aboutThisPublishingSystem"}">
 				<img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}">
 			</a>

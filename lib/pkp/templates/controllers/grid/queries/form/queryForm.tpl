@@ -16,10 +16,9 @@
 		// Attach the handler.
 		$(function() {ldelim}
 			$('#queryForm').pkpHandler(
-				'$.pkp.controllers.grid.queries.QueryFormHandler',
+				'$.pkp.controllers.form.CancelActionAjaxFormHandler',
 				{ldelim}
-					cancelUrl: {if $isNew}{url|json_encode op="deleteQuery" queryId=$queryId csrfToken=$csrfToken params=$actionArgs escape=false}{else}null{/if},
-					templateUrl: {url|json_encode router=$smarty.const.ROUTE_COMPONENT component='grid.queries.QueriesGridHandler' op='fetchTemplateBody' stageId=$stageId submissionId=$assocId escape=false},
+					cancelUrl: {if $isNew}'{url|escape:javascript op="deleteQuery" queryId=$queryId csrfToken=$csrfToken params=$actionArgs escape=false}'{else}null{/if}
 				{rdelim}
 			);
 		{rdelim});
@@ -36,14 +35,6 @@
 			{/foreach}
 		{/fbvFormSection}
 
-		{if count($templates)}
-			{fbvFormArea id="queryTemplateArea"}
-				{fbvFormSection title="stageParticipants.notify.chooseMessage" for="template" size=$fbvStyles.size.medium}
-					{fbvElement type="select" from=$templates translate=false id="template" selected=$template defaultValue="" defaultLabel=""}
-				{/fbvFormSection}
-			{/fbvFormArea}
-		{/if}
-
 		{fbvFormArea id="queryContentsArea"}
 			{fbvFormSection title="common.subject" for="subject" required="true"}
 				{fbvElement type="text" id="subject" value=$subject required="true"}
@@ -55,15 +46,11 @@
 		{/fbvFormArea}
 
 		{fbvFormArea id="queryNoteFilesArea"}
-			{capture assign=queryNoteFilesGridUrl}{url router=PKP\core\PKPApplication::ROUTE_COMPONENT component="grid.files.query.QueryNoteFilesGridHandler" op="fetchGrid" params=$actionArgs queryId=$queryId noteId=$noteId escape=false}{/capture}
+			{capture assign=queryNoteFilesGridUrl}{url router=$smarty.const.ROUTE_COMPONENT component="grid.files.query.QueryNoteFilesGridHandler" op="fetchGrid" params=$actionArgs queryId=$queryId noteId=$noteId escape=false}{/capture}
 			{load_url_in_div id="queryNoteFilesGrid" url=$queryNoteFilesGridUrl}
 		{/fbvFormArea}
 
 		<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
-
-		{if $allowedEditTimeNotice['show']}
-			<p><span class="sub_label">{translate key="submission.query.allowedEditTime" allowedEditTimeNoticeLimit=$allowedEditTimeNotice['limit']}</span></p>
-		{/if}
 
 		{fbvFormButtons id="addQueryButton"}
 

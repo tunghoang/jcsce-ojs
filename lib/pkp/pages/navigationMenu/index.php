@@ -12,14 +12,17 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @ingroup pages_navigationMenu
- *
  * @brief Handle requests for NavigationMenus functions.
  *
  */
 
 switch ($op) {
-    case 'index':
-    case 'view':
-    case 'preview':
-        return new PKP\pages\navigationMenu\NavigationMenuItemHandler();
+	case 'index':
+	case 'view':
+	case 'preview':
+		define('HANDLER_CLASS', 'NavigationMenuItemHandler');
+		import('lib.pkp.pages.navigationMenu.NavigationMenuItemHandler');
+		break;
 }
+
+

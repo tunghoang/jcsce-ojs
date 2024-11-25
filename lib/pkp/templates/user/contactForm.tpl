@@ -23,14 +23,7 @@
 	{include file="controllers/notification/inPlaceNotification.tpl" notificationId="contactFormNotification"}
 
 	{fbvFormSection}
-		{if $changeEmailPending}
-			<p>
-				{fbvElement type="hidden" id="pendingEmail" value=$changeEmailPending}
-				{translate key="user.pendingEmailChange" pendingEmail=$changeEmailPending}
-				<button type="submit" class="pkp_button" name="action" value="cancelPendingEmail">{translate key="common.cancel"}</button>
-			</p>
-		{/if}
-		{fbvElement type="email" readonly=$changeEmailPending|default:false label="user.email" id="email" value=$email size=$fbvStyles.size.MEDIUM required=true}
+		{fbvElement type="email" label="user.email" id="email" value=$email size=$fbvStyles.size.MEDIUM required=true}
 		{fbvElement type="textarea" label="user.signature" multilingual="true" name="signature" id="signature" value=$signature rich=true size=$fbvStyles.size.MEDIUM}
 		{fbvElement type="tel" label="user.phone" name="phone" id="phone" value=$phone maxlength="24" size=$fbvStyles.size.SMALL}
 		{fbvElement type="text" label="user.affiliation" multilingual="true" name="affiliation" id="affiliation" value=$affiliation size=$fbvStyles.size.MEDIUM}
@@ -43,18 +36,18 @@
 	{if count($availableLocales) > 1}
 		{fbvFormSection title="user.workingLanguages" list=true}
 			{foreach from=$availableLocales key=localeKey item=localeName}
-				{if $locales && in_array($localeKey, $locales)}
+				{if $userLocales && in_array($localeKey, $userLocales)}
 					{assign var="checked" value=true}
 				{else}
 					{assign var="checked" value=false}
 				{/if}
-				{fbvElement type="checkbox" name="locales[]" id="locales-$localeKey" value=$localeKey checked=$checked label=$localeName|escape translate=false}
+				{fbvElement type="checkbox" name="userLocales[]" id="userLocales-$localeKey" value=$localeKey checked=$checked label=$localeName|escape translate=false}
 			{/foreach}
 		{/fbvFormSection}
 	{/if}
 
 	<p>
-		{capture assign="privacyUrl"}{url router=PKP\core\PKPApplication::ROUTE_PAGE page="about" op="privacy"}{/capture}
+		{capture assign="privacyUrl"}{url router=$smarty.const.ROUTE_PAGE page="about" op="privacy"}{/capture}
 		{translate key="user.privacyLink" privacyUrl=$privacyUrl}
 	</p>
 

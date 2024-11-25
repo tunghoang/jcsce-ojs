@@ -1,20 +1,18 @@
-# Huang Feilong <hfl@nominsang.org>, 2021.
-# Martin Brändle <martin.braendle@uzh.ch>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-04T08:55:07-08:00\n"
-"PO-Revision-Date: 2023-04-21 03:49+0000\n"
-"Last-Translator: Martin Brändle <martin.braendle@uzh.ch>\n"
+"PO-Revision-Date: 2020-07-28 15:47+0000\n"
+"Last-Translator: Yukari Chiba <Charles@nia.ac.cn>\n"
 "Language-Team: Chinese (Simplified) <http://translate.pkp.sfu.ca/projects/"
-"pkp-lib/common/zh_CN/>\n"
+"pkp-lib/common/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.13.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 msgid "common.publicKnowledgeProject"
 msgstr "公共知识计划"
@@ -130,23 +128,8 @@ msgstr ""
 msgid "common.add"
 msgstr "添加"
 
-msgid "common.addCCBCC"
-msgstr ""
-
-msgid "common.addFiles"
-msgstr ""
-
 msgid "common.addSelf"
 msgstr "添加自己"
-
-msgid "common.attachedFiles"
-msgstr ""
-
-msgid "common.attachFiles"
-msgstr ""
-
-msgid "common.attachSelected"
-msgstr ""
 
 msgid "common.name"
 msgstr "名称"
@@ -212,8 +195,23 @@ msgstr "错误"
 msgid "common.notice"
 msgstr "注意"
 
+msgid "common.captcha.error.missing-input-secret"
+msgstr "此网站的验证码未正确配置。 缺少密钥。"
+
+msgid "common.captcha.error.invalid-input-secret"
+msgstr "此网站的验证码未正确配置。 密钥无效。"
+
 msgid "common.captcha.error.missing-input-response"
 msgstr "您必须完成用于阻止垃圾提交的验证检查。"
+
+msgid "common.captcha.error.invalid-input-response"
+msgstr "您没有通过用于阻止垃圾提交的验证检查。"
+
+msgid "common.captchaField.description"
+msgstr "请输入出现在图片里的字母."
+
+msgid "common.captchaField"
+msgstr "验证"
 
 msgid "common.ccLicense"
 msgstr ""
@@ -239,7 +237,7 @@ msgstr ""
 "width:0\" src=\"//i.creativecommons.org/l/by/3.0/80x15.png\" /></a>\n"
 "\t\t<br />\n"
 "\t\t本作品遵循  <a rel=\"license\" target=\"_blank\" href=\"https://"
-"creativecommons.org/licenses/by/3.0/\">知识共享 署名 3.0  授权许可</a>。\n"
+"creativecommons.org/licenses/by/3.0/\">知识共享 署名 3.0  授权许可</a>.\n"
 "\t</div>\n"
 "\t"
 
@@ -336,29 +334,17 @@ msgstr "删除中"
 msgid "common.deleteSelection"
 msgstr "删除选择"
 
-msgid "common.deselect"
-msgstr ""
-
 msgid "common.designation"
 msgstr "指定"
 
 msgid "common.description"
 msgstr "描述"
 
-msgid "common.details"
-msgstr ""
-
 msgid "common.dimensionsInches"
 msgstr "{$width}&Prime;&times;{$height}&Prime; DPI/PPI为 {$dpi}"
 
 msgid "common.dimensionsPixels"
 msgstr "{$width}&times;{$height} 像素"
-
-msgid "common.discardChanges"
-msgstr ""
-
-msgid "common.disconnected"
-msgstr ""
 
 msgid "common.disable"
 msgstr "禁止"
@@ -378,22 +364,10 @@ msgstr "下载"
 msgid "common.downloadPdf"
 msgstr "下载 PDF"
 
-msgid "common.downloadReport"
-msgstr ""
-
-msgid "common.dragAndDropHere"
-msgstr ""
-
-msgid "common.orUploadFile"
-msgstr ""
-
 msgid "common.edit"
 msgstr "编辑"
 
 msgid "common.editItem"
-msgstr ""
-
-msgid "common.emailTemplates"
 msgstr ""
 
 msgid "common.enable"
@@ -461,14 +435,14 @@ msgstr "添加过滤器：{$filterTitle}"
 msgid "common.filterRemove"
 msgstr "清除过滤器：{$filterTitle}"
 
-msgid "common.findTemplate"
-msgstr ""
+msgid "common.from"
+msgstr "来自"
 
-msgid "common.formatting"
-msgstr ""
+msgid "common.fromWithValue"
+msgstr "来自: {$value}"
 
-msgid "common.geographic"
-msgstr ""
+msgid "common.until"
+msgstr "直到"
 
 msgid "common.go"
 msgstr "进入"
@@ -497,32 +471,17 @@ msgstr "开始"
 msgid "common.inProgress"
 msgstr "进行"
 
-msgid "common.insert"
-msgstr ""
-
-msgid "common.insertContent"
-msgstr ""
-
-msgid "common.insertContentSearch"
-msgstr ""
-
 msgid "common.itemsPerPage"
 msgstr "每页项目"
 
 msgid "common.keywords"
 msgstr "关键词"
 
-msgid "common.label"
-msgstr ""
-
 msgid "common.language"
 msgstr "语言"
 
 msgid "common.languages"
 msgstr "语言"
-
-msgid "common.lastSaved"
-msgstr ""
 
 msgid "common.lastActivity"
 msgstr "最近的活动记录在{$date}。"
@@ -535,9 +494,6 @@ msgstr "{$value}以下"
 
 msgid "common.lessThanOnly"
 msgstr "低于"
-
-msgid "common.keepWorking"
-msgstr ""
 
 msgid "common.commaListSeparator"
 msgstr ", "
@@ -578,12 +534,6 @@ msgstr "没有指派"
 msgid "common.none"
 msgstr "无"
 
-msgid "common.noneSelected"
-msgstr ""
-
-msgid "common.noneProvided"
-msgstr ""
-
 msgid "common.no"
 msgstr "无"
 
@@ -622,9 +572,6 @@ msgstr "通知：{$dateNotified}"
 
 msgid "common.noMatches"
 msgstr "无符合记录"
-
-msgid "common.numberedMore"
-msgstr ""
 
 msgid "common.off"
 msgstr "关闭"
@@ -687,10 +634,10 @@ msgid "common.plugin"
 msgstr "插件"
 
 msgid "common.pluginEnabled"
-msgstr "插件 \"{$pluginName}\" 已经启用。"
+msgstr "插件\"{$pluginName}\"已经被启用"
 
 msgid "common.pluginDisabled"
-msgstr "插件 \"{$pluginName}\" 已被禁用。"
+msgstr "插件\"{$pluginName}\"已经被禁用"
 
 msgid "common.prefix"
 msgstr "前缀"
@@ -721,9 +668,6 @@ msgstr "阅读更多"
 
 msgid "common.readMoreWithTitle"
 msgstr "进一步了解{$title}"
-
-msgid "common.reconnecting"
-msgstr ""
 
 msgid "common.record"
 msgstr "记录"
@@ -770,12 +714,6 @@ msgstr "必须"
 msgid "common.reset"
 msgstr "重置"
 
-msgid "common.reviewRoundNumber"
-msgstr ""
-
-msgid "common.role"
-msgstr ""
-
 msgid "common.saveAndContinue"
 msgstr "保存并继续"
 
@@ -790,12 +728,6 @@ msgstr "保存中"
 
 msgid "common.search"
 msgstr "搜索"
-
-msgid "common.searchPhrase"
-msgstr ""
-
-msgid "common.searching"
-msgstr ""
 
 msgid "common.searchQuery"
 msgstr "搜索查询"
@@ -824,12 +756,6 @@ msgstr ""
 msgid "common.sendEmail"
 msgstr "发送电子邮件"
 
-msgid "common.showAllSteps"
-msgstr ""
-
-msgid "common.showingSteps"
-msgstr ""
-
 msgid "common.size"
 msgstr "大小"
 
@@ -854,12 +780,6 @@ msgstr "副标题"
 msgid "common.suggest"
 msgstr "建议"
 
-msgid "common.switchTo"
-msgstr ""
-
-msgid "common.switchToNamedItem"
-msgstr ""
-
 msgid "common.title"
 msgstr "标题"
 
@@ -869,17 +789,14 @@ msgstr ""
 msgid "common.top"
 msgstr "顶部"
 
+msgid "common.toWithValue"
+msgstr "至：{$value}"
+
 msgid "common.true"
 msgstr "True"
 
 msgid "common.type"
 msgstr "类型"
-
-msgid "common.uploadedBy"
-msgstr ""
-
-msgid "common.uploadedByAndWhen"
-msgstr ""
 
 msgid "common.component"
 msgstr "组件"
@@ -892,12 +809,6 @@ msgstr ""
 
 msgid "common.unread"
 msgstr "未读"
-
-msgid "common.unsavedChanges"
-msgstr ""
-
-msgid "common.unsavedChangesMessage"
-msgstr ""
 
 msgid "common.untitled"
 msgstr "未命名的"
@@ -923,9 +834,6 @@ msgstr ""
 msgid "common.upload.addFile"
 msgstr "上传文件"
 
-msgid "common.upload.addFile.description"
-msgstr ""
-
 msgid "common.upload.restore"
 msgstr "恢复到原始状态"
 
@@ -950,9 +858,6 @@ msgstr ""
 msgid "common.view"
 msgstr "预览"
 
-msgid "common.viewError"
-msgstr ""
-
 msgid "common.viewWithName"
 msgstr ""
 
@@ -965,9 +870,6 @@ msgstr "周"
 msgid "common.width"
 msgstr "宽"
 
-msgid "common.withParenthesis"
-msgstr "{$item} ({$inParenthesis})"
-
 msgid "common.year"
 msgstr "年"
 
@@ -975,10 +877,13 @@ msgid "common.yes"
 msgstr "是"
 
 msgid "common.loading"
-msgstr "载入中"
+msgstr "载入..."
 
 msgid "common.plugins"
 msgstr "插件"
+
+msgid "common.metric"
+msgstr "公制"
 
 msgid "common.count"
 msgstr "计数"
@@ -1010,6 +915,9 @@ msgstr "注释:"
 msgid "defaultMetric.title"
 msgstr "默认公制"
 
+msgid "defaultMetric.availableMetrics"
+msgstr "可用公制"
+
 msgid "editor.submissionReview.uploadFile"
 msgstr "上传评审文件"
 
@@ -1018,30 +926,6 @@ msgstr "上传文件"
 
 msgid "email.addAttachment"
 msgstr "添加附件"
-
-msgid "email.addAttachment.submissionFiles.attach"
-msgstr ""
-
-msgid "email.addAttachment.submissionFiles.submissionDescription"
-msgstr ""
-
-msgid "email.addAttachment.submissionFiles.reviewDescription"
-msgstr ""
-
-msgid "email.addAttachment.libraryFiles"
-msgstr ""
-
-msgid "email.addAttachment.libraryFiles.attach"
-msgstr ""
-
-msgid "email.addAttachment.libraryFiles.description"
-msgstr ""
-
-msgid "email.addAttachment.reviewFiles.attach"
-msgstr ""
-
-msgid "email.addAttachment.reviewFiles.description"
-msgstr ""
 
 msgid "email.addBccRecipient"
 msgstr "添加暗抄送"
@@ -1055,9 +939,6 @@ msgstr "添加收件人"
 msgid "email.attachments"
 msgstr "附件"
 
-msgid "email.attachmentNotFound"
-msgstr ""
-
 msgid "email.bcc"
 msgstr "暗抄送"
 
@@ -1069,9 +950,6 @@ msgstr "内容"
 
 msgid "email.cc"
 msgstr "抄送"
-
-msgid "email.confirmSwitchLocale"
-msgstr ""
 
 msgid "email.compose"
 msgstr "发送电子邮件"
@@ -1123,10 +1001,10 @@ msgid "email.subject"
 msgstr "主题"
 
 msgid "email.subjectRequired"
-msgstr "请提供一个电子邮件的主题。"
+msgstr "请提供一个电子邮件的主题"
 
 msgid "email.bodyRequired"
-msgstr "请提供电子邮件的正文文本。"
+msgstr "请提供电子邮件的正文文本"
 
 msgid "email.to"
 msgstr "到"
@@ -1139,6 +1017,9 @@ msgstr "你确定你要提交这个表单吗？"
 
 msgid "form.confirmSubmit.title"
 msgstr "确认"
+
+msgid "form.emailRequired"
+msgstr "电子邮件地址是必需的."
 
 msgid "form.dataHasChanged"
 msgstr "这个表单的数据已经改变。继续吗？"
@@ -1250,7 +1131,7 @@ msgid "form.submit"
 msgstr "提交"
 
 msgid "form.invalidImage"
-msgstr "上传图像无效。允许的格式有.png、.gif,或者.jpg。"
+msgstr "无效的图像上传,允许的格式有.png,.gif,或者.jpg"
 
 msgid "form.multilingualLabel"
 msgstr "{$localeName} 中的 {$label}"
@@ -1390,7 +1271,7 @@ msgid "locale.supported"
 msgstr "支持的语言环境"
 
 msgid "navigation.access"
-msgstr "用户&角色"
+msgstr "用户&amp;角色"
 
 msgid "navigation.about"
 msgstr "关于我们"
@@ -1518,9 +1399,6 @@ msgstr "用户管理"
 msgid "navigation.viewFrontend"
 msgstr "查看网站"
 
-msgid "institution.institutions"
-msgstr ""
-
 msgid "notification.addedAuditor"
 msgstr "审核员已添加。"
 
@@ -1553,6 +1431,12 @@ msgstr "公告类型已删除。"
 
 msgid "notification.removedAnnouncement"
 msgstr "公告已删除。"
+
+msgid "notification.addedAuthor"
+msgstr "作者已添加。"
+
+msgid "notification.editedAuthor"
+msgstr "作者已编辑。"
 
 msgid "notification.confirmError"
 msgstr "确认您的订阅的时候发生一个错误."
@@ -1604,7 +1488,7 @@ msgid "notification.savedSubmissionMetadata"
 msgstr "投稿元数据已保存。"
 
 msgid "notification.sendNotificationConfirmation"
-msgstr "向所有注册用户发送关于本稿件的电子邮件。"
+msgstr "向所有注册的用户发送通知电子邮件"
 
 msgid "search.author"
 msgstr "按作者"
@@ -1795,9 +1679,6 @@ msgstr "审阅者已取消。"
 msgid "notification.reinstatedReviewer"
 msgstr "审阅者已恢复。"
 
-msgid "notification.reviewerResendRequest"
-msgstr ""
-
 msgid "notification.addedStageParticipant"
 msgstr "用户已添加为阶段参与者。"
 
@@ -1828,13 +1709,13 @@ msgstr "在{$stage}中要考虑的修订。"
 msgid "notification.type.pendingRevisions.title"
 msgstr "修订已提交到 {$stage}。"
 
+msgid "notification.type.metadataModified"
+msgstr "“ {$title}” 的元数据已被修改。"
+
 msgid "notification.type.reviewerComment"
 msgstr "审阅者对“ {$title}”发表了评论。"
 
 msgid "notification.signedFile"
-msgstr ""
-
-msgid "timeZone"
 msgstr ""
 
 msgid "user.email"
@@ -1896,9 +1777,6 @@ msgstr ""
 msgid "notification.type.editorialReport.contents"
 msgstr "这里提醒您通过编辑报告检查期刊的健康状况。"
 
-msgid "notification.type.editorialReminder"
-msgstr ""
-
 msgid "semicolon"
 msgstr "{$label}:"
 
@@ -1920,41 +1798,11 @@ msgstr "导航菜单已成功更新"
 msgid "notification.removedNavigationMenu"
 msgstr "导航菜单已成功删除"
 
-msgid "notification.unsubscribeNotifications.success"
-msgstr ""
-
-msgid "notification.unsubscribeNotifications.error"
-msgstr ""
-
-msgid "notification.unsubscribeNotifications.pageMessage"
-msgstr ""
-
-msgid "notification.unsubscribeNotifications.resubscribe"
-msgstr ""
-
-msgid "notification.unsubscribeNotifications.successMessage"
-msgstr ""
-
-msgid "notification.unsubscribeNotifications.errorMessage"
-msgstr ""
-
-msgid "notification.unsubscribeNotifications"
-msgstr ""
-
 msgid "list.viewMore"
 msgstr "显示有关 {$name} 的更多详细信息"
 
 msgid "list.viewLess"
 msgstr "隐藏有关 {$name} 的详细信息"
-
-msgid "list.expandAll"
-msgstr ""
-
-msgid "list.collapseAll"
-msgstr ""
-
-msgid "validation.invalidOption"
-msgstr ""
 
 msgid "validator.accepted"
 msgstr "请接受此项目。"
@@ -2000,12 +1848,6 @@ msgstr "该字段必须为true或false。"
 
 msgid "validator.confirmed"
 msgstr "此项的确认项不匹配。"
-
-msgid "validator.country"
-msgstr ""
-
-msgid "validator.country.regex"
-msgstr ""
 
 msgid "validator.currency"
 msgstr "这不是有效的货币。"
@@ -2151,36 +1993,6 @@ msgstr "{$attribute}已被使用。"
 msgid "validator.url"
 msgstr "这不是有效的网址。"
 
-msgid "validator.no_new_line"
-msgstr ""
-
-msgid "validator.allowable_title_html_tags"
-msgstr ""
-
-msgid "filter.input.error.notSupported"
-msgstr ""
-
-msgid "filter.error.missingRequirements"
-msgstr ""
-
-msgid "filter.import.error.couldNotImportNode"
-msgstr ""
-
-msgid "plugins.importexport.common.error.unknownCommand"
-msgstr ""
-
-msgid "common.withForwardSlash"
-msgstr "{$item}/{$afterSlash}"
-
-msgid "common.categorySeparator"
-msgstr "{$parent} > {$child}"
-
-msgid "notification.addedAuthor"
-msgstr "作者已添加。"
-
-msgid "notification.editedAuthor"
-msgstr "作者已编辑。"
-
 #~ msgid "announcement.viewLink"
 #~ msgstr "更多..."
 
@@ -2189,12 +2001,6 @@ msgstr "作者已编辑。"
 
 #~ msgid "common.captchaField.badCaptcha"
 #~ msgstr "你输入的字符与图片中的不符合，请检查字符后再试."
-
-#~ msgid "common.captchaField.description"
-#~ msgstr "请输入出现在图片里的字母."
-
-#~ msgid "common.captchaField"
-#~ msgstr "验证"
 
 #~ msgid "help.contents"
 #~ msgstr "内容"
@@ -2237,15 +2043,6 @@ msgstr "作者已编辑。"
 
 #~ msgid "common.element"
 #~ msgstr "元素"
-
-#~ msgid "common.captcha.error.invalid-input-response"
-#~ msgstr "您没有通过用于阻止垃圾提交的验证检查。"
-
-#~ msgid "common.captcha.error.invalid-input-secret"
-#~ msgstr "此网站的验证码未正确配置。 密钥无效。"
-
-#~ msgid "common.captcha.error.missing-input-secret"
-#~ msgstr "此网站的验证码未正确配置。 缺少密钥。"
 
 #~ msgid "notification.editedAnnouncement"
 #~ msgstr "公告已编辑。"

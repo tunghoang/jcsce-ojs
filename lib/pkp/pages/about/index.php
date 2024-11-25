@@ -12,19 +12,23 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @ingroup pages_about
- *
  * @brief Handle requests for about the context functions.
  *
  */
 
 switch ($op) {
-    case 'index':
-    case 'editorialMasthead':
-    case 'editorialHistory':
-    case 'submissions':
-    case 'contact':
-        return new \PKP\pages\about\AboutContextHandler();
-    case 'privacy':
-    case 'aboutThisPublishingSystem':
-        return new \PKP\pages\about\AboutSiteHandler();
+	case 'index':
+	case 'editorialTeam':
+	case 'submissions':
+	case 'contact':
+		define('HANDLER_CLASS', 'AboutContextHandler');
+		import('lib.pkp.pages.about.AboutContextHandler');
+		break;
+	case 'privacy':
+	case 'aboutThisPublishingSystem':
+		define('HANDLER_CLASS', 'AboutSiteHandler');
+		import('lib.pkp.pages.about.AboutSiteHandler');
+		break;
 }
+
+

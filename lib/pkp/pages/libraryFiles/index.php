@@ -8,13 +8,16 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @ingroup pages_publicLibraryFiles
- *
  * @brief Handle requests for public library files.
  *
  */
 
 switch ($op) {
-    case 'downloadPublic':
-    case 'downloadLibraryFile':
-        return new PKP\pages\libraryFiles\LibraryFileHandler();
+	case 'downloadPublic':
+	case 'downloadLibraryFile':
+		define('HANDLER_CLASS', 'LibraryFileHandler');
+		import('lib.pkp.pages.libraryFiles.LibraryFileHandler');
+		break;
 }
+
+

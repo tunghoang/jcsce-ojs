@@ -17,15 +17,9 @@
 	{if isset($_label.$currentLocale)}
 		{assign var=_label value=$_label.$currentLocale}
 	{else}
-		{assign var=_primaryLocale value=PKP\facades\Locale::getPrimaryLocale()}
+		{assign var=_primaryLocale value=AppLocale::getPrimaryLocale()}
 		{assign var=_label value=$_label.$_primaryLocale}
 	{/if}
-{/if}
-
-{if $column->hasFlag('format')}
-	{assign var=_format value=$column->getFlag('format')|lower}
-{else}
-	{assign var=_format value='text'|lower}
 {/if}
 
 {* Handle escaping as needed *}
@@ -52,6 +46,6 @@
 
 {if count($actions) gt 0}
 	{foreach from=$actions item=action}
-		{include file="linkAction/linkAction.tpl" action=$action contextId=$cellId anyhtml=$column->hasFlag('anyhtml') html=$column->hasFlag('html')}
+		{include file="linkAction/linkAction.tpl" action=$action contextId=$cellId anyhtml=$column->hasFlag('anyhtml')}
 	{/foreach}
 {/if}

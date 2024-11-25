@@ -1,10 +1,9 @@
-# Marie-Hélène Vézina [UdeMontréal] <marie-helene.vezina@umontreal.ca>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-15T13:36:56-07:00\n"
-"PO-Revision-Date: 2022-11-12 10:02+0000\n"
+"PO-Revision-Date: 2020-06-04 18:39+0000\n"
 "Last-Translator: Marie-Hélène Vézina [UdeMontréal] <marie-helene."
 "vezina@umontreal.ca>\n"
 "Language-Team: French (Canada) <http://translate.pkp.sfu.ca/projects/pkp-lib/"
@@ -14,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.13.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 # localization file for fr_CA. Last revision 2019-10-23T01:54:20 by Marie-Hélène Vézina, Bibliothèques, Université de Montréal.
 msgid "reviewer.reviewSteps.request"
@@ -24,7 +23,7 @@ msgid "reviewer.reviewSteps.guidelines"
 msgstr "2. Lignes directrices"
 
 msgid "reviewer.reviewSteps.download"
-msgstr "3. Télécharger et évaluer"
+msgstr "3. Télécharger & Évaluer"
 
 msgid "reviewer.reviewSteps.completion"
 msgstr "4. Terminer"
@@ -107,66 +106,6 @@ msgstr ""
 "consulter, y compris les versions révisées des fichiers d'évaluation "
 "originaux."
 
-msgid "reviewer.submission.reviewRound.info"
-msgstr "Évaluations précédentes"
-
-msgid "reviewer.submission.reviewRound.info.submittedOn"
-msgstr "Cycle d'évaluation {$round} Évaluation soumise le {$submittedOn}"
-
-msgid "reviewer.submission.reviewRound.info.read"
-msgstr "Lire l'évaluation du cycle {$round}"
-
-msgid "reviewer.submission.reviewRound.info.modal.title"
-msgstr "Cycle d'évaluation {$round} que vous avez soumis pour"
-
-msgid "reviewer.submission.reviewRound.comments"
-msgstr "Commentaires de l'évaluateur"
-
-msgid "reviewer.submission.reviewRound.comments.authorAndEditor"
-msgstr "Pour la rédaction et les auteurs"
-
-msgid "reviewer.submission.reviewRound.comments.editorOnly"
-msgstr "Pour la rédaction seulement"
-
-msgid "reviewer.submission.reviewRound.comments.prefix"
-msgstr "Commentaire {$index}: "
-
-msgid "reviewer.submission.reviewRound.emailLog"
-msgstr "Raison du refus envoyée par courriel"
-
-msgid "reviewer.submission.reviewRound.emailLog.defaultMessage"
-msgstr "Aucune raison fournie pour le refus de l'invitation à évaluer."
-
-msgid "reviewer.submission.reviewRound.reviewDeclineDate"
-msgstr "Date du refus"
-
-msgid "reviewer.submission.reviewRound.metadata"
-msgstr "Métadonnées de l'article"
-
-msgid "reviewer.submission.reviewRound.metadata.type"
-msgstr "Type"
-
-msgid "reviewer.submission.reviewRound.metadata.abstract"
-msgstr "Résumé"
-
-msgid "reviewer.submission.reviewRound.metadata.keywords"
-msgstr "Mots clés"
-
-msgid "reviewer.submission.reviewRound.general"
-msgstr "Information générale"
-
-msgid "reviewer.submission.reviewRound.attachments"
-msgstr "Pièces jointes"
-
-msgid "reviewer.submission.reviewRound.attachments.description"
-msgstr "Il s'agit des fichiers que vous avez joints à votre évaluation"
-
-msgid "reviewer.submission.reviewRound.files"
-msgstr "Fichiers pour l'évaluation"
-
-msgid "reviewer.submission.reviewRound.files.description"
-msgstr "Il s'agit des fichiers qui vous ont été envoyés pour l'évaluation"
-
 msgid "reviewer.complete"
 msgstr "Évaluation envoyée"
 
@@ -197,10 +136,9 @@ msgstr "Ce texte sera transmis uniquement au,à la rédacteur-trice"
 
 msgid "submission.comments.sendCopyToReviewers"
 msgstr ""
-"Envoyer une copie en Cci de ce courriel aux évaluateur.trice.s suivant.e.s."
 
 msgid "submission.comments.sendToReviewers"
-msgstr "Envoyer aux évaluateur.trice.s"
+msgstr ""
 
 msgid "user.authorization.submissionReviewer"
 msgstr ""

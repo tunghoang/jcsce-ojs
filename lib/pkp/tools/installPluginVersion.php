@@ -8,101 +8,94 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class InstallPluginVersionTool
- *
  * @ingroup tools
  *
  * @brief CLI tool for installing a plugin version descriptor.
  */
 
-require(dirname(__FILE__, 4) . '/tools/bootstrap.php');
+define('RUNNING_UPGRADE', 1);
 
-use APP\core\Application;
-use APP\install\Upgrade;
-use PKP\db\DAORegistry;
-use PKP\plugins\PluginRegistry;
-use PKP\site\VersionCheck;
+require(dirname(dirname(dirname(dirname(__FILE__)))) . '/tools/bootstrap.inc.php');
 
-class InstallPluginVersionTool extends \PKP\cliTool\CommandLineTool
-{
-    /** @var string Path to descriptor file to install */
-    private $_descriptor;
+import('lib.pkp.classes.site.Version');
+import('lib.pkp.classes.site.VersionCheck');
 
-    /**
-     * Constructor.
-     *
-     * @param array $argv command-line arguments
-     */
-    public function __construct($argv = [])
-    {
-        parent::__construct($argv);
+class InstallPluginVersionTool extends CommandLineTool {
+	/** @var string Path to descriptor file to install */
+	private $_descriptor;
 
-        if (!isset($this->argv[0]) || !file_exists($this->argv[0])) {
-            $this->usage();
-            exit(1);
-        }
+	/**
+	 * Constructor.
+	 * @param $argv array command-line arguments
+	 */
+	function __construct($argv = array()) {
+		parent::__construct($argv);
 
-        $this->_descriptor = $this->argv[0];
-    }
+		if (!isset($this->argv[0]) || !file_exists($this->argv[0])) {
+			$this->usage();
+			exit(1);
+		}
 
-    /**
-     * Print command usage information.
-     */
-    public function usage()
-    {
-        echo "Install plugin version tool\n"
-            . "Usage: {$this->scriptName} path/to/version.xml\n";
-    }
+		$this->_descriptor = $this->argv[0];
+	}
 
-    /**
-     * Execute the specified command.
-     */
-    public function execute()
-    {
-        $versionInfo = VersionCheck::parseVersionXML($this->_descriptor);
-        $pluginVersion = $versionInfo['version'];
+	/**
+	 * Print command usage information.
+	 */
+	function usage() {
+		echo "Install plugin version tool\n"
+			. "Usage: {$this->scriptName} path/to/version.xml\n";
+	}
 
-        $productType = $pluginVersion->getProductType();
-        if (!preg_match('/^plugins\.(.+)$/', $productType, $matches) || !in_array($matches[1], Application::get()->getPluginCategories())) {
-            error_log("Invalid type \"{$productType}\".");
-            return false;
-        }
+	/**
+	 * Execute the specified command.
+	 */
+	function execute() {
+		$versionInfo = VersionCheck::parseVersionXML($this->_descriptor);
+		$pluginVersion = $versionInfo['version'];
 
-        /** @var VersionDAO */
-        $versionDao = DAORegistry::getDAO('VersionDAO');
-        $versionDao->insertVersion($pluginVersion, true);
+		$productType = $pluginVersion->getProductType();
+		if (!preg_match('/^plugins\.(.+)$/', $productType, $matches) || !in_array($matches[1], Application::get()->getPluginCategories())) {
+			error_log("Invalid type \"$productType\".");
+			return false;
+		}
 
-        $pluginPath = dirname($this->_descriptor);
-        if (file_exists($wrapperName = "{$pluginPath}/index.php")) {
-            // Old-style (non-FQCN) plugin class name
-            $plugin = include($wrapperName);
-        } else {
-            // Expect a wrapper-less plugin in a namespace.
-            $fqcn = '\\APP\\' . strtr($pluginVersion->getProductType(), '.', '\\') . '\\' . $pluginVersion->getProduct() . '\\' . $pluginVersion->getProductClassName();
-            $plugin = new $fqcn();
-        }
-        if ($plugin && is_object($plugin)) {
-            PluginRegistry::register($matches[1], $plugin, $pluginPath);
-        }
-        $plugin = PluginRegistry::getPlugin($matches[1], $plugin->getName());
+		$versionDao = DAORegistry::getDAO('VersionDAO');
+		$versionDao->insertVersion($pluginVersion, true);
 
-        $installer = new Upgrade([]);
-        $result = true;
-        $param = [&$installer, &$result];
+		$pluginPath = dirname($this->_descriptor);
+		$plugin = @include("$pluginPath/index.php");
+		if ($plugin && is_object($plugin)) {
+			PluginRegistry::register($matches[1], $plugin, $pluginPath);
+		}
+		$plugin = PluginRegistry::getPlugin($matches[1], $plugin->getName());
 
-        if ($plugin->getInstallMigration()) {
-            $plugin->updateSchema('Installer::postInstall', $param);
-        }
-        if ($plugin->getInstallSitePluginSettingsFile()) {
-            $plugin->installSiteSettings('Installer::postInstall', $param);
-        }
-        if ($plugin->getInstallEmailTemplatesFile()) {
-            $plugin->installEmailTemplates('Installer::postInstall', $param);
-        }
-        $plugin->installFilters('Installer::postInstall', $param);
-        return $result;
-    }
+		import('classes.install.Upgrade');
+		$installer = new Upgrade(array());
+		$result = true;
+		$param = [&$installer, &$result];
+
+		if ($plugin->getInstallMigration()) {
+			$plugin->updateSchema('Installer::postInstall', $param);
+		}
+		if ($plugin->getInstallSitePluginSettingsFile()) {
+			$plugin->installSiteSettings('Installer::postInstall', $param);
+		}
+		if ($plugin->getInstallControlledVocabFiles()) {
+			$plugin->installControlledVocabs('Installer::postInstall', $param);
+		}
+		if ($plugin->getInstallEmailTemplatesFile()) {
+			$plugin->installEmailTemplates('Installer::postInstall', $param);
+		}
+		if ($plugin->getInstallEmailTemplateDataFile()) {
+			$plugin->installEmailTemplateData('Installer::postInstall', $param);
+		}
+		$plugin->installFilters('Installer::postInstall', $param);
+		return $result;
+	}
 }
 
-Application::upgrade();
-$tool = new InstallPluginVersionTool($argv ?? []);
+$tool = new InstallPluginVersionTool(isset($argv) ? $argv : array());
 $tool->execute();
+
+

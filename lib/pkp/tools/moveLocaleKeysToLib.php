@@ -3,8 +3,8 @@
 /**
  * @file tools/moveLocaleKeysToLib.php
  *
- * Copyright (c) 2014-2021 Simon Fraser University
- * Copyright (c) 2003-2021 John Willinsky
+ * Copyright (c) 2014-2024 Simon Fraser University
+ * Copyright (c) 2003-2024 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class MoveLocaleKeysToLib
@@ -14,9 +14,11 @@
  * @brief Move a locale key from an application's locale files to the pkp-lib locale files.
  */
 
-require(dirname(__FILE__, 4) . '/tools/bootstrap.php');
+require(dirname(__FILE__, 4) . '/tools/bootstrap.inc.php');
 
-class MoveLocaleKeysToLib extends \PKP\cliTool\CommandLineTool
+import('lib.pkp.classes.cliTool.CliTool');
+
+class MoveLocaleKeysToLib extends CommandLineTool
 {
     /** @var string The string to match in a msgid */
     public $msgidMatch = '';

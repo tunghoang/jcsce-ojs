@@ -31,6 +31,12 @@ msgstr "<span class=\"pkp_form_error formError\">未通过</span>"
 msgid "installer.checkYes"
 msgstr "通过"
 
+msgid "installer.clientCharset"
+msgstr "客户端字符设置"
+
+msgid "installer.clientCharsetInstructions"
+msgstr "从浏览器发送和接受数据的使用的编码."
+
 msgid "installer.configFileError"
 msgstr "配置文件 <tt>config.inc.php</tt> 不存在或者不可读."
 
@@ -111,9 +117,6 @@ msgstr ""
 msgid "installer.form.usernameRequired"
 msgstr "管理员的用户名是必须的."
 
-msgid "installer.form.timeZoneRequired"
-msgstr ""
-
 msgid "installer.installationWrongPhp"
 msgstr ""
 "<br/><strong>警告：您当前PHP的版本不符合系统安装的最低要求. 推荐您升级系统的"
@@ -143,15 +146,8 @@ msgstr "错误解析电子邮件模板文件<tt>{$file}</tt>."
 msgid "installer.installParseFilterConfigFileError"
 msgstr "错误解析过滤配置文件<tt>{$file}</tt>."
 
-#, fuzzy
 msgid "installer.unsupportedUpgradeError"
 msgstr "不支持升级。 有关详细信息，请参阅 docs/UPGRADE-UNSUPPORTED。"
-
-msgid "installer.timezoneInstructions"
-msgstr ""
-
-msgid "installer.additionalLocalesInstructions"
-msgstr ""
 
 msgid "installer.locale"
 msgstr "语言设置"
@@ -216,12 +212,6 @@ msgstr "为PKP提供唯一的站点ID和OAI基本URL，仅用于统计和安全�
 
 msgid "installer.unsupportedPhpError"
 msgstr "该软件不支持您服务器的PHP版本。 请在 docs/README 中仔细检查安装要求。"
-
-#~ msgid "installer.clientCharset"
-#~ msgstr "客户端字符设置"
-
-#~ msgid "installer.clientCharsetInstructions"
-#~ msgstr "从浏览器发送和接受数据的使用的编码."
 
 #~ msgid "installer.encryption"
 #~ msgstr "密码加密算法"

@@ -10,21 +10,21 @@ debug = Off
 
 [general]
 installed = On
-base_url = "https://pkp.sfu.ca/ojs"
+base_url = "http://pkp.sfu.ca/ojs"
 session_cookie_name = OJSSID
 session_lifetime = 30
+scheduled_tasks = Off
 
-date_format_short = "Y-m-d"
-date_format_long = "F j, Y"
-datetime_format_short = "Y-m-d h:i A"
-datetime_format_long = "F j, Y - h:i A"
-time_format = "h:i A"
+date_format_short = "%Y-%m-%d"
+date_format_long = "%B %e, %Y"
+datetime_format_short = "%Y-%m-%d %I:%M %p"
+datetime_format_long = "%B %e, %Y - %I:%M %p"
+
+disable_path_info = Off
 
 ; base_url[index] = http://www.myUrl.com
 ; base_url[myJournal] = http://www.myUrl.com/myJournal
 ; base_url[myOtherJournal] = http://myOtherJournal.myUrl.com
-
-allowed_hosts = "[\"mydomain.org\"]"
 
 [cache]
 cache = file
@@ -34,7 +34,8 @@ web_cache = Off
 web_cache_hours = 1
 
 [i18n]
-locale = en
+locale = en_US
+client_charset = utf-8
 connection_charset = utf8
 
 [files]
@@ -50,8 +51,17 @@ force_ssl = Off
 force_login_ssl = Off
 session_check_ip = On
 encryption = md5
-allowed_html = "a[href|target|title],em,strong,cite,code,ul,ol,li[class],dl,dt,dd,b,i,u,img[src|alt],sup,sub,br,p"
-salt = "YouMustSetASecretKeyHere!!"
+allowed_html = "<a> <em> <strong> <cite> <code> <ul> <ol> <li> <dl> <dt> <dd> <b> <i> <u> <img> <sup> <sub> <br> <p>"
+;implicit_auth = On
+;implicit_auth_header_first_name = HTTP_TDL_GIVENNAME
+;implicit_auth_header_last_name = HTTP_TDL_SN
+;implicit_auth_header_email = HTTP_TDL_MAIL
+;implicit_auth_header_phone = HTTP_TDL_TELEPHONENUMBER
+;implicit_auth_header_initials = HTTP_TDL_METADATA_INITIALS
+;implicit_auth_header_mailing_address = HTTP_TDL_METADATA_TDLHOMEPOSTALADDRESS
+;implicit_auth_header_uin = HTTP_TDL_TDLUID
+;implicit_auth_admin_list = "100000040@tdl.org 85B7FA892DAA90F7@utexas.edu 100000012@tdl.org"
+;implicit_auth_wayf_url = "/Shibboleth.sso/wayf"
 
 [email]
 ; smtp = On
@@ -62,6 +72,8 @@ salt = "YouMustSetASecretKeyHere!!"
 ; smtp_password = password
 ; allow_envelope_sender = Off
 ; default_envelope_sender = my_address@my_host.com
+time_between_emails = 3600
+max_recipients = 10
 require_validation = Off
 validation_timeout = 14
 display_errors = On
@@ -98,12 +110,3 @@ font_location = /usr/share/fonts/truetype/freefont/FreeSerif.ttf
 
 [debug]
 show_stacktrace = On
-
-[queues]
-default_queue = "test_default_queue"
-disable_jobs_run_at_shutdown = Off
-
-[schedule]
-task_runner = On
-task_runner_interval = 60
-scheduled_tasks_report_error_only = Off

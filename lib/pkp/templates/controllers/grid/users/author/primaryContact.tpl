@@ -7,7 +7,6 @@
  *
  * Principal contact cell
  *
- * @deprecated 3.4
  *}
 {if $isPrincipalContact}
 	<div id="isChecked"><div href="#" class='pkp_helpers_container_center checked'></div></div>

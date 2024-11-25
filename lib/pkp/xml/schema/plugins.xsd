@@ -67,16 +67,18 @@
 		<sequence>
 			<element name="version" minOccurs="1" maxOccurs="unbounded">
 				<simpleType>
-					<restriction base="string" />
+					<restriction base="string">
+						<pattern value="\d+\.\d+\.\d+\.\d+" />
+					</restriction>
 				</simpleType>
 			</element>
 		</sequence>
 		<attribute name="application" use="required">
 			<simpleType>
 				<restriction base="string">
+					<enumeration value="ops" />
 					<enumeration value="ojs2" />
 					<enumeration value="ocs2" />
-					<enumeration value="ops" />
 					<enumeration value="omp" />
 					<enumeration value="ohs" />
 				</restriction>
@@ -103,10 +105,10 @@
 	</simpleType>
 
 	<!-- FIXME: These are duplicated from importexport.xsd. Better way? -->
-	<!-- Identifies a particular I18N locale, e.g. en -->
+	<!-- Identifies a particular I18N locale, e.g. en_US -->
 	<simpleType name="locale">
 		<restriction base="string">
-			<pattern value="[a-z][a-z](_[A-Z][A-Z])?" />
+			<pattern value="[a-z][a-z]_[A-Z][A-Z]" />
 		</restriction>
 	</simpleType>
 

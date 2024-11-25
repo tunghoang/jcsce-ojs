@@ -6,8 +6,6 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @brief The users, roles and site access settings page.
- *
- * @hook Template::Settings::access []
  *}
 {extends file="layouts/backend.tpl"}
 
@@ -18,27 +16,31 @@
 
 	<tabs :track-history="true">
 		<tab id="users" label="{translate key="manager.users"}">
-			<user-invitation-manager></user-invitation-manager>
 			{include file="management/accessUsers.tpl"}
 		</tab>
 		<tab id="roles" label="{translate key="manager.roles"}">
 			{help file="users-and-roles" section="roles" class="pkp_help_tab"}
-			{capture assign=rolesUrl}{url router=PKP\core\PKPApplication::ROUTE_COMPONENT component="grid.settings.roles.UserGroupGridHandler" op="fetchGrid" escape=false}{/capture}
+			{capture assign=rolesUrl}{url router=$smarty.const.ROUTE_COMPONENT component="grid.settings.roles.UserGroupGridHandler" op="fetchGrid" escape=false}{/capture}
 			{load_url_in_div id="roleGridContainer" url=$rolesUrl}
 		</tab>
 		{if $enableBulkEmails}
 		<tab id="notify" label="{translate key="manager.setup.notifyUsers"}">
-			<div v-if="totalBulkJobs" role="alert">
-				<p>
-					<icon icon="Complete" :inline="true" class="h-5 w-5"></icon>
-					{translate key="manager.setup.notifyUsers.queued"}
+			<div v-if="queueId" role="alert">
+				<p v-if="completedJobs < totalJobs">
+					<spinner class="notifyUsers__progress__spinner"></spinner>
+					{translate key="manager.setup.notifyUsers.sending"}
+				</p>
+				<p v-else>
+					<icon icon="check" :inline="true"></icon>
+					{translate key="manager.setup.notifyUsers.sent"}
 					<button class="-linkButton" @click="reload">
 						{translate key="manager.setup.notifyUsers.sendAnother"}
 					</button>
 				</p>
+				<progress-bar :max="totalJobs" :min="0" :value="completedJobs" />
 			</div>
 			<notify-users-form v-else
-				v-bind="components.{PKP\components\forms\context\PKPNotifyUsersForm::FORM_NOTIFY_USERS}"
+				v-bind="components.{$smarty.const.FORM_NOTIFY_USERS}"
 				@set="set"
 			/>
 		</tab>
@@ -46,16 +48,10 @@
 		<tab id="access" label="{translate key="manager.siteAccessOptions.siteAccessOptions"}">
 		{help file="users-and-roles" section="site-access" class="pkp_help_tab"}
 			<pkp-form
-				v-bind="components.{PKP\components\forms\context\PKPUserAccessForm::FORM_USER_ACCESS}"
+				v-bind="components.{$smarty.const.FORM_USER_ACCESS}"
 				@set="set"
 			/>
 		</tab>
-        <tab id="orcidSettings" label="{translate key="orcid.displayName"}">
-            <pkp-form
-                    v-bind="components.orcidSettings"
-                    @set="set"
-            />
-        </tab>
 		{call_hook name="Template::Settings::access"}
 	</tabs>
 {/block}

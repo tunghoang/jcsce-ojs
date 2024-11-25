@@ -8,59 +8,37 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class FormValidatorPostTest
- *
  * @ingroup tests_classes_form_validation
- *
  * @see FormValidatorPost
  *
  * @brief Test class for FormValidatorPost.
  */
 
-namespace PKP\tests\classes\form\validation;
 
-use APP\core\Application;
-use Mockery;
-use PKP\core\Registry;
-use PKP\form\Form;
-use PKP\form\validation\FormValidatorPost;
-use PKP\tests\PKPTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
+require_mock_env('env1');
 
-#[CoversClass(FormValidatorPost::class)]
-class FormValidatorPostTest extends PKPTestCase
-{
-    private bool $_isPosted = false;
+import('lib.pkp.tests.PKPTestCase');
+import('lib.pkp.classes.form.Form');
+import('classes.core.Request'); // This will import the mock request
 
-    /**
-     * @see PKPTestCase::getMockedRegistryKeys()
-     */
-    protected function getMockedRegistryKeys(): array
-    {
-        return [...parent::getMockedRegistryKeys(), 'request'];
-    }
+class FormValidatorPostTest extends PKPTestCase {
+	/**
+	 * @covers FormValidatorPost
+	 * @covers FormValidator
+	 */
+	public function testIsValid() {
+		// Instantiate test validator
+		$form = new Form('some template');
+		$validator = new FormValidatorPost($form, 'some.message.key');
 
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $request = Application::get()->getRequest();
-        $mock = Mockery::mock($request)
-            // Custom isPost()
-            ->shouldReceive('isPost')->andReturnUsing(fn () => $this->_isPosted)
-            ->getMock();
-        // Replace the request singleton by a mock
-        Registry::set('request', $mock);
-    }
+		$this->markTestSkipped('Disabled for static invocation of Request.');
 
-    public function testIsValid()
-    {
-        // Instantiate test validator
-        $form = new Form('some template');
-        $validator = new FormValidatorPost($form, 'some.message.key');
+		$request = Application::get()->getRequest();
+		$request->setRequestMethod('POST');
+		self::assertTrue($validator->isValid());
 
-        $this->_isPosted = true;
-        self::assertTrue($validator->isValid());
-
-        $this->_isPosted = false;
-        self::assertFalse($validator->isValid());
-    }
+		$request->setRequestMethod('GET');
+		self::assertFalse($validator->isValid());
+	}
 }
+

@@ -10,6 +10,7 @@
  * Parameters:
  *   $disableUserNameSection: Disable UserName section
  *   $disableEmailSection: Disable Email section
+ *   $disableAuthSourceSection: Disable Auth section
  *   $disablePasswordSection: Disable Password section
  *   $disableSendNotifySection: Disable SendNotify section
  *   $disablePhoneSection: Disable Phone section
@@ -20,8 +21,6 @@
  *
  *   $countryRequired: Whether or not the country select is a required field
  *   $extraContentSectionUnfolded: Whether or not the extra content section is unfolded by default
- *
- * @hook Common::UserDetails::AdditionalItems []
  *}
 
 {fbvFormArea id="userDetails"}
@@ -51,6 +50,12 @@
 	{if !$disableEmailSection}
 		{fbvFormSection title="about.contact"}
 			{fbvElement type="email" label="user.email" id="email" required="true" value=$email maxlength="90" size=$fbvStyles.size.MEDIUM}
+		{/fbvFormSection}
+	{/if}
+
+	{if !$disableAuthSourceSection}
+		{fbvFormSection title="grid.user.authSource" for="authId"}
+			{fbvElement type="select" name="authId" id="authId" defaultLabel="" defaultValue="" from=$authSourceOptions translate="true" selected=$authId}
 		{/fbvFormSection}
 	{/if}
 
@@ -111,17 +116,18 @@
 			{if !$disablePhoneSection}
 				{fbvElement type="tel" label="user.phone" name="phone" id="phone" value=$phone maxlength="24" inline=true size=$fbvStyles.size.SMALL}
 			{/if}
+			{fbvElement type="text" label="user.orcid" name="orcid" id="orcid" value=$orcid maxlength="37" inline=true size=$fbvStyles.size.SMALL}
 		{/fbvFormSection}
 
 		{if !$disableLocaleSection && count($availableLocales) > 1}
 			{fbvFormSection title="user.workingLanguages" list=true}
 				{foreach from=$availableLocales key=localeKey item=localeName}
-					{if $locales && in_array($localeKey, $locales)}
+					{if $userLocales && in_array($localeKey, $userLocales)}
 						{assign var="checked" value=true}
 					{else}
 						{assign var="checked" value=false}
 					{/if}
-					{fbvElement type="checkbox" name="locales[]" id="locales-$localeKey" value=$localeKey checked=$checked label=$localeName|escape translate=false}
+					{fbvElement type="checkbox" name="userLocales[]" id="userLocales-$localeKey" value=$localeKey checked=$checked label=$localeName|escape translate=false}
 				{/foreach}
 			{/fbvFormSection}
 		{/if}

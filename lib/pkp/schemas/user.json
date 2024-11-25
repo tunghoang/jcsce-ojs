@@ -8,38 +8,22 @@
 			"readOnly": true
 		},
 		"affiliation": {
-			"type": "string",
-			"multilingual": true,
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
+			"$ref": "#/definitions/LocaleObject"
 		},
-		"authStr": {
-			"type": "string",
-			"validation": [
-				"nullable"
-			]
+		"authId": {
+			"type": "integer"
+		},
+		"authString": {
+			"type": "string"
 		},
 		"billingAddress": {
-			"type": "string",
-			"validation": [
-				"nullable"
-			]
+			"type": "string"
 		},
 		"biography": {
-			"type": "string",
-			"multilingual": true,
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
+			"$ref": "#/definitions/LocaleObject"
 		},
 		"country": {
-			"type": "string",
-			"validation": [
-				"nullable"
-			]
+			"type": "string"
 		},
 		"dateRegistered": {
 			"type": "string",
@@ -50,40 +34,13 @@
 		"dateValidated": {
 			"type": "string",
 			"validation": [
-				"date:Y-m-d H:i:s",
-				"nullable"
+				"date:Y-m-d H:i:s"
 			]
 		},
-		"dateLastEmail": {
+		"dateLastRegistered": {
 			"type": "string",
 			"validation": [
-				"date:Y-m-d H:i:s",
-				"nullable"
-			]
-		},
-		"dateLastLogin": {
-			"type": "string",
-			"validation": [
-				"date:Y-m-d H:i:s",
-				"nullable"
-			]
-		},
-		"apiKey": {
-			"type": "string",
-			"validation": [
-				"nullable"
-			]
-		},
-		"apiKeyEnabled": {
-			"type": "boolean",
-			"validation": [
-				"nullable"
-			]
-		},
-		"inlineHelp": {
-			"type": "boolean",
-			"validation": [
-				"nullable"
+				"date:Y-m-d H:i:s"
 			]
 		},
 		"disabled": {
@@ -91,10 +48,7 @@
 			"apiSummary": true
 		},
 		"disabledReason": {
-			"type": "string",
-			"validation": [
-				"nullable"
-			]
+			"type": "string"
 		},
 		"email": {
 			"type": "string",
@@ -104,12 +58,7 @@
 			]
 		},
 		"familyName": {
-			"type": "string",
-			"multilingual": true,
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
+			"$ref": "#/definitions/LocaleObject"
 		},
 		"fullName": {
 			"type": "string",
@@ -117,16 +66,10 @@
 			"readOnly": true
 		},
 		"givenName": {
-			"type": "string",
-			"apiSummary": true,
-			"multilingual": true
+			"$ref": "#/definitions/LocaleObject"
 		},
 		"gossip": {
-			"type": "string",
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
+			"$ref": "#/definitions/LocaleObject"
 		},
 		"groups": {
 			"type": "array",
@@ -141,51 +84,15 @@
 			"apiSummary": true,
 			"readOnly": true
 		},
-		"profileImage": {
-			"type": "object",
-			"validation": [
-				"nullable"
-			],
-			"properties": {
-				"dateUploaded": {
-					"type": "string"
-				},
-				"name": {
-					"type": "string"
-				},
-				"uploadName": {
-					"type": "string"
-				},
-				"height": {
-					"type": "integer"
-				},
-				"width": {
-					"type": "integer"
-				}
-			}
-		},
 		"interests": {
 			"type": "array",
 			"readOnly": true,
-			"apiSummary": true,
 			"items": {
 				"$ref": "#/definitions/UserInterest"
 			}
 		},
-		"locales": {
-			"type": "array",
-			"items": {
-				"type": "string",
-				"validation": [
-					"regex:/^([a-z]{2})((_[A-Z]{2})?)(@[a-z]{0,})?$/"
-				]
-			}
-		},
 		"mailingAddress": {
-			"type": "string",
-			"validation": [
-				"nullable"
-			]
+			"type": "string"
 		},
 		"mustChangePassword": {
 			"type": "boolean"
@@ -194,139 +101,24 @@
 			"type": "string",
 			"apiSummary": true,
 			"validation": [
-				"orcid",
-				"nullable"
+				"orcid"
 			]
-		},
-		"password": {
-			"type": "string",
-			"writeOnly": true
 		},
 		"phone": {
-			"type": "string",
-			"validation": [
-				"nullable"
-			]
-		},
-		"preferredPublicName": {
-			"type": "string",
-			"description": "An optional field for users to specify how they prefer to be identified.",
-			"multilingual": true,
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
+			"type": "string"
 		},
 		"signature": {
-			"type": "string",
-			"multilingual": true,
-			"validation": [
-				"nullable"
-			]
+			"$ref": "#/definitions/LocaleObject"
 		},
 		"url": {
 			"type": "string",
 			"validation": [
-				"url",
-				"nullable"
+				"url"
 			]
 		},
 		"userName": {
 			"type": "string",
 			"apiSummary": true
-		},
-		"orcidAccessToken": {
-			"type": "string",
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
-		},
-		"orcidAccessScope": {
-			"type": "string",
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
-		},
-		"orcidRefreshToken": {
-			"type": "string",
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
-		},
-		"orcidAccessExpiresOn": {
-			"type": "string",
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
-		},
-		"orcidAccessDenied": {
-			"type": "string",
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
-		},
-		"orcidIsVerified": {
-			"type": "boolean",
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
-		},
-		"orcidReviewPutCode": {
-			"type": "string",
-			"apiSummary": true,
-			"validation": [
-				"nullable"
-			]
-		},
-		"rememberToken": {
-			"type": "string",
-			"writeOnly": true,
-			"validation": [
-				"nullable"
-			]
-		},
-		"stageAssignments": {
-			"apiSummary": true,
-			"readOnly": true,
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"stageAssignmentId": {
-						"type": "integer"
-					},
-					"stageAssignmentUserGroup": {
-						"type": "object",
-						"$ref": "#/definitions/UserGroup"
-					},
-					"stageAssignmentStageId": {
-						"type": "integer"
-					},
-					"stageAssignmentStage": {
-						"type": "object",
-						"properties": {
-							"id": {
-								"type": "string"
-							},
-							"label": {
-								"type": "string"
-							}
-						}
-					},
-					"canChangeMetadata": {
-						"type": "boolean"
-					},
-					"recommendOnly": {
-						"type": "boolean"
-					}
-				}
-			}
 		}
 	}
 }

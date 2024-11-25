@@ -23,7 +23,7 @@
 	<input type="hidden" name="submissionId" value="{$submissionId|escape}" />
 	<input type="hidden" name="reviewRoundId" value="{$reviewRoundId|escape}" />
 
-	{fbvFormSection title="editor.review.importantDates" description="editor.review.importantDates.notice"}
+	{fbvFormSection title="editor.review.importantDates"}
 		{fbvElement type="text" id="responseDueDate" name="responseDueDate" label="submission.task.responseDueDate" value=$responseDueDate inline=true size=$fbvStyles.size.MEDIUM class="datepicker"}
 		{fbvElement type="text" id="reviewDueDate" name="reviewDueDate" label="editor.review.reviewDueDate" value=$reviewDueDate inline=true size=$fbvStyles.size.MEDIUM class="datepicker"}
 	{/fbvFormSection}
@@ -43,7 +43,7 @@
 	{include file="controllers/grid/users/reviewer/form/noFilesWarning.tpl"}
 
 	<h3>{translate key="editor.submissionReview.restrictFiles"}</h3>
-	{capture assign=limitReviewFilesGridUrl}{url router=PKP\core\PKPApplication::ROUTE_COMPONENT component="grid.files.review.LimitReviewFilesGridHandler" op="fetchGrid" submissionId=$submissionId stageId=$stageId reviewRoundId=$reviewRoundId reviewAssignmentId=$reviewAssignmentId escape=false}{/capture}
+	{capture assign=limitReviewFilesGridUrl}{url router=$smarty.const.ROUTE_COMPONENT component="grid.files.review.LimitReviewFilesGridHandler" op="fetchGrid" submissionId=$submissionId stageId=$stageId reviewRoundId=$reviewRoundId reviewAssignmentId=$reviewAssignmentId escape=false}{/capture}
 	{load_url_in_div id="limitReviewFilesGrid" url=$limitReviewFilesGridUrl}
 
 	{if $reviewForms}

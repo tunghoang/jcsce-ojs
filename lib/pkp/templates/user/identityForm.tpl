@@ -12,16 +12,6 @@
 	$(function() {ldelim}
 		// Attach the form handler.
 		$('#identityForm').pkpHandler('$.pkp.controllers.form.AjaxFormHandler');
-
-		$('#deleteOrcidButton').on('click', function(e) {
-			const isModalConfirmTrigger = !e.originalEvent;
-			// Only execute logic when button was clicked via ButtonConfirmationModalHandler
-			if(isModalConfirmTrigger){
-				$('#identityForm').append('<input type="checkbox" id="removeOrcidId" name="removeOrcidId"  checked value="true"/>');
-				$('#identityForm').submit();
-				$('#removeOrcidId').remove();
-			}
-		});
 	{rdelim});
 </script>
 
@@ -50,29 +40,8 @@
 		{fbvElement type="text" label="user.preferredPublicName" multilingual="true" name="preferredPublicName" id="preferredPublicName" value=$preferredPublicName size=$fbvStyles.size.LARGE}
 	{/fbvFormSection}
 
-	{if $orcidEnabled}
-
-	<div class="orcid_container">
-		{* FIXME: The form element is still required for "connect ORCID" functionality to work. *}
-		{fbvFormSection }
-		{fbvElement type="text" label="user.orcid" name="orcid" id="orcid" value=$orcid maxlength="46"}
-
-		{include file="form/orcidProfile.tpl"}
-		{if $orcid && $orcidAuthenticated}
-			{include file="linkAction/buttonConfirmationLinkAction.tpl" modalStyle="negative" buttonSelector="#deleteOrcidButton" dialogText="orcid.field.deleteOrcidModal.message"}
-			<button id="deleteOrcidButton" type="button"  class="pkp_button pkp_button_offset" style="margin-left: 1rem">{translate key='common.delete'}</button>
-		{/if}
-		{/fbvFormSection}
-	</div>
-		<style>
-			.orcid_container> .section {
-				display:flex;
-			}
-		</style>
-	{/if}
-
 	<p>
-		{capture assign="privacyUrl"}{url router=PKP\core\PKPApplication::ROUTE_PAGE page="about" op="privacy"}{/capture}
+		{capture assign="privacyUrl"}{url router=$smarty.const.ROUTE_PAGE page="about" op="privacy"}{/capture}
 		{translate key="user.privacyLink" privacyUrl=$privacyUrl}
 	</p>
 

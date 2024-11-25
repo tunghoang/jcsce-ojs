@@ -30,7 +30,7 @@
 	{rdelim});
 </script>
 
-<form class="pkp_form" id="categoryForm" method="post" action="{url router=PKP\core\PKPApplication::ROUTE_COMPONENT component="grid.settings.category.CategoryCategoryGridHandler" op="updateCategory" categoryId=$categoryId}">
+<form class="pkp_form" id="categoryForm" method="post" action="{url router=$smarty.const.ROUTE_COMPONENT component="grid.settings.category.CategoryCategoryGridHandler" op="updateCategory" categoryId=$categoryId}">
 	{csrf}
 	{include file="controllers/notification/inPlaceNotification.tpl" notificationId="categoryFormNotification"}
 
@@ -47,10 +47,8 @@
 		{/fbvFormSection}
 
 		{fbvFormSection title="grid.category.path" required=true for="path"}
-			{capture assign="sampleUrl"}
-				{url router=PKP\core\PKPApplication::ROUTE_PAGE page="catalog" op="category" path="path"}
-			{/capture}
 			{capture assign="instruct"}
+				{url router=$smarty.const.ROUTE_PAGE page="catalog" op="category" path="path"}
 				{translate key="grid.category.urlWillBe" sampleUrl=$sampleUrl}
 			{/capture}
 			{fbvElement type="text" id="path" value=$path maxlength="32" label=$instruct subLabelTranslate=false}
@@ -72,27 +70,17 @@
 		{if $image}
 			{fbvFormSection}
 				{capture assign="altTitle"}{translate key="submission.currentCoverImage"}{/capture}
-				<img class="pkp_helpers_container_center" height="{$image.thumbnailHeight}" width="{$image.thumbnailWidth}" src="{url router=PKP\core\PKPApplication::ROUTE_PAGE page="catalog" op="thumbnail" type="category" id=$categoryId}" alt="{$altTitle|escape}" />
+				<img class="pkp_helpers_container_center" height="{$image.thumbnailHeight}" width="{$image.thumbnailWidth}" src="{url router=$smarty.const.ROUTE_PAGE page="catalog" op="thumbnail" type="category" id=$categoryId}" alt="{$altTitle|escape}" />
 			{/fbvFormSection}
 		{/if}
 
-		{fbvFormSection list=true title="manager.sections.form.assignEditors"}
-		<div>{translate key="manager.categories.form.assignEditors.description"}</div>
-		{foreach from=$assignableUserGroups item="assignableUserGroup"}
-			{assign var="role" value=$assignableUserGroup.userGroup->getLocalizedName()}
-			{assign var="userGroupId" value=$assignableUserGroup.userGroup->getId()}
-			{foreach from=$assignableUserGroup.users item=$username key="id"}
-				{fbvElement
-					type="checkbox"
-					id="subEditors[{$userGroupId}][]"
-					value=$id
-					checked=(isset($subeditorUserGroups[$id]) && in_array($userGroupId, $subeditorUserGroups[$id]))
-					label={translate key="manager.sections.form.assignEditorAs" name=$username|escape role=$role|escape}
-					translate=false
-				}
-			{/foreach}
-		{/foreach}
-		{/fbvFormSection}
+		{if count($availableSubeditors)}
+			{fbvFormSection list=true title="submissionGroup.assignedSubEditors"}
+				{foreach from=$availableSubeditors item="subEditor" key="id"}
+					{fbvElement type="checkbox" id="subEditors[]" value=$id checked=in_array($id, $assignedToCategory) label=$subEditor|escape translate=false}
+				{/foreach}
+			{/fbvFormSection}
+		{/if}
 
 		<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
 		{fbvFormButtons}

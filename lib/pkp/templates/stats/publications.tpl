@@ -16,7 +16,7 @@
 		<pkp-header>
 			<h1>{translate key="common.publications"}</h1>
 			<spinner v-if="isLoadingTimeline"></spinner>
-			<template #actions>
+			<template slot="actions">
 				<date-range
 					unique-id="publication-stats-date-range"
 					:date-start="dateStart"
@@ -46,7 +46,7 @@
 					:is-active="isSidebarVisible"
 					@click="toggleSidebar"
 				>
-					<icon icon="Filter" class="h-4 w-4" :inline="true"></icon>
+					<icon icon="filter" :inline="true"></icon>
 					{translate key="common.filter"}
 				</pkp-button>
 			</template>
@@ -64,7 +64,7 @@
 					:tabindex="isSidebarVisible ? 0 : -1"
 				>
 					<h2>
-						<icon icon="Filter" class="h-4 w-4" :inline="true"></icon>
+						<icon icon="filter" :inline="true"></icon>
 						{translate key="common.filter"}
 					</h2>
 				</pkp-header>
@@ -102,9 +102,9 @@
 									{translate key="stats.publications.abstracts"}
 								</pkp-button>
 								<pkp-button
-									:aria-pressed="timelineType === 'files'"
+									:aria-pressed="timelineType === 'galley'"
 									aria-describedby="publication-stats-graph-title"
-									@click="setTimelineType('files')"
+									@click="setTimelineType('galley')"
 								>
 									{translate key="submission.files"}
 								</pkp-button>
@@ -129,25 +129,23 @@
 							</div>
 						</div>
 					</div>
-					<div class="sr-only">
-						<table class="-screenReader" role="region" aria-live="polite">
-							<caption v-if="timelineType === 'files'">{translate key="stats.publications.totalGalleyViews.timelineInterval"}</caption>
-							<caption v-else>{translate key="stats.publications.totalAbstractViews.timelineInterval"}</caption>
-							<thead>
-								<tr>
-									<th scope="col">{translate key="common.date"}</th>
-									<th v-if="timelineType === 'files'" scope="col">{translate key="stats.fileViews"}</th>
-									<th v-else scope="col">{translate key="submission.abstractViews"}</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr	v-for="segment in timeline" :key="segment.date">
-									<th scope="row">{{ segment.label }}</th>
-									<td>{{ segment.value }}</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+					<table class="-screenReader" role="region" aria-live="polite">
+						<caption v-if="timelineType === 'galley'">{translate key="stats.publications.totalGalleyViews.timelineInterval"}</caption>
+						<caption v-else>{translate key="stats.publications.totalAbstractViews.timelineInterval"}</caption>
+						<thead>
+							<tr>
+								<th scope="col">{translate key="common.date"}</th>
+								<th v-if="timelineType === 'galley'" scope="col">{translate key="stats.fileViews"}</th>
+								<th v-else scope="col">{translate key="submission.abstractViews"}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr	v-for="segment in timeline" :key="segment.date">
+								<th scope="row">{{ segment.label }}</th>
+								<td>{{ segment.value }}</td>
+							</tr>
+						</tbody>
+					</table>
 					<line-chart :chart-data="chartData" aria-hidden="true"></line-chart>
 					<span v-if="isLoadingTimeline" class="pkpStats__loadingCover">
 						<spinner></spinner>
@@ -159,7 +157,7 @@
 							{translate key="stats.publications.details"}
 							<spinner v-if="isLoadingItems"></spinner>
 						</h2>
-						<template #actions>
+						<template slot="actions">
 							<div class="pkpStats__itemsOfTotal">
 								{{
 									replaceLocaleParams(itemsOfTotalLabel, {
@@ -175,43 +173,33 @@
 									{translate key="common.pagination.label"}
 								</a>
 							</div>
-							<pkp-button
-								ref="downloadReportModalButton"
-								@click="openDownloadReportModal"
-							>
-								{translate key="common.downloadReport"}
-							</pkp-button>
 						</template>
 					</pkp-header>
 					<pkp-table
 						labelled-by="publicationDetailTableLabel"
-						@sort="setOrderBy"
+						:class="tableClasses"
+						:columns="tableColumns"
+						:rows="items"
+						:order-by="orderBy"
+						:order-direction="orderDirection"
+						@order-by="setOrderBy"
 					>
-						<table-header>
-							<table-column
-								v-for="column in tableColumns"
+						<search
+							slot="thead-title"
+							class="pkpStats__titleSearch"
+							:search-phrase="searchPhrase"
+							search-label="{translate key="stats.searchSubmissionDescription"}"
+							@search-phrase-changed="setSearchPhrase"
+						></search>
+						<template slot-scope="{ row, rowIndex }">
+							<table-cell
+								v-for="(column, columnIndex) in tableColumns"
 								:key="column.name"
-								:id="column.name"
-								:allows-sorting="column.name === 'total'"
+								:column="column"
+								:row="row"
+								:tabindex="!rowIndex && !columnIndex ? 0 : -1"
 							>
 								<template v-if="column.name === 'title'">
-									{{ column.label }}
-									<search
-										#thead-title
-										class="pkpStats__titleSearch"
-										:search-phrase="searchPhrase"
-										search-label="{translate key="stats.searchSubmissionDescription"}"
-										@search-phrase-changed="setSearchPhrase"
-									></search>
-								</template>
-								<template v-else>
-									{{ column.label }}
-								</template>
-							</table-column>
-						</table-header>
-						<table-body>
-							<table-row v-for="(row) in items" :key="row.key">
-								<table-cell>
 									<a
 										:href="row.publication.urlPublished"
 										class="pkpStats__itemLink"
@@ -220,24 +208,19 @@
 										<span class="pkpStats__itemAuthors">{{ row.publication.authorsStringShort }}</span>
 										<span class="pkpStats__itemTitle">{{ localize(row.publication.fullTitle) }}</span>
 									</a>
-								</table-cell>
-								<table-cell>{{ row.abstractViews }}</table-cell>
-								<table-cell>{{ row.galleyViews }}</table-cell>
-								<table-cell>{{ row.pdfViews }}</table-cell>
-								<table-cell>{{ row.htmlViews }}</table-cell>
-								<table-cell>{{ row.otherViews }}</table-cell>
-								<table-cell>{{ row.total }}</table-cell>
-							</table-row>
-							<template #no-content v-if="!items.length">
-								<template v-if="isLoadingItems">
-									{translate key="common.loading"}
 								</template>
-								<template v-else>
-									{translate key="stats.publications.none"}
-								</template>
-							</template>
-						</table-body>
+							</table-cell>
+						</template>
 					</pkp-table>
+					<div v-if="!items.length" class="pkpStats__noRecords">
+						<template v-if="isLoadingItems">
+							<spinner></spinner>
+							{translate key="common.loading"}
+						</template>
+						<template v-else>
+							{translate key="stats.publications.none"}
+						</template>
+					</div>
 					<pagination
 						v-if="lastPage > 1"
 						id="publicationDetailTablePagination"
@@ -251,4 +234,3 @@
 		</div>
 	</div>
 {/block}
-

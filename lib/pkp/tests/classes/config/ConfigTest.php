@@ -8,101 +8,92 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class ConfigTest
- *
  * @ingroup tests_classes_config
- *
  * @see Config
  *
  * @brief Tests for the Config class.
  */
 
-namespace PKP\tests\classes\config;
 
-use PKP\config\Config;
-use PKP\core\Core;
-use PKP\tests\PKPTestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
+import('lib.pkp.tests.PKPTestCase');
 
-#[CoversClass(Config::class)]
-class ConfigTest extends PKPTestCase
-{
-    /**
-     * @see PKPTestCase::getMockedRegistryKeys()
-     */
-    protected function getMockedRegistryKeys(): array
-    {
-        return [...parent::getMockedRegistryKeys(), 'configData', 'configFile'];
-    }
+class ConfigTest extends PKPTestCase {
+	/**
+	 * @covers Config::getConfigFileName
+	 */
+	public function testGetDefaultConfigFileName() {
+		$expectedResult = Core::getBaseDir(). DIRECTORY_SEPARATOR. 'config.inc.php';
+		self::assertEquals($expectedResult, Config::getConfigFileName());
+	}
 
-    
-    public function testGetDefaultConfigFileName()
-    {
-        $expectedResult = Core::getBaseDir() . '/config.inc.php';
-        self::assertEquals($expectedResult, Config::getConfigFileName());
-    }
+	/**
+	 * @covers Config::setConfigFileName
+	 */
+	public function testSetConfigFileName() {
+		Config::setConfigFileName('some_config');
+		self::assertEquals('some_config', Config::getConfigFileName());
+	}
 
-    public function testSetConfigFileName()
-    {
-        Config::setConfigFileName('some_config');
-        self::assertEquals('some_config', Config::getConfigFileName());
-    }
+	/**
+	 * @depends testSetConfigFileName
+	 * @covers Config::reloadData
+	 */
+	public function testReloadDataWithNonExistentConfigFile() {
+		$this->expectOutputRegex('/Cannot read configuration file some_config/');
+		Config::setConfigFileName('some_config');
+		$this->expectError();
+		Config::reloadData();
+	}
 
-    public function testReloadDataWithNonExistentConfigFile()
-    {
-        Config::setConfigFileName('some_config');
-        $this->expectExceptionMessage('Cannot read configuration file some_config');
-        Config::reloadData();
-    }
+	/**
+	 * @depends testSetConfigFileName
+	 * @covers Config::reloadData
+	 */
+	public function testReloadDataAndGetData() {
+		$this->markTestSkipped();
+		Config::setConfigFileName('lib/pkp/tests/config/config.mysql.inc.php');
+		$result = Config::reloadData();
+		$expectedResult = array(
+			'installed' => true,
+			'base_url' => 'http://pkp.sfu.ca/ojs',
+			'session_cookie_name' => 'OJSSID',
+			'session_lifetime' => 30,
+			'scheduled_tasks' => false,
+			'date_format_short' => '%Y-%m-%d',
+			'date_format_long' => '%B %e, %Y',
+			'datetime_format_short' => '%Y-%m-%d %I:%M %p',
+			'datetime_format_long' => '%B %e, %Y - %I:%M %p',
+			'disable_path_info' => false,
+		);
 
-    public function testReloadDataAndGetData()
-    {
-        Config::setConfigFileName('lib/pkp/tests/config/config.TEMPLATE.mysql.inc.php');
-        $result = Config::reloadData();
-        $expectedResult = [
-            'installed' => true,
-            'base_url' => 'https://pkp.sfu.ca/ojs',
-            'session_cookie_name' => 'OJSSID',
-            'session_lifetime' => 30,
-            'date_format_short' => 'Y-m-d',
-            'date_format_long' => 'F j, Y',
-            'datetime_format_short' => 'Y-m-d h:i A',
-            'datetime_format_long' => 'F j, Y - h:i A',
-            'allowed_hosts' => '["mydomain.org"]',
-            'time_format' => 'h:i A',
-        ];
+		// We'll only check part of the configuration data to
+		// keep the test less verbose.
+		self::assertEquals($expectedResult, $result['general']);
 
-        // We'll only check part of the configuration data to
-        // keep the test less verbose.
-        self::assertEquals($expectedResult, $result['general']);
+		$result = &Config::getData();
+		self::assertEquals($expectedResult, $result['general']);
+	}
 
-        $result = & Config::getData();
-        self::assertEquals($expectedResult, $result['general']);
-    }
+	/**
+	 * @depends testReloadDataAndGetData
+	 * @covers Config::getVar
+	 * @covers Config::getData
+	 */
+	public function testGetVar() {
+		self::assertEquals('mysql', Config::getVar('database', 'driver'));
+		self::assertNull(Config::getVar('general', 'non-existent-config-var'));
+		self::assertNull(Config::getVar('non-existent-config-section', 'non-existent-config-var'));
+	}
 
-    public function testGetVar()
-    {
-        Config::setConfigFileName('lib/pkp/tests/config/config.TEMPLATE.mysql.inc.php');
-        self::assertEquals('mysqli', Config::getVar('database', 'driver'));
-        self::assertNull(Config::getVar('general', 'non-existent-config-var'));
-        self::assertNull(Config::getVar('non-existent-config-section', 'non-existent-config-var'));
-    }
-
-    public function testGetVarFromOtherConfig()
-    {
-        Config::setConfigFileName('lib/pkp/tests/config/config.TEMPLATE.pgsql.inc.php');
-        self::assertEquals('pgsql', Config::getVar('database', 'driver'));
-    }
-
-    public function testHasVar()
-    {
-        Config::setConfigFileName('lib/pkp/tests/config/config.mysql.inc.php');
-        self::assertTrue(Config::hasVar('general', 'installed'));
-    }
-
-    public function testIsSensitive()
-    {
-        Config::setConfigFileName('lib/pkp/tests/config/config.mysql.inc.php');
-        self::assertTrue(Config::isSensitive('database', 'password'));
-        self::assertFalse(Config::isSensitive('database', 'driver'));
-    }
+	/**
+	 * @depends testGetVar
+	 * @covers Config::getVar
+	 * @covers Config::getData
+	 */
+	public function testGetVarFromOtherConfig() {
+		Config::setConfigFileName('lib/pkp/tests/config/config.pgsql.inc.php');
+		self::assertEquals('pgsql', Config::getVar('database', 'driver'));
+	}
 }
+
+

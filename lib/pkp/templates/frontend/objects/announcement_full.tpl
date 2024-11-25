@@ -13,23 +13,16 @@
 
 <article class="obj_announcement_full">
 	<h1>
-		{$announcement->getLocalizedData('title')|escape}
+		{$announcement->getLocalizedTitle()|escape}
 	</h1>
 	<div class="date">
-		{$announcement->datePosted->format($dateFormatShort)}
+		{$announcement->getDatePosted()|date_format:$dateFormatShort}
 	</div>
-	{if $announcement->image}
-		<img
-			class="obj_announcement_full_image"
-			src="{$announcement->imageUrl}"
-			alt="{$announcement->imageAltText}"
-		/>
-	{/if}
 	<div class="description">
-		{if $announcement->getLocalizedData('description')}
-			{$announcement->getLocalizedData('description')|strip_unsafe_html}
+		{if $announcement->getLocalizedDescription()}
+			{$announcement->getLocalizedDescription()|strip_unsafe_html}
 		{else}
-			{$announcement->getLocalizedData('descriptionShort')|strip_unsafe_html}
+			{$announcement->getLocalizedDescriptionShort()|strip_unsafe_html}
 		{/if}
 	</div>
 </article><!-- .obj_announcement_full -->

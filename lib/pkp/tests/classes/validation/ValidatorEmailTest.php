@@ -8,32 +8,29 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @class ValidatorEmailTest
- *
  * @ingroup tests_classes_validation
- *
  * @see ValidatorEmail
  *
  * @brief Test class for ValidatorEmail.
  */
 
-namespace PKP\tests\classes\validation;
+import('lib.pkp.tests.PKPTestCase');
+import('lib.pkp.classes.validation.ValidatorEmail');
 
-use PKP\tests\PKPTestCase;
-use PKP\validation\ValidatorEmail;
-use PHPUnit\Framework\Attributes\CoversClass;
-
-#[CoversClass(ValidatorEmail::class)]
-class ValidatorEmailTest extends PKPTestCase
-{
-    public function testValidatorEmail()
-    {
-        $validator = new ValidatorEmail();
-        self::assertTrue($validator->isValid('some.address@gmail.com'));
-        self::assertTrue($validator->isValid('anything@localhost'));
-        self::assertTrue($validator->isValid("allowedchars!#$%&'*+./=?^_`{|}@gmail.com"));
-        self::assertTrue($validator->isValid('"quoted.username"@gmail.com'));
-        self::assertFalse($validator->isValid('anything else'));
-        self::assertFalse($validator->isValid('double@@gmail.com'));
-        self::assertFalse($validator->isValid('no"quotes"in.middle@gmail.com'));
-    }
+class ValidatorEmailTest extends PKPTestCase {
+	/**
+	 * @covers ValidatorEmail
+	 * @covers ValidatorRegExp
+	 */
+	public function testValidatorEmail() {
+		$validator = new ValidatorEmail();
+		self::assertTrue($validator->isValid('some.address@gmail.com'));
+		self::assertTrue($validator->isValid('anything@localhost'));
+		self::assertTrue($validator->isValid("allowedchars!#$%&'*+./=?^_`{|}@gmail.com"));
+		self::assertTrue($validator->isValid('"quoted.username"@gmail.com'));
+		self::assertFalse($validator->isValid('anything else'));
+		self::assertFalse($validator->isValid('double@@gmail.com'));
+		self::assertFalse($validator->isValid('no"quotes"in.middle@gmail.com'));
+	}
 }
+

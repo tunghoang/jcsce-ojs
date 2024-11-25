@@ -6,8 +6,6 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * Common site header.
- *
- * @hook Template::Layout::Backend::HeaderActions []
  *}
 <!DOCTYPE html>
 <html lang="{$currentLocale|replace:"_":"-"}" xml:lang="{$currentLocale|replace:"_":"-"}">
@@ -18,10 +16,6 @@
 	{load_header context="backend"}
 	{load_stylesheet context="backend"}
 	{load_script context="backend"}
-	<style type="text/css">
-		/* Prevent flash of unstyled content in some browsers */
-		[v-cloak] { display: none; }
-	</style>
 </head>
 <body class="pkp_page_{$requestedPage|escape|default:"index"} pkp_op_{$requestedOp|escape|default:"index"}" dir="{$currentLocaleLangDir|escape|default:"ltr"}">
 
@@ -35,15 +29,13 @@
 				{rdelim});
 		{rdelim});
 	</script>
-	<div id="app" class="app {if $isLoggedInAs} app--isLoggedInAs{/if}" v-cloak>
-		<vue-announcer class="sr-only"></vue-announcer>
-		<pkp-announcer class="sr-only"></pkp-announcer>
-		<modal-manager></modal-manager>
+
+	<div id="app" class="app {if $isLoggedInAs} app--isLoggedInAs{/if}">
 		<header class="app__header" role="banner">
 			{if $availableContexts}
-				<dropdown class="app__headerAction app__contexts">
-					<template #button>
-						<icon icon="Sitemap" class="h-7 w-7"></icon>
+				<dropdown class="app__headerAction app__contexts" v-cloak>
+					<template slot="button">
+						<icon icon="sitemap"></icon>
 						<span class="-screenReader">{translate key="context.contexts"}</span>
 					</template>
 					<ul>
@@ -73,31 +65,22 @@
 				</div>
 			{/if}
 			{if $currentUser}
-				<div class="app__headerActions">
+				<div class="app__headerActions" v-cloak>
 					{call_hook name="Template::Layout::Backend::HeaderActions"}
 					<div class="app__headerAction app__tasks">
 						<button ref="tasksButton" @click="openTasks">
-							<icon icon="Notifications" class="h-7 w-7"></icon>
+							<icon icon="bell-o"></icon>
 							<span class="-screenReader">{translate key="common.tasks"}</span>
 							<span v-if="unreadTasksCount" class="app__tasksCount">{{ unreadTasksCount }}</span>
 						</button>
 					</div>
 					<dropdown class="app__headerAction app__userNav">
-						<template #button>
-							<initials-avatar
-								:is-secondary="true"
-								{if $isUserLoggedInAs}
-								:is-disabled="true"
-								{/if}
-							></initials-avatar>
+						<template slot="button">
+							<icon icon="user-circle-o"></icon>
 							{if $isUserLoggedInAs}
-								<initials-avatar 
-									class="absolute right-2 top-2 rounded-full h-5 w-5"
-									:is-warnable="true"
-									:shrink="true"
-								></initials-avatar>
+								<icon icon="user-circle" class="app__userNav__isLoggedInAsWarning"></icon>
 							{/if}
-							<span class="-screenReader">{$currentUser->getData('userName')}</span>
+							<span class="-screenReader">{$currentUser->getData('username')}</span>
 						</template>
 						<nav aria-label="{translate key="common.navigation.user"}">
 							{if $supportedLocales|@count > 1}
@@ -106,9 +89,9 @@
 									<ul>
 										{foreach from=$supportedLocales item="locale" key="localeKey"}
 											<li>
-												<a href="{url router=PKP\core\PKPApplication::ROUTE_PAGE page="user" op="setLocale" path=$localeKey}" class="pkpDropdown__action">
+												<a href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey}" class="pkpDropdown__action">
 													{if $localeKey == $currentLocale}
-														<icon icon="Complete" class="h-5 w-5" :inline="true"></icon>
+														<icon icon="check" :inline="true"></icon>
 													{/if}
 													{$locale|escape}
 												</a>
@@ -120,8 +103,8 @@
 							{if $isUserLoggedInAs}
 								<div class="pkpDropdown__section">
 									<div class="app__userNav__loggedInAs">
-										{translate key="manager.people.signedInAs" username=$currentUser->getData('userName')}
-										<a href="{url router=PKP\core\PKPApplication::ROUTE_PAGE page="login" op="signOutAsUser"}" class="app__userNav__logOutAs">{translate key="user.logOutAs" username=$currentUser->getData('userName')}</a>.
+										{translate key="manager.people.signedInAs" username=$currentUser->getData('username')}
+										<a href="{url router=$smarty.const.ROUTE_PAGE page="login" op="signOutAsUser"}" class="app__userNav__logOutAs">{translate key="user.logOutAs" username=$currentUser->getData('username')}</a>.
 									</div>
 								</div>
 							{/if}
@@ -133,17 +116,17 @@
 										</a>
 									</li>
 									<li>
-										<a href="{url router=PKP\core\PKPApplication::ROUTE_PAGE page="user" op="profile"}" class="pkpDropdown__action">
+										<a href="{url router=$smarty.const.ROUTE_PAGE page="user" op="profile"}" class="pkpDropdown__action">
 											{translate key="user.profile.editProfile"}
 										</a>
 									</li>
 									<li>
 										{if $isUserLoggedInAs}
-											<a href="{url router=PKP\core\PKPApplication::ROUTE_PAGE page="login" op="signOutAsUser"}" class="pkpDropdown__action">
-												{translate key="user.logOutAs" username=$currentUser->getData('userName')}
+											<a href="{url router=$smarty.const.ROUTE_PAGE page="login" op="signOutAsUser"}" class="pkpDropdown__action">
+												{translate key="user.logOutAs" username=$currentUser->getData('username')}
 											</a>
 										{else}
-											<a href="{url router=PKP\core\PKPApplication::ROUTE_PAGE page="login" op="signOut"}" class="pkpDropdown__action">
+											<a href="{url router=$smarty.const.ROUTE_PAGE page="login" op="signOut"}" class="pkpDropdown__action">
 												{translate key="user.logOut"}
 											</a>
 										{/if}
@@ -156,35 +139,49 @@
 			{/if}
 		</header>
 
+		{* Swap the navigation menu for a back-to-dashboard link when only one item exists *}
+		<nav v-if="backToDashboardLink" class="app__returnHeader" aria-label="{translate key="common.navigation.site"}">
+			<a class="app__returnHeaderLink" :href="backToDashboardLink.url">
+				{{ backToDashboardLabel }}
+			</a>
+		</nav>
+
 		<div class="app__body">
 			{block name="menu"}
-				<pkp-side-nav :links="menu" aria-label="{translate key="common.navigation.site"}">
-				</pkp-side-nav>
+				<nav v-if="!!menu && Object.keys(menu).length > 1" class="app__nav" aria-label="{translate key="common.navigation.site"}">
+					<ul>
+						<li v-for="(menuItem, key) in menu" :key="key" :class="!!menuItem.submenu ? 'app__navGroup' : ''">
+							<div v-if="!!menuItem.submenu" class="app__navItem app__navItem--hasSubmenu">
+								{{ menuItem.name }}
+							</div>
+							<a v-else class="app__navItem" :class="menuItem.isCurrent ? 'app__navItem--isCurrent' : ''" :href="menuItem.url">
+								{{ menuItem.name }}
+							</a>
+							<ul v-if="!!menuItem.submenu">
+								<li v-for="(submenuItem, submenuKey) in menuItem.submenu" :key="submenuKey">
+									<a class="app__navItem" :class="submenuItem.isCurrent ? 'app__navItem--isCurrent' : ''" :href="submenuItem.url">
+										{{ submenuItem.name }}
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
 			{/block}
 
 			<main class="app__main">
-				<div class="app__page width{if $pageWidth} width--{$pageWidth}{/if}">
+				<div class="app__page{if $pageWidth} app__page--{$pageWidth}{/if}">
 					{block name="breadcrumbs"}
 						{if $breadcrumbs}
 							<nav class="app__breadcrumbs" role="navigation" aria-label="{translate key="navigation.breadcrumbLabel"}">
 								<ol>
 									{foreach from=$breadcrumbs item="breadcrumb" name="breadcrumbs"}
-										{assign var=_format value=$breadcrumb.format|default:'text'|lower}
-
-										{if $_format === 'text'}
-											{assign var=_name value=$breadcrumb.name|escape}
-										{else}
-											{assign var=_name value=$breadcrumb.name|strip_unsafe_html}
-										{/if}
-
 										<li>
 											{if $smarty.foreach.breadcrumbs.last}
-												<span aria-current="page">
-													{$_name}
-												</span>
+												<span aria-current="page">{$breadcrumb.name|escape}</span>
 											{else}
 												<a href="{$breadcrumb.url|escape}">
-													{$_name}
+													{$breadcrumb.name|escape}
 												</a>
 												<span class="app__breadcrumbsSeparator" aria-hidden="true">{translate key="navigation.breadcrumbSeparator"}</span>
 											{/if}
@@ -213,18 +210,6 @@
 				</notification>
 			</transition-group>
 		</div>
-		<transition name="app__loading">
-			<div
-				v-if="isLoading"
-				class="app__loading"
-				role="alert"
-			>
-				<div class="app__loading__content">
-					<spinner></spinner>
-					{translate key="common.loading"}
-				</div>
-			</div>
-		</transition>
 	</div>
 
 	<script type="text/javascript">
