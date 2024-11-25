@@ -1,0 +1,11 @@
+.git*
+
+cypress/
+cypress.json
+tests/
+
+docs/
+deployment/
+
+*node_modules*
+

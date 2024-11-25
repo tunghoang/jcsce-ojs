@@ -1,5 +1,5 @@
 {
-	"name": "OJS3",
+	"name": "jcsce-ojs",
 	"description": "Open Journal Systems (OJS) is a journal management and publishing system that has been developed by the Public Knowledge Project through its federally funded efforts to expand and improve access to research.",
 	"version": "3.3.0",
 	"author": "Public Knowledge Project",
@@ -8,7 +8,7 @@
 		"dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build --no-clean --watch",
 		"build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build --no-clean",
 		"lint": "vue-cli-service lint js/load.js lib/pkp/js/load.js lib/pkp/js/classes/VueRegistry.js",
-		"containerize": "docker build . -f deployment/Dockerfile"
+		"containerize": "docker build . -f deployment/Dockerfile -t $npm_package_name:$npm_package_version"
 	},
 	"dependencies": {
 		"@tinymce/tinymce-vue": "^1.1.0",
