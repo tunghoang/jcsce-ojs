@@ -1,0 +1,5 @@
+{
+	"github-oauth": {
+		"github.com": "GITHUB_TOKEN_THAT_ALLOWS_COMPOSER_TO_BYPASS_60RPH_RESTRICTION"
+	}
+}
