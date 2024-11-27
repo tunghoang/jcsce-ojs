@@ -8,4 +8,4 @@ docs/
 deployment/
 
 *node_modules*
-
+config.inc.php

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-cp config.TEMPLATE.inc.php config.inc.php
+php inject-env.php
 
 apache2-foreground
