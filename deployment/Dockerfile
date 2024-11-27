@@ -29,13 +29,14 @@ RUN apt install -y libxml2-dev git unzip libicu-dev g++
 
 COPY --from=composer:lts /usr/bin/composer /usr/local/bin/composer
 
-RUN docker-php-ext-install mysqli xml fileinfo intl
+RUN docker-php-ext-install mysqli pdo pdo_mysql xml fileinfo intl
 
 COPY --from=src_filter /app .
 
 RUN composer --working-dir=lib/pkp --no-progress -o -n --no-dev update
 COPY --from=ui_builder /app/js/build.js ./js/build.js
 
+# Cleanup github credentials for composer
 RUN for file in $(find . -name "auth.json"); do rm $file -f; done
 
 RUN chown -R www-data:www-data *
