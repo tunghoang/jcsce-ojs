@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+    webphp:
+        build:
+            context: .
+        container_name: "webserver"
+        restart: "always"
+        ports:
+            - '80:80'
+        links: 
+            - database
+        volumes:
+            - ./ojs:/var/www/html:rw
+        environment:
+            APACHE_DOCUMENT_ROOT: ./var/www/html
+            PMA_PORT: 8080
+            MYSQL_ROOT_PASSWORD: tiger
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: docker
+            MYSQL_DATABASE: root
+            HOST_MACHINE_MYSQL_PORT: 3306
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+    database: 
+        image: mysql:8.0.40
+        container_name: "database"
+        restart: "always"
+        ports:
+            - "127.0.0.1:3306:3306"
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: tiger
+            MYSQL_DATABASE: root
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: docker
+    phpmy: 
+        image: phpmyadmin
+        container_name: "phpadmin"
+        links: 
+            - database
+        environment:
+            PMA_HOST: database
+            PMA_PORT: 3306
+            PMA_USER: root
+            PMA_PASSWORD: tiger
+            MYSQL_ROOT_PASSWORD: tiger
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: docker
+        ports:
+            - "8080:80"
+    
