@@ -8,7 +8,7 @@
 		"dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build --no-clean --watch",
 		"build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build --no-clean",
 		"lint": "vue-cli-service lint js/load.js lib/pkp/js/load.js lib/pkp/js/classes/VueRegistry.js",
-		"containerize": "docker build . -f deployment/Dockerfile -t $npm_package_name:$npm_package_version"
+		"containerize": "cross-var docker build . -f deployment/Dockerfile -t $npm_package_name:$npm_package_version"
 	},
 	"dependencies": {
 		"@tinymce/tinymce-vue": "^1.1.0",
@@ -36,6 +36,7 @@
 		"@vue/eslint-config-prettier": "^4.0.1",
 		"babel-eslint": "^10.1.0",
 		"cross-env": "^7.0.3",
+		"cross-var": "^1.1.0",
 		"cypress": "^5.6",
 		"cypress-failed-log": "^2.7.0",
 		"cypress-file-upload": "^3.5.1",

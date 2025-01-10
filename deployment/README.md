@@ -1,5 +1,23 @@
 # JCSCE Docker Image
 
+## Build the image
+
+The project has a npm script to automatically build docker images, run this script at the project's root.
+
+```sh
+npm run containerize
+```
+
+Composer can sometimes download dependencies from their source, i.e. remote SCM like Github or Gitlab, which has their own rate limiting rule. Composer recommends using Github access token to bypass this rate limiting rule, see [this](https://getcomposer.org/doc/articles/authentication-for-private-packages.md).
+
+To use access token during build process:
+
+```sh
+npm run containerize -- --build-arg COMPOSER_TOKEN=ghp_xxxxxxxxxxx
+```
+
+Built container image should be tagged as `jcsce-ojs:$npm_package_version`.
+
 ## Environment variables
 
 > More variables can be made available, contact for update.
