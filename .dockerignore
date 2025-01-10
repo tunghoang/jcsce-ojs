@@ -8,4 +8,9 @@ docs/
 deployment/
 
 *node_modules*
+
+cache/
+
+**/vendor/
+
 config.inc.php
