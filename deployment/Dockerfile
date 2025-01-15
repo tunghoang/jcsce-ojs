@@ -53,6 +53,9 @@ EXPOSE 80
 RUN mkdir cache
 RUN chown -R www-data:www-data /var/www/html
 
+RUN rm /etc/apache2/sites-available/default-ssl.conf
+RUN mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
+
 USER www-data:www-data
 
 ENTRYPOINT ["/var/www/html/entrypoint.sh"]
