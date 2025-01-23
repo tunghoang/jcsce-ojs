@@ -13,4 +13,6 @@ cache/
 
 **/vendor/
 
+**/build.*
+
 config.inc.php
