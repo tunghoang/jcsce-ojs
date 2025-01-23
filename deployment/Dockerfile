@@ -43,6 +43,7 @@ RUN php -d default_socket_timeout=720 composer.phar --working-dir=lib/pkp --no-p
 RUN php -d default_socket_timeout=720 composer.phar --working-dir=plugins/generic/citationStyleLanguage --no-progress -o -n --no-dev install
 
 COPY --from=ui_builder /app/js/build.js ./js/build.js
+COPY --from=ui_builder /app/styles/build.css ./styles/build.css
 
 # Cleanup github credentials for composer
 RUN for file in $(find . -name "auth.json"); do rm $file -f; done
