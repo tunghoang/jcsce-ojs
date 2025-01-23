@@ -1,6 +1,6 @@
 # Frontend builder container
 
-FROM node:lts AS ui_builder
+FROM node:16-bookworm AS ui_builder
 
 WORKDIR /app
 
