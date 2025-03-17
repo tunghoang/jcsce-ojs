@@ -31,7 +31,9 @@ RUN apt install -y libxml2-dev git unzip libicu-dev g++ wget
 
 COPY --from=composer:lts /usr/bin/composer /usr/local/bin/composer
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql xml fileinfo intl
+RUN apt-get install -y zlib1g-dev \ 
+&& docker-php-ext-configure intl
+RUN docker-php-ext-install mysqli pdo pdo_mysql xml fileinfo intl gettext
 RUN a2enmod rewrite
 
 COPY --from=src_filter /app .
@@ -48,6 +50,8 @@ COPY --from=ui_builder /app/styles/build.css ./styles/build.css
 # Cleanup github credentials for composer
 RUN for file in $(find . -name "auth.json"); do rm $file -f; done
 RUN rm -rf ~/.composer
+
+RUN rm -rf /var/www/html/plugins/paymethod/paypal
 
 EXPOSE 80
 
