@@ -19,6 +19,12 @@
 		{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 		{if $sidebarCode}
 			<div class="pkp_structure_sidebar left" role="complementary" aria-label="{translate|escape key="common.navigation.sidebar"}">
+				{if !$activeTheme->getOption('useHomepageImageAsHeader') && $homepageImage}
+					<div class="pkp_block homepage_image">
+						<img src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}"{if $homepageImage.altText} alt="{$homepageImage.altText|escape}"{/if}>
+					</div>
+				{/if}
+
 				{$sidebarCode}
 			</div><!-- pkp_sidebar.left -->
 		{/if}
@@ -36,11 +42,11 @@
 			</div>
 		{/if}
 
-		<div class="pkp_brand_footer" role="complementary">
+		{* <div class="pkp_brand_footer" role="complementary">
 			<a href="{url page="about" op="aboutThisPublishingSystem"}">
 				<img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}">
 			</a>
-		</div>
+		</div> *}
 	</div>
 </div><!-- pkp_structure_footer_wrapper -->
 
