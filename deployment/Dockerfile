@@ -33,6 +33,7 @@ COPY --from=composer:lts /usr/bin/composer /usr/local/bin/composer
 
 RUN apt-get install -y zlib1g-dev \ 
 && docker-php-ext-configure intl
+RUN apt-get install -y sendmail
 RUN docker-php-ext-install mysqli pdo pdo_mysql xml fileinfo intl gettext
 RUN a2enmod rewrite
 

@@ -122,6 +122,14 @@ override_cfg(env_key: 'OJS_RECAPTCHA_PRIVATE_KEY', cfg_group: 'captcha', cfg_key
 override_cfg(env_key: 'OJS_CAPTCHA_ON_REGISTER', cfg_group: 'captcha', cfg_key: 'captcha_on_register');
 override_cfg(env_key: 'OJS_RECAPTCHA_ENFORCE_HOSTNAME', cfg_group: 'captcha', cfg_key: 'recaptcha_enforce_hostname');
 
+override_cfg(env_key: 'OJS_EMAIL_SMTP', cfg_group: 'email', cfg_key: 'smtp');
+override_cfg(env_key: 'OJS_EMAIL_SMTP_SERVER', cfg_group: 'email', cfg_key: 'smtp_server');
+override_cfg(env_key: 'OJS_EMAIL_SMTP_PORT', cfg_group: 'email', cfg_key: 'smtp_port');
+override_cfg(env_key: 'OJS_EMAIL_SMTP_USERNAME', cfg_group: 'email', cfg_key: 'smtp_username');
+override_cfg(env_key: 'OJS_EMAIL_SMTP_PASSWORD', cfg_group: 'email', cfg_key: 'smtp_password');
+
+override_cfg(env_key: 'OJS_EMAIL_REQUIRE_VALIDATION', cfg_group: 'email', cfg_key: 'require_validation');
+
 override_cfg(env_key: 'OJS_TAR', cfg_group: 'cli', cfg_key: 'tar');
 override_cfg(env_key: 'OJS_XSLT_COMMAND', cfg_group: 'cli', cfg_key: 'xslt_command');
 
