@@ -1,0 +1,16 @@
+services:
+  jcsce:
+    image: "jcsce-ojs:3.3.0"
+    restart: always
+
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - "./files:/var/www/html/files"
+      - "./public:/var/www/html/public"
+      - "./config.inc.php:/var/www/html/config.inc.php"
+      - "./php.ini:/usr/local/etc/php/php.ini"
+networks:
+  default:
+    name: jcsce-net
+    external: true
