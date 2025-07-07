@@ -22,7 +22,7 @@ RUN rm -rf ./babel.config.js ./package.json ./package-lock.json ./vue.config.js
 
 # Target
 
-FROM php:8.1-apache-bookworm AS server
+FROM php:7.4-apache AS server
 
 ARG COMPOSER_TOKEN=""
 
