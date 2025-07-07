@@ -8,6 +8,7 @@ services:
     volumes:
       - "./files:/var/www/html/files"
       - "./public:/var/www/html/public"
+      - "./cache:/var/www/html/cache"
       - "./config.inc.php:/var/www/html/config.inc.php"
       - "./php.ini:/usr/local/etc/php/php.ini"
 networks:
