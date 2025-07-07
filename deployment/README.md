@@ -1,88 +1,92 @@
-# JCSCE Docker Image
+# Migrate OJS database
+## Requirement
+- PHP version 7.4.
+## Method:
+Upgrade sequentially from 3.0.2 → 3.1.1-2 → 3.2.1-4 → 3.3.0-8.
+## Implementation
+Download suitable [release package](https://pkp.sfu.ca/software/ojs/download/) versions of OJS (4 versions above):
+## Upgrade from old version to nearest new version (example with 3.0.2 to 3.1.1-2)
+### Step 0. Disable custom theme
+Custom theme will break new version. Follow this step for disable custom theme and use default theme. 
+```
+    Login admin account  → Settings  → Appearance → Theme → Pick Default theme from the list
+```
+Should use current version to do that. If you run OJS 3.0.2 on PHP-7.4, you must apply [this patch](https://forum.pkp.sfu.ca/t/ojs-3-1-blank-screen-after-installation/36243).
 
-## Build the image
+### Step 1. Backup data:  
+- Backup database: Dumps a `.sql` and **MUST** clone to new database. Old database will be modified.
+- Backup files: Move `files` folder from old version to new version.
+- Backup plugins: Move `plugins` folder from old version to new version.
+### Step 2 (Modify configuration):
+From 3.1.1-2 package extracted, modify configuration file `config.inc.php` to ensure can use old username and  password. **DON'T FORGET** change encryption to `md5` as old version.
+```
+...
+;;;;;;;;;;;;;;;;;;;;;
+; Security Settings ;
+;;;;;;;;;;;;;;;;;;;;;
 
-The project has a npm script to automatically build docker images, run this script at the project's root.
-
-```sh
-npm run containerize
+...
+encryption = md5
+...
 ```
 
-Composer can sometimes download dependencies from their source, i.e. remote SCM like Github or Gitlab, which has their own rate limiting rule. Composer recommends using Github access token to bypass this rate limiting rule, see [this](https://getcomposer.org/doc/articles/authentication-for-private-packages.md).
+### Step 3. Upgrade:
+To avoid getting error: `Data too long for column`. Access to the MySQL server and run the following command and use old database dump again (new database was modified):
+```
+mysql> SET @@global.sql_mode= 'NO_ENGINE_SUBSTITUTION';
+```
+Inside old version of OJS run following command to upgrade database:
+```
+php tools/upgrade.php upgrade
+```
+You should see the notification if upgrading succesfully: 
+```
+Succesfully upgraded to version 3.1.1.2
+```
 
-To use access token during build process:
+### Step 4. Repeat the process: 
+Repeat upgrading to the nearest version:
+3.1.1-2 → 3.2.1-4, 3.2.1-4 → 3.3.0-8.
 
-```sh
+## Fix unicode charset
+Fix database to ensure not have error with UTF-8 characters. Inside target database, run:
+```
+mysql> USE <target-database-name>;
+mysql> SOURCE <path to fix_db.sql>;
+```
+
+# Deploy JCSCE (OJS 3.3.0-8)
+## Build image
+Run npm install with:
+```
+npm i
+```
+Run this command with `COMPOSER_TOKEN` from Github token. Please check `Dockerfile` in `deployment`.
+```
 npm run containerize -- --build-arg COMPOSER_TOKEN=ghp_xxxxxxxxxxx
 ```
+Built container image should be tagged as `jcsce-ojs:3.3.0`. Tested on host with `node-v22.13.1` and `npm-v11.0.0`.
 
-Built container image should be tagged as `jcsce-ojs:$npm_package_version`.
-
-## Environment variables
-
-> More variables can be made available, contact for update.
-
-We made OJS more cloud-native by injecting environment variables into running container's config.inc.php file, to specify environment variables, use:
-
-```sh
-docker run -e OJS_BASE_URL=https://ojs.yourdomain.com jcsce-ojs:<tag>
+## Using Docker-compose
+Make sure these volume for mapping with file/folder from old OJS. 
+```
+    volumes:
+      - "./files:/var/www/html/files"
+      - "./public:/var/www/html/public"
+      - "./cache:/var/www/html/cache"
+      - "./config.inc.php:/var/www/html/config.inc.php"
+      - "./php.ini:/usr/local/etc/php/php.ini"
 ```
 
-Full supported environment variable list:
+Run it with `docker-compose up -d`. Please check port mapping in config.
 
-`OJS_BASE_URL`: Map to `general.base_url`.
+# Config theme
 
-`OJS_SESSION_COOKIE_NAME`: Map to `general.session_cookie_name`.
-
-`OJS_SESSION_LIFETIME`: Map to `general.session_lifetime`.
-
-`OJS_SESSION_SAMESITE`: Map to `general.session_samesite`.
-
-`OJS_SCHEDULED_TASKS`: Map to `general.scheduled_tasks`.
-
-`OJS_SCHEDULED_TASKS_REPORT_ERROR_ONLY`: Map to `general.scheduled_tasks_report_error_only`.
-
-`OJS_TIMEZONE`: Map to `general.timezone`.
-
-`OJS_ALLOWED_HOSTS`: Map to `general.allowed_hosts`.
-
-`OJS_DATABASE_URI`: Map to `database.*`, use full database connection URI format: `mysql://username:password@host[:port][/database]`.
-
-`OJS_LOCALE`: Map to `i18n.locale`.
-
-`OJS_ENCRYPTION`: Map to `security.encryption`.
-
-`OJS_SALT`: Map to `security.salt`.
-
-`OJS_API_KEY_SECRET`: Map to `security.api_key_secret`.
-
-`OJS_EMAIL_BOX`: Map to `email.*`, use full email URI format: `smtp://uri_encoded_username@uri_encoded_password@smtp_host[:smtp_port]`
-
-`OJS_RECAPTCHA`: Map to `captcha.*`, use full captcha configuration URI format: `public_key:private_key?[on_register=(on|off)][&enforce_hostname=(on|off)]`.
-
-`OJS_DEBUG`: Set the level of debug logging:
-- `0`: No debug log.
-- `1`: `log_web_service_info=on`.
-- `2`: `deprecation_warnings=on`.
-- `3`: `display_errors=on`.
-- `4`: `show_stacktrace=on`
-
-# Persistency
-
-OJS stores uploaded resources (journals, photos) locally, you **MUST** mount their data volume somewhere on your physical server to prevent data loss after restarting container.
-
-```sh
-docker run -v /path/to/physical/location:/var/www/html/files jcsce-ojs:<tag>
+Follow this step for config theme:
+```
+    Login admin account  → Settings  → Appearance → Theme
 ```
 
-# Keep OJS running in background
-
-```sh
-docker run -d --restart always jcsce-ojs:<tag>
-```
-
-# Forward container's HTTP port to host
-
-```sh
-docker run -p 8080:80 jcsce-ojs:<tag>
-```
+Options:
+- Colour: `#0E5450`.
+- Check `Show the journal summary on the homepage`.
